@@ -7,15 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import "TabOverViewController.h"
 
 @implementation AppDelegate
 
+enum selectedView {
+    NOT_SET,
+    ADD_DEVICE,
+    REMOVE_DEVICE,
+    CHANGE_DEVICE,
+    SETTINGS
+};
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    TabOverViewController *mainController = [[TabOverViewController alloc] init];
+    
+    if ([defaults integerForKey:@"ConfigChanger.Mode"] != NOT_SET) {
+    
+            // set the selcted view
+        
+    } else {
+        [defaults setInteger:ADD_DEVICE forKey:@"ConfigChanger.Mode"];
+        [defaults synchronize];
+    }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = mainController;
     [self.window makeKeyAndVisible];
+    defaults = nil;
     return YES;
 }
 

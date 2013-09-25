@@ -1,0 +1,35 @@
+//
+//  ConfigurationData.h
+//  COnfiguration Change Form
+//
+//  Created by Douglas Gardiner on 9/24/13.
+//  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "enumList.h"
+
+@interface ConfigurationData : NSObject
+
+@property (retain) NSString *building;
+@property(retain) NSString *closet;
+@property (retain) NSString *currentUplinkOne;
+@property (retain) NSString *currentUplinkTwo;
+@property (retain) NSString *currentTag;
+@property (retain) NSString *oldTag;
+@property (retain) NSString *oldUplinkOne;
+@property (retain) NSString *oldUplinkTwo;
+@property (retain) NSString *oldIp;
+@property (retain) NSString *currentIp;
+@property int deviceType;
+@property int site;
+@property (retain) NSMutableArray *emailAddresses;
+
+-(NSString*) getOldDeviceName;
+-(NSString*) getNewDeviceName;
+-(NSString*) getMailingList;
+-(void) addEmailAddress: (NSString*) email;
+-(void) removeEmailAddress: (NSString*) email;
+
+-(NSString*) getDeviceTypeString: (int) device;
+@end
