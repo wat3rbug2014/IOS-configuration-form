@@ -31,5 +31,9 @@
 -(void) addEmailAddress: (NSString*) email;
 -(void) removeEmailAddress: (NSString*) email;
 
--(NSString*) getDeviceTypeString: (int) device;
+-(NSString*) getDeviceTypeString;
+-(int) emailCount;
+-(void) updateStoredEmailSettings;
+-(NSString*) getSiteString;
+-(NSString*) getSiteAbbreviatedString;
 @end

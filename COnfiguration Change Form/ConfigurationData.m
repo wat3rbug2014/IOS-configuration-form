@@ -8,6 +8,8 @@
 
 #import "ConfigurationData.h"
 
+static NSString *const emailKey = @"ConfigChanger.Email";
+
 @implementation ConfigurationData
 
 @synthesize building;
@@ -22,14 +24,29 @@
 @synthesize oldUplinkTwo;
 @synthesize emailAddresses;
 
+-(id) init {
+    
+    self = [super init];
+    if (self != nil) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [self setEmailAddresses:[NSMutableArray arrayWithArray:[defaults objectForKey:emailKey]]];
+    }
+    return self;
+}
+
 -(int) deviceType {
     
     return self.deviceType;
 }
 -(void)setDeviceType:(int)deviceType {
     
-    // go through enum and check if deviceType matches and write if it does
-    self.deviceType = deviceType;
+    // watch for fall through because of the use of enum when iterating.
+    
+    for (int i = UNDEFINED; i < AR; i++) {
+        if (deviceType == i) {
+            self.deviceType = deviceType;
+        }
+    }
 }
 
 -(int) site {
@@ -38,25 +55,44 @@
 }
 -(void) setSite:(int)site {
     
-    // go through enum and check available site
-    self.site = site;
+    // watch for fall through because of the use of enum when iterating.
+    
+    for (int i = JSC; i < LARC; i++) {
+        if (site == i) {
+            self.site = site;
+        }
+    }
 }
 -(NSString*) getOldDeviceName {
-    
+
     NSMutableString *buffer = [[NSMutableString alloc] init];
-    
-    // build the name by the convention
-    
+    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
+    [buffer stringByAppendingString: @"-"];
+    [buffer stringByAppendingString:[self getDeviceTypeString]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self building]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self closet]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self oldTag]];
     return buffer;
 }
+
 -(NSString*) getNewDeviceName {
-    
+  
     NSMutableString *buffer = [[NSMutableString alloc] init];
-    
-    // build the name by the convention
-    
+    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
+    [buffer stringByAppendingString: @"-"];
+    [buffer stringByAppendingString:[self getDeviceTypeString]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self building]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self closet]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self currentTag]];
     return buffer;
 }
+
 -(NSString*) getMailingList {
     
     NSMutableString *buffer = [[NSMutableString alloc] init];
@@ -66,19 +102,26 @@
     }
     return buffer;
 }
+
 -(void) addEmailAddress: (NSString*) email {
     
     [emailAddresses addObject:email];
+    [self updateStoredEmailSettings];
+    
 }
+
 -(void) removeEmailAddress: (NSString*) email{
     
     [emailAddresses removeObject:email];
+    [self updateStoredEmailSettings];
 }
--(NSString*) getDeviceTypeString:(int)device {
+
+-(NSString*) getDeviceTypeString {
     
+#warning not all cases defined
     // this should be written better. I don't like switch stuff
     NSString *deviceTypeString;
-    switch (device) {
+    switch ([self deviceType]) {
         case AS: {
             deviceTypeString = @"Access Switch";
             break;
@@ -96,5 +139,54 @@
         }
     }
     return deviceTypeString;
+}
+
+-(NSString*) getSiteString {
+    
+#warning not all cases defined
+    
+    NSString *siteName;
+    switch ([self site]) {
+        case LARC: {
+            siteName =@"LARC";
+            break;
+        }
+        default: {
+            siteName = @"JSC";
+            break;
+        }
+    }
+    return siteName;
+}
+
+-(NSString*) getSiteAbbreviatedString {
+    
+#warning not all cases defined
+    
+    NSString *siteName;
+    switch ([self site]) {
+        case LARC: {
+            siteName =@"AR";
+            break;
+        }
+        default: {
+            siteName = @"JS";
+            break;
+        }
+    }
+    return siteName;
+}
+
+-(int) emailCount {
+    
+    return [emailAddresses count];
+}
+
+-(void) updateStoredEmailSettings {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:emailAddresses forKey:emailKey];
+    [defaults synchronize];
+    defaults = nil;
 }
 @end

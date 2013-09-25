@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConfigurationData.h"
 
 @interface SettingsController : UITableViewController
 
+@property (retain) ConfigurationData *appData;
 @end
