@@ -7,12 +7,21 @@
 //
 
 #import "TabOverViewController.h"
+#import "AddOrRemoveDeviceController.h"
+#import "ChangeDeviceController.h"
+#import "SettingsController.h"
 
 @interface TabOverViewController ()
 
 @end
 
 @implementation TabOverViewController
+@synthesize addDeviceViewer;
+@synthesize removeDeviceViewer;
+@synthesize changeDeviceViewer;
+@synthesize settingsViewer;
+
+int static const CONTROLLER_NUM = 4;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,13 +35,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] init];
+    [addView setIsAddView:YES];
+    AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] init];
+    ChangeDeviceController *changeView = [[ChangeDeviceController alloc] init];
+    SettingsController *settingsView = [[SettingsController alloc] init];
+    NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, settingsView, nil];
+    NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];
+    for (int i = 0; i < CONTROLLER_NUM; i++) {
+        [navControllers setObject:[[UINavigationController alloc] initWithRootViewController:[viewcontrollerArray objectAtIndex:i]]atIndexedSubscript:i];
+    }
+    [self setViewControllers:navControllers animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    addDeviceViewer =nil;
+    removeDeviceViewer = nil;
+    changeDeviceViewer =nil;
+    settingsViewer = nil;
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface AddOrRemoveDeviceController : UIViewController
 
+@property BOOL isAddView;
+
 @end
