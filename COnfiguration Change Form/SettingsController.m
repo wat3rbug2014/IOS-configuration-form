@@ -7,6 +7,7 @@
 //
 
 #import "SettingsController.h"
+#import "UIColor+ExtendedColor.h"
 
 @interface SettingsController ()
 
@@ -22,6 +23,7 @@
     if (self) {
         // Custom initialization
         [self setTitle:@"Mail Settings"];
+        appData = [[ConfigurationData alloc] init];
     }
     // load the contact info up
     return self;
@@ -30,7 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    UIBarButtonItem *addContacts = [[UIBarButtonItem alloc] initWithTitle:@"Contacts" style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
+    [[self navigationItem] setRightBarButtonItem:addContacts];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -44,6 +47,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) addContacts {
+    ABPeoplePickerNavigationController *listOfContacts = [[ABPeoplePickerNavigationController alloc] init];
+    [listOfContacts setPeoplePickerDelegate:self];
+    [self presentViewController:listOfContacts animated:YES completion:nil];
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -61,11 +70,12 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
-    // Configure the cell...
-    
+    [[cell textLabel] setText:[appData getNameAtIndex:indexPath.row]];
+    [[cell textLabel] setTextColor:[UIColor textColor]];
+    [[cell detailTextLabel] setTextColor:[UIColor userTextColor]];
+    [[cell detailTextLabel] setText:[appData getEmailAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -125,5 +135,45 @@
 }
  
  */
+#pragma mark - ABPeoplePickerNavigationControllerDelegate
 
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
+    
+    NSMutableString *name = [NSMutableString stringWithString: (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty)];
+    [name appendString: @" "];
+    [name appendString:(__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty)];
+    NSString *email;
+    ABMultiValueRef emailAddress = ABRecordCopyValue(person, kABPersonEmailProperty);
+    if (ABMultiValueGetCount(emailAddress) > 0) {
+        for (int i = 0; i < ABMultiValueGetCount(emailAddress); i++) {
+            NSString *testString = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, i);
+            
+            // unsure if memory leak here
+            
+            if ([testString hasSuffix:@"@nasa.gov"]) {
+                email = [[NSString alloc] initWithString: testString];
+            }
+        }
+        // may need to remove this is nasa only emails are allowed
+        
+        if (email == nil) {
+            email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, 0);
+        }
+        if (email != nil && name != nil) {
+            [appData addEmailAddress:email withName:name];
+        }
+    }
+    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+    [[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    return NO;
+}
+
+-(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+
+    return NO;
+}
+-(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
+    
+    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+}
 @end

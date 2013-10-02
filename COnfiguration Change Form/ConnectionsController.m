@@ -77,7 +77,8 @@
     } else {
         [currentIPLabel setText:@"New IP"];
     }
-        // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
+    [[self navigationItem] setRightBarButtonItem:sendForm];
 }
 
 
@@ -96,5 +97,11 @@
         [self setConnectionsNeeded:BOTH];
     }
     
+}
+
+-(void) sendForm {
+    
+    MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
+    [mailer setMailComposeDelegate:self];
 }
 @end

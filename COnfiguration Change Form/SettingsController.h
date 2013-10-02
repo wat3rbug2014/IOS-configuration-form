@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ConfigurationData.h"
 #import "enumList.h"
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface SettingsController : UITableViewController
+@interface SettingsController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @property (retain) ConfigurationData *appData;
 
+-(void) addContacts;
 
 @end

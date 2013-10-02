@@ -10,8 +10,9 @@
 #import "enumList.h"
 #import "ConfigurationData.h"
 #import "UIColor+ExtendedColor.h"
+#import "MailController.h"
 
-@interface ConnectionsController : UIViewController
+@interface ConnectionsController : UIViewController <MFMailComposeViewControllerDelegate>
 
 -(void) setConnectionInfoRequired: (NSInteger) infoType;
 
@@ -31,5 +32,6 @@
 
 -(id) initWithConnectionInfo: (NSInteger) infoType andCurrentData: (ConfigurationData*) currentData;
 -(id) initWithConnectionInfo: (NSInteger) infoType;
+-(void) sendForm;
 
 @end
