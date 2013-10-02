@@ -21,8 +21,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        // add the image for tab bar
-        [self setTitle:@"Settings"];
+        [self setTitle:@"Mail Settings"];
     }
     return self;
 }
