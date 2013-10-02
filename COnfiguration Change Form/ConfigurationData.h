@@ -21,19 +21,27 @@
 @property (retain) NSString *oldUplinkTwo;
 @property (retain) NSString *oldIp;
 @property (retain) NSString *currentIp;
+
 @property int deviceType;
 @property int site;
-@property (retain) NSMutableArray *emailAddresses;
+
+@property (retain) NSMutableDictionary *emailAddresses;
+@property (retain) NSArray *nameArray;
+@property (retain) NSArray *emailArray;
 
 -(NSString*) getOldDeviceName;
 -(NSString*) getNewDeviceName;
--(NSString*) getMailingList;
--(void) addEmailAddress: (NSString*) email;
--(void) removeEmailAddress: (NSString*) email;
-
 -(NSString*) getDeviceTypeString;
--(int) emailCount;
--(void) updateStoredEmailSettings;
 -(NSString*) getSiteString;
 -(NSString*) getSiteAbbreviatedString;
+
+-(void) addEmailAddress: (NSString*) email withName: (NSString*) name;
+-(void) removeEmailAddress: (NSString*) name;
+-(NSString*) getNameAtIndex: (NSInteger) index;
+-(NSString*) getEmailAtIndex: (NSInteger) index;
+-(NSInteger) emailCount;
+-(void) updateStoredEmailSettings;
+
+
+
 @end

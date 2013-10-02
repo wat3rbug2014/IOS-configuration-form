@@ -23,13 +23,15 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize oldUplinkOne;
 @synthesize oldUplinkTwo;
 @synthesize emailAddresses;
+@synthesize emailArray;
+@synthesize nameArray;
 
 -(id) init {
     
     self = [super init];
     if (self != nil) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [self setEmailAddresses:[NSMutableArray arrayWithArray:[defaults objectForKey:emailKey]]];
+        [self setEmailAddresses:[NSMutableDictionary dictionaryWithDictionary:[defaults objectForKey:emailKey]]];
     }
     return self;
 }
@@ -103,22 +105,21 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return buffer;
 }
 
--(void) addEmailAddress: (NSString*) email {
+-(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
     
-    [emailAddresses addObject:email];
+    [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
     [self updateStoredEmailSettings];
     
 }
 
--(void) removeEmailAddress: (NSString*) email{
+-(void) removeEmailAddress: (NSString*) name{
     
-    [emailAddresses removeObject:email];
+    [emailAddresses removeObjectForKey:name];
     [self updateStoredEmailSettings];
 }
 
 -(NSString*) getDeviceTypeString {
     
-#warning not all cases defined
     // this should be written better. I don't like switch stuff
     NSString *deviceTypeString;
     switch ([self deviceType]) {
@@ -143,8 +144,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSString*) getSiteString {
     
-#warning not all cases defined
-    
     NSString *siteName;
     switch ([self site]) {
         case LARC: {
@@ -161,8 +160,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSString*) getSiteAbbreviatedString {
     
-#warning not all cases defined
-    
     NSString *siteName;
     switch ([self site]) {
         case LARC: {
@@ -177,9 +174,22 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return siteName;
 }
 
--(int) emailCount {
+-(NSInteger) emailCount {
     
-    return [emailAddresses count];
+    emailArray = [emailAddresses allValues];
+    return [emailArray count];
+}
+-(NSString*) getEmailAtIndex:(NSInteger)index {
+    
+    emailArray = [emailAddresses allValues];
+    return [emailArray objectAtIndex:index];
+    
+}
+
+-(NSString*) getNameAtIndex:(NSInteger)index {
+    
+    nameArray = [emailAddresses allKeys];
+    return [nameArray objectAtIndex:index];
 }
 
 -(void) updateStoredEmailSettings {
