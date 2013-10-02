@@ -46,6 +46,11 @@ int const DEF_ROW = 2;
     [self.view addSubview:deviceTypeSelection];
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
+    [deviceTypeSelResult setTextColor:[UIColor userTextColor]];
+    [oldTag setTextColor:[UIColor userTextColor]];
+    [currentTag setTextColor:[UIColor userTextColor]];
+    [building setTextColor:[UIColor userTextColor]];
+    [closet setTextColor:[UIColor userTextColor]];
 }
 
 - (void)didReceiveMemoryWarning

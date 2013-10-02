@@ -23,6 +23,7 @@
         // Custom initialization
         [self setTitle:@"Mail Settings"];
     }
+    // load the contact info up
     return self;
 }
 

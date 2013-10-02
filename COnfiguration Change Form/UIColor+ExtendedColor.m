@@ -12,9 +12,15 @@
 
 +(UIColor*) textColor {
     
-    return [UIColor colorByHex:@"0x7109aa"];
+    //return [UIColor colorByHex:@"0x7109aa"];
+    return  [UIColor colorByHex:@"0x3216b0"];
 }
 
++(UIColor*) userTextColor {
+    
+    //return [UIColor colorByHex:@"0x7109aa"];
+    return  [UIColor colorByHex:@"0x00a08a"];
+}
 +(UIColor*) colorByHex:(NSString *)hexValue {
     
     UIColor *result;

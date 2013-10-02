@@ -15,5 +15,4 @@
 @property (retain) ConfigurationData *appData;
 
 
-
 @end

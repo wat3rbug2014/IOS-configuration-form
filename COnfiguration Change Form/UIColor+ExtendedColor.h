@@ -15,4 +15,5 @@
 +(CGFloat) colorIntToFloat: (int) color;
 +(int) convertUpperHexNumToInt: (char) currentLetter;
 +(UIColor*) textColor;
++(UIColor*) userTextColor;
 @end

@@ -38,28 +38,28 @@
                     <rect key="frame" x="37" y="168" width="63" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.4431372549" green="0.035294117649999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.086274509803921567" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wGF-U7-xCH">
                     <rect key="frame" x="37" y="205" width="50" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.4431372549" green="0.035294117649999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.086274509803921567" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DWU-wq-f2L">
                     <rect key="frame" x="37" y="253" width="91" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.4431372549" green="0.035294117649999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.086274509803921567" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dys-1g-54B">
                     <rect key="frame" x="156" y="253" width="144" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.62352941179999999" green="0.24313725489999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.19607843137254902" green="0.086274509803921567" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="6eG-lY-IUd">
