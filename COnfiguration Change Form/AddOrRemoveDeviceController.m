@@ -7,6 +7,7 @@
 //
 
 #import "AddOrRemoveDeviceController.h"
+#import "UIColor+ExtendedColor.h"
 
 @interface AddOrRemoveDeviceController ()
 
@@ -15,20 +16,46 @@
 @implementation AddOrRemoveDeviceController
 
 @synthesize isAddView;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+@synthesize tagEntry;
+@synthesize tagLabel;
+@synthesize buildingEntry;
+@synthesize closetEntry;
+@synthesize equipTypeSelResult;
+@synthesize deviceTypeSelection;
+@synthesize devices;
+
+int const DEF_ROW = 2;
+
+-(id) initAsAddView: (BOOL) addView {
+    
+    self = [super initWithNibName:@"AddOrRemoveDeviceController" bundle:nil];
     if (self) {
-        [self setIsAddView:NO];
-        // add the image for tab bar
+        [self setIsAddView:addView];
+        if ([self isAddView]) {
+            [self setTitle: @"Add Device"];
+        } else {
+            [self setTitle:@"Remove Device"];
+        }
+        devices = [[PickerItems alloc] init];
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIColor *textColor = [UIColor colorByHex:@"0x7109aa"];
+    [tagLabel setTextColor:textColor];
+    if ([self isAddView]) {
+        [tagLabel setText:@"New tag"];
+    } else {
+        [tagLabel setText:@"Old tag"];
+    }
+    deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
+    [deviceTypeSelection setDelegate:self];
+    [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
+    [deviceTypeSelection setShowsSelectionIndicator:YES];
+    [self.view addSubview:deviceTypeSelection];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,4 +64,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    [equipTypeSelResult setText:[devices deviceAtIndex:row]];
+}
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [devices count];
+}
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+}
+-(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    if (row < 0) {
+        return [devices deviceAtIndex:0];
+    }
+    if (row >= [devices count]) {
+        return [devices deviceAtIndex:[devices count] - 1];
+    }
+    return [devices deviceAtIndex:row];
+}
+
+-(CGFloat) pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    
+    return 300.0;
+}
 @end

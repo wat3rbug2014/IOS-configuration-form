@@ -22,6 +22,7 @@
     if (self) {
         // Custom initialization
         // add the image for tab bar
+        [self setTitle:@"Settings"];
     }
     return self;
 }

@@ -10,12 +10,14 @@
 #import "AddOrRemoveDeviceController.h"
 #import "ChangeDeviceController.h"
 #import "SettingsController.h"
+#import "UIColor+ExtendedColor.h"
 
 @interface TabOverViewController ()
 
 @end
 
 @implementation TabOverViewController
+
 @synthesize addDeviceViewer;
 @synthesize removeDeviceViewer;
 @synthesize changeDeviceViewer;
@@ -35,15 +37,17 @@ int static const CONTROLLER_NUM = 4;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] init];
-    [addView setIsAddView:YES];
-    AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] init];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"adddevice.png", nil];
+    AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] initAsAddView:YES];
+    AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] initAsAddView:NO];
     ChangeDeviceController *changeView = [[ChangeDeviceController alloc] init];
     SettingsController *settingsView = [[SettingsController alloc] init];
     NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, settingsView, nil];
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];
     for (int i = 0; i < CONTROLLER_NUM; i++) {
         [navControllers setObject:[[UINavigationController alloc] initWithRootViewController:[viewcontrollerArray objectAtIndex:i]]atIndexedSubscript:i];
+        [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor colorByHex:@"0x7109aa"]];
+        [[[navControllers objectAtIndex:i] tabBarItem] setImage:[UIImage imageNamed:[tabIcons objectAtIndex:i]]];
     }
     [self setViewControllers:navControllers animated:YES];
 }

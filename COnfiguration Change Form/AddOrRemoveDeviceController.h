@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PickerItems.h"
 
-@interface AddOrRemoveDeviceController : UIViewController
+@interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property BOOL isAddView;
 
+@property (retain, nonatomic) IBOutlet UITextField *tagEntry;
+@property (retain, nonatomic) IBOutlet UITextField *buildingEntry;
+@property (retain, nonatomic) IBOutlet UITextField *closetEntry;
+@property (retain, nonatomic) IBOutlet UILabel *tagLabel;
+@property (retain, nonatomic) IBOutlet UILabel *equipTypeSelResult;
+@property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
+@property (retain) PickerItems *devices;
+
+-(id) initAsAddView: (BOOL) isAddView;
 @end

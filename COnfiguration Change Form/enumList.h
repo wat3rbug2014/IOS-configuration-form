@@ -13,6 +13,8 @@ enum device {
     UNDEFINED,
     AS,
     UP,
+    AP,
+    DS,
     AR
     
 };

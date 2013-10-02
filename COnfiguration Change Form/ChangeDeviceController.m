@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         // add the image for tab bar
+        [self setTitle:@"Change Device"];
     }
     return self;
 }
@@ -27,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view from its nib.
 }
 
