@@ -8,6 +8,8 @@
 
 #import "AddOrRemoveDeviceController.h"
 #import "UIColor+ExtendedColor.h"
+#import "ConnectionsController.h"
+#import "enumList.h"
 
 @interface AddOrRemoveDeviceController ()
 
@@ -23,6 +25,7 @@
 @synthesize equipTypeSelResult;
 @synthesize deviceTypeSelection;
 @synthesize devices;
+@synthesize data;
 
 int const DEF_ROW = 2;
 
@@ -43,7 +46,7 @@ int const DEF_ROW = 2;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *textColor = [UIColor colorByHex:@"0x7109aa"];
+    UIColor *textColor = [UIColor textColor];
     [tagLabel setTextColor:textColor];
     if ([self isAddView]) {
         [tagLabel setText:@"New tag"];
@@ -55,7 +58,8 @@ int const DEF_ROW = 2;
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
-    
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
+    [[self navigationItem] setRightBarButtonItem:toConnection];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,9 +68,35 @@ int const DEF_ROW = 2;
     // Dispose of any resources that can be recreated.
 }
 
+-(void) updateConfigurationDataStructure {
+    
+    [data setBuilding:[buildingEntry text]];
+    [data setCloset:[closetEntry text]];
+    if ([self isAddView]) {
+        [data setCurrentTag:[tagEntry text]];
+    } else {
+        [data setCurrentTag:[tagEntry text]];
+    }
+}
+-(void) updateConnections {
+    
+    int addOrRemove;
+    if ([self isAddView]) {
+        addOrRemove = ADD;
+    } else {
+        addOrRemove = REMOVE;
+    }
+    [self updateConfigurationDataStructure];
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:addOrRemove andCurrentData:data];
+    [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
+
+#pragma UIPickerViewDelegate methods
+
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     [equipTypeSelResult setText:[devices deviceAtIndex:row]];
+    [data setDeviceType:row];
 }
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     

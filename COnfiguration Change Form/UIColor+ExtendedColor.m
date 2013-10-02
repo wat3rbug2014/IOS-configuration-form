@@ -10,6 +10,11 @@
 
 @implementation UIColor (ExtendedColor)
 
++(UIColor*) textColor {
+    
+    return [UIColor colorByHex:@"0x7109aa"];
+}
+
 +(UIColor*) colorByHex:(NSString *)hexValue {
     
     UIColor *result;

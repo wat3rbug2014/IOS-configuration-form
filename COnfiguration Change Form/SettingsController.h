@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ConfigurationData.h"
+#import "enumList.h"
 
 @interface SettingsController : UITableViewController
 
 @property (retain) ConfigurationData *appData;
+
+
+
 @end

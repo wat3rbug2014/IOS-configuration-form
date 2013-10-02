@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
+#import "ConfigurationData.h"
+
+/* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
 
 @interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -18,5 +21,6 @@
 @property (retain, nonatomic) IBOutlet UITextField *closet;
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
+@property (retain, nonatomic) ConfigurationData *data;
 
 @end

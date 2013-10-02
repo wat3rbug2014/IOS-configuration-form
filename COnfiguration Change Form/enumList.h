@@ -25,4 +25,10 @@ enum sites {
     LARC
 };
 
+enum connectType {
+    
+    BOTH,
+    ADD,
+    REMOVE
+};
 #endif

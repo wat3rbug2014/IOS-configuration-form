@@ -46,7 +46,7 @@ int static const CONTROLLER_NUM = 4;
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];
     for (int i = 0; i < CONTROLLER_NUM; i++) {
         [navControllers setObject:[[UINavigationController alloc] initWithRootViewController:[viewcontrollerArray objectAtIndex:i]]atIndexedSubscript:i];
-        [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor colorByHex:@"0x7109aa"]];
+        [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor textColor]];
         [[[navControllers objectAtIndex:i] tabBarItem] setImage:[UIImage imageNamed:[tabIcons objectAtIndex:i]]];
     }
     [self setViewControllers:navControllers animated:YES];

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
+#import "ConfigurationData.h"
 
 @interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -20,6 +21,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeSelResult;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain) PickerItems *devices;
+@property (retain, nonatomic) ConfigurationData *data;
 
 -(id) initAsAddView: (BOOL) isAddView;
 @end

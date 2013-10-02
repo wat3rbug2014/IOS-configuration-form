@@ -13,5 +13,6 @@
 +(UIColor*) colorByHex: (NSString*) hexValue;
 +(int) convertHexToInt: (NSString*) hexValue;
 +(CGFloat) colorIntToFloat: (int) color;
-+(int) convertUpperHexNumToInt: (char) currentLetter ;
++(int) convertUpperHexNumToInt: (char) currentLetter;
++(UIColor*) textColor;
 @end

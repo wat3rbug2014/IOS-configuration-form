@@ -7,6 +7,7 @@
 //
 
 #import "ChangeDeviceController.h"
+#import "ConnectionsController.h"
 
 @interface ChangeDeviceController ()
 
@@ -21,6 +22,7 @@
 @synthesize closet;
 @synthesize devices;
 @synthesize deviceTypeSelection;
+@synthesize data;
 
 int const DEF_ROW = 2;
 
@@ -30,6 +32,7 @@ int const DEF_ROW = 2;
     if (self) {
         devices = [[PickerItems alloc] init];
         [self setTitle:@"Change Device"];
+        [[self navigationController] setTitle:@"Change Device"];
     }
     return self;
 }
@@ -41,7 +44,8 @@ int const DEF_ROW = 2;
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
-    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
+    [[self navigationItem] setRightBarButtonItem:toConnection];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +53,22 @@ int const DEF_ROW = 2;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) updateConfigurationDataStructure {
+    
+    [data setBuilding:[building text]];
+    [data setCloset:[closet text]];
+    [data setCurrentTag:[currentTag text]];
+    [data setOldTag:[oldTag text]];
+}
+
+-(void) updateConnections {
+    
+    [self updateConfigurationDataStructure];
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:BOTH andCurrentData:data];
+    [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
+
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
