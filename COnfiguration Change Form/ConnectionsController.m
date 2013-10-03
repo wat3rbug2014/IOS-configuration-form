@@ -77,7 +77,7 @@
     } else {
         [currentIPLabel setText:@"New IP"];
     }
-    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
+    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setRightBarButtonItem:sendForm];
 }
 
@@ -98,10 +98,34 @@
     }
     
 }
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    BOOL stillInTextField = NO;
+    NSArray *views = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, oldIP, currentIP, nil];
+    for (int i = 0; i < [views count]; i++) {
+        if ([touch view] == [views objectAtIndex:i]) {
+            stillInTextField = YES;
+        }
+    }
+    if (stillInTextField == NO) {
+        for (int i = 0; i < [views count]; i++) {
+            if ([[views objectAtIndex:i] isFirstResponder]) {
+                [[views objectAtIndex:i] resignFirstResponder];
+            }
+        }
+    }
+    
+}
 
 -(void) sendForm {
     
+    if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
+        // do alertbox -want this to go to the form section and turn everything red that is missing
+        return;
+    }
     MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
     [mailer setMailComposeDelegate:self];
+    [self presentViewController:mailer animated:YES completion:nil];
 }
 @end

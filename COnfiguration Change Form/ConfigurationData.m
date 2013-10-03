@@ -25,6 +25,8 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize emailAddresses;
 @synthesize emailArray;
 @synthesize nameArray;
+@synthesize destTagOne;
+@synthesize destTagTwo;
 
 -(id) init {
     
@@ -95,14 +97,10 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return buffer;
 }
 
--(NSString*) getMailingList {
+-(NSArray*) getMailingList {
     
-    NSMutableString *buffer = [[NSMutableString alloc] init];
-    for (NSString *currentEmail in emailAddresses) {
-        [buffer stringByAppendingString:@","];
-        [buffer stringByAppendingString:currentEmail];
-    }
-    return buffer;
+    emailArray = [emailAddresses allValues];
+    return emailArray;
 }
 
 -(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
@@ -198,5 +196,24 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     [defaults setObject:emailAddresses forKey:emailKey];
     [defaults synchronize];
     defaults = nil;
+}
+
+-(BOOL) isFormFilledOutForType: (NSInteger) formType {
+    
+    BOOL result = YES;
+    if ([self building] == nil|| [self closet] == nil || [self vlan] == nil) {
+        result = NO;
+    }
+    if (formType == ADD || formType == BOTH) {
+        if ([self currentUplinkOne] == nil|| [self currentTag] == nil || [self currentIp] == nil || [self destTagOne] == nil) {
+            result = NO;
+        }
+    }
+    if (formType == REMOVE) {
+        if ([self oldTag] == nil|| [self oldIp] == nil) {
+            result = NO;
+        }
+    }
+    return result;
 }
 @end

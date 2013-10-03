@@ -7,6 +7,7 @@
 //
 
 #import "MailController.h"
+#import "enumList.h"
 
 @interface MailController ()
 
@@ -37,6 +38,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSMutableString *subjectLine;
+    NSString *tag;
+    NSArray *devices = [NSArray arrayWithObjects:@"Access Switch", @"UPS", @"Access Point", @"Distribution Switch", @"Access Router", nil];
+    switch ([self formType]) {
+        case ADD: {
+            subjectLine = [NSMutableString stringWithString:@"Added "];
+            tag = [[self formData] currentTag];
+            break;
+        }
+        case REMOVE: {
+            subjectLine = [NSMutableString stringWithString:@"Removed "];
+            tag = [[self formData] oldTag];
+            break;
+        }
+        default: {
+            subjectLine = [NSMutableString stringWithString:@"Changed "];
+            tag = [[self formData] oldTag];
+            break;
+        }
+    }
+    [subjectLine appendString:[devices objectAtIndex:[[self formData] deviceType]]];
+    [subjectLine appendString:@" tag# "];
+    [subjectLine appendString:tag];
+    if ([self formType] == BOTH) {
+        [subjectLine appendString:@" with new tag# "];
+        [subjectLine appendString:[[self formData] currentTag]];
+    }
+    [self setToRecipients:[[self formData] getMailingList]];
     
 	// Do any additional setup after loading the view.
 }

@@ -64,6 +64,7 @@ int const DEF_ROW = 2;
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
     [equipTypeSelResult setTextColor:[UIColor userTextColor]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,6 +94,25 @@ int const DEF_ROW = 2;
     [self updateConfigurationDataStructure];
     ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:addOrRemove andCurrentData:data];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    BOOL stillInTextField = NO;
+    NSArray *views = [NSArray arrayWithObjects:tagEntry, buildingEntry, closetEntry, nil];
+    for (int i = 0; i < [views count]; i++) {
+        if ([touch view] == [views objectAtIndex:i]) {
+            stillInTextField = YES;
+        }
+    }
+    if (stillInTextField == NO) {
+        for (int i = 0; i < [views count]; i++) {
+            if ([[views objectAtIndex:i] isFirstResponder]) {
+                [[views objectAtIndex:i] resignFirstResponder];
+            }
+        }
+    }
 }
 
 #pragma UIPickerViewDelegate methods

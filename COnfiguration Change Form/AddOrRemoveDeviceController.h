@@ -24,4 +24,5 @@
 @property (retain, nonatomic) ConfigurationData *data;
 
 -(id) initAsAddView: (BOOL) isAddView;
+
 @end

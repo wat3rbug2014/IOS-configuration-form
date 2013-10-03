@@ -21,6 +21,9 @@
 @property (retain) NSString *oldUplinkTwo;
 @property (retain) NSString *oldIp;
 @property (retain) NSString *currentIp;
+@property (retain) NSString *vlan;
+@property (retain) NSString *destTagOne;
+@property (retain) NSString *destTagTwo;
 
 @property int deviceType;
 @property int site;
@@ -41,7 +44,8 @@
 -(NSString*) getEmailAtIndex: (NSInteger) index;
 -(NSInteger) emailCount;
 -(void) updateStoredEmailSettings;
+-(NSArray*) getMailingList;
 
-
+-(BOOL) isFormFilledOutForType: (NSInteger) formType;
 
 @end

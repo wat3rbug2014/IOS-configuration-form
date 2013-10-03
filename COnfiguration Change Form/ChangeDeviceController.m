@@ -74,6 +74,25 @@ int const DEF_ROW = 2;
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    BOOL stillInTextField = NO;
+    NSArray *views = [NSArray arrayWithObjects:oldTag, currentTag, closet, building, nil];
+    for (int i = 0; i < [views count]; i++) {
+        if ([touch view] == [views objectAtIndex:i]) {
+            stillInTextField = YES;
+        }
+    }
+    if (stillInTextField == NO) {
+        for (int i = 0; i < [views count]; i++) {
+            if ([[views objectAtIndex:i] isFirstResponder]) {
+                [[views objectAtIndex:i] resignFirstResponder];
+            }
+        }
+    }
+    
+}
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
