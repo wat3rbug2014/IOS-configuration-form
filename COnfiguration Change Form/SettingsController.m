@@ -17,11 +17,13 @@
 
 @synthesize appData;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+#pragma mark -
+#pragma mark Initialization methods
+
+- (id)initWithStyle:(UITableViewStyle)style {
+    
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
         [self setTitle:@"Mail Settings"];
         appData = [[ConfigurationData alloc] init];
     }
@@ -29,8 +31,10 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+#pragma mark -
+#pragma mark Superclass methods
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     UIBarButtonItem *addContacts = [[UIBarButtonItem alloc] initWithTitle:@"Contacts" style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
     [[self navigationItem] setRightBarButtonItem:addContacts];
@@ -41,8 +45,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -53,20 +57,22 @@
     [self presentViewController:listOfContacts animated:YES completion:nil];
     
 }
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+#pragma mark -
+#pragma mark TableViewDataSource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [appData emailCount];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -118,9 +124,10 @@
 }
 */
 
-/*
-#pragma mark - Table view delegate
+#pragma mark -
+#pragma mark - TableViewDelegate methods
 
+/*
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -133,8 +140,8 @@
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
- 
- */
+*/ 
+
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
@@ -172,6 +179,7 @@
 
     return NO;
 }
+
 -(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {
     
     [peoplePicker dismissViewControllerAnimated:YES completion:nil];

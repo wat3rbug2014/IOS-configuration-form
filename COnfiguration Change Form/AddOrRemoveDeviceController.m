@@ -29,6 +29,9 @@
 
 int const DEF_ROW = 2;
 
+#pragma mark -
+#pragma mark Initialization Methods
+
 -(id) initAsAddView: (BOOL) addView {
     
     self = [super initWithNibName:@"AddOrRemoveDeviceController" bundle:nil];
@@ -43,8 +46,12 @@ int const DEF_ROW = 2;
     }
     return self;
 }
-- (void)viewDidLoad
-{
+
+#pragma mark -
+#pragma mark Superclass methods
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     UIColor *textColor = [UIColor textColor];
     [tagLabel setTextColor:textColor];
@@ -72,6 +79,9 @@ int const DEF_ROW = 2;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -
+#pragma mark Sublass specific methods
 
 -(void) updateConfigurationDataStructure {
     
@@ -115,21 +125,28 @@ int const DEF_ROW = 2;
     }
 }
 
-#pragma UIPickerViewDelegate methods
+#pragma mark -
+#pragma mark UIPickerViewDataSource methods
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [devices count];
+}
+
+#pragma mark -
+#pragma mark UIPickerViewDelegate methods
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     [equipTypeSelResult setText:[devices deviceAtIndex:row]];
     [data setDeviceType:row];
 }
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [devices count];
-}
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
-    return 1;
-}
+
 -(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     if (row < 0) {

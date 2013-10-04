@@ -29,6 +29,9 @@
 @synthesize oldIPLabel;
 @synthesize currentIPLabel;
 
+#pragma mark -
+#pragma mark Initialization methods
+
 -(id) initWithConnectionInfo: (NSInteger) infoType andCurrentData: (ConfigurationData*) currentData {
     
     self = [self initWithConnectionInfo:infoType];
@@ -54,6 +57,9 @@
     }
     return self;
 }
+
+#pragma mark -
+#pragma mark Superclass methods
 
 - (void)viewDidLoad
 {
@@ -81,23 +87,13 @@
     [[self navigationItem] setRightBarButtonItem:sendForm];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void) setConnectionInfoRequired:(NSInteger)infoType {
-    
-    // this is brittle because enum
-    
-    [self setConnectionsNeeded:infoType];
-    if (infoType < BOTH || infoType > REMOVE) {
-        [self setConnectionsNeeded:BOTH];
-    }
-    
-}
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
@@ -118,14 +114,46 @@
     
 }
 
+#pragma mark -
+#pragma mark Class specific methods
+
 -(void) sendForm {
     
     if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
-        // do alertbox -want this to go to the form section and turn everything red that is missing
+        NSString *message = @"Incomplete Form.  See items in red";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
         return;
     }
     MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
     [mailer setMailComposeDelegate:self];
     [self presentViewController:mailer animated:YES completion:nil];
+}
+
+-(void) setConnectionInfoRequired:(NSInteger)infoType {
+    
+    // this is brittle because enum
+    
+    [self setConnectionsNeeded:infoType];
+    if (infoType < BOTH || infoType > REMOVE) {
+        [self setConnectionsNeeded:BOTH];
+    }
+    
+}
+
+#pragma mark -
+#pragma MFMAilComposeViewControllerDelegate methods
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    if (error) {
+        // do a popup for error message with a proper message
+        // currently basic activity is being tested
+        
+        NSString *message = @"Failed to send the form.  Check Settings";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+    }
 }
 @end

@@ -28,6 +28,9 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize destTagOne;
 @synthesize destTagTwo;
 
+#pragma mark -
+#pragma mark initialization methods
+
 -(id) init {
     
     self = [super init];
@@ -41,79 +44,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 -(int) deviceType {
     
     return self.deviceType;
-}
--(void)setDeviceType:(int)deviceType {
-    
-    // watch for fall through because of the use of enum when iterating.
-    
-    for (int i = UNDEFINED; i < AR; i++) {
-        if (deviceType == i) {
-            self.deviceType = deviceType;
-        }
-    }
-}
-
--(int) site {
-    
-    return self.site;
-}
--(void) setSite:(int)site {
-    
-    // watch for fall through because of the use of enum when iterating.
-    
-    for (int i = JSC; i < LARC; i++) {
-        if (site == i) {
-            self.site = site;
-        }
-    }
-}
--(NSString*) getOldDeviceName {
-
-    NSMutableString *buffer = [[NSMutableString alloc] init];
-    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
-    [buffer stringByAppendingString: @"-"];
-    [buffer stringByAppendingString:[self getDeviceTypeString]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self building]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self closet]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self oldTag]];
-    return buffer;
-}
-
--(NSString*) getNewDeviceName {
-  
-    NSMutableString *buffer = [[NSMutableString alloc] init];
-    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
-    [buffer stringByAppendingString: @"-"];
-    [buffer stringByAppendingString:[self getDeviceTypeString]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self building]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self closet]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self currentTag]];
-    return buffer;
-}
-
--(NSArray*) getMailingList {
-    
-    emailArray = [emailAddresses allValues];
-    return emailArray;
-}
-
--(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
-    
-    [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
-    [self updateStoredEmailSettings];
-    
-}
-
--(void) removeEmailAddress: (NSString*) name{
-    
-    [emailAddresses removeObjectForKey:name];
-    [self updateStoredEmailSettings];
 }
 
 -(NSString*) getDeviceTypeString {
@@ -139,6 +69,87 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     }
     return deviceTypeString;
 }
+
+-(NSString*) getNewDeviceName {
+    
+    NSMutableString *buffer = [[NSMutableString alloc] init];
+    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
+    [buffer stringByAppendingString: @"-"];
+    [buffer stringByAppendingString:[self getDeviceTypeString]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self building]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self closet]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self currentTag]];
+    return buffer;
+}
+
+-(NSString*) getOldDeviceName {
+    
+    NSMutableString *buffer = [[NSMutableString alloc] init];
+    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
+    [buffer stringByAppendingString: @"-"];
+    [buffer stringByAppendingString:[self getDeviceTypeString]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self building]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self closet]];
+    [buffer stringByAppendingString:@"-"];
+    [buffer stringByAppendingString:[self oldTag]];
+    return buffer;
+}
+
+-(int) site {
+    
+    return self.site;
+}
+
+-(void)setDeviceType:(int)deviceType {
+    
+    // watch for fall through because of the use of enum when iterating.
+    
+    for (int i = UNDEFINED; i < AR; i++) {
+        if (deviceType == i) {
+            self.deviceType = deviceType;
+        }
+    }
+}
+
+-(void) setSite:(int)site {
+    
+    // watch for fall through because of the use of enum when iterating.
+    
+    for (int i = JSC; i < LARC; i++) {
+        if (site == i) {
+            self.site = site;
+        }
+    }
+}
+
+#pragma mark -
+#pragma Email methods
+
+-(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
+    
+    [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
+    [self updateStoredEmailSettings];
+    
+}
+
+-(NSArray*) getMailingList {
+    
+    emailArray = [emailAddresses allValues];
+    return emailArray;
+}
+
+-(void) removeEmailAddress: (NSString*) name{
+    
+    [emailAddresses removeObjectForKey:name];
+    [self updateStoredEmailSettings];
+}
+
+
 
 -(NSString*) getSiteString {
     
@@ -190,14 +201,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return [nameArray objectAtIndex:index];
 }
 
--(void) updateStoredEmailSettings {
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:emailAddresses forKey:emailKey];
-    [defaults synchronize];
-    defaults = nil;
-}
-
 -(BOOL) isFormFilledOutForType: (NSInteger) formType {
     
     BOOL result = YES;
@@ -216,4 +219,13 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     }
     return result;
 }
+
+-(void) updateStoredEmailSettings {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:emailAddresses forKey:emailKey];
+    [defaults synchronize];
+    defaults = nil;
+}
+
 @end

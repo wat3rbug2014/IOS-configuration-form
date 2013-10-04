@@ -10,6 +10,9 @@
 
 @implementation UIColor (ExtendedColor)
 
+#pragma mark -
+#pragma mark Application specific methods
+
 +(UIColor*) textColor {
     
     //return [UIColor colorByHex:@"0x7109aa"];
@@ -21,6 +24,10 @@
     //return [UIColor colorByHex:@"0x7109aa"];
     return  [UIColor colorByHex:@"0x00a08a"];
 }
+
+#pragma mark -
+#pragma mark Category methods
+
 +(UIColor*) colorByHex:(NSString *)hexValue {
     
     UIColor *result;

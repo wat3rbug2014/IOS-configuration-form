@@ -26,8 +26,11 @@
 
 int const DEF_ROW = 2;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark -
+#pragma mark Superclass specific methods
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         devices = [[PickerItems alloc] init];
@@ -37,8 +40,8 @@ int const DEF_ROW = 2;
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     [deviceTypeSelection setDelegate:self];
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
@@ -53,11 +56,14 @@ int const DEF_ROW = 2;
     [closet setTextColor:[UIColor userTextColor]];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -
+#pragma mark Subclass specific methods
 
 -(void) updateConfigurationDataStructure {
     
@@ -94,18 +100,27 @@ int const DEF_ROW = 2;
     
 }
 
--(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    [deviceTypeSelResult setText:[devices deviceAtIndex:row]];
-}
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [devices count];
-}
+#pragma mark -
+#pragma mark UIPickerViewDataSource methods
+
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
     return 1;
 }
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [devices count];
+}
+
+#pragma mark -
+#pragma mark UIPickerViewDelegate methods
+
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    [deviceTypeSelResult setText:[devices deviceAtIndex:row]];
+}
+
 -(NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
     if (row < 0) {

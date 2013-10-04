@@ -18,6 +18,9 @@
 @synthesize formData;
 @synthesize formType;
 
+#pragma mark -
+#pragma mark Initialization methods
+
 -(id) initWithData:(ConfigurationData *)data andFormType:(NSInteger)type {
     
     self = [self initWithNibName:nil bundle:nil];
@@ -26,8 +29,8 @@
     return  self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -35,8 +38,11 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+#pragma mark -
+#pragma mark Superclass methods
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     NSMutableString *subjectLine;
     NSString *tag;
@@ -70,8 +76,8 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
