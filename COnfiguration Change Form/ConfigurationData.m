@@ -27,6 +27,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize nameArray;
 @synthesize destTagOne;
 @synthesize destTagTwo;
+@synthesize vlan;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -41,6 +42,24 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return self;
 }
 
+-(void) clear {
+    
+    // can i do this with new object and dismiss self and copy email over?
+    
+    building = nil;
+    closet = nil;
+    currentUplinkOne = nil;
+    currentUplinkTwo = nil;
+    currentTag = nil;
+    oldTag = nil;
+    oldUplinkOne = nil;
+    oldUplinkTwo = nil;
+    oldIp = nil;
+    currentIp = nil;
+    vlan = nil;
+    destTagOne = nil;
+    destTagTwo = nil;
+}
 -(int) deviceType {
     
     return self.deviceType;
@@ -127,30 +146,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     }
 }
 
-#pragma mark -
-#pragma Email methods
-
--(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
-    
-    [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
-    [self updateStoredEmailSettings];
-    
-}
-
--(NSArray*) getMailingList {
-    
-    emailArray = [emailAddresses allValues];
-    return emailArray;
-}
-
--(void) removeEmailAddress: (NSString*) name{
-    
-    [emailAddresses removeObjectForKey:name];
-    [self updateStoredEmailSettings];
-}
-
-
-
 -(NSString*) getSiteString {
     
     NSString *siteName;
@@ -183,24 +178,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return siteName;
 }
 
--(NSInteger) emailCount {
-    
-    emailArray = [emailAddresses allValues];
-    return [emailArray count];
-}
--(NSString*) getEmailAtIndex:(NSInteger)index {
-    
-    emailArray = [emailAddresses allValues];
-    return [emailArray objectAtIndex:index];
-    
-}
-
--(NSString*) getNameAtIndex:(NSInteger)index {
-    
-    nameArray = [emailAddresses allKeys];
-    return [nameArray objectAtIndex:index];
-}
-
 -(BOOL) isFormFilledOutForType: (NSInteger) formType {
     
     BOOL result = YES;
@@ -218,6 +195,46 @@ static NSString *const emailKey = @"ConfigChanger.Email";
         }
     }
     return result;
+}
+
+#pragma mark -
+#pragma Email methods
+
+-(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
+    
+    [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
+    [self updateStoredEmailSettings];
+    
+}
+
+-(NSArray*) getMailingList {
+    
+    emailArray = [emailAddresses allValues];
+    return emailArray;
+}
+
+-(void) removeEmailAddress: (NSString*) name{
+    
+    [emailAddresses removeObjectForKey:name];
+    [self updateStoredEmailSettings];
+}
+
+-(NSInteger) emailCount {
+    
+    emailArray = [emailAddresses allValues];
+    return [emailArray count];
+}
+-(NSString*) getEmailAtIndex:(NSInteger)index {
+    
+    emailArray = [emailAddresses allValues];
+    return [emailArray objectAtIndex:index];
+    
+}
+
+-(NSString*) getNameAtIndex:(NSInteger)index {
+    
+    nameArray = [emailAddresses allKeys];
+    return [nameArray objectAtIndex:index];
 }
 
 -(void) updateStoredEmailSettings {

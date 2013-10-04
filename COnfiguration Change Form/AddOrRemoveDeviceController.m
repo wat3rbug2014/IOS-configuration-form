@@ -11,6 +11,7 @@
 #import "ConnectionsController.h"
 #import "enumList.h"
 
+
 @interface AddOrRemoveDeviceController ()
 
 @end
@@ -53,6 +54,9 @@ int const DEF_ROW = 2;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    // setup text and labels
+    
     UIColor *textColor = [UIColor textColor];
     [tagLabel setTextColor:textColor];
     if ([self isAddView]) {
@@ -65,13 +69,17 @@ int const DEF_ROW = 2;
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
-    [[self navigationItem] setRightBarButtonItem:toConnection];
     [tagEntry setTextColor:[UIColor userTextColor]];
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
     [equipTypeSelResult setTextColor:[UIColor userTextColor]];
-
+    
+    // add navigation buttons
+    
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
+    [[self navigationItem] setRightBarButtonItem:toConnection];
+    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
+    [[self navigationItem] setLeftBarButtonItem:sendForm];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,6 +101,25 @@ int const DEF_ROW = 2;
         [data setCurrentTag:[tagEntry text]];
     }
 }
+
+-(void) sendForm {
+    
+    // check to see if form is done
+    
+    if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
+        NSString *message = @"Incomplete Form.  See items in red";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+        return;
+    }
+    // setup mailer and transfer control
+    
+    MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
+    [mailer setMailComposeDelegate:self];
+    [self presentViewController:mailer animated:YES completion:nil];
+    [data clear];
+}
+
 -(void) updateConnections {
     
     int addOrRemove;
@@ -107,6 +134,8 @@ int const DEF_ROW = 2;
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    // check which textfield needs to dismiss keyboard if none are touched
     
     UITouch *touch = [[event allTouches] anyObject];
     BOOL stillInTextField = NO;
@@ -162,4 +191,21 @@ int const DEF_ROW = 2;
     
     return 300.0;
 }
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    if (error) {
+        // do a popup for error message with a proper message
+        // currently basic activity is being tested
+        
+        NSString *message = @"Failed to send the form.  Check Settings";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+    }
+}
+
 @end

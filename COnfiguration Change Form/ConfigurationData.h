@@ -38,6 +38,8 @@
 -(NSString*) getSiteString;
 -(NSString*) getSiteAbbreviatedString;
 
+// email methods
+
 -(void) addEmailAddress: (NSString*) email withName: (NSString*) name;
 -(void) removeEmailAddress: (NSString*) name;
 -(NSString*) getNameAtIndex: (NSInteger) index;
@@ -47,5 +49,6 @@
 -(NSArray*) getMailingList;
 
 -(BOOL) isFormFilledOutForType: (NSInteger) formType;
+-(void) clear;
 
 @end

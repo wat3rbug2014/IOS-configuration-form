@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
 #import "ConfigurationData.h"
+#import "MailController.h"
 
-@interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate>
 
 @property BOOL isAddView;
 
@@ -22,7 +23,9 @@
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) ConfigurationData *data;
+@property (nonatomic) NSInteger connectionsNeeded;
+// methods
 
 -(id) initAsAddView: (BOOL) isAddView;
-
+-(void) sendForm;
 @end
