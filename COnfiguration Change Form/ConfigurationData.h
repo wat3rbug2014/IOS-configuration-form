@@ -47,6 +47,7 @@
 -(NSInteger) emailCount;
 -(void) updateStoredEmailSettings;
 -(NSArray*) getMailingList;
+-(void) removeEntryAtIndex: (NSInteger) index;
 
 -(BOOL) isFormFilledOutForType: (NSInteger) formType;
 -(void) clear;

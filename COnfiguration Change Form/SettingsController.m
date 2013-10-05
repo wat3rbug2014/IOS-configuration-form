@@ -27,7 +27,6 @@
         [self setTitle:@"Mail Settings"];
         appData = [[ConfigurationData alloc] init];
     }
-    // load the contact info up
     return self;
 }
 
@@ -38,11 +37,7 @@
     [super viewDidLoad];
     UIBarButtonItem *addContacts = [[UIBarButtonItem alloc] initWithTitle:@"Contacts" style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
     [[self navigationItem] setRightBarButtonItem:addContacts];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,53 +89,29 @@
 }
 */
 
-/*
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [appData removeEntryAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark -
 #pragma mark - TableViewDelegate methods
 
-/*
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+//* Added so that the app doesn't hang up just cause it is selected. */
 
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/ 
+
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 
@@ -161,7 +132,7 @@
                 email = [[NSString alloc] initWithString: testString];
             }
         }
-        // may need to remove this is nasa only emails are allowed
+        // may need to remove this if nasa only emails are allowed
         
         if (email == nil) {
             email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, 0);
@@ -177,7 +148,7 @@
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
 
-    return NO;
+    return YES;
 }
 
 -(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {

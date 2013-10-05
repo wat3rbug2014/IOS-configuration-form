@@ -205,6 +205,8 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     [emailAddresses addEntriesFromDictionary:[NSDictionary dictionaryWithObject:email forKey:name]];
     [self updateStoredEmailSettings];
+    nameArray = [emailAddresses allKeys];
+    emailArray = [emailAddresses allValues];
     
 }
 
@@ -214,7 +216,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return emailArray;
 }
 
--(void) removeEmailAddress: (NSString*) name{
+-(void) removeEmailAddress: (NSString*) name {
     
     [emailAddresses removeObjectForKey:name];
     [self updateStoredEmailSettings];
@@ -246,4 +248,10 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     defaults = nil;
 }
 
+-(void) removeEntryAtIndex:(NSInteger)index {
+    
+    NSString *emailToRemove = [nameArray objectAtIndex:index];
+    [emailAddresses removeObjectForKey:emailToRemove];
+    [self updateStoredEmailSettings];
+}
 @end
