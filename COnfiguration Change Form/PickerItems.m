@@ -17,7 +17,10 @@
     
     self = [super init];
     if (self != nil) {
-        items = [NSArray arrayWithObjects:@"Access Switch", @"UPS", @"Access Point", @"Distribution Switch", @"Access Router", nil];
+        items = [NSArray arrayWithObjects:@"Aggregation Device", @"Access Point", @"Access-Layer-Router", @"Access-Layer Switch",
+                 @"Border Router", @"Call Manager", @"Core Switch", @"Core Router", @"Distribution Switch", @"Distribution Router",
+                 @"Firewall", @"Load Balancer", @"NAM Module", @"Power Distribution Unit", @"Power Strip", @"Proxy", @"UPS",
+                 @"VPN Controller", @"Wireless Controller", nil];
     }
     return self;
 }

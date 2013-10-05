@@ -11,12 +11,25 @@
 
 enum device {
     UNDEFINED,
-    AS,
-    UP,
+    AD,
     AP,
+    AR,
+    AS,
+    BD,
+    CM,
+    CS,
+    CR,
     DS,
-    AR
-    
+    DR,
+    FW,
+    LB,
+    NM,
+    PD,
+    PS,
+    PX,
+    UP,
+    VP,
+    WC
 };
 enum sites {
     JSC,
