@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
 #import "ConfigurationData.h"
+#import "MailController.h"
 
 /* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
 
-@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult;
 @property (retain, nonatomic) IBOutlet UITextField *oldTag;
@@ -22,5 +23,8 @@
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain, nonatomic) ConfigurationData *data;
+@property (nonatomic) NSInteger connectionsNeeded;
 
+-(void) updateConnections;
+-(void) sendForm;
 @end

@@ -30,6 +30,7 @@
 @synthesize buildingLabel;
 @synthesize closetLabel;
 @synthesize equipTypeLabel;
+@synthesize connectionsNeeded;
 
 int const DEF_ROW = 2;
 
