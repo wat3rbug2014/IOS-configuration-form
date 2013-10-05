@@ -64,7 +64,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     currentIP = [[UITextField alloc] init];
     [currentIP setTextColor:[UIColor textColor]];
     if ([self connectionsNeeded] == BOTH) {

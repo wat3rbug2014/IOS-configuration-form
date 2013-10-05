@@ -7,8 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddOrRemoveDeviceController">
             <connections>
                 <outlet property="buildingEntry" destination="xfL-br-FCk" id="ZmJ-pp-E0l"/>
+                <outlet property="buildingLabel" destination="xP4-rV-4xi" id="KiK-wt-XSL"/>
                 <outlet property="closetEntry" destination="hmh-vd-We2" id="ghP-kL-krk"/>
+                <outlet property="closetLabel" destination="FAs-RF-hcb" id="Esq-s6-Tmo"/>
                 <outlet property="deviceTypeSelection" destination="PXS-rA-8Df" id="64Y-x4-Aug"/>
+                <outlet property="equipTypeLabel" destination="lVo-Rj-XdU" id="7tP-29-bEL"/>
                 <outlet property="equipTypeSelResult" destination="G0E-LH-2HJ" id="HTo-fo-Qbh"/>
                 <outlet property="tagEntry" destination="5H3-Yc-uNQ" id="Gd9-Sv-7nu"/>
                 <outlet property="tagLabel" destination="GH1-1t-mJG" id="rOS-Wi-vYG"/>

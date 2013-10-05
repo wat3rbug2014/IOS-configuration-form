@@ -16,16 +16,25 @@
 @property BOOL isAddView;
 
 @property (retain, nonatomic) IBOutlet UITextField *tagEntry;
-@property (retain, nonatomic) IBOutlet UITextField *buildingEntry;
-@property (retain, nonatomic) IBOutlet UITextField *closetEntry;
 @property (retain, nonatomic) IBOutlet UILabel *tagLabel;
+@property (retain, nonatomic) IBOutlet UITextField *buildingEntry;
+@property (retain, nonatomic) IBOutlet UILabel *buildingLabel;
+@property (retain, nonatomic) IBOutlet UITextField *closetEntry;
+@property (retain, nonatomic) IBOutlet UILabel *closetLabel;
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeSelResult;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
+@property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) ConfigurationData *data;
 @property (nonatomic) NSInteger connectionsNeeded;
-// methods
+
+
+// custom methods
 
 -(id) initAsAddView: (BOOL) isAddView;
 -(void) sendForm;
+-(void) updateFormContent;
+-(void) updateConfigurationDataStructure;
+-(void) updateConnections;
+
 @end

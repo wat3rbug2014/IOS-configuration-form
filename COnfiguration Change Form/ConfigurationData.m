@@ -28,6 +28,8 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize destTagOne;
 @synthesize destTagTwo;
 @synthesize vlan;
+@synthesize site;
+@synthesize deviceType;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -60,10 +62,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     destTagOne = nil;
     destTagTwo = nil;
 }
--(int) deviceType {
-    
-    return self.deviceType;
-}
+
 
 -(NSString*) getDeviceTypeString {
     
@@ -119,32 +118,34 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return buffer;
 }
 
--(int) site {
-    
-    return self.site;
-}
+//-(int) deviceType {
+//    
+//    return self.site;
+//}
+//
+//-(void)setDeviceType:(int)type {
+//    
+//    // watch for fall through because of the use of enum when iterating.
+//    
+//    for (int i = UNDEFINED; i < AR; i++) {
+//        if ([self deviceType] == i) {
+//            [self setDeviceType: type];
+//        }
+//    }
+//}
 
--(void)setDeviceType:(int)deviceType {
-    
-    // watch for fall through because of the use of enum when iterating.
-    
-    for (int i = UNDEFINED; i < AR; i++) {
-        if (deviceType == i) {
-            self.deviceType = deviceType;
-        }
-    }
-}
 
--(void) setSite:(int)site {
-    
-    // watch for fall through because of the use of enum when iterating.
-    
-    for (int i = JSC; i < LARC; i++) {
-        if (site == i) {
-            self.site = site;
-        }
-    }
-}
+
+//-(void) setSite:(int)newSite {
+//    
+//    // watch for fall through because of the use of enum when iterating.
+//    
+//    for (int i = JSC; i < LARC; i++) {
+//        if (self.site == i) {
+//            self.site = newSite;
+//        }
+//    }
+//}
 
 -(NSString*) getSiteString {
     
