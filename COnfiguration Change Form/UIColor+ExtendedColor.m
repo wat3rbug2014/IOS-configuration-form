@@ -19,6 +19,11 @@
     return  [UIColor colorByHex:@"0x3216b0"];
 }
 
++(UIColor*) unFilledRequiredTextColor {
+    
+    return [UIColor redColor];
+}
+
 +(UIColor*) userTextColor {
     
     //return [UIColor colorByHex:@"0x7109aa"];

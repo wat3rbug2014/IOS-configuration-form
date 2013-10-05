@@ -16,4 +16,5 @@
 +(int) convertUpperHexNumToInt: (char) currentLetter;
 +(UIColor*) textColor;
 +(UIColor*) userTextColor;
++(UIColor*) unFilledRequiredTextColor;
 @end
