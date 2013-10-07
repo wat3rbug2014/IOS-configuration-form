@@ -33,5 +33,6 @@
 -(id) initWithConnectionInfo: (NSInteger) infoType andCurrentData: (ConfigurationData*) currentData;
 -(id) initWithConnectionInfo: (NSInteger) infoType;
 -(void) sendForm;
+-(void) updateConfigurationDataStructure;
 
 @end

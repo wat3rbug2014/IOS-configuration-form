@@ -30,6 +30,8 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize vlan;
 @synthesize site;
 @synthesize deviceType;
+@synthesize destPortOne;
+@synthesize destPortTwo;
 
 #pragma mark -
 #pragma mark initialization methods

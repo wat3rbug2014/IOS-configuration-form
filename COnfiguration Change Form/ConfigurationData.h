@@ -24,6 +24,8 @@
 @property (retain) NSString *vlan;
 @property (retain) NSString *destTagOne;
 @property (retain) NSString *destTagTwo;
+@property (retain) NSString *destPortOne;
+@property (retain) NSString *destPortTwo;
 
 @property int deviceType;
 @property int site;

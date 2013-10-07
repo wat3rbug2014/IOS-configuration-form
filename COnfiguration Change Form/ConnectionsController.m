@@ -110,7 +110,7 @@
             }
         }
     }
-    
+    [self updateConfigurationDataStructure];
 }
 
 #pragma mark -
@@ -138,6 +138,50 @@
         [self setConnectionsNeeded:BOTH];
     }
     
+}
+-(void) updateConfigurationDataStructure {
+    
+    if ([[vlan text] length] > 0) {
+        [data setVlan:[vlan text]];
+    }
+    // stuff only when adding a device or changing it
+    
+    if ([self connectionsNeeded] != REMOVE) {
+        if ([[devDestPortOne text] length] > 0) {
+            [data setDestPortOne: [devDestPortOne text]];
+        }
+        if ([[devDestPortTwo text] length] > 0) {
+            [data setDestPortTwo: [devDestPortTwo text]];
+        }
+        if ([[devPortOne text] length] > 0) {
+            [data setCurrentUplinkOne: [devPortOne text]];
+        }
+        if ([[destTagOne text] length] > 0) {
+            [data setDestTagOne: [destTagOne text]];
+        }
+        if ([[destTagTwo text] length] > 0) {
+            [data setDestTagTwo: [destTagTwo text]];
+        }
+        if ([[devPortTwo text] length] > 0) {
+            [data setCurrentUplinkTwo: [devPortTwo text]];
+        }
+        if ([[currentIP text] length] > 0) {
+            [data setCurrentIp:[currentIP text]];
+        }
+    }
+    // a bit hairy because currentIP label is the only label unless a change form is done
+    
+    if ([self connectionsNeeded] == REMOVE) {
+        if ([[currentIP text] length] > 0) {
+            [data setOldIp:[currentIP text]];
+        }
+    }
+    if ([self connectionsNeeded] == BOTH) {
+        if ([[oldIP text] length] > 0) {
+            [data setOldIp:[oldIP text]];
+        }
+    }
+    NSLog(@"old ip is %@\tnew IP is %@", [data oldIp], [data currentIp]);
 }
 
 #pragma mark -
