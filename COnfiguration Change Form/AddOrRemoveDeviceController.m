@@ -152,35 +152,29 @@ int const DEF_ROW = 2;
     if ([data building] == nil) {
         [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
-        [buildingEntry setText:[data building]];
         [buildingLabel setTextColor:[UIColor textColor]];
     }
     if ([data closet] == nil) {
         [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
-        [closetEntry setText:[data closet]];
         [closetLabel setTextColor:[UIColor textColor]];
     }
     if ([self connectionsNeeded] == ADD) {
         if ([data currentTag] == nil) {
             [tagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
         } else {
-            [tagEntry setText:[data currentTag]];
             [tagLabel setTextColor:[UIColor textColor]];
         }
     } else {
         if ([data oldTag] == nil) {
             [tagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
         } else {
-            [tagEntry setText:[data oldTag]];
             [tagLabel setTextColor:[UIColor textColor]];
         }
     }
     if ([data deviceType] == UNDEFINED) {
         [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
-        [equipTypeSelResult setText:[data getDeviceTypeString]];
-//        [deviceTypeSelection select:[data getDeviceTypeString]];
         [equipTypeLabel setTextColor:[UIColor textColor]];
     }
 }
