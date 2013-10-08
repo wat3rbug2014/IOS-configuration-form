@@ -35,8 +35,7 @@ int const DEF_ROW = 2;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         devices = [[PickerItems alloc] init];
-        [self setTitle:@"Change Device"];
-        [[self navigationController] setTitle:@"Change Device"];
+        [self setTitle:@"Change"];
     }
     return self;
 }
