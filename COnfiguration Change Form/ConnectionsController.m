@@ -28,6 +28,13 @@
 @synthesize currentIP;
 @synthesize oldIPLabel;
 @synthesize currentIPLabel;
+@synthesize vlanLabel;
+@synthesize devDestPortOneLabel;
+@synthesize devDestPortTwoLabel;
+@synthesize destTagOneLabel;
+@synthesize destTagTwoLabel;
+@synthesize devPortOneLabel;
+@synthesize devPortTwoLabel;
 
 #pragma mark -
 #pragma mark Initialization methods
@@ -44,7 +51,7 @@
     
     self = [self initWithNibName:@"ConnectionsController" bundle:nil];
     if (self) {
-        [self setConnectionInfoRequired:infoType];
+        [self setConnectionsNeeded:infoType];
     }
     return self;
 }
@@ -84,6 +91,7 @@
     }
     UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setRightBarButtonItem:sendForm];
+    [self changeLabelColorForMissingInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,16 +137,6 @@
     [self presentViewController:mailer animated:YES completion:nil];
 }
 
--(void) setConnectionInfoRequired:(NSInteger)infoType {
-    
-    // this is brittle because enum
-    
-    [self setConnectionsNeeded:infoType];
-    if (infoType < BOTH || infoType > REMOVE) {
-        [self setConnectionsNeeded:BOTH];
-    }
-    
-}
 -(void) updateConfigurationDataStructure {
     
     if ([[vlan text] length] > 0) {
@@ -181,8 +179,46 @@
             [data setOldIp:[oldIP text]];
         }
     }
-    NSLog(@"old ip is %@\tnew IP is %@", [data oldIp], [data currentIp]);
 }
+
+-(void) changeLabelColorForMissingInfo {
+    
+    if ([data vlan] == nil) {
+        [vlanLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [vlanLabel setTextColor:[UIColor textColor]];
+    }
+    if ([self connectionsNeeded] != REMOVE) {
+        if ([data currentIp] == nil) {
+            [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [currentIPLabel setTextColor:[UIColor textColor]];
+        }
+        if ([data currentUplinkOne] == nil) {
+            [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [devPortOneLabel setTextColor:[UIColor textColor]];
+        }
+        if ([data destPortOne] == nil) {
+            [devDestPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [devDestPortOneLabel setTextColor:[UIColor textColor]];
+        }
+        if ([data destTagOne] == nil) {
+            [destTagOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [destTagOneLabel setTextColor:[UIColor textColor]];
+        }
+    }
+    if ([self connectionsNeeded] == REMOVE) {
+        if ([data oldIp] == nil) {
+            [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [currentIPLabel setTextColor:[UIColor textColor]];
+        }
+    }
+}
+
 
 #pragma mark -
 #pragma MFMAilComposeViewControllerDelegate methods

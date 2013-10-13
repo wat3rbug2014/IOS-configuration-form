@@ -14,8 +14,6 @@
 
 @interface ConnectionsController : UIViewController <MFMailComposeViewControllerDelegate>
 
--(void) setConnectionInfoRequired: (NSInteger) infoType;
-
 @property (nonatomic) NSInteger connectionsNeeded;
 @property (retain, nonatomic) ConfigurationData *data;
 @property (retain, nonatomic) IBOutlet UITextField *devPortOne;
@@ -27,6 +25,14 @@
 @property (retain, nonatomic) IBOutlet UITextField *vlan;
 @property (retain, nonatomic) IBOutlet UITextField *oldIP;
 @property (retain, nonatomic) IBOutlet UITextField *currentIP;
+
+@property (retain, nonatomic) IBOutlet UILabel *devPortOneLabel;
+@property (retain, nonatomic) IBOutlet UILabel *devPortTwoLabel;
+@property (retain, nonatomic) IBOutlet UILabel *devDestPortOneLabel;
+@property (retain, nonatomic) IBOutlet UILabel *devDestPortTwoLabel;
+@property (retain, nonatomic) IBOutlet UILabel *destTagOneLabel;
+@property (retain, nonatomic) IBOutlet UILabel *destTagTwoLabel;
+@property (retain, nonatomic) IBOutlet UILabel *vlanLabel;
 @property (retain, nonatomic) IBOutlet UILabel *oldIPLabel;
 @property (retain, nonatomic) IBOutlet UILabel *currentIPLabel;
 
@@ -34,5 +40,6 @@
 -(id) initWithConnectionInfo: (NSInteger) infoType;
 -(void) sendForm;
 -(void) updateConfigurationDataStructure;
+-(void) changeLabelColorForMissingInfo;
 
 @end
