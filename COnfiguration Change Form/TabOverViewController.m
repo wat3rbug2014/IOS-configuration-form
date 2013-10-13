@@ -11,6 +11,7 @@
 #import "ChangeDeviceController.h"
 #import "SettingsController.h"
 #import "UIColor+ExtendedColor.h"
+#import "enumList.h"
 
 @interface TabOverViewController ()
 
@@ -38,9 +39,9 @@ int static const CONTROLLER_NUM = 4;
 {
     [super viewDidLoad];
     NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"adddevice.png", nil];
-    AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] initAsAddView:YES];
-    AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] initAsAddView:NO];
-    ChangeDeviceController *changeView = [[ChangeDeviceController alloc] init];
+    AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] initAsViewType:ADD];
+    AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] initAsViewType:REMOVE];
+    AddOrRemoveDeviceController *changeView = [[AddOrRemoveDeviceController alloc] initAsViewType:BOTH];
     SettingsController *settingsView = [[SettingsController alloc] init];
     NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, settingsView, nil];
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];

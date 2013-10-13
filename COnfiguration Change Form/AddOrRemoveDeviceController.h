@@ -15,7 +15,7 @@
 
 @property BOOL isAddView;
 
-@property (retain, nonatomic) IBOutlet UITextField *tagEntry;
+@property (retain, nonatomic) IBOutlet UITextField *currentTag;
 @property (retain, nonatomic) IBOutlet UILabel *tagLabel;
 @property (retain, nonatomic) IBOutlet UITextField *buildingEntry;
 @property (retain, nonatomic) IBOutlet UILabel *buildingLabel;
@@ -31,7 +31,7 @@
 
 // custom methods
 
--(id) initAsAddView: (BOOL) isAddView;
+-(id) initAsViewType: (int) typeType;
 -(void) sendForm;
 -(void) updateFormContent;
 -(void) updateConfigurationDataStructure;

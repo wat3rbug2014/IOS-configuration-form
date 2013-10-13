@@ -19,7 +19,7 @@
 @implementation AddOrRemoveDeviceController
 
 @synthesize isAddView;
-@synthesize tagEntry;
+@synthesize currentTag;
 @synthesize tagLabel;
 @synthesize buildingEntry;
 @synthesize closetEntry;
@@ -37,22 +37,30 @@ int const DEF_ROW = 2;
 #pragma mark -
 #pragma mark Initialization Methods
 
--(id) initAsAddView: (BOOL) addView {
+-(id) initAsViewType:(int)typeType {
     
-    self = [super initWithNibName:@"AddOrRemoveDeviceController" bundle:nil];
+    if (typeType != BOTH) {
+        self = [super initWithNibName:@"AddOrRemoveDeviceController" bundle:nil];
+    } else {
+        self = [super initWithNibName:@"ChangeDeviceController" bundle:nil];
+    }
     if (self) {
-        [self setIsAddView:addView];
-        if ([self isAddView]) {
+        [self setConnectionsNeeded:typeType];
+        if ([self connectionsNeeded] == ADD) {
             [self setTitle: @"Add"];
-            [self setConnectionsNeeded:ADD];
-        } else {
+        }
+        if ([self connectionsNeeded] == REMOVE) {
             [self setTitle:@"Remove"];
-            [self setConnectionsNeeded:REMOVE];
+        }
+        if ([self connectionsNeeded] == BOTH) {
+            [self setTitle:@"Change"];
         }
         devices = [[PickerItems alloc] init];
     }
     return self;
+
 }
+
 
 #pragma mark -
 #pragma mark Superclass methods
@@ -65,17 +73,19 @@ int const DEF_ROW = 2;
     
     UIColor *textColor = [UIColor textColor];
     [tagLabel setTextColor:textColor];
-    if ([self isAddView]) {
-        [tagLabel setText:@"New tag"];
-    } else {
-        [tagLabel setText:@"Old tag"];
+    if ([self connectionsNeeded] != BOTH) {
+        if ([self connectionsNeeded] == ADD) {
+            [tagLabel setText:@"New tag"];
+        } else {
+            [tagLabel setText:@"Old tag"];
+        }
     }
     deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
     [deviceTypeSelection setDelegate:self];
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
-    [tagEntry setTextColor:[UIColor userTextColor]];
+    [currentTag setTextColor:[UIColor userTextColor]];
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
     [equipTypeSelResult setTextColor:[UIColor userTextColor]];
@@ -125,11 +135,11 @@ int const DEF_ROW = 2;
     if ([[closetEntry text] length] > 0) {
         [data setCloset:[closetEntry text]];
     }
-    if ([[tagEntry text] length] > 0) {
+    if ([[currentTag text] length] > 0) {
         if ([self connectionsNeeded] == ADD) {
-            [data setCurrentTag:[tagEntry text]];
+            [data setCurrentTag:[currentTag text]];
         } else {
-            [data setOldTag:[tagEntry text]];
+            [data setOldTag:[currentTag text]];
         }
     }
 }
@@ -186,7 +196,7 @@ int const DEF_ROW = 2;
     
     UITouch *touch = [[event allTouches] anyObject];
     BOOL stillInTextField = NO;
-    NSArray *views = [NSArray arrayWithObjects:tagEntry, buildingEntry, closetEntry, nil];
+    NSArray *views = [NSArray arrayWithObjects:currentTag, buildingEntry, closetEntry, nil];
     for (int i = 0; i < [views count]; i++) {
         if ([touch view] == [views objectAtIndex:i]) {
             stillInTextField = YES;
