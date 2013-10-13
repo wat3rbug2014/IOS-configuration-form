@@ -43,10 +43,10 @@ int const DEF_ROW = 2;
     if (self) {
         [self setIsAddView:addView];
         if ([self isAddView]) {
-            [self setTitle: @"Add Device"];
+            [self setTitle: @"Add"];
             [self setConnectionsNeeded:ADD];
         } else {
-            [self setTitle:@"Remove Device"];
+            [self setTitle:@"Remove"];
             [self setConnectionsNeeded:REMOVE];
         }
         devices = [[PickerItems alloc] init];
