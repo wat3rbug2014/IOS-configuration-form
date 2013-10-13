@@ -33,8 +33,8 @@
 
 -(id) initAsViewType: (int) typeType;
 -(void) sendForm;
--(void) updateFormContent;
+-(void) changeLabelColorForMissingInfo;
 -(void) updateConfigurationDataStructure;
--(void) updateConnections;
+-(void) pushConnectionsController;
 
 @end

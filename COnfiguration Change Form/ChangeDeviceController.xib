@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -7,11 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeDeviceController">
             <connections>
                 <outlet property="building" destination="fPX-tD-QZg" id="b2r-XL-brI"/>
+                <outlet property="buildingLabel" destination="rzi-l7-jKJ" id="E7B-Q0-vub"/>
                 <outlet property="closet" destination="3Lh-LK-FYl" id="opz-fE-oZM"/>
+                <outlet property="closetLabel" destination="wGF-U7-xCH" id="soU-r2-wMY"/>
                 <outlet property="currentTag" destination="9Rj-uc-sXI" id="5po-ha-zIg"/>
+                <outlet property="currentTagLabel" destination="UFX-ZJ-Ygr" id="g9i-92-RcY"/>
                 <outlet property="deviceTypeSelResult" destination="dys-1g-54B" id="aP9-ec-7DG"/>
                 <outlet property="deviceTypeSelection" destination="l7G-Nc-hGc" id="pbT-y4-b92"/>
+                <outlet property="equipTypeLabel" destination="DWU-wq-f2L" id="NX9-hZ-S8t"/>
                 <outlet property="oldTag" destination="6eG-lY-IUd" id="Ruq-V2-wnc"/>
+                <outlet property="oldTagLabel" destination="Pwl-Gm-ELA" id="53U-Tp-oJL"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

@@ -90,11 +90,11 @@ int const DEF_ROW = 2;
     [closetEntry setTextColor:[UIColor userTextColor]];
     [equipTypeSelResult setTextColor:[UIColor userTextColor]];
     data = [[ConfigurationData alloc] init];
-    [self updateFormContent];
+    [self changeLabelColorForMissingInfo];
     
     // add navigation buttons
     
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
     UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setLeftBarButtonItem:sendForm];
@@ -144,7 +144,7 @@ int const DEF_ROW = 2;
     }
 }
 
--(void) updateConnections {
+-(void) pushConnectionsController {
     
     int addOrRemove;
     if ([self isAddView]) {
@@ -157,7 +157,7 @@ int const DEF_ROW = 2;
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 
--(void) updateFormContent {
+-(void) changeLabelColorForMissingInfo {
     
     if ([data building] == nil) {
         [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
@@ -210,7 +210,7 @@ int const DEF_ROW = 2;
         }
     }
     [self updateConfigurationDataStructure];
-    [self updateFormContent];
+    [self changeLabelColorForMissingInfo];
 }
 
 #pragma mark -

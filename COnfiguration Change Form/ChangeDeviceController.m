@@ -24,6 +24,11 @@
 @synthesize deviceTypeSelection;
 @synthesize data;
 @synthesize connectionsNeeded;
+@synthesize buildingLabel;
+@synthesize closetLabel;
+@synthesize currentTagLabel;
+@synthesize oldTagLabel;
+@synthesize equipTypeLabel;
 
 int const DEF_ROW = 2;
 
@@ -48,16 +53,13 @@ int const DEF_ROW = 2;
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
     [deviceTypeSelResult setTextColor:[UIColor userTextColor]];
-    [oldTag setTextColor:[UIColor userTextColor]];
-    [currentTag setTextColor:[UIColor userTextColor]];
-    [building setTextColor:[UIColor userTextColor]];
-    [closet setTextColor:[UIColor userTextColor]];
+    [self changeLabelColorForMissingInfo];
     
     // add navigation items
     
     UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setLeftBarButtonItem:sendForm];
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(updateConnections)];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
 
 }
@@ -98,11 +100,40 @@ int const DEF_ROW = 2;
     [data setOldTag:[oldTag text]];
 }
 
--(void) updateConnections {
+-(void) pushConnectionsController {
     
     [self updateConfigurationDataStructure];
     ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:BOTH andCurrentData:data];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
+
+-(void) changeLabelColorForMissingInfo {
+    
+    if ([data building] == nil) {
+        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [buildingLabel setTextColor:[UIColor textColor]];
+    }
+    if ([data closet] == nil) {
+        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [closetLabel setTextColor:[UIColor textColor]];
+    }
+    if ([data currentTag] == nil) {
+            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [currentTagLabel setTextColor:[UIColor textColor]];
+    }
+    if ([data oldTag] == nil) {
+        [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [oldTagLabel setTextColor:[UIColor textColor]];
+    }
+    if ([data deviceType] == UNDEFINED) {
+        [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [equipTypeLabel setTextColor:[UIColor textColor]];
+    }
 }
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

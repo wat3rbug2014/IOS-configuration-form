@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -10,10 +10,10 @@
                 <outlet property="buildingLabel" destination="xP4-rV-4xi" id="KiK-wt-XSL"/>
                 <outlet property="closetEntry" destination="hmh-vd-We2" id="ghP-kL-krk"/>
                 <outlet property="closetLabel" destination="FAs-RF-hcb" id="Esq-s6-Tmo"/>
+                <outlet property="currentTag" destination="5H3-Yc-uNQ" id="qhW-86-Y01"/>
                 <outlet property="deviceTypeSelection" destination="PXS-rA-8Df" id="64Y-x4-Aug"/>
                 <outlet property="equipTypeLabel" destination="lVo-Rj-XdU" id="7tP-29-bEL"/>
                 <outlet property="equipTypeSelResult" destination="G0E-LH-2HJ" id="HTo-fo-Qbh"/>
-                <outlet property="tagEntry" destination="5H3-Yc-uNQ" id="Gd9-Sv-7nu"/>
                 <outlet property="tagLabel" destination="GH1-1t-mJG" id="rOS-Wi-vYG"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>

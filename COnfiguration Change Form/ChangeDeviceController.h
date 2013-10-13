@@ -20,11 +20,18 @@
 @property (retain, nonatomic) IBOutlet UITextField *currentTag;
 @property (retain, nonatomic) IBOutlet UITextField *building;
 @property (retain, nonatomic) IBOutlet UITextField *closet;
+@property (retain, nonatomic) IBOutlet UILabel *buildingLabel;
+@property (retain, nonatomic) IBOutlet UILabel *closetLabel;
+@property (retain, nonatomic) IBOutlet UILabel *currentTagLabel;
+@property (retain, nonatomic) IBOutlet UILabel *oldTagLabel;
+@property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
+
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain, nonatomic) ConfigurationData *data;
 @property (nonatomic) NSInteger connectionsNeeded;
 
--(void) updateConnections;
+-(void) pushConnectionsController;
 -(void) sendForm;
+-(void) changeLabelColorForMissingInfo;
 @end
