@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
 #import "ConfigurationData.h"
-#import "MailController.h"
+#import <MessageUI/MessageUI.h>
 
 /* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
 

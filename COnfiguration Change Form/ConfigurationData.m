@@ -7,6 +7,7 @@
 //
 
 #import "ConfigurationData.h"
+#import "PickerItems.h"
 
 static NSString *const emailKey = @"ConfigChanger.Email";
 
@@ -251,5 +252,41 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     NSString *emailToRemove = [nameArray objectAtIndex:index];
     [emailAddresses removeObjectForKey:emailToRemove];
     [self updateStoredEmailSettings];
+}
+-(NSString*) getMessageBodyForConnectionType:(NSInteger)formType {
+    
+    NSMutableString *result;
+    
+    return result;
+}
+-(NSString*) getSubjectForConnectionType: (NSInteger) formType {
+    
+    NSMutableString *result;
+    switch (formType) {
+        case ADD: {
+            result = [NSMutableString stringWithString:@"Adding "];
+            break;
+        }
+        case REMOVE: {
+            result = [NSMutableString stringWithString:@"Removing "];
+            break;
+        }
+        case BOTH: {
+            result = [NSMutableString stringWithString:@"Changing "];
+        }
+    }
+    PickerItems *items = [[PickerItems alloc] init];
+    [result appendString:[items deviceAtIndex:deviceType]];
+    [result appendString:@" tag# "];
+    if (formType != BOTH) {
+        if (formType == ADD) {
+            [result appendString:[self currentTag]];
+        } else {
+            [result appendString:[self oldTag]];
+        }
+    } else {
+        [result appendFormat:@"%@ to tag# %@",[self oldTag], [self currentTag]];
+    }
+    return result;
 }
 @end

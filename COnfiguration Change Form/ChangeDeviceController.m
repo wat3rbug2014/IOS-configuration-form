@@ -88,12 +88,20 @@ int const DEF_ROW = 2;
     }
     // setup mailer and transfer control
     
-    MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
-    [mailer setMailComposeDelegate:self];
-    [self presentViewController:mailer animated:YES completion:nil];
-    [data clear];
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        [mailer setMailComposeDelegate:self];
+        [mailer setToRecipients:[data getMailingList]];
+        [mailer setSubject:[data getSubjectForConnectionType:[self connectionsNeeded]]];
+        [mailer setMessageBody:[data getMessageBodyForConnectionType:[self connectionsNeeded]] isHTML:NO];
+        [self presentViewController:mailer animated:YES completion:nil];
+        [data clear];
+    } else {
+        NSString *message = @"Unable to send email.  Please check your settings";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+    }
 }
-
 
 -(void) updateConfigurationDataStructure {
     

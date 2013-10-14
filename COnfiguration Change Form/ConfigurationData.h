@@ -48,6 +48,9 @@
 -(void) updateStoredEmailSettings;
 -(NSArray*) getMailingList;
 -(void) removeEntryAtIndex: (NSInteger) index;
+-(NSString*) getSubjectForConnectionType: (NSInteger) formType;
+-(NSString*) getMessageBodyForConnectionType: (NSInteger) formType;
+
 
 -(BOOL) isFormFilledOutForType: (NSInteger) formType;
 -(void) clear;

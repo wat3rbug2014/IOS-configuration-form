@@ -110,15 +110,29 @@
 
 -(void) sendForm {
     
+    // check to see if form is done
+    
     if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
         NSString *message = @"Incomplete Form.  See items in red";
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailError show];
         return;
     }
-    MailController *mailer = [[MailController alloc] initWithData:[self data] andFormType:[self connectionsNeeded]];
-    [mailer setMailComposeDelegate:self];
-    [self presentViewController:mailer animated:YES completion:nil];
+    // setup mailer and transfer control
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        [mailer setMailComposeDelegate:self];
+        [mailer setToRecipients:[data getMailingList]];
+        [mailer setSubject:[data getSubjectForConnectionType:[self connectionsNeeded]]];
+        [mailer setMessageBody:[data getMessageBodyForConnectionType:[self connectionsNeeded]] isHTML:NO];
+        [self presentViewController:mailer animated:YES completion:nil];
+        [data clear];
+    } else {
+        NSString *message = @"Unable to send email.  Please check your settings";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+    }
 }
 
 -(void) updateConfigurationDataStructure {

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
 #import "ConfigurationData.h"
-#import "MailController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 

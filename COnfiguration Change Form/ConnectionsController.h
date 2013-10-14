@@ -10,7 +10,7 @@
 #import "enumList.h"
 #import "ConfigurationData.h"
 #import "UIColor+ExtendedColor.h"
-#import "MailController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface ConnectionsController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
