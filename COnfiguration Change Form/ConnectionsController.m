@@ -71,12 +71,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    currentIP = [[UITextField alloc] init];
     [currentIP setTextColor:[UIColor textColor]];
     if ([self connectionsNeeded] == BOTH) {
-        oldIP = [[UITextField alloc] init];
         [oldIP setTextColor:[UIColor textColor]];
-        oldIPLabel = [[UILabel alloc] init];
         [oldIPLabel setText:@"Old IP"];
         [oldIPLabel setTextColor:[UIColor textColor]];
     }
@@ -92,33 +89,20 @@
     UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setRightBarButtonItem:sendForm];
     [self changeLabelColorForMissingInfo];
+    NSArray *textFields;
+    if ([self connectionsNeeded] == BOTH) {
+        textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, oldIP, currentIP, nil];
+    } else {
+        textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, currentIP, nil];
+    }
+    for (UITextField *currentField in textFields) {
+        [currentField setDelegate:self];
+    }
 }
-
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    BOOL stillInTextField = NO;
-    NSArray *views = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, oldIP, currentIP, nil];
-    for (int i = 0; i < [views count]; i++) {
-        if ([touch view] == [views objectAtIndex:i]) {
-            stillInTextField = YES;
-        }
-    }
-    if (stillInTextField == NO) {
-        for (int i = 0; i < [views count]; i++) {
-            if ([[views objectAtIndex:i] isFirstResponder]) {
-                [[views objectAtIndex:i] resignFirstResponder];
-            }
-        }
-    }
-    [self updateConfigurationDataStructure];
 }
 
 #pragma mark -
@@ -234,5 +218,16 @@
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailError show];
     }
+}
+
+#pragma mark -
+#pragma UITextFieldDelegate methods
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+    return YES;
 }
 @end

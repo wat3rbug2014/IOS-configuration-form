@@ -90,6 +90,9 @@ int const DEF_ROW = 2;
     [closetEntry setTextColor:[UIColor userTextColor]];
     [equipTypeSelResult setTextColor:[UIColor userTextColor]];
     data = [[ConfigurationData alloc] init];
+    [currentTag setDelegate:self];
+    [buildingEntry setDelegate:self];
+    [closetEntry setDelegate:self];
     [self changeLabelColorForMissingInfo];
     
     // add navigation buttons
@@ -146,14 +149,8 @@ int const DEF_ROW = 2;
 
 -(void) pushConnectionsController {
     
-    int addOrRemove;
-    if ([self isAddView]) {
-        addOrRemove = ADD;
-    } else {
-        addOrRemove = REMOVE;
-    }
     [self updateConfigurationDataStructure];
-    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:addOrRemove andCurrentData:data];
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:[self connectionsNeeded] andCurrentData:data];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 
@@ -187,30 +184,6 @@ int const DEF_ROW = 2;
     } else {
         [equipTypeLabel setTextColor:[UIColor textColor]];
     }
-}
-
-
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    // check which textfield needs to dismiss keyboard if none are touched
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    BOOL stillInTextField = NO;
-    NSArray *views = [NSArray arrayWithObjects:currentTag, buildingEntry, closetEntry, nil];
-    for (int i = 0; i < [views count]; i++) {
-        if ([touch view] == [views objectAtIndex:i]) {
-            stillInTextField = YES;
-        }
-    }
-    if (stillInTextField == NO) {
-        for (int i = 0; i < [views count]; i++) {
-            if ([[views objectAtIndex:i] isFirstResponder]) {
-                [[views objectAtIndex:i] resignFirstResponder];
-            }
-        }
-    }
-    [self updateConfigurationDataStructure];
-    [self changeLabelColorForMissingInfo];
 }
 
 #pragma mark -
@@ -267,6 +240,16 @@ int const DEF_ROW = 2;
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailError show];
     }
+}
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+    return YES;
 }
 
 @end

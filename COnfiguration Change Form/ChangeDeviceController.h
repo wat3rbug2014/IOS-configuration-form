@@ -13,7 +13,7 @@
 
 /* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
 
-@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate>
+@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult;
 @property (retain, nonatomic) IBOutlet UITextField *oldTag;

@@ -12,7 +12,7 @@
 #import "UIColor+ExtendedColor.h"
 #import "MailController.h"
 
-@interface ConnectionsController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface ConnectionsController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic) NSInteger connectionsNeeded;
 @property (retain, nonatomic) ConfigurationData *data;

@@ -11,7 +11,7 @@
 #import "ConfigurationData.h"
 #import "MailController.h"
 
-@interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate>
+@interface AddOrRemoveDeviceController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property BOOL isAddView;
 

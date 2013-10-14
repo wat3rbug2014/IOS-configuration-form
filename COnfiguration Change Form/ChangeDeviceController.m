@@ -61,7 +61,10 @@ int const DEF_ROW = 2;
     [[self navigationItem] setLeftBarButtonItem:sendForm];
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
-
+    [oldTag setDelegate:self];
+    [currentTag setDelegate:self];
+    [building setDelegate:self];
+    [closet setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,26 +139,6 @@ int const DEF_ROW = 2;
     }
 }
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    BOOL stillInTextField = NO;
-    NSArray *views = [NSArray arrayWithObjects:oldTag, currentTag, closet, building, nil];
-    for (int i = 0; i < [views count]; i++) {
-        if ([touch view] == [views objectAtIndex:i]) {
-            stillInTextField = YES;
-        }
-    }
-    if (stillInTextField == NO) {
-        for (int i = 0; i < [views count]; i++) {
-            if ([[views objectAtIndex:i] isFirstResponder]) {
-                [[views objectAtIndex:i] resignFirstResponder];
-            }
-        }
-    }
-    
-}
-
 #pragma mark -
 #pragma mark UIPickerViewDataSource methods
 
@@ -209,4 +192,14 @@ int const DEF_ROW = 2;
     }
 }
 
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+    return YES;
+}
 @end
