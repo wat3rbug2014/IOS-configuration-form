@@ -73,7 +73,7 @@
     [super viewDidLoad];
     [currentIP setTextColor:[UIColor textColor]];
     if ([self connectionsNeeded] == BOTH) {
-        [oldIP setTextColor:[UIColor textColor]];
+        //[oldIP setTextColor:[UIColor userTextColor]];
         [oldIPLabel setText:@"Old IP"];
         [oldIPLabel setTextColor:[UIColor textColor]];
     }
@@ -97,15 +97,23 @@
     }
     for (UITextField *currentField in textFields) {
         [currentField setDelegate:self];
+        [currentField setTextColor:[UIColor userTextColor]];
     }
     [self updateFormContents];
+    [self changeLabelColorForMissingInfo];
 }
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [self updateConfigurationDataStructure];
+    [super viewWillDisappear:animated];
+}
 #pragma mark -
 #pragma mark Class specific methods
 

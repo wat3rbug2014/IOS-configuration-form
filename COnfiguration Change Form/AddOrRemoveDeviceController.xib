@@ -70,7 +70,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not selected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G0E-LH-2HJ">
-                    <rect key="frame" x="156" y="208" width="144" height="21"/>
+                    <rect key="frame" x="92" y="208" width="208" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.19607843137254902" green="0.086274509803921567" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
