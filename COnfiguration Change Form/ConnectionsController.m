@@ -98,20 +98,40 @@
     for (UITextField *currentField in textFields) {
         [currentField setDelegate:self];
     }
+    [self updateFormContents];
 }
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self updateConfigurationDataStructure];
 }
 
 #pragma mark -
 #pragma mark Class specific methods
 
+-(void) updateFormContents {
+    
+    [devPortOne setText:[data currentUplinkOne]];
+    [devPortTwo setText:[data currentUplinkTwo]];
+    [devDestPortOne setText:[data destPortOne]];
+    [devDestPortTwo setText:[data destPortTwo]];
+    [vlan setText:[data vlan]];
+    if ([self connectionsNeeded] == ADD) {
+        [currentIP setText:[data currentIp]];
+    }
+    if ([self connectionsNeeded] == REMOVE) {
+        [currentIP setText:[data oldIp]];
+    }
+    if ([self connectionsNeeded] == BOTH) {
+        [oldIP setText:[data oldIp]];
+    }
+}
+
 -(void) sendForm {
     
     // check to see if form is done
     
+    [self updateConfigurationDataStructure];
     if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
         NSString *message = @"Incomplete Form.  See items in red";
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];

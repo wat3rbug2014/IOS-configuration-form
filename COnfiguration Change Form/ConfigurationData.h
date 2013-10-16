@@ -37,6 +37,7 @@
 -(NSString*) getDeviceTypeString;
 -(NSString*) getSiteString;
 -(NSString*) getSiteAbbreviatedString;
+-(NSString*) getAbbreviateDeviceString;
 
 // email methods
 

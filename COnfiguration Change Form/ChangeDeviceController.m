@@ -70,6 +70,7 @@ int const DEF_ROW = 2;
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
+    [self updateConfigurationDataStructure];
     // Dispose of any resources that can be recreated.
 }
 
@@ -80,6 +81,7 @@ int const DEF_ROW = 2;
     
     // check to see if form is done
     
+    [self updateConfigurationDataStructure];
     if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
         NSString *message = @"Incomplete Form.  See items in red";
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];

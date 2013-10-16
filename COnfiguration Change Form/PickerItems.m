@@ -12,6 +12,7 @@
 
 
 @synthesize items;
+@synthesize deviceAbbr;
 
 -(id) init {
     
@@ -21,8 +22,17 @@
                  @"Border Router", @"Call Manager", @"Core Switch", @"Core Router", @"Distribution Switch", @"Distribution Router",
                  @"Firewall", @"Load Balancer", @"NAM Module", @"Power Distribution Unit", @"Power Strip", @"Proxy", @"UPS",
                  @"VPN Controller", @"Wireless Controller", nil];
+        deviceAbbr = [NSArray arrayWithObjects:@"AD", @"AP", @"AR", @"AS", @"BR", @"CM", @"CS", @"CR", @"DS", @"DR", @"FW", @"LB", @"NM", @"PD", @"PR", @"UP", nil];
     }
     return self;
+}
+-(NSString*) getAbbreviatedDeviceString: (int) device {
+    
+    if (device < 0 || device >= [items count]) {
+        return @"AS";
+    } else {
+        return [deviceAbbr objectAtIndex:device];
+    }
 }
 
 -(NSInteger) count {

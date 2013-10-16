@@ -13,8 +13,9 @@
 @interface PickerItems : NSObject
 
 @property (retain, readonly) NSArray *items;
+@property (retain, readonly) NSArray *deviceAbbr;
 
 -(NSInteger) count;
 -(NSString*) deviceAtIndex: (NSInteger) index;
-
+-(NSString*) getAbbreviatedDeviceString: (int) device;
 @end

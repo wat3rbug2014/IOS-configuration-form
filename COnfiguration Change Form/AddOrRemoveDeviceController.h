@@ -36,5 +36,6 @@
 -(void) changeLabelColorForMissingInfo;
 -(void) updateConfigurationDataStructure;
 -(void) pushConnectionsController;
+-(void) updateFormContents;
 
 @end

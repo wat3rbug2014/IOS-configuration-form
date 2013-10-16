@@ -41,5 +41,6 @@
 -(void) sendForm;
 -(void) updateConfigurationDataStructure;
 -(void) changeLabelColorForMissingInfo;
+-(void) updateFormContents;
 
 @end

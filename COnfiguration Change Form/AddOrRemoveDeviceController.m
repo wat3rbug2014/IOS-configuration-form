@@ -96,6 +96,7 @@ int const DEF_ROW = 2;
     [currentTag setDelegate:self];
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];
+    [self updateFormContents];
     [self changeLabelColorForMissingInfo];
     
     // add navigation buttons
@@ -109,6 +110,7 @@ int const DEF_ROW = 2;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    [self updateConfigurationDataStructure];
     // Dispose of any resources that can be recreated.
 }
 
@@ -119,6 +121,7 @@ int const DEF_ROW = 2;
     
     // check to see if form is done
     
+    [self updateConfigurationDataStructure];
     if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
         NSString *message = @"Incomplete Form.  See items in red";
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -195,6 +198,18 @@ int const DEF_ROW = 2;
         [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
         [equipTypeLabel setTextColor:[UIColor textColor]];
+    }
+}
+
+-(void) updateFormContents {
+    
+    [buildingEntry setText:[data building]];
+    [closetEntry setText:[data closet]];
+    [equipTypeSelResult setText:[data getDeviceTypeString]];
+    if ([self connectionsNeeded] == ADD) {
+        [currentTag setText:[data currentTag]];
+    } else {
+        [currentTag setText:[data oldTag]];
     }
 }
 

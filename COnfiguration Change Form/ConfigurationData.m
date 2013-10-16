@@ -62,43 +62,23 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     destTagTwo = nil;
 }
 
+-(NSString*) getAbbreviateDeviceString {
+    
+    PickerItems *deviceTypes = [[PickerItems alloc] init];
+    return [deviceTypes getAbbreviatedDeviceString:[self deviceType]];
+}
 
 -(NSString*) getDeviceTypeString {
     
-    // this should be written better. I don't like switch stuff
-    NSString *deviceTypeString;
-    switch ([self deviceType]) {
-        case AS: {
-            deviceTypeString = @"Access Switch";
-            break;
-        }
-        case AR: {
-            deviceTypeString = @"Distribution Router";
-            break;
-        }
-        case UP: {
-            deviceTypeString =@"UPS";
-            break;
-        }
-        default: {
-            deviceTypeString = @"Undefined";
-        }
-    }
-    return deviceTypeString;
+    PickerItems *deviceNames = [[PickerItems alloc] init];
+    return [deviceNames deviceAtIndex:[self deviceType]];
 }
 
 -(NSString*) getNewDeviceName {
     
     NSMutableString *buffer = [[NSMutableString alloc] init];
-    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
-    [buffer stringByAppendingString: @"-"];
-    [buffer stringByAppendingString:[self getDeviceTypeString]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self building]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self closet]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self currentTag]];
+    [buffer appendFormat:@"%@-%@-%@-%@-%@", [self getSiteAbbreviatedString], [self getAbbreviateDeviceString], [self building], [self closet], [self currentTag]];
+    NSLog(@"the device name is %@", buffer);
     return buffer;
 }
 
@@ -116,35 +96,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     [buffer stringByAppendingString:[self oldTag]];
     return buffer;
 }
-
-//-(int) deviceType {
-//    
-//    return self.site;
-//}
-//
-//-(void)setDeviceType:(int)type {
-//    
-//    // watch for fall through because of the use of enum when iterating.
-//    
-//    for (int i = UNDEFINED; i < AR; i++) {
-//        if ([self deviceType] == i) {
-//            [self setDeviceType: type];
-//        }
-//    }
-//}
-
-
-
-//-(void) setSite:(int)newSite {
-//    
-//    // watch for fall through because of the use of enum when iterating.
-//    
-//    for (int i = JSC; i < LARC; i++) {
-//        if (self.site == i) {
-//            self.site = newSite;
-//        }
-//    }
-//}
 
 -(NSString*) getSiteString {
     
@@ -211,6 +162,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSArray*) getMailingList {
     
+    
     emailArray = [emailAddresses allValues];
     return emailArray;
 }
@@ -253,39 +205,65 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     [emailAddresses removeObjectForKey:emailToRemove];
     [self updateStoredEmailSettings];
 }
+
 -(NSString*) getMessageBodyForConnectionType:(NSInteger)formType {
     
     NSMutableString *result;
+    result = [NSMutableString stringWithFormat:@"Location: %@ closet %@\n", [self building], [self closet]];
     
+    // add form body
+    
+    if (formType == ADD) {
+        [result appendFormat:@"tag# %@ is device type %@.\n", [self currentTag], [self getDeviceTypeString]];
+        [result appendFormat:@"tag #%@ is on vlan %@ with address %@.\n", [self currentTag], [self vlan], [self currentIp]];
+        [result appendFormat:@"tag# %@ port %@ is connected to %@ on port %@.\n", [self currentTag], [self currentUplinkOne], [self destTagOne], [self destPortOne]];
+        if ([self currentUplinkTwo] != nil) {
+            [result appendFormat:@"tag# %@ port %@ is also connected to %@ on port %@.\n", [self currentTag], [self currentUplinkTwo], [self destTagOne], [self destPortTwo]];
+        }
+    }
+    // remove form body
+    
+    if (formType == REMOVE) {
+        [result appendFormat:@"tag# %@ was device type %@.\n", [self oldTag], [self getDeviceTypeString]];
+        [result appendFormat:@"tag #%@ was on vlan %@ with address %@.\n", [self oldTag], [self vlan], [self oldIp]];
+    }
+    // change form body
+    
+    if (formType == BOTH) {
+        [result appendFormat:@"tag# %@ was device type %@.\n", [self currentTag], [self getDeviceTypeString]];
+        if ([self oldIp] != nil && [self currentIp] != nil) {
+            [result appendFormat:@"IP addresses changed from %@ to %@.\n", [self oldIp], [self currentIp]];
+        }
+        if ([self oldTag] != nil && [self currentTag] != nil) {
+            [result appendFormat:@"tags changed from %@ to %@.\n", [self oldTag], [self currentTag]];
+        }
+        [result appendFormat:@"tag# %@ port %@ is connected to %@ on port %@.\n", [self currentTag], [self currentUplinkOne], [self destTagOne], [self destPortOne]];
+        if ([self currentUplinkTwo] != nil) {
+            [result appendFormat:@"tag# %@ port %@ is also connected to %@ on port %@.\n", [self currentTag], [self currentUplinkTwo], [self destTagOne], [self destPortTwo]];
+        }
+    }
     return result;
 }
+
 -(NSString*) getSubjectForConnectionType: (NSInteger) formType {
     
-    NSMutableString *result;
+    NSString *result;
     switch (formType) {
         case ADD: {
-            result = [NSMutableString stringWithString:@"Adding "];
+            result = [NSString stringWithFormat:@"Added %@", [self getNewDeviceName]];
             break;
         }
         case REMOVE: {
-            result = [NSMutableString stringWithString:@"Removing "];
+            result = [NSString stringWithFormat:@"Removed %@", [self getNewDeviceName]];
             break;
         }
         case BOTH: {
-            result = [NSMutableString stringWithString:@"Changing "];
+            if([self oldTag] != nil) {
+                result = [NSString stringWithFormat:@"Changed %@", [self getOldDeviceName]];
+            } else {
+                result = [NSString stringWithFormat:@"Changed %@", [self getNewDeviceName]];
+            }
         }
-    }
-    PickerItems *items = [[PickerItems alloc] init];
-    [result appendString:[items deviceAtIndex:deviceType]];
-    [result appendString:@" tag# "];
-    if (formType != BOTH) {
-        if (formType == ADD) {
-            [result appendString:[self currentTag]];
-        } else {
-            [result appendString:[self oldTag]];
-        }
-    } else {
-        [result appendFormat:@"%@ to tag# %@",[self oldTag], [self currentTag]];
     }
     return result;
 }
