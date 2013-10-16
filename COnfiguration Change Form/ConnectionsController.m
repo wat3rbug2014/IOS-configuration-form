@@ -149,6 +149,7 @@
     // setup mailer and transfer control
     
     if ([MFMailComposeViewController canSendMail]) {
+        [self updateConfigurationDataStructure];
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         [mailer setMailComposeDelegate:self];
         [mailer setToRecipients:[data getMailingList]];

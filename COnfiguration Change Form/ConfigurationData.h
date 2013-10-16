@@ -46,6 +46,7 @@
 -(NSString*) getNameAtIndex: (NSInteger) index;
 -(NSString*) getEmailAtIndex: (NSInteger) index;
 -(NSInteger) emailCount;
+-(void) getStoredEmailSettings;
 -(void) updateStoredEmailSettings;
 -(NSArray*) getMailingList;
 -(void) removeEntryAtIndex: (NSInteger) index;

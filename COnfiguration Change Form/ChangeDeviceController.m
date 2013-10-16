@@ -62,9 +62,13 @@ int const DEF_ROW = 2;
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
     [oldTag setDelegate:self];
+    [oldTag setTextColor:[UIColor userTextColor]];
     [currentTag setDelegate:self];
+    [currentTag setTextColor:[UIColor userTextColor]];
     [building setDelegate:self];
+    [building setTextColor:[UIColor userTextColor]];
     [closet setDelegate:self];
+    [closet setTextColor:[UIColor userTextColor]];
 }
 
 - (void)didReceiveMemoryWarning {

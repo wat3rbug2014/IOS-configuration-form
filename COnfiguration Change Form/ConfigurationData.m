@@ -39,8 +39,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     self = [super init];
     if (self != nil) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [self setEmailAddresses:[NSMutableDictionary dictionaryWithDictionary:[defaults objectForKey:emailKey]]];
+        [self getStoredEmailSettings];
     }
     return self;
 }
@@ -161,7 +160,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSArray*) getMailingList {
     
-    
+    [self getStoredEmailSettings];
     emailArray = [emailAddresses allValues];
     return emailArray;
 }
@@ -190,6 +189,11 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return [nameArray objectAtIndex:index];
 }
 
+-(void) getStoredEmailSettings {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [self setEmailAddresses:[NSMutableDictionary dictionaryWithDictionary:[defaults objectForKey:emailKey]]];
+}
 -(void) updateStoredEmailSettings {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
