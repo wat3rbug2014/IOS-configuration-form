@@ -85,6 +85,9 @@ int const DEF_ROW = 2;
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
+    [deviceTypeSelection selectRow:2 inComponent:0 animated:YES];
+    [data setDeviceType:AS];
+    [equipTypeSelResult setText:[data getDeviceTypeString]];
     
     // setup textfields
     
