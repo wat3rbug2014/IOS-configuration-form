@@ -133,35 +133,36 @@ int const DEF_ROW = 2;
 
 -(void) changeLabelColorForMissingInfo {
     
-    if ([data building] == nil) {
-        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
+    if ([[data building]length] > 0) {
         [buildingLabel setTextColor:[UIColor textColor]];
-    }
-    if ([data closet] == nil) {
-        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
+        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[data closet] length] > 0) {
         [closetLabel setTextColor:[UIColor textColor]];
+        
+    } else {
+        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
     if ([self connectionsNeeded] != REMOVE) {
-        if ([data currentTag] == nil) {
-            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
+        if ([[data currentTag] length] > 0) {
             [currentTagLabel setTextColor:[UIColor textColor]];
+        } else {
+            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
         }
     }
     if ([self connectionsNeeded] == REMOVE) {
-        if ([data oldTag] == nil) {
-            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
+        if ([[data oldTag] length] > 0) {
             [currentTagLabel setTextColor:[UIColor textColor]];
+        } else {
+            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
         }
     }
     if ([self connectionsNeeded] == BOTH) {
-        if ([data oldTag] == nil) {
-            [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
+        if ([[data oldTag] length] > 0) {
             [oldTagLabel setTextColor:[UIColor textColor]];
+        } else {
+            [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
         }
     }
     if ([data deviceType] == UNDEFINED) {
@@ -169,7 +170,6 @@ int const DEF_ROW = 2;
     } else {
         [equipTypeLabel setTextColor:[UIColor textColor]];
     }
-
 }
 
 -(void) pushConnectionsController {
@@ -207,38 +207,23 @@ int const DEF_ROW = 2;
     }
 }
 
-// This will be overwritten.  See if it is necessary to have this here
-
 -(void) updateConfigurationDataStructure {
     
-
-    if([[buildingEntry text] length] > 0) {
-        [data setBuilding:[buildingEntry text]];
-    }
-    if ([[closetEntry text] length] > 0) {
-        [data setCloset:[closetEntry text]];
-    }
-    if ([[currentTag text] length] > 0) {
-        if ([self connectionsNeeded] == ADD) {
-            [data setCurrentTag:[currentTag text]];
-        } else {
-            [data setOldTag:[currentTag text]];
-        }
+    [data setBuilding:[buildingEntry text]];
+    [data setCloset:[closetEntry text]];
+    if ([self connectionsNeeded] == ADD) {
+        [data setCurrentTag:[currentTag text]];
+    } else {
+        [data setOldTag:[currentTag text]];
     }
     if ([self connectionsNeeded] != REMOVE) {
-        if ([[currentTag text] length] > 0) {
-            [data setCurrentTag:[currentTag text]];
-        }
+        [data setCurrentTag:[currentTag text]];
     }
     if ([self connectionsNeeded] == REMOVE) {
-        if ([[currentTag text] length] > 0) {
-            [data setOldTag:[currentTag text]];
-        }
+        [data setOldTag:[currentTag text]];
     }
     if ([self connectionsNeeded] == BOTH) {
-        if ([[oldTag text] length] > 0) {
-            [data setOldTag:[oldTag text]];
-        }
+        [data setOldTag:[oldTag text]];
     }
 }
 
