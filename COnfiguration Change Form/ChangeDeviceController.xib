@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeDeviceController">
             <connections>
-                <outlet property="building" destination="fPX-tD-QZg" id="b2r-XL-brI"/>
+                <outlet property="buildingEntry" destination="fPX-tD-QZg" id="S7y-Dq-SNW"/>
                 <outlet property="buildingLabel" destination="rzi-l7-jKJ" id="E7B-Q0-vub"/>
-                <outlet property="closet" destination="3Lh-LK-FYl" id="opz-fE-oZM"/>
+                <outlet property="closetEntry" destination="3Lh-LK-FYl" id="mvT-GG-3u2"/>
                 <outlet property="closetLabel" destination="wGF-U7-xCH" id="soU-r2-wMY"/>
                 <outlet property="currentTag" destination="9Rj-uc-sXI" id="5po-ha-zIg"/>
                 <outlet property="currentTagLabel" destination="UFX-ZJ-Ygr" id="g9i-92-RcY"/>

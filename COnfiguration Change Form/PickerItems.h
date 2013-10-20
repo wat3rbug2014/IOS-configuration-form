@@ -17,5 +17,5 @@
 
 -(NSInteger) count;
 -(NSString*) deviceAtIndex: (NSInteger) index;
--(NSString*) getAbbreviatedDeviceString: (int) device;
+-(NSString*) getAbbreviatedDeviceString: (NSInteger) device;
 @end

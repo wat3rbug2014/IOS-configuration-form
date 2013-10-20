@@ -18,8 +18,8 @@
 @synthesize deviceTypeSelResult;
 @synthesize oldTag;
 @synthesize currentTag;
-@synthesize building;
-@synthesize closet;
+@synthesize buildingEntry;
+@synthesize closetEntry;
 @synthesize devices;
 @synthesize deviceTypeSelection;
 @synthesize data;
@@ -61,14 +61,17 @@ int const DEF_ROW = 2;
     [[self navigationItem] setLeftBarButtonItem:sendForm];
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
+    
+    // setup entry fields and labels
+    
     [oldTag setDelegate:self];
     [oldTag setTextColor:[UIColor userTextColor]];
     [currentTag setDelegate:self];
     [currentTag setTextColor:[UIColor userTextColor]];
-    [building setDelegate:self];
-    [building setTextColor:[UIColor userTextColor]];
-    [closet setDelegate:self];
-    [closet setTextColor:[UIColor userTextColor]];
+    [buildingEntry setDelegate:self];
+    [buildingEntry setTextColor:[UIColor userTextColor]];
+    [closetEntry setDelegate:self];
+    [closetEntry setTextColor:[UIColor userTextColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,8 +114,8 @@ int const DEF_ROW = 2;
 
 -(void) updateConfigurationDataStructure {
     
-    [data setBuilding:[building text]];
-    [data setCloset:[closet text]];
+    [data setBuilding:[buildingEntry text]];
+    [data setCloset:[closetEntry text]];
     [data setCurrentTag:[currentTag text]];
     [data setOldTag:[oldTag text]];
 }

@@ -25,8 +25,8 @@
 @property (retain) NSString *destPortOne;
 @property (retain) NSString *destPortTwo;
 
-@property int deviceType;
-@property int site;
+@property NSInteger deviceType;
+@property NSInteger site;
 
 @property (retain) NSMutableDictionary *emailAddresses;
 @property (retain) NSArray *nameArray;

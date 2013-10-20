@@ -26,7 +26,7 @@
     }
     return self;
 }
--(NSString*) getAbbreviatedDeviceString: (int) device {
+-(NSString*) getAbbreviatedDeviceString: (NSInteger) device {
     
     if (device < 0 || device >= [items count]) {
         return @"AS";

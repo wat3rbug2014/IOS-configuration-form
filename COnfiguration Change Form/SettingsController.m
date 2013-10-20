@@ -49,6 +49,7 @@
 -(void) addContacts {
     ABPeoplePickerNavigationController *listOfContacts = [[ABPeoplePickerNavigationController alloc] init];
     [listOfContacts setPeoplePickerDelegate:self];
+    [listOfContacts setDisplayedProperties:[NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]];
     [self presentViewController:listOfContacts animated:YES completion:nil];
     
 }
@@ -143,7 +144,7 @@
     }
     [peoplePicker dismissViewControllerAnimated:YES completion:nil];
     [[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    return NO;
+    return YES;
 }
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {

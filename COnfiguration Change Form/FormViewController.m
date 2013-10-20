@@ -1,43 +1,48 @@
 //
-//  AddOrRemoveDeviceController.m
+//  FormViewController.m
 //  COnfiguration Change Form
 //
-//  Created by Douglas Gardiner on 9/24/13.
+//  Created by Douglas Gardiner on 10/20/13.
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "AddOrRemoveDeviceController.h"
-#import "UIColor+ExtendedColor.h"
+#import "FormViewController.h"
 #import "ConnectionsController.h"
-#import "enumList.h"
 
-
-@interface AddOrRemoveDeviceController ()
+@interface FormViewController ()
 
 @end
 
-@implementation AddOrRemoveDeviceController
+@implementation FormViewController
 
-@synthesize isAddView;
+@synthesize deviceTypeSelResult;
+@synthesize oldTag;
 @synthesize currentTag;
-@synthesize currentTagLabel;
 @synthesize buildingEntry;
 @synthesize closetEntry;
-@synthesize deviceTypeSelResult;
-@synthesize deviceTypeSelection;
-@synthesize devices;
-@synthesize data;
 @synthesize buildingLabel;
 @synthesize closetLabel;
+@synthesize currentTagLabel;
+@synthesize oldTagLabel;
 @synthesize equipTypeLabel;
+
+@synthesize devices;
+@synthesize deviceTypeSelection;
+@synthesize data;
 @synthesize connectionsNeeded;
 
 int const DEF_ROW = 2;
 
-#pragma mark -
-#pragma mark Initialization Methods
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
--(id) initAsViewType:(int)typeType {
+-(id) initAsViewType:(NSInteger)typeType {
     
     if (typeType != BOTH) {
         self = [super initWithNibName:@"AddOrRemoveDeviceController" bundle:nil];
@@ -58,39 +63,25 @@ int const DEF_ROW = 2;
         devices = [[PickerItems alloc] init];
     }
     return self;
-
+    
 }
 
-
-#pragma mark -
-#pragma mark Superclass methods
-
-- (void)viewDidLoad {
-    
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     // setup text and labels
     
-    UIColor *textColor = [UIColor textColor];
-    [currentTagLabel setTextColor:textColor];
     if ([self connectionsNeeded] != BOTH) {
         if ([self connectionsNeeded] == ADD) {
             [currentTagLabel setText:@"New tag"];
         } else {
             [currentTagLabel setText:@"Old tag"];
         }
+    } else {
+        [currentTagLabel setText:@"New tag"];
+        [oldTagLabel setText:@"Old tag"];
     }
-    deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
-    [deviceTypeSelection setDelegate:self];
-    [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
-    [deviceTypeSelection setShowsSelectionIndicator:YES];
-    [self.view addSubview:deviceTypeSelection];
-    [deviceTypeSelection selectRow:2 inComponent:0 animated:YES];
-    [data setDeviceType:AS];
-    [deviceTypeSelResult setText:[data getDeviceTypeString]];
-    
-    // setup textfields
-    
     [currentTag setTextColor:[UIColor userTextColor]];
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
@@ -99,8 +90,27 @@ int const DEF_ROW = 2;
     [currentTag setDelegate:self];
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];
-    [self updateFormContents];
+
     [self changeLabelColorForMissingInfo];
+    if ([self connectionsNeeded] == BOTH) {
+        [oldTag setDelegate:self];
+        [oldTag setTextColor:[UIColor userTextColor]];
+        [currentTag setDelegate:self];
+        [buildingEntry setDelegate:self];
+        [closetEntry setDelegate:self];
+    }
+    // setup picker
+    
+    deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
+    [deviceTypeSelection setDelegate:self];
+    [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
+    [deviceTypeSelection setShowsSelectionIndicator:YES];
+    [self.view addSubview:deviceTypeSelection];
+    [deviceTypeSelection selectRow:2 inComponent:0 animated:YES];
+    [data setDeviceType:AS];
+    [deviceTypeSelResult setText:[data getDeviceTypeString]];
+
+    [self updateFormContents];
     
     // add navigation buttons
     
@@ -114,11 +124,60 @@ int const DEF_ROW = 2;
 {
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -
-#pragma mark Sublass specific methods
+#pragma mark ConfigurationFormController protocol methods
+
+// debug this -change form does all blue
+
+-(void) changeLabelColorForMissingInfo {
+    
+    if ([data building] == nil) {
+        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [buildingLabel setTextColor:[UIColor textColor]];
+    }
+    if ([data closet] == nil) {
+        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [closetLabel setTextColor:[UIColor textColor]];
+    }
+    if ([self connectionsNeeded] != REMOVE) {
+        if ([data currentTag] == nil) {
+            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [currentTagLabel setTextColor:[UIColor textColor]];
+        }
+    }
+    if ([self connectionsNeeded] == REMOVE) {
+        if ([data oldTag] == nil) {
+            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [currentTagLabel setTextColor:[UIColor textColor]];
+        }
+    }
+    if ([self connectionsNeeded] == BOTH) {
+        if ([data oldTag] == nil) {
+            [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [oldTagLabel setTextColor:[UIColor textColor]];
+        }
+    }
+    if ([data deviceType] == UNDEFINED) {
+        [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    } else {
+        [equipTypeLabel setTextColor:[UIColor textColor]];
+    }
+
+}
+
+-(void) pushConnectionsController {
+    
+    [self updateConfigurationDataStructure];
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:[self connectionsNeeded] andCurrentData:data];
+    [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
 
 -(void) sendForm {
     
@@ -148,85 +207,42 @@ int const DEF_ROW = 2;
     }
 }
 
+// This will be overwritten.  See if it is necessary to have this here
+
 -(void) updateConfigurationDataStructure {
     
-    if([[buildingEntry text] length] > 0) {
-        [data setBuilding:[buildingEntry text]];
-    }
-    if ([[closetEntry text] length] > 0) {
-        [data setCloset:[closetEntry text]];
-    }
-    if ([[currentTag text] length] > 0) {
+        
+    [data setBuilding:[buildingEntry text]];
+    [data setCloset:[closetEntry text]];
+    if ([self connectionsNeeded] != BOTH) {
         if ([self connectionsNeeded] == ADD) {
             [data setCurrentTag:[currentTag text]];
         } else {
             [data setOldTag:[currentTag text]];
         }
+    } else {
+        [data setCurrentTag:[currentTag text]];
+        [data setOldTag:[oldTag text]];
     }
 }
 
--(void) pushConnectionsController {
-    
-    [self updateConfigurationDataStructure];
-    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:[self connectionsNeeded] andCurrentData:data];
-    [[self navigationController] pushViewController:updateConnectorController animated:YES];
-}
-
--(void) changeLabelColorForMissingInfo {
-    
-    if ([data building] == nil) {
-        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
-        [buildingLabel setTextColor:[UIColor textColor]];
-    }
-    if ([data closet] == nil) {
-        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
-        [closetLabel setTextColor:[UIColor textColor]];
-    }
-    if ([self connectionsNeeded] == ADD) {
-        if ([data currentTag] == nil) {
-            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [currentTagLabel setTextColor:[UIColor textColor]];
-        }
-    } else {
-        if ([data oldTag] == nil) {
-            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [currentTagLabel setTextColor:[UIColor textColor]];
-        }
-    }
-    if ([data deviceType] == UNDEFINED) {
-        [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
-        [equipTypeLabel setTextColor:[UIColor textColor]];
-    }
-}
+// This will be overwritten.  See if it is necessary to have this here.
 
 -(void) updateFormContents {
     
     [buildingEntry setText:[data building]];
     [closetEntry setText:[data closet]];
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
-    if ([self connectionsNeeded] == ADD) {
-        [currentTag setText:[data currentTag]];
+    if ([self connectionsNeeded] != BOTH) {
+        if ([self connectionsNeeded] == ADD) {
+            [currentTag setText:[data currentTag]];
+        } else {
+            [currentTag setText:[data oldTag]];
+        }
     } else {
-        [currentTag setText:[data oldTag]];
+        [currentTag setText:[data currentTag]];
+        [oldTag setText:[data oldTag]];
     }
-}
-
-#pragma mark -
-#pragma mark UIPickerViewDataSource methods
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
-    return 1;
-}
-
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [devices count];
 }
 
 #pragma mark -
@@ -257,6 +273,19 @@ int const DEF_ROW = 2;
 }
 
 #pragma mark -
+#pragma mark UIPickerViewDataSource methods
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [devices count];
+}
+
+#pragma mark -
 #pragma mark MFMailComposeViewControllerDelegate methods
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
@@ -281,5 +310,4 @@ int const DEF_ROW = 2;
     [self changeLabelColorForMissingInfo];
     return YES;
 }
-
 @end

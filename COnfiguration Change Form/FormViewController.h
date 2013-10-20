@@ -1,19 +1,18 @@
 //
-//  ChangeDeviceController.h
+//  FormViewController.h
 //  COnfiguration Change Form
 //
-//  Created by Douglas Gardiner on 9/24/13.
+//  Created by Douglas Gardiner on 10/20/13.
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "PickerItems.h"
 #import "ConfigurationData.h"
-#import <MessageUI/MessageUI.h>
+#import "ConfigurationFormController.h"
 
-/* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
-
-@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+@interface FormViewController : UIViewController <ConfigurationFormController,UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
 @property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult;
 @property (retain, nonatomic) IBOutlet UITextField *oldTag;
@@ -31,7 +30,12 @@
 @property (retain, nonatomic) ConfigurationData *data;
 @property (nonatomic) NSInteger connectionsNeeded;
 
+-(id) initAsViewType: (NSInteger) typeType;
+
+-(void) changeLabelColorForMissingInfo;
 -(void) pushConnectionsController;
 -(void) sendForm;
--(void) changeLabelColorForMissingInfo;
+-(void) updateConfigurationDataStructure;
+-(void) updateFormContents;
+
 @end

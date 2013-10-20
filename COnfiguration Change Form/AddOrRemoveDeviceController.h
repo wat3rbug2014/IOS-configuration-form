@@ -16,12 +16,12 @@
 @property BOOL isAddView;
 
 @property (retain, nonatomic) IBOutlet UITextField *currentTag;
-@property (retain, nonatomic) IBOutlet UILabel *tagLabel;
+@property (retain, nonatomic) IBOutlet UILabel *currentTagLabel;
 @property (retain, nonatomic) IBOutlet UITextField *buildingEntry;
 @property (retain, nonatomic) IBOutlet UILabel *buildingLabel;
 @property (retain, nonatomic) IBOutlet UITextField *closetEntry;
 @property (retain, nonatomic) IBOutlet UILabel *closetLabel;
-@property (retain, nonatomic) IBOutlet UILabel *equipTypeSelResult;
+@property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult;
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
