@@ -211,22 +211,37 @@ int const DEF_ROW = 2;
 
 -(void) updateConfigurationDataStructure {
     
-        
-    [data setBuilding:[buildingEntry text]];
-    [data setCloset:[closetEntry text]];
-    if ([self connectionsNeeded] != BOTH) {
+
+    if([[buildingEntry text] length] > 0) {
+        [data setBuilding:[buildingEntry text]];
+    }
+    if ([[closetEntry text] length] > 0) {
+        [data setCloset:[closetEntry text]];
+    }
+    if ([[currentTag text] length] > 0) {
         if ([self connectionsNeeded] == ADD) {
             [data setCurrentTag:[currentTag text]];
         } else {
             [data setOldTag:[currentTag text]];
         }
-    } else {
-        [data setCurrentTag:[currentTag text]];
-        [data setOldTag:[oldTag text]];
+    }
+    if ([self connectionsNeeded] != REMOVE) {
+        if ([[currentTag text] length] > 0) {
+            [data setCurrentTag:[currentTag text]];
+        }
+    }
+    if ([self connectionsNeeded] == REMOVE) {
+        if ([[currentTag text] length] > 0) {
+            [data setOldTag:[currentTag text]];
+        }
+    }
+    if ([self connectionsNeeded] == BOTH) {
+        if ([[oldTag text] length] > 0) {
+            [data setOldTag:[oldTag text]];
+        }
     }
 }
 
-// This will be overwritten.  See if it is necessary to have this here.
 
 -(void) updateFormContents {
     
