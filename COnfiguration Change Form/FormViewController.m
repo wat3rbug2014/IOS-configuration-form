@@ -83,8 +83,11 @@ int const DEF_ROW = 2;
         [oldTagLabel setText:@"Old tag"];
     }
     [currentTag setTextColor:[UIColor userTextColor]];
+    [currentTag setDelegate:self];
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
+    [buildingEntry setDelegate:self];
+    [closetEntry setDelegate:self];
     [deviceTypeSelResult setTextColor:[UIColor userTextColor]];
     data = [[ConfigurationData alloc] init];
     [currentTag setDelegate:self];
@@ -95,9 +98,6 @@ int const DEF_ROW = 2;
     if ([self connectionsNeeded] == BOTH) {
         [oldTag setDelegate:self];
         [oldTag setTextColor:[UIColor userTextColor]];
-        [currentTag setDelegate:self];
-        [buildingEntry setDelegate:self];
-        [closetEntry setDelegate:self];
     }
     // setup picker
     
@@ -120,16 +120,14 @@ int const DEF_ROW = 2;
     [[self navigationItem] setLeftBarButtonItem:sendForm];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
 }
 
 #pragma mark -
 #pragma mark ConfigurationFormController protocol methods
-
-// debug this -change form does all blue
 
 -(void) changeLabelColorForMissingInfo {
     
