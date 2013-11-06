@@ -7,8 +7,7 @@
 //
 
 #import "TabOverViewController.h"
-#import "AddOrRemoveDeviceController.h"
-#import "ChangeDeviceController.h"
+#import "FormViewControllerFactory.h"
 #import "SettingsController.h"
 #import "UIColor+ExtendedColor.h"
 #import "enumList.h"
@@ -40,12 +39,9 @@ int static const CONTROLLER_NUM = 4;
 {
     [super viewDidLoad];
     NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"adddevice.png", nil];
-    FormViewController *addView = [[FormViewController alloc] initAsViewType:ADD];
-    FormViewController *removeView = [[FormViewController alloc] initAsViewType:REMOVE];
-    FormViewController *changeView = [[FormViewController alloc] initAsViewType:BOTH];
-    //AddOrRemoveDeviceController *addView = [[AddOrRemoveDeviceController alloc] initAsViewType:ADD];
-    //AddOrRemoveDeviceController *removeView = [[AddOrRemoveDeviceController alloc] initAsViewType:REMOVE];
-    //ChangeDeviceController *changeView = [[ChangeDeviceController alloc] init];
+    FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
+    FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
+    FormViewController *changeView = [FormViewControllerFactory createFormView: BOTH];
     SettingsController *settingsView = [[SettingsController alloc] init];
     NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, settingsView, nil];
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];

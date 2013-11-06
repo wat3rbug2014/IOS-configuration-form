@@ -27,6 +27,7 @@
 
 @property NSInteger deviceType;
 @property NSInteger site;
+@property BOOL isReadyToSend;
 
 @property (retain) NSMutableDictionary *emailAddresses;
 @property (retain) NSArray *nameArray;
@@ -54,7 +55,7 @@
 -(NSString*) getMessageBodyForConnectionType: (NSInteger) formType;
 
 
--(BOOL) isFormFilledOutForType: (NSInteger) formType;
+-(void) isFormFilledOutForType: (NSInteger) formType;
 -(void) clear;
 
 @end

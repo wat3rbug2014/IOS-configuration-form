@@ -31,6 +31,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize deviceType;
 @synthesize destPortOne;
 @synthesize destPortTwo;
+@dynamic isReadyToSend;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -40,6 +41,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     self = [super init];
     if (self != nil) {
         [self getStoredEmailSettings];
+        [self setIsReadyToSend:false];
     }
     return self;
 }
@@ -127,7 +129,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return siteName;
 }
 
--(BOOL) isFormFilledOutForType: (NSInteger) formType {
+-(void) isFormFilledOutForType: (NSInteger) formType {
     
     BOOL result = YES;
     if ([self building] == nil|| [self closet] == nil || [self vlan] == nil) {
@@ -143,7 +145,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
             result = NO;
         }
     }
-    return result;
+    [self setIsReadyToSend:result];
 }
 
 #pragma mark -

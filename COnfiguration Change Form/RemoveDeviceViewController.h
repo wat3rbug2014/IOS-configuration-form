@@ -1,17 +1,14 @@
 //
-//  FormViewController.h
+//  AddOrRemoveDeviceController.h
 //  COnfiguration Change Form
 //
-//  Created by Douglas Gardiner on 11/5/13.
+//  Created by Douglas Gardiner on 9/24/13.
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "PickerItems.h"
-#import "ConfigurationData.h"
-#import <MessageUI/MessageUI.h>
+#import "FormViewController.h"
 
-@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+@interface RemoveDeviceViewController : FormViewController 
 
 @property BOOL isAddView;
 
@@ -26,7 +23,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) ConfigurationData *data;
-@property (nonatomic) NSInteger connectionsNeeded; // -- polymorph this too
+@property (nonatomic) NSInteger connectionsNeeded;
 
 
 // custom methods
@@ -36,4 +33,5 @@
 -(void) updateConfigurationDataStructure;
 -(void) pushConnectionsController;
 -(void) updateFormContents;
+
 @end

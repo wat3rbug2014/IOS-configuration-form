@@ -140,7 +140,7 @@
     // check to see if form is done
     
     [self updateConfigurationDataStructure];
-    if (![[self data] isFormFilledOutForType:[self connectionsNeeded]]) {
+    if (![[self data] isReadyToSend]) {
         NSString *message = @"Incomplete Form.  See items in red";
         UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailError show];
