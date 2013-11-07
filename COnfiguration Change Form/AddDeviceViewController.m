@@ -15,19 +15,6 @@
 
 @implementation AddDeviceViewController
 
-//@synthesize currentTag;
-//@synthesize currentTagLabel;
-//@synthesize buildingEntry;
-//@synthesize closetEntry;
-//@synthesize deviceTypeSelResult;
-//@synthesize deviceTypeSelection;
-//@synthesize devices;
-//@synthesize data;
-//@synthesize buildingLabel;
-//@synthesize closetLabel;
-//@synthesize equipTypeLabel;
-//@synthesize connectionsNeeded;
-
 -(id) init {
     
     return [self initWithNibName:@"AddDeviceViewController" bundle:nil];
@@ -72,15 +59,8 @@
 
 -(void) updateConfigurationDataStructure {
     
-    if([[super.buildingEntry text] length] > 0) {
-        [super.data setBuilding:[super.buildingEntry text]];
-    }
-    if ([[super.closetEntry text] length] > 0) {
-        [super.data setCloset:[super.closetEntry text]];
-    }
-    if ([[super.currentTag text] length] > 0) {
-        [super.data setCurrentTag:[super.currentTag text]];
-    }
+    [super updateConfigurationDataStructure];
+    [super.data setCurrentTag:[super.currentTag text]];
 }
 
 -(void) pushConnectionsController {
@@ -91,18 +71,18 @@
 
 -(void) changeLabelColorForMissingInfo {
  
-    if ([super.data currentTag] == nil) {
-        [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
+    if ([[super.data currentTag] length] > 0) {
         [super.currentTagLabel setTextColor:[UIColor textColor]];
+    } else {
+        [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
     [super changeLabelColorForMissingInfo];
 }
 
 -(void) updateFormContents {
     
-    [super.currentTag setText:[super.data currentTag]];
     [super updateFormContents];
+    [super.currentTag setText:[super.data currentTag]];
 }
 
 #pragma mark -

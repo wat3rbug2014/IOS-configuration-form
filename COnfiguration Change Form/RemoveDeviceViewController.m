@@ -15,19 +15,6 @@
 
 @implementation RemoveDeviceViewController
 
-@synthesize currentTag;
-@synthesize currentTagLabel;
-@synthesize buildingEntry;
-@synthesize closetEntry;
-@synthesize deviceTypeSelResult;
-@synthesize deviceTypeSelection;
-@synthesize devices;
-@synthesize data;
-@synthesize buildingLabel;
-@synthesize closetLabel;
-@synthesize equipTypeLabel;
-@synthesize connectionsNeeded;
-
 
 #pragma mark -
 #pragma mark Initialization Methods
@@ -56,8 +43,8 @@
     // setup text and labels
     
     UIColor *textColor = [UIColor textColor];
-    [currentTagLabel setTextColor:textColor];
-    [currentTagLabel setText:@"Old tag"];
+    [super.currentTagLabel setTextColor:textColor];
+    [super.currentTagLabel setText:@"Old tag"];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
 }
@@ -81,7 +68,7 @@
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [data setOldTag:[currentTag text]];
+    [super.data setOldTag:[super.currentTag text]];
 }
 
 -(void) pushConnectionsController {
@@ -92,18 +79,17 @@
 
 -(void) changeLabelColorForMissingInfo {
     
-    [super changeLabelColorForMissingInfo];
-    if ([data oldTag] == nil) {
-        [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    if ([[super.data currentTag] length] > 0) {
+        [super.currentTagLabel setTextColor:[UIColor textColor]];
     } else {
-        [currentTagLabel setTextColor:[UIColor textColor]];
+        [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
 }
 
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [currentTag setText:[data oldTag]];
+    [super.currentTag setText:[super.data oldTag]];
 }
 #pragma mark -
 #pragma mark UITextFieldDelegate methods

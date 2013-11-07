@@ -139,19 +139,8 @@
 
 -(void) updateConfigurationDataStructure {
     
-    if([[buildingEntry text] length] > 0) {
-        [data setBuilding:[buildingEntry text]];
-    }
-    if ([[closetEntry text] length] > 0) {
-        [data setCloset:[closetEntry text]];
-    }
-    if ([[currentTag text] length] > 0) {
-        if ([self connectionsNeeded] == ADD) {
-            [data setCurrentTag:[currentTag text]];
-        } else {
-            [data setOldTag:[currentTag text]];
-        }
-    }
+    [data setBuilding:[buildingEntry text]];
+    [data setCloset:[closetEntry text]];
 }
 
 -(void) pushConnectionsController {
@@ -162,23 +151,16 @@
 
 -(void) changeLabelColorForMissingInfo {
     
-    if ([data building] == nil) {
-        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
+    if ([[buildingEntry text] length] > 0) {
         [buildingLabel setTextColor:[UIColor textColor]];
-    }
-    if ([data closet] == nil) {
-        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
-        [closetLabel setTextColor:[UIColor textColor]];
+        [buildingLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
-    //    } else { // remove portion
-    //        if ([data oldTag] == nil) {
-    //            [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    //        } else {
-    //            [currentTagLabel setTextColor:[UIColor textColor]];
-    //        }
-    //    }
+    if ([[closetEntry text] length] > 0) {
+        [closetLabel setTextColor:[UIColor textColor]];
+    } else {
+        [closetLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
     if ([data deviceType] == UNDEFINED) {
         [equipTypeLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
@@ -191,10 +173,7 @@
     [buildingEntry setText:[data building]];
     [closetEntry setText:[data closet]];
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
-    
-    //    } else { // remove portion
-    //        [currentTag setText:[data oldTag]];
-    //    }
+
 }
 
 #pragma mark -
