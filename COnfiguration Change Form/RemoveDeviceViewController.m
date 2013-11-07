@@ -79,7 +79,8 @@
 
 -(void) changeLabelColorForMissingInfo {
     
-    if ([[super.data currentTag] length] > 0) {
+    [super changeLabelColorForMissingInfo];
+    if ([[super.currentTag text] length] > 0) {
         [super.currentTagLabel setTextColor:[UIColor textColor]];
     } else {
         [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];

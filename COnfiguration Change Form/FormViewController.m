@@ -173,7 +173,6 @@
     [buildingEntry setText:[data building]];
     [closetEntry setText:[data closet]];
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
-
 }
 
 #pragma mark -
