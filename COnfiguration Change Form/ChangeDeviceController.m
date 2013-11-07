@@ -30,8 +30,6 @@
 @synthesize oldTagLabel;
 @synthesize equipTypeLabel;
 
-int const DEF_ROW = 2;
-
 #pragma mark -
 #pragma mark Superclass specific methods
 
@@ -86,30 +84,9 @@ int const DEF_ROW = 2;
 
 -(void) sendForm {
     
-    // check to see if form is done
-    
     [self updateConfigurationDataStructure];
-    if (![[self data] isReadyToSend]) {
-        NSString *message = @"Incomplete Form.  See items in red";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-        return;
-    }
-    // setup mailer and transfer control
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        [mailer setMailComposeDelegate:self];
-        [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getSubjectForConnectionType:[self connectionsNeeded]]];
-        [mailer setMessageBody:[data getMessageBodyForConnectionType:[self connectionsNeeded]] isHTML:NO];
-        [self presentViewController:mailer animated:YES completion:nil];
-        [data clear];
-    } else {
-        NSString *message = @"Unable to send email.  Please check your settings";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-    }
+    [[self data] isFormFilledOutForType:BOTH];
+    [super sendForm];
 }
 
 -(void) updateConfigurationDataStructure {

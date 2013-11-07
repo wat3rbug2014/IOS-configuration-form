@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PickerItems.h"
-#import "ConfigurationData.h"
-#import <MessageUI/MessageUI.h>
+#import "FormViewController.h"
 
 /* I should do something about this.  AddorRemoveController is the same as this controller except the xib... for the most part */
 
-@interface ChangeDeviceController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+@interface ChangeDeviceController : FormViewController
 
 @property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult;
 @property (retain, nonatomic) IBOutlet UITextField *oldTag;

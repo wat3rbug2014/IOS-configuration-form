@@ -44,4 +44,5 @@ enum connectType {
     ADD,
     REMOVE
 };
+#define DEF_ROW 2
 #endif

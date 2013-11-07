@@ -41,7 +41,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     self = [super init];
     if (self != nil) {
         [self getStoredEmailSettings];
-        [self setIsReadyToSend:false];
+
     }
     return self;
 }

@@ -15,18 +15,18 @@
 
 @implementation AddDeviceViewController
 
-@synthesize currentTag;
-@synthesize currentTagLabel;
-@synthesize buildingEntry;
-@synthesize closetEntry;
-@synthesize deviceTypeSelResult;
-@synthesize deviceTypeSelection;
-@synthesize devices;
-@synthesize data;
-@synthesize buildingLabel;
-@synthesize closetLabel;
-@synthesize equipTypeLabel;
-@synthesize connectionsNeeded;
+//@synthesize currentTag;
+//@synthesize currentTagLabel;
+//@synthesize buildingEntry;
+//@synthesize closetEntry;
+//@synthesize deviceTypeSelResult;
+//@synthesize deviceTypeSelection;
+//@synthesize devices;
+//@synthesize data;
+//@synthesize buildingLabel;
+//@synthesize closetLabel;
+//@synthesize equipTypeLabel;
+//@synthesize connectionsNeeded;
 
 -(id) init {
     
@@ -45,11 +45,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *textColor = [UIColor textColor]; // -these need to be moved to super?
-    [currentTagLabel setTextColor:textColor]; // -these need to be moved to super?
-    [currentTagLabel setText:@"New tag"];
+    [super.currentTagLabel setText:@"New tag"];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
+    [super.currentTag setDelegate:self];
+    [super.buildingEntry setDelegate:self];
+    [super.closetEntry setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,17 +72,17 @@
 
 -(void) updateConfigurationDataStructure {
     
-    if([[buildingEntry text] length] > 0) {
-        [data setBuilding:[buildingEntry text]];
+    if([[super.buildingEntry text] length] > 0) {
+        [super.data setBuilding:[super.buildingEntry text]];
     }
-    if ([[closetEntry text] length] > 0) {
-        [data setCloset:[closetEntry text]];
+    if ([[super.closetEntry text] length] > 0) {
+        [super.data setCloset:[super.closetEntry text]];
     }
-    if ([[currentTag text] length] > 0) {
+    if ([[super.currentTag text] length] > 0) {
         if ([self connectionsNeeded] == ADD) {
-            [data setCurrentTag:[currentTag text]];
+            [super.data setCurrentTag:[super.currentTag text]];
         } else {
-            [data setOldTag:[currentTag text]];
+            [super.data setOldTag:[super.currentTag text]];
         }
     }
 }
@@ -94,17 +95,17 @@
 
 -(void) changeLabelColorForMissingInfo {
  
-    if ([data currentTag] == nil) {
-        [currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    if ([super.data currentTag] == nil) {
+        [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     } else {
-        [currentTagLabel setTextColor:[UIColor textColor]];
+        [super.currentTagLabel setTextColor:[UIColor textColor]];
     }
     [super changeLabelColorForMissingInfo];
 }
 
 -(void) updateFormContents {
     
-    [currentTag setText:[data currentTag]];
+    [super.currentTag setText:[super.data currentTag]];
     [super updateFormContents];
 }
 

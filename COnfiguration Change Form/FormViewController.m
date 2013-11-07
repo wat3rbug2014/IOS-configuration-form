@@ -35,7 +35,7 @@
 @synthesize connectionsNeeded;
 
 
-int const DEF_ROW = 2;
+//int const DEF_ROW = 2;
 
 #pragma mark -
 #pragma mark Initialization Methods
@@ -49,6 +49,14 @@ int const DEF_ROW = 2;
     
 }
 
+-(id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        devices = [[PickerItems alloc] init];
+    }
+    return self;
+}
+
 #pragma mark -
 #pragma mark Superclass methods
 
@@ -60,13 +68,9 @@ int const DEF_ROW = 2;
     
     UIColor *textColor = [UIColor textColor];
     [currentTagLabel setTextColor:textColor];
-    if ([self connectionsNeeded] != BOTH) {
-        if ([self connectionsNeeded] == ADD) {
-            [currentTagLabel setText:@"New tag"];
-        } else {
-            [currentTagLabel setText:@"Old tag"];
-        }
-    }
+    
+    // setup roller selector
+    
     deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
     [deviceTypeSelection setDelegate:self];
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
@@ -86,8 +90,6 @@ int const DEF_ROW = 2;
     [currentTag setDelegate:self];
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];
-    [self updateFormContents];
-    [self changeLabelColorForMissingInfo];
     
     // add navigation buttons
     

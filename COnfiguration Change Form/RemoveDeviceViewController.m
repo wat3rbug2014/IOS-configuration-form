@@ -28,7 +28,6 @@
 @synthesize equipTypeLabel;
 @synthesize connectionsNeeded;
 
-int const DEF_ROW = 2;
 
 #pragma mark -
 #pragma mark Initialization Methods
