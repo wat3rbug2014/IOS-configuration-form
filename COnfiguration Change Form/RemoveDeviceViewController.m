@@ -92,6 +92,7 @@
     [super updateFormContents];
     [super.currentTag setText:[super.data oldTag]];
 }
+
 #pragma mark -
 #pragma mark UITextFieldDelegate methods
 

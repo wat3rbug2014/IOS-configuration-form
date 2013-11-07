@@ -29,8 +29,8 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     [super.currentTagLabel setText:@"New tag"];
     [self updateFormContents];
