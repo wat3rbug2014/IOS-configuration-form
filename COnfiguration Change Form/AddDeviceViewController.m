@@ -79,11 +79,7 @@
         [super.data setCloset:[super.closetEntry text]];
     }
     if ([[super.currentTag text] length] > 0) {
-        if ([self connectionsNeeded] == ADD) {
-            [super.data setCurrentTag:[super.currentTag text]];
-        } else {
-            [super.data setOldTag:[super.currentTag text]];
-        }
+        [super.data setCurrentTag:[super.currentTag text]];
     }
 }
 
