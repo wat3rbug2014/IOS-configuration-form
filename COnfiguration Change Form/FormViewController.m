@@ -99,11 +99,25 @@
     [[self navigationItem] setLeftBarButtonItem:sendForm];
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+   // BOOL needsUpdate = true;
+//    UIView *hasKeyboard;
+//    NSArray *textfields = [NSArray arrayWithObjects:currentTag, buildingEntry, closetEntry, nil];
+//    for (UITextField *currentViewInTest in textfields) {
+//        if ([currentViewInTest isFirstResponder]) {
+//            hasKeyboard = currentViewInTest;
+//        }
+//    }
+//    for(UIView *touchedView in touches) {
+//        
+//    }
+    [self updateConfigurationDataStructure];
+}
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -

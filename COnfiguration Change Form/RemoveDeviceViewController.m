@@ -104,4 +104,12 @@
     return YES;
 }
 
+#pragma mark -
+#pragma mark UIResponder methods
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+}
 @end
