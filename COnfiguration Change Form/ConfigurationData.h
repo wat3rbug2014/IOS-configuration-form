@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "enumList.h"
-#import "ConfigurationDataProtocol.h"
 
-@interface ConfigurationData : NSObject <ConfigurationDataProtocol>
+@interface ConfigurationData : NSObject 
 
 @property (retain) NSString *building;
 @property(retain) NSString *closet;
 @property (retain) NSString *tag;
 @property (retain) NSString *ipAddress;
 @property NSInteger vlan;
+@property (retain) NSString *comments;
 
 @property NSInteger deviceType;
 @property NSInteger site;

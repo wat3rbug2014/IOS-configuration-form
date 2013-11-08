@@ -23,6 +23,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize site;
 @synthesize deviceType;
 @synthesize isReadyToSend;
+@synthesize comments;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -174,23 +175,24 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(BOOL) isFormFilledOut {
     
-    BOOL result = false;
-    if ([tag length] > 0 && [closet length] > 0 && [ipAddress length] > 0) {
-        if ([self vlan] > [[NSNumber numberWithInt:0] integerValue]) {
-            result = true;
-        }
+    BOOL result = true;
+    
+    // make list on checks so easier to add if needed.
+    
+    if ([tag length] == 0) {
+        result = false;
+    }
+    if ([closet length] == 0) {
+        result = false;
+    }
+    if ([ipAddress length] == 0) {
+        result = false;
+    }
+    if (self.vlan == [[NSNumber numberWithInt:0] integerValue]) {
+        result = false;
     }
     return result;
 }
 
--(NSString*) getEMailMessageBody {
-    
-    
-    return @"";
-}
--(NSString*) getEMailSubject {
-    
-    return @"";
-}
 
 @end
