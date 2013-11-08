@@ -15,23 +15,14 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 @synthesize building;
 @synthesize closet;
-@synthesize currentIp;
-@synthesize oldIp;
-@synthesize currentTag;
-@synthesize oldTag;
-@synthesize currentUplinkOne;
-@synthesize currentUplinkTwo;
+@synthesize ipAddress;
+@synthesize tag;
 @synthesize emailAddresses;
 @synthesize emailArray;
 @synthesize nameArray;
-@synthesize destTagOne;
-@synthesize destTagTwo;
-@synthesize vlan;
 @synthesize site;
 @synthesize deviceType;
-@synthesize destPortOne;
-@synthesize destPortTwo;
-@dynamic isReadyToSend;
+@synthesize isReadyToSend;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -46,21 +37,25 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return self;
 }
 
+-(NSInteger) vlan {
+    
+    return self.vlan;
+}
+
+-(void) setVlan:(NSInteger)newVlan {
+    
+    if (newVlan > [[NSNumber numberWithInt:0] integerValue] &&  newVlan < [[NSNumber numberWithInt:9999] integerValue]) {
+        self.vlan = newVlan;
+    }
+}
 -(void) clear {
     
     // can i do this with new object and dismiss self and copy email over?
     
     building = nil;
     closet = nil;
-    currentUplinkOne = nil;
-    currentUplinkTwo = nil;
-    currentTag = nil;
-    oldTag = nil;
-    oldIp = nil;
-    currentIp = nil;
-    vlan = nil;
-    destTagOne = nil;
-    destTagTwo = nil;
+    tag = nil;
+    ipAddress = nil;
 }
 
 -(NSString*) getAbbreviateDeviceString {
@@ -75,25 +70,10 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return [deviceNames deviceAtIndex:[self deviceType]];
 }
 
--(NSString*) getNewDeviceName {
+-(NSString*) getDeviceName {
     
     NSMutableString *buffer = [[NSMutableString alloc] init];
-    [buffer appendFormat:@"%@-%@-%@-%@-%@", [self getSiteAbbreviatedString], [self getAbbreviateDeviceString], [self building], [self closet], [self currentTag]];
-    return buffer;
-}
-
--(NSString*) getOldDeviceName {
-    
-    NSMutableString *buffer = [[NSMutableString alloc] init];
-    [buffer stringByAppendingString:[self getSiteAbbreviatedString]];
-    [buffer stringByAppendingString: @"-"];
-    [buffer stringByAppendingString:[self getDeviceTypeString]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self building]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self closet]];
-    [buffer stringByAppendingString:@"-"];
-    [buffer stringByAppendingString:[self oldTag]];
+    [buffer appendFormat:@"%@-%@-%@-%@-%@", [self getSiteAbbreviatedString], [self getAbbreviateDeviceString], [self building], [self closet], [self tag]];
     return buffer;
 }
 
@@ -127,25 +107,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
         }
     }
     return siteName;
-}
-
--(void) isFormFilledOutForType: (NSInteger) formType {
-    
-    BOOL result = YES;
-    if ([self building] == nil|| [self closet] == nil || [self vlan] == nil) {
-        result = NO;
-    }
-    if (formType == ADD || formType == BOTH) {
-        if ([self currentUplinkOne] == nil|| [self currentTag] == nil || [self currentIp] == nil || [self destTagOne] == nil) {
-            result = NO;
-        }
-    }
-    if (formType == REMOVE) {
-        if ([self oldTag] == nil|| [self oldIp] == nil) {
-            result = NO;
-        }
-    }
-    [self setIsReadyToSend:result];
 }
 
 #pragma mark -
@@ -211,64 +172,11 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     [self updateStoredEmailSettings];
 }
 
--(NSString*) getMessageBodyForConnectionType:(NSInteger)formType {
+-(BOOL) isFormFilledOut {
     
-    NSMutableString *result;
-    result = [NSMutableString stringWithFormat:@"Location: %@ closet %@\n", [self building], [self closet]];
-    
-    // add form body
-    
-    if (formType == ADD) {
-        [result appendFormat:@"tag# %@ is device type %@.\n", [self currentTag], [self getDeviceTypeString]];
-        [result appendFormat:@"tag #%@ is on vlan %@ with address %@.\n", [self currentTag], [self vlan], [self currentIp]];
-        [result appendFormat:@"tag# %@ port %@ is connected to %@ on port %@.\n", [self currentTag], [self currentUplinkOne], [self destTagOne], [self destPortOne]];
-        if ([self currentUplinkTwo] != nil) {
-            [result appendFormat:@"tag# %@ port %@ is also connected to %@ on port %@.\n", [self currentTag], [self currentUplinkTwo], [self destTagOne], [self destPortTwo]];
-        }
-    }
-    // remove form body
-    
-    if (formType == REMOVE) {
-        [result appendFormat:@"tag# %@ was device type %@.\n", [self oldTag], [self getDeviceTypeString]];
-        [result appendFormat:@"tag #%@ was on vlan %@ with address %@.\n", [self oldTag], [self vlan], [self oldIp]];
-    }
-    // change form body
-    
-    if (formType == BOTH) {
-        [result appendFormat:@"tag# %@ was device type %@.\n", [self currentTag], [self getDeviceTypeString]];
-        if ([self oldIp] != nil && [self currentIp] != nil) {
-            [result appendFormat:@"IP addresses changed from %@ to %@.\n", [self oldIp], [self currentIp]];
-        }
-        if ([self oldTag] != nil && [self currentTag] != nil) {
-            [result appendFormat:@"tags changed from %@ to %@.\n", [self oldTag], [self currentTag]];
-        }
-        [result appendFormat:@"tag# %@ port %@ is connected to %@ on port %@.\n", [self currentTag], [self currentUplinkOne], [self destTagOne], [self destPortOne]];
-        if ([self currentUplinkTwo] != nil) {
-            [result appendFormat:@"tag# %@ port %@ is also connected to %@ on port %@.\n", [self currentTag], [self currentUplinkTwo], [self destTagOne], [self destPortTwo]];
-        }
-    }
-    return result;
-}
-
--(NSString*) getSubjectForConnectionType: (NSInteger) formType {
-    
-    NSString *result;
-    switch (formType) {
-        case ADD: {
-            result = [NSString stringWithFormat:@"Added %@", [self getNewDeviceName]];
-            break;
-        }
-        case REMOVE: {
-            result = [NSString stringWithFormat:@"Removed %@", [self getNewDeviceName]];
-            break;
-        }
-        case BOTH: {
-            if([self oldTag] != nil) {
-                result = [NSString stringWithFormat:@"Changed %@", [self getOldDeviceName]];
-            } else {
-                result = [NSString stringWithFormat:@"Changed %@", [self getNewDeviceName]];
-            }
-        }
+    BOOL result = false;
+    if ([tag length] > 0 && [closet length] > 0 && [ipAddress length] > 0) {
+        if
     }
     return result;
 }

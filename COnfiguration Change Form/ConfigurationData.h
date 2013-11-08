@@ -13,17 +13,9 @@
 
 @property (retain) NSString *building;
 @property(retain) NSString *closet;
-@property (retain) NSString *currentUplinkOne;
-@property (retain) NSString *currentUplinkTwo;
-@property (retain) NSString *currentTag;
-@property (retain) NSString *oldTag;
-@property (retain) NSString *oldIp;
-@property (retain) NSString *currentIp;
-@property (retain) NSString *vlan;
-@property (retain) NSString *destTagOne;
-@property (retain) NSString *destTagTwo;
-@property (retain) NSString *destPortOne;
-@property (retain) NSString *destPortTwo;
+@property (retain) NSString *tag;
+@property (retain) NSString *ipAddress;
+@property NSInteger vlan;
 
 @property NSInteger deviceType;
 @property NSInteger site;
@@ -33,12 +25,12 @@
 @property (retain) NSArray *nameArray;
 @property (retain) NSArray *emailArray;
 
--(NSString*) getOldDeviceName;
--(NSString*) getNewDeviceName;
+-(NSString*) getDeviceName;
 -(NSString*) getDeviceTypeString;
 -(NSString*) getSiteString;
 -(NSString*) getSiteAbbreviatedString;
 -(NSString*) getAbbreviateDeviceString;
+-(void) clear;
 
 // email methods
 
@@ -51,11 +43,5 @@
 -(void) updateStoredEmailSettings;
 -(NSArray*) getMailingList;
 -(void) removeEntryAtIndex: (NSInteger) index;
--(NSString*) getSubjectForConnectionType: (NSInteger) formType;
--(NSString*) getMessageBodyForConnectionType: (NSInteger) formType;
-
-
--(void) isFormFilledOutForType: (NSInteger) formType;
--(void) clear;
 
 @end
