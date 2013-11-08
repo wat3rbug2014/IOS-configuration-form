@@ -101,18 +101,8 @@
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
-   // BOOL needsUpdate = true;
-//    UIView *hasKeyboard;
-//    NSArray *textfields = [NSArray arrayWithObjects:currentTag, buildingEntry, closetEntry, nil];
-//    for (UITextField *currentViewInTest in textfields) {
-//        if ([currentViewInTest isFirstResponder]) {
-//            hasKeyboard = currentViewInTest;
-//        }
-//    }
-//    for(UIView *touchedView in touches) {
-//        
-//    }
     [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
 }
 - (void)didReceiveMemoryWarning {
     
@@ -129,8 +119,8 @@
     
     
     if (![[self data] isReadyToSend]) {
-        NSString *message = @"Incomplete Form.  See items in red";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        NSString *message = @"The form is incomplete.  See items in red since they are required before sending an update";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Form Incomplete" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailError show];
         return;
     }
@@ -140,8 +130,8 @@
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         [mailer setMailComposeDelegate:self];
         [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getSubjectForConnectionType:[self connectionsNeeded]]];
-        [mailer setMessageBody:[data getMessageBodyForConnectionType:[self connectionsNeeded]] isHTML:NO];
+        [mailer setSubject:[data getEmailSubject]];
+        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
         [self presentViewController:mailer animated:YES completion:nil];
         [data clear];
     } else {

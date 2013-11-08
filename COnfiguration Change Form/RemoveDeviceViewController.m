@@ -61,14 +61,14 @@
 -(void) sendForm {
     
     [self updateConfigurationDataStructure];
-    [[self data] isFormFilledOutForType:REMOVE];
+    [[self data] isFormFilledOut];
     [super sendForm];
 }
 
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [super.data setOldTag:[super.currentTag text]];
+    [super.data setTag:[super.currentTag text]];
 }
 
 -(void) pushConnectionsController {
@@ -90,7 +90,7 @@
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [super.currentTag setText:[super.data oldTag]];
+    [super.currentTag setText:[super.data tag]];
 }
 
 #pragma mark -

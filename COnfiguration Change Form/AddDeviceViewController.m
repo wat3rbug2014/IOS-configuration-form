@@ -8,6 +8,7 @@
 
 #import "AddDeviceViewController.h"
 #import "UIColor+ExtendedColor.h"
+#import "ConfigurationDataFactory.h"
 
 @interface AddDeviceViewController ()
 
@@ -25,6 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle: @"Add"];
+        [super setData:[ConfigurationDataFactory create:ADD]];
     }
     return self;
 }
@@ -53,14 +55,14 @@
 -(void) sendForm {
     
     [self updateConfigurationDataStructure];
-    [[self data] isFormFilledOutForType:ADD];
+    [[self data] isFormFilledOut];
     [super sendForm];
 }
 
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [super.data setCurrentTag:[super.currentTag text]];
+    [super.data setTag:[super.currentTag text]];
 }
 
 -(void) pushConnectionsController {
@@ -82,7 +84,7 @@
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [super.currentTag setText:[super.data currentTag]];
+    [super.currentTag setText:[super.data tag]];
 }
 
 #pragma mark -

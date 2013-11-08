@@ -176,8 +176,21 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     BOOL result = false;
     if ([tag length] > 0 && [closet length] > 0 && [ipAddress length] > 0) {
-        if
+        if ([self vlan] > [[NSNumber numberWithInt:0] integerValue]) {
+            result = true;
+        }
     }
     return result;
 }
+
+-(NSString*) getEMailMessageBody {
+    
+    
+    return @"";
+}
+-(NSString*) getEMailSubject {
+    
+    return @"";
+}
+
 @end

@@ -11,9 +11,9 @@
 @protocol ConfigurationDataProtocol <NSObject>
 
 @required
--(NSString*) getDeviceName;
--(NSString*) getMessageBodyForConnectionType:(NSInteger)formType;
--(NSString*) getSubjectForConnectionType: (NSInteger) formType;
+
+-(NSString*) getEmailMessageBody;
+-(NSString*) getEmailSubject;
 -(BOOL) isFormFilledOut;
 
 @end

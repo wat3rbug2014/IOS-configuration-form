@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "enumList.h"
+#import "ConfigurationDataProtocol.h"
 
-@interface ConfigurationData : NSObject
+@interface ConfigurationData : NSObject <ConfigurationDataProtocol>
 
 @property (retain) NSString *building;
 @property(retain) NSString *closet;
