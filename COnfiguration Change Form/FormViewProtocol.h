@@ -15,6 +15,9 @@
 -(void) sendForm;
 -(void) changeLabelColorForMissingInfo;
 -(void) updateConfigurationDataStructure;
--(void) pushConnectionsController;
 -(void) updateFormContents;
+
+@optional
+
+-(void) pushConnectionsController;
 @end

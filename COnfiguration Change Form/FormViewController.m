@@ -104,6 +104,7 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
@@ -149,7 +150,7 @@
 
 -(void) pushConnectionsController {
     
-    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] initWithConnectionInfo:[self connectionsNeeded] andCurrentData:data];
+    ConnectionsController *updateConnectorController = [ConnectionsControllerFactory createConnectionsController: ADD];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 

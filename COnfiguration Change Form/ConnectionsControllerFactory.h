@@ -11,6 +11,6 @@
 
 @interface ConnectionsControllerFactory : NSObject
 
--(ConnectionsController*) createConnectionsController: (int) formType;
++(ConnectionsController*) createConnectionsController: (int) formType;
 
 @end

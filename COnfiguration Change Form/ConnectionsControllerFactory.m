@@ -10,7 +10,7 @@
 
 @implementation ConnectionsControllerFactory
 
--(ConnectionsController*) createConnectionsController: (int) formType {
++(ConnectionsController*) createConnectionsController: (int) formType {
     
     switch (formType) {
         case ADD: return [[ConnectionsController alloc] init];
