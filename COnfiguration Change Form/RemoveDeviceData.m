@@ -10,4 +10,10 @@
 
 @implementation RemoveDeviceData
 
+
+-(NSString*) getEmailSubject {
+    
+    return [NSString stringWithFormat:@"Removed %@ from service", [super getDeviceName]];
+}
+
 @end
