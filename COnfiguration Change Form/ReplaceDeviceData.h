@@ -12,7 +12,7 @@
 
 @property (retain) NSString *oldTag;
 
--(void) setNewTag: (NSString*) newTag;
--(NSString*) newTag;
+-(void) setCurrentTag: (NSString*) currentTag;
+-(NSString*) currentTag;
 
 @end

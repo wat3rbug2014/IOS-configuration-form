@@ -21,11 +21,11 @@
     return result;
 }
 
--(void) setNewTag: (NSString*) newTag {
+-(void) setCurrentTag: (NSString*) newTag {
     
     [super setTag:newTag];
 }
--(NSString*) newTag {
+-(NSString*) currentTag {
     
     return [super tag];
 }

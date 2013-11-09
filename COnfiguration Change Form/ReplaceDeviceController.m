@@ -9,6 +9,8 @@
 #import "ReplaceDeviceController.h"
 #import "ConnectionsController.h"
 #import "ConfigurationDataFactory.h"
+#import "UIColor+ExtendedColor.h"
+#import "ReplaceDeviceData.h"
 
 @interface ReplaceDeviceController ()
 
@@ -69,8 +71,8 @@
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [[super data] setCurrentTag:[currentTag text]];
-    [[super data] setOldTag:[oldTag text]];
+    [(ReplaceDeviceData*)[super data] setCurrentTag:[currentTag text]];
+    [(ReplaceDeviceData*)[super data] setOldTag:[oldTag text]];
 }
 
 
