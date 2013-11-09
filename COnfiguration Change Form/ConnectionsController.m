@@ -7,7 +7,9 @@
 //
 
 #import "ConnectionsController.h"
-#import "ConfigurationData.h"
+#import "UIColor+ExtendedColor.h"
+#import "ConfigurationDataFactory.h"
+#import "AddDeviceData.h"
 
 @interface ConnectionsController ()
 
@@ -15,7 +17,6 @@
 
 @implementation ConnectionsController
 
-@synthesize connectionsNeeded;
 @synthesize data;
 @synthesize destTagOne;
 @synthesize destTagTwo;
@@ -24,9 +25,7 @@
 @synthesize devPortOne;
 @synthesize devPortTwo;
 @synthesize vlan;
-@synthesize oldIP;
 @synthesize currentIP;
-@synthesize oldIPLabel;
 @synthesize currentIPLabel;
 @synthesize vlanLabel;
 @synthesize devDestPortOneLabel;
@@ -37,30 +36,20 @@
 @synthesize devPortTwoLabel;
 
 #pragma mark -
-#pragma mark Initialization methods
+#pragma mark Initialization Methods
 
--(id) initWithConnectionInfo: (NSInteger) infoType andCurrentData: (ConfigurationData*) currentData {
+
+-(id) init {
     
-    self = [self initWithConnectionInfo:infoType];
-    if (self) {
-        [self setData:currentData];
-    }
-    return self;
-}
--(id) initWithConnectionInfo: (NSInteger) infoType {
-    
-    self = [self initWithNibName:@"ConnectionsController" bundle:nil];
-    if (self) {
-        [self setConnectionsNeeded:infoType];
-    }
-    return self;
+    return [self initWithNibName:@"ConnectionsController" bundle:nil];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setTitle:@"Connections"];
+        [self setTitle: @"Uplinks"];
+        [self setData:[ConfigurationDataFactory create:ADD]];
     }
     return self;
 }
@@ -72,29 +61,9 @@
 {
     [super viewDidLoad];
     [currentIP setTextColor:[UIColor textColor]];
-    if ([self connectionsNeeded] == BOTH) {
-        //[oldIP setTextColor:[UIColor userTextColor]];
-        [oldIPLabel setText:@"Old IP"];
-        [oldIPLabel setTextColor:[UIColor textColor]];
-    }
-    if ([self connectionsNeeded] != BOTH) {
-        [oldIP setHidden:YES];
-        [oldIPLabel setHidden:YES];
-    }
-    if ([self connectionsNeeded] == REMOVE) {
-        [currentIPLabel setText:@"Old IP"];
-    } else {
-        [currentIPLabel setText:@"New IP"];
-    }
     UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[self navigationItem] setRightBarButtonItem:sendForm];
-    [self changeLabelColorForMissingInfo];
-    NSArray *textFields;
-    if ([self connectionsNeeded] == BOTH) {
-        textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, oldIP, currentIP, nil];
-    } else {
-        textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, currentIP, nil];
-    }
+    NSArray *textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, currentIP, nil];
     for (UITextField *currentField in textFields) {
         [currentField setDelegate:self];
         [currentField setTextColor:[UIColor userTextColor]];
@@ -114,25 +83,18 @@
     [self updateConfigurationDataStructure];
     [super viewWillDisappear:animated];
 }
+
 #pragma mark -
 #pragma mark Class specific methods
 
 -(void) updateFormContents {
     
-    [devPortOne setText:[data currentUplinkOne]];
-    [devPortTwo setText:[data currentUplinkTwo]];
-    [devDestPortOne setText:[data destPortOne]];
-    [devDestPortTwo setText:[data destPortTwo]];
-    [vlan setText:[data vlan]];
-    if ([self connectionsNeeded] == ADD) {
-        [currentIP setText:[data currentIp]];
-    }
-    if ([self connectionsNeeded] == REMOVE) {
-        [currentIP setText:[data oldIp]];
-    }
-    if ([self connectionsNeeded] == BOTH) {
-        [oldIP setText:[data oldIp]];
-    }
+    [devPortOne setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
+    [devPortTwo setText:[(AddDeviceData*)[self data] uplinkTwoFrom]];
+    [devDestPortOne setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
+    [devDestPortTwo setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
+    [vlan setText:[[NSNumber numberWithInteger:[data vlan]] stringValue]];
+    [currentIP setText:[data ipAddress]];
 }
 
 -(void) sendForm {
@@ -153,8 +115,8 @@
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         [mailer setMailComposeDelegate:self];
         [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getSubjectForConnectionType:[self connectionsNeeded]]];
-        [mailer setMessageBody:[data getMessageBodyForConnectionType:[self connectionsNeeded]] isHTML:NO];
+        [mailer setSubject:[data getEmailSubject]];
+        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
         [self presentViewController:mailer animated:YES completion:nil];
         [data clear];
     } else {
@@ -167,83 +129,19 @@
 -(void) updateConfigurationDataStructure {
     
     if ([[vlan text] length] > 0) {
-        [data setVlan:[vlan text]];
+        [data setVlan:[[vlan text] integerValue]];
     }
-    // stuff only when adding a device or changing it
-    
-    if ([self connectionsNeeded] != REMOVE) {
-        if ([[devDestPortOne text] length] > 0) {
-            [data setDestPortOne: [devDestPortOne text]];
-        }
-        if ([[devDestPortTwo text] length] > 0) {
-            [data setDestPortTwo: [devDestPortTwo text]];
-        }
-        if ([[devPortOne text] length] > 0) {
-            [data setCurrentUplinkOne: [devPortOne text]];
-        }
-        if ([[destTagOne text] length] > 0) {
-            [data setDestTagOne: [destTagOne text]];
-        }
-        if ([[destTagTwo text] length] > 0) {
-            [data setDestTagTwo: [destTagTwo text]];
-        }
-        if ([[devPortTwo text] length] > 0) {
-            [data setCurrentUplinkTwo: [devPortTwo text]];
-        }
-        if ([[currentIP text] length] > 0) {
-            [data setCurrentIp:[currentIP text]];
-        }
-    }
-    // a bit hairy because currentIP label is the only label unless a change form is done
-    
-    if ([self connectionsNeeded] == REMOVE) {
-        if ([[currentIP text] length] > 0) {
-            [data setOldIp:[currentIP text]];
-        }
-    }
-    if ([self connectionsNeeded] == BOTH) {
-        if ([[oldIP text] length] > 0) {
-            [data setOldIp:[oldIP text]];
-        }
-    }
+    [(AddDeviceData*)data setUpLinkOneTo:[devDestPortOne text]];
+    [(AddDeviceData*)data setUplinkOneFrom:[devPortOne text]];
+    [(AddDeviceData*)data setUplinkTwoTo:[devDestPortTwo text]];
+    [(AddDeviceData*)data setUplinkTwoFrom:[devPortTwo text]];
+    [(AddDeviceData*)data setDestOneTag:[destTagOne text]];
+    [(AddDeviceData*)data setDestTwoTag:[destTagTwo text]];
 }
 
 -(void) changeLabelColorForMissingInfo {
     
-    if ([data vlan] == nil) {
-        [vlanLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    } else {
-        [vlanLabel setTextColor:[UIColor textColor]];
-    }
-    if ([self connectionsNeeded] != REMOVE) {
-        if ([data currentIp] == nil) {
-            [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [currentIPLabel setTextColor:[UIColor textColor]];
-        }
-        if ([data currentUplinkOne] == nil) {
-            [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [devPortOneLabel setTextColor:[UIColor textColor]];
-        }
-        if ([data destPortOne] == nil) {
-            [devDestPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [devDestPortOneLabel setTextColor:[UIColor textColor]];
-        }
-        if ([data destTagOne] == nil) {
-            [destTagOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [destTagOneLabel setTextColor:[UIColor textColor]];
-        }
-    }
-    if ([self connectionsNeeded] == REMOVE) {
-        if ([data oldIp] == nil) {
-            [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-        } else {
-            [currentIPLabel setTextColor:[UIColor textColor]];
-        }
-    }
+    
 }
 
 
