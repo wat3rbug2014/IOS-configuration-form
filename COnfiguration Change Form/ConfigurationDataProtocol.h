@@ -16,4 +16,11 @@
 -(NSString*) getEmailSubject;
 -(BOOL) isFormFilledOut;
 
+@optional
+
+-(void) setOldTag: (NSString*) oldTag;
+-(NSString*) oldTag;
+-(void) setCurrentTag: (NSString*) currentTag;
+-(NSString*) currentTag;
+
 @end

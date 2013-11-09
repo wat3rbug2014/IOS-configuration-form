@@ -21,13 +21,14 @@
 
 @synthesize addDeviceViewer;
 @synthesize removeDeviceViewer;
+@synthesize replaceDeviceViewer;
 @synthesize changeDeviceViewer;
 @synthesize settingsViewer;
 
 int static const CONTROLLER_NUM = 4;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -35,16 +36,17 @@ int static const CONTROLLER_NUM = 4;
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"adddevice.png", nil];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"changedevice.png", @"adddevice.png", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
-    FormViewController *changeView = [FormViewControllerFactory createFormView: BOTH];
+    FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];
+    FormViewController *changeView = [FormViewControllerFactory createFormView: OTHER];
     SettingsController *settingsView = [[SettingsController alloc] init];
-    NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, settingsView, nil];
-    NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:4];
+    NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, replaceView, changeView, settingsView, nil];
+    NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:5];
     for (int i = 0; i < CONTROLLER_NUM; i++) {
         [navControllers setObject:[[UINavigationController alloc] initWithRootViewController:[viewcontrollerArray objectAtIndex:i]]atIndexedSubscript:i];
         [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor textColor]];
@@ -53,11 +55,12 @@ int static const CONTROLLER_NUM = 4;
     [self setViewControllers:navControllers animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     addDeviceViewer =nil;
     removeDeviceViewer = nil;
+    replaceDeviceViewer = nil;
     changeDeviceViewer =nil;
     settingsViewer = nil;
 }

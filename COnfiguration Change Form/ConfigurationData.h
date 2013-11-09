@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ConfigurationDataProtocol.h"
 #import "enumList.h"
 
-@interface ConfigurationData : NSObject 
+@interface ConfigurationData : NSObject <ConfigurationDataProtocol>
 
 @property (retain) NSString *building;
 @property(retain) NSString *closet;

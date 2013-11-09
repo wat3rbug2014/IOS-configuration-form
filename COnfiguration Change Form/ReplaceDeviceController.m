@@ -66,12 +66,12 @@
     [super sendForm];
 }
 
-//-(void) updateConfigurationDataStructure {
-//    
-//    [super updateConfigurationDataStructure];
-//    [[super data] setTag:[currentTag text]];
-//    [[super data] setOldTag:[oldTag text]];
-//}
+-(void) updateConfigurationDataStructure {
+    
+    [super updateConfigurationDataStructure];
+    [[super data] setCurrentTag:[currentTag text]];
+    [[super data] setOldTag:[oldTag text]];
+}
 
 
 
@@ -93,7 +93,7 @@
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [[super currentTag] setText:[[super data] tag]];
+    [[super currentTag] setText:[[super data] currentTag]];
     [[self oldTag] setText:[[super data] oldTag]];
 }
 
