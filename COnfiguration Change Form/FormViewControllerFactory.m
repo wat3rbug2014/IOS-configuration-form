@@ -24,7 +24,10 @@
     if (type == REMOVE) {
         return [[RemoveDeviceViewController alloc] init];
     }
-    return [[ChangeDeviceController alloc] init];
+    if (type == REPLACE) {
+        return [[ReplaceDeviceController alloc] init];
+    }
+    return [[ReplaceDeviceController alloc] init];
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "FormViewController.h"
 #import "AddDeviceViewController.h"
 #import "RemoveDeviceViewController.h"
-#import "ChangeDeviceController.h"
+#import "ReplaceDeviceController.h"
 
 @interface FormViewControllerFactory : NSObject
 

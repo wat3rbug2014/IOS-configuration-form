@@ -1,32 +1,39 @@
 //
-//  AddDeviceViewController.m
+//  ChangeDeviceController.m
 //  COnfiguration Change Form
 //
-//  Created by Douglas Gardiner on 11/5/13.
+//  Created by Douglas Gardiner on 9/24/13.
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "AddDeviceViewController.h"
-#import "UIColor+ExtendedColor.h"
+#import "ReplaceDeviceController.h"
+#import "ConnectionsController.h"
 #import "ConfigurationDataFactory.h"
 
-@interface AddDeviceViewController ()
+@interface ReplaceDeviceController ()
 
 @end
 
-@implementation AddDeviceViewController
+@implementation ReplaceDeviceController
+
+@synthesize oldTag;
+@synthesize currentTag;
+@synthesize oldTagLabel;
+
+#pragma mark -
+#pragma mark Superclass specific methods
 
 -(id) init {
     
-    return [self initWithNibName:@"AddDeviceViewController" bundle:nil];
+    return [self initWithNibName:@"ReplaceDeviceViewController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setTitle: @"Add"];
-        [super setData:[ConfigurationDataFactory create:ADD]];
+        [self setTitle: @"Replace"];
+        [super setData: [ConfigurationDataFactory create:REPLACE]];
     }
     return self;
 }
@@ -39,6 +46,7 @@
     [self changeLabelColorForMissingInfo];
     [[super currentTag] setDelegate:self];
     [[super buildingEntry] setDelegate:self];
+    [[self oldTag] setDelegate:self];
     [[super closetEntry] setDelegate:self];
 }
 
@@ -48,6 +56,9 @@
     [self updateConfigurationDataStructure];
 }
 
+#pragma mark -
+#pragma mark Sublass specific methods
+
 -(void) sendForm {
     
     [self updateConfigurationDataStructure];
@@ -55,32 +66,35 @@
     [super sendForm];
 }
 
--(void) updateConfigurationDataStructure {
-    
-    [super updateConfigurationDataStructure];
-    [[super data] setTag:[[super currentTag] text]];
-}
+//-(void) updateConfigurationDataStructure {
+//    
+//    [super updateConfigurationDataStructure];
+//    [[super data] setTag:[currentTag text]];
+//    [[super data] setOldTag:[oldTag text]];
+//}
 
--(void) pushConnectionsController {
-    
-    [self updateConfigurationDataStructure];
-    [super pushConnectionsController];
-}
+
 
 -(void) changeLabelColorForMissingInfo {
- 
+    
+    [super changeLabelColorForMissingInfo];
     if ([[[super currentTag] text] length] > 0) {
         [[super currentTagLabel] setTextColor:[UIColor textColor]];
     } else {
         [[super currentTagLabel] setTextColor:[UIColor unFilledRequiredTextColor]];
     }
-    [super changeLabelColorForMissingInfo];
+    if ([[oldTag text] length] > 0) {
+        [oldTagLabel setTextColor:[UIColor textColor]];
+    } else {
+        [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
 }
 
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [[super currentTag] setText:[super.data tag]];
+    [[super currentTag] setText:[[super data] tag]];
+    [[self oldTag] setText:[[super data] oldTag]];
 }
 
 #pragma mark -
@@ -88,13 +102,13 @@
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
-    [super textFieldShouldReturn:textField];
+    [textField resignFirstResponder];
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
     return YES;
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark UIResponder methods
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -102,4 +116,5 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
+
 @end

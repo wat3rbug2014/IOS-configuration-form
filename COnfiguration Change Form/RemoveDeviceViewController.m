@@ -45,6 +45,7 @@
     UIColor *textColor = [UIColor textColor];
     [super.currentTagLabel setTextColor:textColor];
     [super.currentTagLabel setText:@"Old tag"];
+    [[super navigationItem] setRightBarButtonItem:nil];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
 }
@@ -54,9 +55,6 @@
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
 }
-
-#pragma mark -
-#pragma mark Sublass specific methods
 
 -(void) sendForm {
     
@@ -68,7 +66,7 @@
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [super.data setTag:[super.currentTag text]];
+    [[super data] setTag:[[super currentTag] text]];
 }
 
 -(void) pushConnectionsController {
@@ -80,17 +78,17 @@
 -(void) changeLabelColorForMissingInfo {
     
     [super changeLabelColorForMissingInfo];
-    if ([[super.currentTag text] length] > 0) {
-        [super.currentTagLabel setTextColor:[UIColor textColor]];
+    if ([[[super currentTag] text] length] > 0) {
+        [[super currentTagLabel] setTextColor:[UIColor textColor]];
     } else {
-        [super.currentTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        [[super currentTagLabel] setTextColor:[UIColor unFilledRequiredTextColor]];
     }
 }
 
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [super.currentTag setText:[super.data tag]];
+    [[super currentTag] setText:[[super data] tag]];
 }
 
 #pragma mark -

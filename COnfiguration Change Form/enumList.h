@@ -40,7 +40,8 @@ enum sites {
 
 enum connectType {
     
-    BOTH,
+    REPLACE,
+    OTHER,
     ADD,
     REMOVE
 };

@@ -9,6 +9,7 @@
 #import "ConfigurationDataFactory.h"
 #import "AddDeviceData.h"
 #import "RemoveDeviceData.h"
+#import "ReplaceDeviceData.h"
 
 @implementation ConfigurationDataFactory
 
@@ -19,6 +20,8 @@
         case ADD: return [[AddDeviceData alloc] init];
             break;
         case REMOVE: return [[RemoveDeviceData alloc] init];
+            break;
+        case REPLACE: return [[ReplaceDeviceData alloc] init];
             break;
         default: return [[ConfigurationData alloc] init];
             break;

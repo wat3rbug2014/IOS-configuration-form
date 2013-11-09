@@ -50,17 +50,17 @@
     switch ([self formType]) {
         case ADD: {
             subjectLine = [NSMutableString stringWithString:@"Added "];
-            tag = [[self formData] currentTag];
+            tag = [[self formData] tag];
             break;
         }
         case REMOVE: {
             subjectLine = [NSMutableString stringWithString:@"Removed "];
-            tag = [[self formData] oldTag];
+            tag = [[self formData] tag];
             break;
         }
         default: {
             subjectLine = [NSMutableString stringWithString:@"Changed "];
-            tag = [[self formData] oldTag];
+            tag = [[self formData] tag];
             break;
         }
     }
@@ -69,7 +69,7 @@
     [subjectLine appendString:tag];
     if ([self formType] == BOTH) {
         [subjectLine appendString:@" with new tag# "];
-        [subjectLine appendString:[[self formData] currentTag]];
+        [subjectLine appendString:[[self formData] tag]];
     }
     [self setToRecipients:[[self formData] getMailingList]];
     
