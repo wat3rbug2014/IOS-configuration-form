@@ -10,10 +10,10 @@
 #import "PickerItems.h"
 #import "ConfigurationData.h"
 #import <MessageUI/MessageUI.h>
+#import "FormViewProtocol.h"
 
-@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate, FormViewProtocol>
 
-@property BOOL isAddView;
 
 @property (retain, nonatomic) IBOutlet UITextField *currentTag;
 @property (retain, nonatomic) IBOutlet UILabel *currentTagLabel;

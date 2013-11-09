@@ -16,11 +16,11 @@
 #import "FormViewController.h"
 #import "UIColor+ExtendedColor.h"
 #import "ConnectionsController.h"
+#import "ConnectionsControllerFactory.h"
 #import "enumList.h"
 
 @implementation FormViewController
 
-@synthesize isAddView;
 @synthesize currentTag;
 @synthesize currentTagLabel;
 @synthesize buildingEntry;
