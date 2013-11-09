@@ -32,6 +32,7 @@
 -(NSString*) getSiteAbbreviatedString;
 -(NSString*) getAbbreviateDeviceString;
 -(void) clear;
+-(BOOL) isFormFilledOut;
 
 // email methods
 
@@ -44,5 +45,7 @@
 -(void) updateStoredEmailSettings;
 -(NSArray*) getMailingList;
 -(void) removeEntryAtIndex: (NSInteger) index;
+-(NSString*) getEmailSubject;
+-(NSString*) getEmailMessageBody;
 
 @end

@@ -37,10 +37,7 @@
 
 -(NSString*) getEmailMessageBody {
     
-    NSMutableString *buffer = [NSMutableString stringWithFormat:@"%@ added to the network.\n", [super getDeviceTypeString]];
-    [buffer appendFormat:@"Device name: %@\nBuilding: %@\nCloset: %@\n", [super getDeviceName], [super building], [super closet]];
-    [buffer appendFormat:@"Tag number: %@\nIP Address: %@\nVLAN: %@", [super tag], [super ipAddress], [[NSNumber numberWithInteger:[super vlan]] stringValue]];
-    [buffer appendFormat:@"%@ is a %@.\n", [super getDeviceName], [super getDeviceTypeString]];
+    NSMutableString *buffer = [NSMutableString stringWithString:[super getEmailMessageBody]];
     [buffer appendFormat:@"The first uplink on port %@ of %@ connects to port %@ of the device with tag# %@\n", [self uplinkOneFrom],
      [super getDeviceName], [self upLinkOneTo], [self destOneTag]];
     if ([uplinkTwoFrom length] > 0 && [uplinkTwoTo length] > 0 && [destTwoTag length] > 0) {
@@ -55,9 +52,7 @@
 
 -(NSString*) getEmailSubject {
 
-    NSMutableString *buffer = [NSMutableString stringWithString:@"Added "];
-    [buffer appendFormat:@"%@ tag# %@ to building %@ closet %@", [super getDeviceTypeString], [super tag], [super building], [super closet]];
-    return buffer;
+    return[NSString stringWithFormat:@"Added %@", [super getEmailSubject]];
 }
 
 @end

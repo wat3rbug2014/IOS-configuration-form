@@ -194,5 +194,19 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return result;
 }
 
+-(NSString*) getEmailMessageBody {
+    
+    NSMutableString *buffer = [NSMutableString stringWithFormat:@"Device name: %@\nBuilding: %@\nCloset: %@\n", [self getDeviceName], [self building], [self closet]];
+    [buffer appendFormat:@"Tag number: %@\nIP Address: %@\nVLAN: %@", [self tag], [self ipAddress], [[NSNumber numberWithInteger:[self vlan]] stringValue]];
+    [buffer appendFormat:@"%@ is a %@.\n", [self getDeviceName], [self getDeviceTypeString]];
+    return buffer;
+}
+
+-(NSString*) getEmailSubject {
+    
+    NSString *buffer = [NSString stringWithFormat:@"%@ tag# %@ to building %@ closet %@", [self getDeviceTypeString], [self tag], [self building], [self closet]];
+    return buffer;
+}
+
 
 @end
