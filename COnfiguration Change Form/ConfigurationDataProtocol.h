@@ -15,12 +15,29 @@
 -(NSString*) getEmailMessageBody;
 -(NSString*) getEmailSubject;
 -(BOOL) isFormFilledOut;
+-(void) setCurrentTag: (NSString*) currentTag;
+-(NSString*) currentTag;
+-(NSString*) getDeviceName;
+-(NSString*) getDeviceTypeString;
+-(NSString*) getSiteString;
+-(NSString*) getSiteAbbreviatedString;
+-(NSString*) getAbbreviateDeviceString;
+-(void) clear;
+
+-(void) addEmailAddress: (NSString*) email withName: (NSString*) name;
+-(void) removeEmailAddress: (NSString*) name;
+-(NSString*) getNameAtIndex: (NSInteger) index;
+-(NSString*) getEmailAtIndex: (NSInteger) index;
+-(NSInteger) emailCount;
+-(void) getStoredEmailSettings;
+-(void) updateStoredEmailSettings;
+-(NSArray*) getMailingList;
+-(void) removeEntryAtIndex: (NSInteger) index;
 
 @optional
 
 -(void) setOldTag: (NSString*) oldTag;
 -(NSString*) oldTag;
--(void) setCurrentTag: (NSString*) currentTag;
--(NSString*) currentTag;
+
 
 @end

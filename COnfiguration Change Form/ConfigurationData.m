@@ -13,10 +13,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 @implementation ConfigurationData
 
-@synthesize building;
-@synthesize closet;
-@synthesize ipAddress;
-@synthesize tag;
 @synthesize emailAddresses;
 @synthesize emailArray;
 @synthesize nameArray;

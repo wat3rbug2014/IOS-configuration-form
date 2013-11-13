@@ -6,18 +6,9 @@
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "ConfigurationDataProtocol.h"
-#import "enumList.h"
+#import "RemoveDeviceData.h"
 
-@interface ConfigurationData : NSObject <ConfigurationDataProtocol>
-
-@property (retain) NSString *building;
-@property(retain) NSString *closet;
-@property (retain) NSString *tag;
-@property (retain) NSString *ipAddress;
-@property NSInteger vlan;
-@property (retain) NSString *comments;
+@interface ConfigurationData : RemoveDeviceData
 
 @property NSInteger deviceType;
 @property NSInteger site;
