@@ -15,8 +15,8 @@
 -(NSString*) getEmailMessageBody;
 -(NSString*) getEmailSubject;
 -(BOOL) isFormFilledOut;
--(void) setCurrentTag: (NSString*) currentTag;
--(NSString*) currentTag;
+-(void) setTag: (NSString*) currentTag;
+-(NSString*) tag;
 -(NSString*) getDeviceName;
 -(NSString*) getDeviceTypeString;
 -(NSString*) getSiteString;
@@ -35,9 +35,6 @@
 -(void) removeEntryAtIndex: (NSInteger) index;
 
 @optional
-
--(void) setOldTag: (NSString*) oldTag;
--(NSString*) oldTag;
 
 
 @end
