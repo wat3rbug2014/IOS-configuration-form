@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "ConfigurationData.h"
+#import "BasicConfigData.h"
 
-@interface ReplaceDeviceData : ConfigurationData
+@interface ReplaceDeviceData : BasicConfigData
 
 @property (retain) NSString *oldTag;
 

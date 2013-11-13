@@ -47,7 +47,7 @@
     if ([[super comments] length] > 0) {
         [buffer appendFormat:@"Comments:\n%@", [super comments]];
     }
-    return buffer;
+    return [buffer copy];
 }
 
 -(NSString*) getEmailSubject {

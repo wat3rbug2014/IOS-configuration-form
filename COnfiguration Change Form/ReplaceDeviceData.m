@@ -34,12 +34,12 @@
     
     NSMutableString *buffer = [NSMutableString stringWithString:[super getEmailMessageBody]];
     [buffer appendFormat:@"The old tag# was %@ and the new tag is %@\n.", [self oldTag], [super tag]];
-    return buffer;
+    return [buffer copy];
 }
 
 -(NSString*) getEmailSubject {
     
-    return[NSString stringWithFormat:@"%@ replaced tag #%@", [super getEmailSubject], [self oldTag]];
+    return [NSString stringWithFormat:@"%@ replaced tag #%@", [super getEmailSubject], [self oldTag]];
 }
 
 @end
