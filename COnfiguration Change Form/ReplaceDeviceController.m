@@ -43,13 +43,14 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [[super currentTagLabel] setText:@"New tag"];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
     [[super currentTag] setDelegate:self];
     [[super buildingEntry] setDelegate:self];
     [[self oldTag] setDelegate:self];
     [[super closetEntry] setDelegate:self];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
+     [[super navigationItem] setRightBarButtonItem:toConnection];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,13 +62,6 @@
 #pragma mark -
 #pragma mark Sublass specific methods
 
--(void) sendForm {
-    
-    [self updateConfigurationDataStructure];
-    [[self data] isFormFilledOut];
-    [super sendForm];
-}
-
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
@@ -75,12 +69,10 @@
     [(ReplaceDeviceData*)[super data] setOldTag:[oldTag text]];
 }
 
-
-
 -(void) changeLabelColorForMissingInfo {
     
     [super changeLabelColorForMissingInfo];
-    if ([[[super currentTag] text] length] > 0) {
+    if ([[currentTag text] length] > 0) {
         [[super currentTagLabel] setTextColor:[UIColor textColor]];
     } else {
         [[super currentTagLabel] setTextColor:[UIColor unFilledRequiredTextColor]];
@@ -95,8 +87,8 @@
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [[super currentTag] setText:[[super data] currentTag]];
-    [[self oldTag] setText:[[super data] oldTag]];
+    [currentTag setText:[(ReplaceDeviceData*)[super data] currentTag]];
+    [oldTag setText:[(ReplaceDeviceData*)[super data] oldTag]];
 }
 
 #pragma mark -

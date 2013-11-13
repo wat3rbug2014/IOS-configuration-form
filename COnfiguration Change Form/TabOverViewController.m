@@ -39,7 +39,7 @@ int static const CONTROLLER_NUM = 4;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddevice.png", @"rmdevice.png", @"changedevice.png", @"changedevice.png", @"adddevice.png", nil];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv1.png", @"rmdv1.png", @"changedv2.png", @"changedv1.png", @"changedv1.png", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
     FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];

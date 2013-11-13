@@ -24,6 +24,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize deviceType;
 @synthesize isReadyToSend;
 @synthesize comments;
+@synthesize vlan = _vlan;
 
 #pragma mark -
 #pragma mark initialization methods
@@ -40,15 +41,16 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSInteger) vlan {
     
-    return self.vlan;
+    return _vlan;
 }
 
 -(void) setVlan:(NSInteger)newVlan {
     
     if (newVlan > [[NSNumber numberWithInt:0] integerValue] &&  newVlan < [[NSNumber numberWithInt:9999] integerValue]) {
-        self.vlan = newVlan;
+        _vlan = newVlan;
     }
 }
+
 -(void) clear {
     
     // can i do this with new object and dismiss self and copy email over?

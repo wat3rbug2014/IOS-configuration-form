@@ -45,7 +45,6 @@
     UIColor *textColor = [UIColor textColor];
     [super.currentTagLabel setTextColor:textColor];
     [super.currentTagLabel setText:@"Old tag"];
-    [[super navigationItem] setRightBarButtonItem:nil];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
 }
@@ -54,13 +53,6 @@
     
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
-}
-
--(void) sendForm {
-    
-    [self updateConfigurationDataStructure];
-    [[self data] isFormFilledOut];
-    [super sendForm];
 }
 
 -(void) updateConfigurationDataStructure {

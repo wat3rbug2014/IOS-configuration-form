@@ -8,8 +8,8 @@
 
 #import "ConfigurationDataFactory.h"
 #import "AddDeviceData.h"
-#import "RemoveDeviceData.h"
 #import "ReplaceDeviceData.h"
+#import "ConfigurationData.h"
 
 @implementation ConfigurationDataFactory
 
@@ -19,7 +19,7 @@
     switch (formType) {
         case ADD: return [[AddDeviceData alloc] init];
             break;
-        case REMOVE: return [[RemoveDeviceData alloc] init];
+        case REMOVE: return [[ConfigurationData alloc] init];
             break;
         case REPLACE: return [[ReplaceDeviceData alloc] init];
             break;

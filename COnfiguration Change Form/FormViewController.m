@@ -91,12 +91,10 @@
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];
     
-    // add navigation buttons
+    // add navigation button
     
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
-    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
-    [[self navigationItem] setLeftBarButtonItem:sendForm];
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -113,34 +111,6 @@
 
 #pragma mark -
 #pragma mark Sublass specific methods
-
--(void) sendForm {
-    
-    // check to see if form is done
-    
-    
-    if (![[self data] isReadyToSend]) {
-        NSString *message = @"The form is incomplete.  See items in red since they are required before sending an update";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Form Incomplete" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-        return;
-    }
-    // setup mailer and transfer control
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        [mailer setMailComposeDelegate:self];
-        [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getEmailSubject]];
-        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
-        [self presentViewController:mailer animated:YES completion:nil];
-        [data clear];
-    } else {
-        NSString *message = @"Unable to send email.  Please check your settings";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-    }
-}
 
 -(void) updateConfigurationDataStructure {
     

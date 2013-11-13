@@ -31,7 +31,6 @@
 
 // custom methods
 
--(void) sendForm;
 -(void) changeLabelColorForMissingInfo;
 -(void) updateConfigurationDataStructure;
 -(void) pushConnectionsController;

@@ -48,13 +48,6 @@
     [self updateConfigurationDataStructure];
 }
 
--(void) sendForm {
-    
-    [self updateConfigurationDataStructure];
-    [[self data] isFormFilledOut];
-    [super sendForm];
-}
-
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
