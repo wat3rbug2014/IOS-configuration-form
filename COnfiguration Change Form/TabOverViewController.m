@@ -25,8 +25,6 @@
 @synthesize changeDeviceViewer;
 @synthesize settingsViewer;
 
-int static const CONTROLLER_NUM = 5;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -47,7 +45,7 @@ int static const CONTROLLER_NUM = 5;
     SettingsController *settingsView = [[SettingsController alloc] init];
     NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, replaceView, changeView, settingsView, nil];
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:5];
-    for (int i = 0; i < CONTROLLER_NUM; i++) {
+    for (int i = 0; i < [viewcontrollerArray count]; i++) {
         [navControllers setObject:[[UINavigationController alloc] initWithRootViewController:[viewcontrollerArray objectAtIndex:i]]atIndexedSubscript:i];
         [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor textColor]];
         [[[navControllers objectAtIndex:i] tabBarItem] setImage:[UIImage imageNamed:[tabIcons objectAtIndex:i]]];
