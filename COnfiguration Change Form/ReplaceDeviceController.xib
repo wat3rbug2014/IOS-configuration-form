@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplaceDeviceController">
@@ -13,7 +14,6 @@
                 <outlet property="currentTag" destination="9Rj-uc-sXI" id="5po-ha-zIg"/>
                 <outlet property="currentTagLabel" destination="UFX-ZJ-Ygr" id="g9i-92-RcY"/>
                 <outlet property="deviceTypeSelResult" destination="dys-1g-54B" id="aP9-ec-7DG"/>
-                <outlet property="deviceTypeSelection" destination="l7G-Nc-hGc" id="pbT-y4-b92"/>
                 <outlet property="equipTypeLabel" destination="DWU-wq-f2L" id="NX9-hZ-S8t"/>
                 <outlet property="oldTag" destination="6eG-lY-IUd" id="Ruq-V2-wnc"/>
                 <outlet property="oldTagLabel" destination="Pwl-Gm-ELA" id="f45-Pv-Mo8"/>
@@ -91,11 +91,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <pickerView contentMode="scaleToFill" id="l7G-Nc-hGc" userLabel="selectEquipType">
-                    <rect key="frame" x="0.0" y="282" width="320" height="162"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.4431372549" green="0.035294117649999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
-                </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

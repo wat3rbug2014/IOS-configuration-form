@@ -1,57 +1,55 @@
 //
-//  ChangeDeviceController.m
+//  AddOrRemoveDeviceController.m
 //  COnfiguration Change Form
 //
 //  Created by Douglas Gardiner on 9/24/13.
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "ReplaceDeviceController.h"
-#import "ConnectionsController.h"
-#import "ConfigurationDataFactory.h"
+#import "RemoveDeviceController.h"
 #import "UIColor+ExtendedColor.h"
-#import "ReplaceDeviceData.h"
+#import "ConfigurationDataFactory.h"
 
-@interface ReplaceDeviceController ()
+@interface RemoveDeviceController ()
 
 @end
 
-@implementation ReplaceDeviceController
+@implementation RemoveDeviceController
 
-@synthesize oldTag;
-@synthesize currentTag;
-@synthesize oldTagLabel;
 
 #pragma mark -
-#pragma mark Superclass specific methods
+#pragma mark Initialization Methods
 
 -(id) init {
     
-    return [self initWithNibName:@"ReplaceDeviceController" bundle:nil];
+    return [self initWithNibName:@"RemoveDeviceController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [super setTitle: @"Replace"];
-        [super setData: [ConfigurationDataFactory create:REPLACE]];
+        [self setTitle: @"Remove"];
+        [super setData:[ConfigurationDataFactory create:REMOVE]];
     }
     return self;
 }
 
+#pragma mark -
+#pragma mark Superclass methods
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self updateFormContents];
-    [self changeLabelColorForMissingInfo];
-    [[super currentTag] setDelegate:self];
-    [[super buildingEntry] setDelegate:self];
-    [[self oldTag] setDelegate:self];
-    [[super closetEntry] setDelegate:self];
-    [[super navigationItem] setRightBarButtonItem:nil];
     UIBarButtonItem *toMailForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
     [[super navigationItem] setRightBarButtonItem:toMailForm];
+    // setup text and labels
+    
+    UIColor *textColor = [UIColor textColor];
+    [super.currentTagLabel setTextColor:textColor];
+    [super.currentTagLabel setText:@"Old tag"];
+    [self updateFormContents];
+    [self changeLabelColorForMissingInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,36 +58,32 @@
     [self updateConfigurationDataStructure];
 }
 
-#pragma mark -
-#pragma mark Sublass specific methods
-
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [[super data] setTag:[currentTag text]];
-    [[super data] setOldTag:[oldTag text]];
+    [[super data] setTag:[[super currentTag] text]];
+}
+
+-(void) pushConnectionsController {
+    
+    [self updateConfigurationDataStructure];
+    [super pushConnectionsController];
 }
 
 -(void) changeLabelColorForMissingInfo {
     
     [super changeLabelColorForMissingInfo];
-    if ([[currentTag text] length] > 0) {
+    if ([[[super currentTag] text] length] > 0) {
         [[super currentTagLabel] setTextColor:[UIColor textColor]];
     } else {
         [[super currentTagLabel] setTextColor:[UIColor unFilledRequiredTextColor]];
-    }
-    if ([[oldTag text] length] > 0) {
-        [oldTagLabel setTextColor:[UIColor textColor]];
-    } else {
-        [oldTagLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
 }
 
 -(void) updateFormContents {
     
     [super updateFormContents];
-    [currentTag setText:[(ReplaceDeviceData*)[super data] currentTag]];
-    [oldTag setText:[(ReplaceDeviceData*)[super data] oldTag]];
+    [[super currentTag] setText:[[super data] tag]];
 }
 
 #pragma mark -
@@ -111,5 +105,4 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
-
 @end

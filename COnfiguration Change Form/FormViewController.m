@@ -32,10 +32,6 @@
 @synthesize buildingLabel;
 @synthesize closetLabel;
 @synthesize equipTypeLabel;
-@synthesize connectionsNeeded;
-
-
-//int const DEF_ROW = 2;
 
 #pragma mark -
 #pragma mark Initialization Methods
@@ -148,6 +144,32 @@
     [buildingEntry setText:[data building]];
     [closetEntry setText:[data closet]];
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
+}
+
+-(void) sendForm {
+    
+    //    if (![[self data] isReadyToSend]) {
+    //        NSString *message = @"Incomplete Form.  See items in red";
+    //        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    //        [emailError show];
+    //        return;
+    //    }
+    // setup mailer and transfer control
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        [self updateConfigurationDataStructure];
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        [mailer setMailComposeDelegate:self];
+        [mailer setToRecipients:[data getMailingList]];
+        [mailer setSubject:[data getEmailSubject]];
+        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
+        [self presentViewController:mailer animated:YES completion:nil];
+        [data clear];
+    } else {
+        NSString *message = @"Unable to send email.  Please check your settings";
+        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailError show];
+    }
 }
 
 #pragma mark -

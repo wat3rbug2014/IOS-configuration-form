@@ -19,17 +19,16 @@
 +(id) createFormView: (int) type {
     
     if (type == ADD) {
-        return [[AddDeviceViewController alloc] init];
+        return [[AddDeviceController alloc] init];
     }
     if (type == REMOVE) {
-        return [[RemoveDeviceViewController alloc] init];
+        return [[RemoveDeviceController alloc] init];
     }
     if (type == REPLACE) {
         id result = [[ReplaceDeviceController alloc] init];
-        [result setTitle: @"Change"];
         return result;
     }
-    return [[ChangeDeviceViewController alloc] init];
+    return [[ChangeDeviceController alloc] init];
 }
 
 @end

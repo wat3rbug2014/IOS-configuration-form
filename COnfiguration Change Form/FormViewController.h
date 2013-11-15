@@ -26,8 +26,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
 @property (retain, nonatomic) BasicDeviceData *data;
-@property (nonatomic) NSInteger connectionsNeeded; // -- polymorph this too
-
 
 // custom methods
 
@@ -35,4 +33,5 @@
 -(void) updateConfigurationDataStructure;
 -(void) pushConnectionsController;
 -(void) updateFormContents;
+-(void) sendForm;
 @end
