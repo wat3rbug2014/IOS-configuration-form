@@ -34,6 +34,7 @@
 -(NSArray*) getMailingList;
 -(void) removeEntryAtIndex: (NSInteger) index;
 
+
 @optional
 
 

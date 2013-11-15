@@ -25,7 +25,7 @@
             break;
         case REPLACE: return [[ReplaceDeviceData alloc] init];
             break;
-        default: return [[BasicConfigData alloc] init];
+        default: return [[BasicDeviceData alloc] init];
             break;
     }
 }

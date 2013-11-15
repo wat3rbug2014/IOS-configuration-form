@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "BasicConfigData.h"
+#import "BasicDeviceData.h"
 
-@interface RemoveDeviceData : BasicConfigData
+@interface RemoveDeviceData : BasicDeviceData
 
 
 @end

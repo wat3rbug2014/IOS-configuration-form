@@ -27,7 +27,7 @@
 
 -(id) init {
     
-    return [self initWithNibName:@"ReplaceDeviceViewController" bundle:nil];
+    return [self initWithNibName:@"ReplaceDeviceController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -65,8 +65,8 @@
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [(ReplaceDeviceData*)[super data] setCurrentTag:[currentTag text]];
-    [(ReplaceDeviceData*)[super data] setOldTag:[oldTag text]];
+    [[super data] setCurrentTag:[currentTag text]];
+    [[super data] setOldTag:[oldTag text]];
 }
 
 -(void) changeLabelColorForMissingInfo {

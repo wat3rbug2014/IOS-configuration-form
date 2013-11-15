@@ -24,9 +24,12 @@
     if (type == REMOVE) {
         return [[RemoveDeviceViewController alloc] init];
     }
-    id result = [[ReplaceDeviceController alloc] init];
-    [result setTitle: @"Change"];
-    return result;
+    if (type == REPLACE) {
+        id result = [[ReplaceDeviceController alloc] init];
+        [result setTitle: @"Change"];
+        return result;
+    }
+    return [[ChangeDeviceViewController alloc] init];
 }
 
 @end

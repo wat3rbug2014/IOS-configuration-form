@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
-#import "BasicConfigData.h"
+#import "BasicDeviceData.h"
 #import "ConfigurationDataProtocol.h"
 
-@interface AddDeviceData : BasicConfigData
+@interface AddDeviceData : BasicDeviceData
 
 @property (retain) NSString* uplinkOneFrom;
 @property (retain) NSString* upLinkOneTo;

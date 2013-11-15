@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ConfigurationData.h"
+#import "BasicDeviceData.h"
 #import <MessageUI/MessageUI.h>
 #import "FormViewProtocol.h"
 
 @interface ConnectionsController : UIViewController<UITextFieldDelegate, MFMailComposeViewControllerDelegate, FormViewProtocol>
 
-@property (retain, nonatomic) ConfigurationData *data;
+@property (retain, nonatomic) BasicDeviceData *data;
 @property (retain, nonatomic) IBOutlet UITextField *devPortOne;
 @property (retain, nonatomic) IBOutlet UITextField *devPortTwo;
 @property (retain, nonatomic) IBOutlet UITextField *devDestPortOne;

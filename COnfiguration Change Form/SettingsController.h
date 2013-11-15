@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConfigurationData.h"
+#import "BasicDeviceData.h"
 #import "enumList.h"
 #import <AddressBookUI/AddressBookUI.h>
 
 @interface SettingsController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>
 
-@property (retain) ConfigurationData *appData;
+@property (retain) BasicDeviceData *appData;
 
 -(void) addContacts;
 

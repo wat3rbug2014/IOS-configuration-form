@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
-#import "ConfigurationData.h"
+#import "BasicDeviceData.h"
 #import <MessageUI/MessageUI.h>
 #import "FormViewProtocol.h"
 
@@ -25,7 +25,7 @@
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
-@property (retain, nonatomic) ConfigurationData *data;
+@property (retain, nonatomic) BasicDeviceData *data;
 @property (nonatomic) NSInteger connectionsNeeded; // -- polymorph this too
 
 

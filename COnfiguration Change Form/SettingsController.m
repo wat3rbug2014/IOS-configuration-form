@@ -25,7 +25,7 @@
     self = [super initWithStyle:style];
     if (self) {
         [self setTitle:@"Mail Settings"];
-        appData = [[ConfigurationData alloc] init];
+        appData = [[BasicDeviceData alloc] init];
     }
     return self;
 }
