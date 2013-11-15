@@ -41,7 +41,18 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     [self setTag:newTag];
 }
+
 -(NSString*) currentTag {
+    
+    return [self tag];
+}
+
+-(void) setOldTag: (NSString*) newTag {
+    
+    [self setTag:newTag];
+}
+
+-(NSString*) oldTag {
     
     return [self tag];
 }

@@ -8,6 +8,7 @@
 
 #import "RemoveDeviceViewController.h"
 #import "UIColor+ExtendedColor.h"
+#import "ConfigurationDataFactory.h"
 
 @interface RemoveDeviceViewController ()
 
@@ -29,6 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle: @"Remove"];
+        [super setData:[ConfigurationDataFactory create:REMOVE]];
     }
     return self;
 }

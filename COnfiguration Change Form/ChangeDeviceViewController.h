@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FormViewController.h"
 
-@interface ChangeDeviceViewController : UIViewController
+@interface ChangeDeviceViewController : FormViewController
 
 @end

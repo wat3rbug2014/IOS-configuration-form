@@ -25,7 +25,7 @@
 @synthesize changeDeviceViewer;
 @synthesize settingsViewer;
 
-int static const CONTROLLER_NUM = 4;
+int static const CONTROLLER_NUM = 5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
@@ -39,7 +39,7 @@ int static const CONTROLLER_NUM = 4;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv1.png", @"rmdv1.png", @"changedv2.png", @"changedv1.png", @"changedv1.png", nil];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv1.png", @"rmdv1.png", @"changedv2.png", @"changedv1.png", @"settings.png", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
     FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];

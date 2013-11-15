@@ -7,6 +7,7 @@
 //
 
 #import "ChangeDeviceViewController.h"
+#import "ConfigurationDataFactory.h"
 
 @interface ChangeDeviceViewController ()
 
@@ -18,7 +19,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setTitle:@"Alter"];
+        [super setData:[ConfigurationDataFactory create:OTHER]];
     }
     return self;
 }
@@ -33,6 +35,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) changeLabelColorForMissingInfo {
+    
+    
+}
+
+-(void) updateConfigurationDataStructure {
+    
+    
+}
+
+-(void) pushConnectionsController {
+    
+    
+}
+
+-(void) updateFormContents {
+    
+    
 }
 
 @end

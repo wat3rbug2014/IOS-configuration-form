@@ -25,4 +25,7 @@
 @property (retain) NSArray *nameArray;
 @property (retain) NSArray *emailArray;
 
+-(void) setOldTag: (NSString*) newTag;
+-(NSString*) oldTag;
+
 @end

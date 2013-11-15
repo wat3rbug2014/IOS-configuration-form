@@ -34,7 +34,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setTitle: @"Replace"];
+        [super setTitle: @"Replace"];
         [super setData: [ConfigurationDataFactory create:REPLACE]];
     }
     return self;
@@ -49,8 +49,9 @@
     [[super buildingEntry] setDelegate:self];
     [[self oldTag] setDelegate:self];
     [[super closetEntry] setDelegate:self];
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
-     [[super navigationItem] setRightBarButtonItem:toConnection];
+    [[super navigationItem] setRightBarButtonItem:nil];
+    UIBarButtonItem *toMailForm = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStylePlain target:self action:@selector(sendForm)];
+    [[super navigationItem] setRightBarButtonItem:toMailForm];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +66,7 @@
 -(void) updateConfigurationDataStructure {
     
     [super updateConfigurationDataStructure];
-    [[super data] setCurrentTag:[currentTag text]];
+    [[super data] setTag:[currentTag text]];
     [[super data] setOldTag:[oldTag text]];
 }
 
