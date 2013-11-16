@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
 #import "BasicDeviceData.h"
-#import <MessageUI/MessageUI.h>
 #import "FormViewProtocol.h"
 
-@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, MFMailComposeViewControllerDelegate, UITextFieldDelegate, FormViewProtocol>
+@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource,  UITextFieldDelegate, FormViewProtocol>
 
 
 @property (retain, nonatomic) IBOutlet UITextField *currentTag;
@@ -31,7 +30,7 @@
 
 -(void) changeLabelColorForMissingInfo;
 -(void) updateConfigurationDataStructure;
--(void) pushConnectionsController;
+-(void) pushNextController;
 -(void) updateFormContents;
 -(void) sendForm;
 @end

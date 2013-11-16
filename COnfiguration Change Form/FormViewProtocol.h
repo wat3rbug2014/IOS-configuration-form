@@ -18,6 +18,6 @@
 
 @optional
 
--(void) pushConnectionsController;
+-(void) pushNextController;
 
 @end

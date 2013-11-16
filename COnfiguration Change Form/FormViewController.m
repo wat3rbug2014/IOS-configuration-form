@@ -89,7 +89,7 @@
     
     // add navigation button
     
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushConnectionsController)];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
 }
 
@@ -114,7 +114,7 @@
     [data setCloset:[closetEntry text]];
 }
 
--(void) pushConnectionsController {
+-(void) pushNextController {
     
     ConnectionsController *updateConnectorController = [ConnectionsControllerFactory createConnectionsController: ADD];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
