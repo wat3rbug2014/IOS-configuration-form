@@ -42,10 +42,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    UIBarButtonItem *toMailForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
-    [[super navigationItem] setRightBarButtonItem:toMailForm];
-    // setup text and labels
-    
+    UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
+    [[self navigationItem] setRightBarButtonItem:toCommenter];
     UIColor *textColor = [UIColor textColor];
     [super.currentTagLabel setTextColor:textColor];
     [super.currentTagLabel setText:@"Old tag"];
@@ -65,10 +63,10 @@
     [[super data] setTag:[[super currentTag] text]];
 }
 
--(void) pushConnectionsController {
+-(void) pushNextController {
     
     [self updateConfigurationDataStructure];
-    CommentsController *commenter = [[CommentsController alloc] initWithData:[super data]];
+    CommentsController *commenter = [[CommentsController alloc] initWithData:[self data]];
     [[self navigationController] pushViewController:commenter animated:YES];
 }
 

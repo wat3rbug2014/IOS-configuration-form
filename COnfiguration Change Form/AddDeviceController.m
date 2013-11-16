@@ -57,7 +57,7 @@
 -(void) pushConnectionsController {
     
     [self updateConfigurationDataStructure];
-    [super pushConnectionsController];
+    [super pushNextController];
 }
 
 -(void) changeLabelColorForMissingInfo {

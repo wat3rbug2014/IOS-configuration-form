@@ -11,6 +11,7 @@
 #import "ConfigurationDataFactory.h"
 #import "UIColor+ExtendedColor.h"
 #import "ReplaceDeviceData.h"
+#import "CommentsController.h"
 
 @interface ReplaceDeviceController ()
 
@@ -50,8 +51,8 @@
     [[self oldTag] setDelegate:self];
     [[super closetEntry] setDelegate:self];
     [[super navigationItem] setRightBarButtonItem:nil];
-    UIBarButtonItem *toMailForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
-    [[super navigationItem] setRightBarButtonItem:toMailForm];
+    UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
+    [[self navigationItem] setRightBarButtonItem:toCommenter];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +91,13 @@
     [super updateFormContents];
     [currentTag setText:[(ReplaceDeviceData*)[super data] currentTag]];
     [oldTag setText:[(ReplaceDeviceData*)[super data] oldTag]];
+}
+
+-(void) pushNextController {
+    
+    [self updateConfigurationDataStructure];
+    CommentsController *commenter = [[CommentsController alloc] initWithData:[self data]];
+    [[self navigationController] pushViewController:commenter animated:YES];
 }
 
 #pragma mark -
