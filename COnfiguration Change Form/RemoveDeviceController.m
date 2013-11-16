@@ -9,6 +9,7 @@
 #import "RemoveDeviceController.h"
 #import "UIColor+ExtendedColor.h"
 #import "ConfigurationDataFactory.h"
+#import "CommentsController.h"
 
 @interface RemoveDeviceController ()
 
@@ -67,7 +68,8 @@
 -(void) pushConnectionsController {
     
     [self updateConfigurationDataStructure];
-    [super pushConnectionsController];
+    CommentsController *commenter = [[CommentsController alloc] initWithData:[super data]];
+    [[self navigationController] pushViewController:commenter animated:YES];
 }
 
 -(void) changeLabelColorForMissingInfo {
