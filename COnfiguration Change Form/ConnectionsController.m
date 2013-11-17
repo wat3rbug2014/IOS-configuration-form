@@ -8,7 +8,7 @@
 
 #import "ConnectionsController.h"
 #import "UIColor+ExtendedColor.h"
-#import "ConfigurationDataFactory.h"
+#import "CommentsController.h"
 #import "AddDeviceData.h"
 
 @interface ConnectionsController ()
@@ -39,9 +39,10 @@
 #pragma mark Initialization Methods
 
 
--(id) init {
+-(id) initWithData:(AddDeviceData *)newData {
     
     return [self initWithNibName:@"ConnectionsController" bundle:nil];
+    [self setData:newData];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -49,7 +50,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle: @"Uplinks"];
-        [self setData:[ConfigurationDataFactory create:ADD]];
     }
     return self;
 }
@@ -61,8 +61,8 @@
 {
     [super viewDidLoad];
     [currentIP setTextColor:[UIColor textColor]];
-    UIBarButtonItem *sendForm = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendForm)];
-    [[self navigationItem] setRightBarButtonItem:sendForm];
+    UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
+    [[self navigationItem] setRightBarButtonItem:toCommenter];
     NSArray *textFields = [NSArray arrayWithObjects:devPortOne, devPortTwo, devDestPortOne, devDestPortTwo, destTagOne, destTagTwo, vlan, currentIP, nil];
     for (UITextField *currentField in textFields) {
         [currentField setDelegate:self];
@@ -89,41 +89,19 @@
 
 -(void) updateFormContents {
     
-    [devPortOne setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
-    [devPortTwo setText:[(AddDeviceData*)[self data] uplinkTwoFrom]];
-    [devDestPortOne setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
-    [devDestPortTwo setText:[(AddDeviceData*)[self data] uplinkOneFrom]];
+    [devPortOne setText:[[self data] uplinkOneFrom]];
+    [devPortTwo setText:[[self data] uplinkTwoFrom]];
+    [devDestPortOne setText:[[self data] uplinkOneFrom]];
+    [devDestPortTwo setText:[[self data] uplinkOneFrom]];
     [vlan setText:[[NSNumber numberWithInteger:[data vlan]] stringValue]];
     [currentIP setText:[data ipAddress]];
 }
 
--(void) sendForm {
-    
-    // check to see if form is done
+-(void) pushNextController {
     
     [self updateConfigurationDataStructure];
-//    if (![[self data] isReadyToSend]) {
-//        NSString *message = @"Incomplete Form.  See items in red";
-//        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//        [emailError show];
-//        return;
-//    }
-    // setup mailer and transfer control
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        [self updateConfigurationDataStructure];
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        [mailer setMailComposeDelegate:self];
-        [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getEmailSubject]];
-        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
-        [self presentViewController:mailer animated:YES completion:nil];
-        [data clear];
-    } else {
-        NSString *message = @"Unable to send email.  Please check your settings";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-    }
+    CommentsController *commenter = [[CommentsController alloc] initWithData:[self data]];
+    [[self navigationController] pushViewController:commenter animated:YES];
 }
 
 -(void) updateConfigurationDataStructure {
@@ -131,12 +109,12 @@
     if ([[vlan text] length] > 0) {
         [data setVlan:[[vlan text] integerValue]];
     }
-    [(AddDeviceData*)data setUpLinkOneTo:[devDestPortOne text]];
-    [(AddDeviceData*)data setUplinkOneFrom:[devPortOne text]];
-    [(AddDeviceData*)data setUplinkTwoTo:[devDestPortTwo text]];
-    [(AddDeviceData*)data setUplinkTwoFrom:[devPortTwo text]];
-    [(AddDeviceData*)data setDestOneTag:[destTagOne text]];
-    [(AddDeviceData*)data setDestTwoTag:[destTagTwo text]];
+    [data setUpLinkOneTo:[devDestPortOne text]];
+    [data setUplinkOneFrom:[devPortOne text]];
+    [data setUplinkTwoTo:[devDestPortTwo text]];
+    [data setUplinkTwoFrom:[devPortTwo text]];
+    [data setDestOneTag:[destTagOne text]];
+    [data setDestTwoTag:[destTagTwo text]];
 }
 
 -(void) changeLabelColorForMissingInfo {
