@@ -44,6 +44,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [oldTag setTextColor:[UIColor userTextColor]];
+    [currentTag setTextColor:[UIColor userTextColor]];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
     [[super currentTag] setDelegate:self];
