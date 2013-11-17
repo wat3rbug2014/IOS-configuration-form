@@ -14,7 +14,7 @@
 @property (retain) UINavigationController *addDeviceViewer;
 @property (retain) UINavigationController *removeDeviceViewer;
 @property (retain) UINavigationController *replaceDeviceViewer;
-@property (retain) UINavigationController *changeDeviceViewer;
+@property (retain) UINavigationController *alterDeviceViewer;
 @property (retain) UINavigationController *settingsViewer;
 
 

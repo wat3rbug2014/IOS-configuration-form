@@ -22,7 +22,7 @@
 @synthesize addDeviceViewer;
 @synthesize removeDeviceViewer;
 @synthesize replaceDeviceViewer;
-@synthesize changeDeviceViewer;
+@synthesize alterDeviceViewer;
 @synthesize settingsViewer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -59,7 +59,7 @@
     addDeviceViewer =nil;
     removeDeviceViewer = nil;
     replaceDeviceViewer = nil;
-    changeDeviceViewer =nil;
+    alterDeviceViewer =nil;
     settingsViewer = nil;
 }
 
