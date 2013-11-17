@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FormViewController.h"
+#import "ReplaceDeviceController.h"
 
-@interface AlterDeviceController : FormViewController
-
-@property (retain, nonatomic) IBOutlet UITextField *oldTag;
-@property (retain, nonatomic) IBOutlet UITextField *currentTag;
-@property (retain, nonatomic) IBOutlet UILabel *oldTagLabel;
+@interface AlterDeviceController : ReplaceDeviceController
 
 @end

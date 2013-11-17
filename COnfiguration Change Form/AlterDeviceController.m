@@ -8,6 +8,7 @@
 
 #import "AlterDeviceController.h"
 #import "ConfigurationDataFactory.h"
+#import "UIColor+ExtendedColor.h"
 
 @interface AlterDeviceController ()
 
@@ -15,11 +16,10 @@
 
 @implementation AlterDeviceController
 
-@synthesize currentTag;
 
 -(id) init {
     
-    return [self initWithNibName:@"AddDeviceController" bundle:nil];
+    return [self initWithNibName:@"ReplaceDeviceController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -30,37 +30,6 @@
         [super setData:[ConfigurationDataFactory create:OTHER]];
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void) changeLabelColorForMissingInfo {
-    
-    
-}
-
--(void) updateConfigurationDataStructure {
-    
-    
-}
-
--(void) pushConnectionsController {
-    
-    
-}
-
--(void) updateFormContents {
-    
-    
 }
 
 @end
