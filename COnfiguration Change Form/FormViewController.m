@@ -16,7 +16,6 @@
 #import "FormViewController.h"
 #import "UIColor+ExtendedColor.h"
 #import "ConnectionsController.h"
-#import "ConnectionsControllerFactory.h"
 #import "enumList.h"
 
 @implementation FormViewController
@@ -89,7 +88,7 @@
     
     // add navigation button
     
-    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Links" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
 }
 
@@ -116,7 +115,7 @@
 
 -(void) pushNextController {
     
-    ConnectionsController *updateConnectorController = [ConnectionsControllerFactory createConnectionsController: ADD];
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] init];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 
@@ -146,31 +145,6 @@
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
 }
 
--(void) sendForm {
-    
-    //    if (![[self data] isReadyToSend]) {
-    //        NSString *message = @"Incomplete Form.  See items in red";
-    //        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    //        [emailError show];
-    //        return;
-    //    }
-    // setup mailer and transfer control
-    
-    if ([MFMailComposeViewController canSendMail]) {
-        [self updateConfigurationDataStructure];
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        [mailer setMailComposeDelegate:self];
-        [mailer setToRecipients:[data getMailingList]];
-        [mailer setSubject:[data getEmailSubject]];
-        [mailer setMessageBody:[data getEmailMessageBody] isHTML:NO];
-        [self presentViewController:mailer animated:YES completion:nil];
-        [data clear];
-    } else {
-        NSString *message = @"Unable to send email.  Please check your settings";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"EMail Not Setup" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-    }
-}
 
 #pragma mark -
 #pragma mark UIPickerViewDataSource methods

@@ -32,5 +32,5 @@
 -(void) updateConfigurationDataStructure;
 -(void) pushNextController;
 -(void) updateFormContents;
--(void) sendForm;
+
 @end
