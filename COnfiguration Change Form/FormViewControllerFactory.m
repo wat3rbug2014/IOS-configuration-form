@@ -28,7 +28,7 @@
         id result = [[ReplaceDeviceController alloc] init];
         return result;
     }
-    return [[ChangeDeviceController alloc] init];
+    return [[AlterDeviceController alloc] init];
 }
 
 @end

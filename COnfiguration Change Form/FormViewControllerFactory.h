@@ -11,7 +11,7 @@
 #import "RemoveDeviceController.h"
 #import "ReplaceDeviceController.h"
 #import "ConnectionsController.h"
-#import "ChangeDeviceController.h"
+#import "AlterDeviceController.h"
 
 @interface FormViewControllerFactory : NSObject
 

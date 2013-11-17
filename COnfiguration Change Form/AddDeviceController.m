@@ -37,7 +37,7 @@
     [[super currentTagLabel] setText:@"New tag"];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
-    [[super currentTag] setDelegate:self];
+    [[self currentTag] setDelegate:self];
     [[super buildingEntry] setDelegate:self];
     [[super closetEntry] setDelegate:self];
 }
@@ -54,7 +54,7 @@
     [[super data] setTag:[[super currentTag] text]];
 }
 
--(void) pushConnectionsController {
+-(void) pushNextController {
     
     [self updateConfigurationDataStructure];
     [super pushNextController];

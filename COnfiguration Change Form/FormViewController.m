@@ -187,21 +187,6 @@
 }
 
 #pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
-
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    
-    [controller dismissViewControllerAnimated:YES completion:nil];
-    if (error) {
-        // do a popup for error message with a proper message
-        // currently basic activity is being tested
-        
-        NSString *message = @"Failed to send the form.  Check Settings";
-        UIAlertView *emailError = [[UIAlertView alloc] initWithTitle:@"Cannot Send Form" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [emailError show];
-    }
-}
-#pragma mark -
 #pragma mark UITextFieldDelegate methods
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
