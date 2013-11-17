@@ -48,10 +48,15 @@
     [currentTag setTextColor:[UIColor userTextColor]];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
-    [[super currentTag] setDelegate:self];
+    
+    // setup delegates to listen for touch events
+    
+    [currentTag setDelegate:self];
     [[super buildingEntry] setDelegate:self];
-    [[self oldTag] setDelegate:self];
+    [oldTag setDelegate:self];
     [[super closetEntry] setDelegate:self];
+    
+    // add naviagtion buttons
     [[super navigationItem] setRightBarButtonItem:nil];
     UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toCommenter];
