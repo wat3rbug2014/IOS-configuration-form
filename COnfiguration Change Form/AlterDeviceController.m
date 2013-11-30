@@ -9,6 +9,7 @@
 #import "AlterDeviceController.h"
 #import "ConfigurationDataFactory.h"
 #import "UIColor+ExtendedColor.h"
+#import "ConnectionsController.h"
 
 @interface AlterDeviceController ()
 
@@ -32,4 +33,16 @@
     return self;
 }
 
+-(void) viewDidLoad {
+    
+    [super viewDidLoad];
+    UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
+    [[self navigationItem] setRightBarButtonItem:toConnection];
+}
+
+-(void) pushNextController {
+    
+    ConnectionsController *updateConnectorController = [[ConnectionsController alloc] init];
+    [[self navigationController] pushViewController:updateConnectorController animated:YES];
+}
 @end

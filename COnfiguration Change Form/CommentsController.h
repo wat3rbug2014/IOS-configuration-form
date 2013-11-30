@@ -21,4 +21,5 @@
 
 -(void) sendForm;
 
+-(void) readyToSendForm;
 @end
