@@ -1,21 +1,21 @@
 {
   "images" : [
     {
-      "size" : "29x29",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "icon1_spot.png"
+    },
+    {
       "idiom" : "iphone",
-      "filename" : "icon57.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icon80.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "icon120.png",
+      "subtype" : "retina4",
       "scale" : "2x"
     }
   ],

@@ -47,9 +47,12 @@
 }
 
 -(void) addContacts {
+    
     ABPeoplePickerNavigationController *listOfContacts = [[ABPeoplePickerNavigationController alloc] init];
     [listOfContacts setPeoplePickerDelegate:self];
-    [listOfContacts setDisplayedProperties:[NSArray arrayWithObject:[NSNumber numberWithInt:kABPersonEmailProperty]]];
+    NSArray *itemsToDisplay = [NSArray arrayWithObjects:[NSNumber numberWithInt: kABPersonFirstNameProperty]
+                               ,[NSNumber numberWithInt: kABPersonLastNameProperty], [NSNumber numberWithInt: kABPersonEmailProperty], nil];
+    [listOfContacts setDisplayedProperties:itemsToDisplay];
     [self presentViewController:listOfContacts animated:YES completion:nil];
     
 }
@@ -118,38 +121,40 @@
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     
-    NSMutableString *name = [NSMutableString stringWithString: (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty)];
-    [name appendString: @" "];
-    [name appendString:(__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty)];
-    NSString *email;
-    ABMultiValueRef emailAddress = ABRecordCopyValue(person, kABPersonEmailProperty);
-    if (ABMultiValueGetCount(emailAddress) > 0) {
-        for (int i = 0; i < ABMultiValueGetCount(emailAddress); i++) {
-            NSString *testString = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, i);
-            
-            // unsure if memory leak here
-            
-            if ([testString hasSuffix:@"@nasa.gov"]) {
-                email = [[NSString alloc] initWithString: testString];
-            }
-        }
-        // may need to remove this if nasa only emails are allowed
-        
-        if (email == nil) {
-            email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, 0);
-        }
-        if (email != nil && name != nil) {
-            [appData addEmailAddress:email withName:name];
-        }
-    }
-    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
-    [[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     return YES;
 }
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
 
-    return NO;
+    bool tryAgain = YES;
+    NSMutableString *name = [NSMutableString stringWithString: (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty)];
+    [name appendString: @" "];
+    [name appendString:(__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty)];
+    if (property == kABPersonEmailProperty) {
+        tryAgain = NO;
+    }
+    // should I check identifier for invalid multivalue?
+    NSString *email;
+    ABMultiValueRef emailAddress = ABRecordCopyValue(person, kABPersonEmailProperty);
+    if (ABMultiValueGetCount(emailAddress) > 1) {
+        int index = ABMultiValueGetIndexForIdentifier(emailAddress, identifier);
+        email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, index);
+
+    }
+    if (ABMultiValueGetCount(emailAddress) == 1) {
+        email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emailAddress, 0);
+    }
+    if (email != nil && name != nil) {
+        [appData addEmailAddress:email withName:name];
+    } else {
+        NSString *message = [NSString stringWithFormat:@"%@ does not have an email address", name];
+        UIAlertView *emailSelectError = [[UIAlertView alloc] initWithTitle:@"No Email Address" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [emailSelectError show];
+    }
+    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+    [[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    return tryAgain;
 }
 
 -(void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker {

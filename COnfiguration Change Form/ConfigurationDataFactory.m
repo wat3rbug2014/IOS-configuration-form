@@ -11,6 +11,7 @@
 #import "ReplaceDeviceData.h"
 #import "RemoveDeviceData.h"
 #import "ChangeDeviceData.h"
+#import "AlterDeviceData.h"
 
 @implementation ConfigurationDataFactory
 
@@ -24,7 +25,7 @@
             break;
         case REPLACE: return [[ReplaceDeviceData alloc] init];
             break;
-        default: return [[ChangeDeviceData alloc] init];
+        default: return [[AlterDeviceData alloc] init];
             break;
     }
 }
