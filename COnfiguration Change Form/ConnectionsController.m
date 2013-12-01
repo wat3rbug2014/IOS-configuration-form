@@ -115,6 +115,7 @@
     [data setUplinkTwoFrom:[devPortTwo text]];
     [data setDestOneTag:[destTagOne text]];
     [data setDestTwoTag:[destTagTwo text]];
+    [data setIpAddress:[currentIP text]];
 }
 
 -(void) changeLabelColorForMissingInfo {
