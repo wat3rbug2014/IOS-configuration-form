@@ -38,14 +38,14 @@
 -(NSString*) getEmailMessageBody {
     
     NSMutableString *buffer = [NSMutableString stringWithString:[super getEmailMessageBody]];
-    [buffer appendFormat:@"The first uplink on port %@ of %@ connects to port %@ of the device with tag# %@\n", [self uplinkOneFrom],
+    [buffer appendFormat:@"The first uplink on port %@ of %@ connects to port %@ of the device with tag# %@<br/>", [self uplinkOneFrom],
      [super getDeviceName], [self upLinkOneTo], [self destOneTag]];
     if ([uplinkTwoFrom length] > 0 && [uplinkTwoTo length] > 0 && [destTwoTag length] > 0) {
-        [buffer appendFormat:@"The second uplink on port %@ of %@ connects to port %@ of the device with tag# %@\n", [self uplinkTwoFrom],
+        [buffer appendFormat:@"The second uplink on port %@ of %@ connects to port %@ of the device with tag# %@<br/>", [self uplinkTwoFrom],
          [super getDeviceName], [self uplinkTwoTo], [self destTwoTag]];
     }
     if ([[super comments] length] > 0) {
-        [buffer appendFormat:@"Comments:\n%@", [super comments]];
+        [buffer appendFormat:@"<p></p><b>Comments:</b><br/>%@", [super comments]];
     }
     return [buffer copy];
 }

@@ -119,11 +119,11 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     NSString *siteName;
     switch ([self site]) {
         case LARC: {
-            siteName =@"AR";
+            siteName =@"ar";
             break;
         }
         default: {
-            siteName = @"JS";
+            siteName = @"js";
             break;
         }
     }
@@ -216,9 +216,9 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSString*) getEmailMessageBody {
     
-    NSMutableString *buffer = [NSMutableString stringWithFormat:@"Device name: %@\nBuilding: %@\nCloset: %@\n", [self getDeviceName], [self building], [self closet]];
-    [buffer appendFormat:@"Tag number: %@\nIP Address: %@\nVLAN: %@\n", [self tag], [self ipAddress], [[NSNumber numberWithInteger:[self vlan]] stringValue]];
-    [buffer appendFormat:@"%@ is a %@.\n", [self getDeviceName], [self getDeviceTypeString]];
+    NSMutableString *buffer = [NSMutableString stringWithFormat:@"<b>Device name:</b> %@<br/><b>Building:</b> %@<br/><b>Closet:</b> %@<br/>", [self getDeviceName], [self building], [self closet]];
+    [buffer appendFormat:@"<b>Tag number:</b> %@<br/><b>IP Address:</b> %@<br/><b>VLAN:</b> %@<br/>", [self tag], [self ipAddress], [[NSNumber numberWithInteger:[self vlan]] stringValue]];
+    [buffer appendFormat:@"%@ is a %@.<br/>", [self getDeviceName], [self getDeviceTypeString]];
     return buffer;
 }
 

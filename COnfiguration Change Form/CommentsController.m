@@ -80,7 +80,7 @@
     [mailer setMailComposeDelegate:self];
     [mailer setToRecipients:[[self data] getMailingList]];
     [mailer setSubject:[[self data] getEmailSubject]];
-    [mailer setMessageBody:[[self data] getEmailMessageBody] isHTML:NO];
+    [mailer setMessageBody:[[self data] getEmailMessageBody] isHTML:YES];
         
     // NOTE: documentation says do your email stuff before display of viewcontroller because you
     // cannot edit message from here on out.
@@ -88,4 +88,27 @@
     [self presentViewController:mailer animated:YES completion:nil];
     //[[self navigationController] popToRootViewControllerAnimated:YES];
 }
+
+#pragma mark MFMailComposeViewControllerDelegate methods
+#pragma mark -
+
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    if (result == MFMailComposeResultSent) {
+        [controller dismissViewControllerAnimated:YES completion:nil];
+        [[self navigationController] popToRootViewControllerAnimated:YES];
+    } else {
+        if (result == MFMailComposeResultFailed || error != nil) {
+            NSString *message = @"Failed to Send Email";
+            if (error != nil) {
+                // figure out how to test this portion
+                
+                [message stringByAppendingString:[error localizedDescription]];
+            }
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Cannot Send Email" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [errorAlert show];
+        }
+    }
+}
+
 @end
