@@ -18,15 +18,17 @@
 
 +(id) create:(int)formType {
     
+    id result = nil;
     switch (formType) {
-        case ADD: return [[AddDeviceData alloc] init];
+        case ADD: result = [[AddDeviceData alloc] init];
             break;
-        case REMOVE: return [[RemoveDeviceData alloc] init];
+        case REMOVE: result = [[RemoveDeviceData alloc] init];
             break;
-        case REPLACE: return [[ReplaceDeviceData alloc] init];
+        case REPLACE: result = [[ReplaceDeviceData alloc] init];
             break;
-        default: return [[AlterDeviceData alloc] init];
+        default: result = [[AlterDeviceData alloc] init];
             break;
     }
+    return result;
 }
 @end

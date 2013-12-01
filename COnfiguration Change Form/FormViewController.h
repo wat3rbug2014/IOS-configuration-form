@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PickerItems.h"
-#import "BasicDeviceData.h"
+#import "AddDeviceData.h"
 #import "FormViewProtocol.h"
 
 @interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource,  UITextFieldDelegate, FormViewProtocol>
@@ -24,7 +24,7 @@
 @property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection;
 @property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel;
 @property (retain) PickerItems *devices;
-@property (retain, nonatomic) BasicDeviceData *data;
+@property (retain, nonatomic) AddDeviceData *data;
 
 // custom methods
 

@@ -119,7 +119,32 @@
 
 -(void) changeLabelColorForMissingInfo {
     
-    
+        
+    if ([[devPortOne text] length] > 0) {
+        [devPortOneLabel setTextColor:[UIColor textColor]];
+    } else {
+        [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[devDestPortOne text] length] > 0) {
+        [devDestPortOneLabel setTextColor:[UIColor textColor]];
+    } else {
+        [devDestPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[destTagOne text] length] > 0) {
+        [destTagOneLabel setTextColor:[UIColor textColor]];
+    } else {
+        [destTagOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[vlan text] intValue] != 0) {
+        [vlanLabel setTextColor:[UIColor textColor]];
+    } else {
+        [vlanLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[currentIP text] length] > 0) {
+        [currentIPLabel setTextColor:[UIColor textColor]];
+    } else {
+        [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
 }
 
 

@@ -67,7 +67,9 @@
         }
     }
     [[self data] setComments:[commentSection text]];
-    [self sendForm];
+    if (canSend) {
+        [self sendForm];
+    }
 }
 
 -(void) sendForm {

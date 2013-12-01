@@ -81,7 +81,7 @@
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
     [deviceTypeSelResult setTextColor:[UIColor userTextColor]];
-    data = [[BasicDeviceData alloc] init];
+    data = [[AddDeviceData alloc] init];
     [currentTag setDelegate:self];
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];
@@ -116,6 +116,7 @@
 -(void) pushNextController {
     
     ConnectionsController *updateConnectorController = [[ConnectionsController alloc] init];
+    [updateConnectorController setData:[self data]];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 
