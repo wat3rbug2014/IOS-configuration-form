@@ -86,6 +86,6 @@
     // cannot edit message from here on out.
         
     [self presentViewController:mailer animated:YES completion:nil];
-    [[self navigationController] popToRootViewControllerAnimated:YES];
+    //[[self navigationController] popToRootViewControllerAnimated:YES];
 }
 @end

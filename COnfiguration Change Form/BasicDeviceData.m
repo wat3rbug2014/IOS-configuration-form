@@ -217,7 +217,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 -(NSString*) getEmailMessageBody {
     
     NSMutableString *buffer = [NSMutableString stringWithFormat:@"Device name: %@\nBuilding: %@\nCloset: %@\n", [self getDeviceName], [self building], [self closet]];
-    [buffer appendFormat:@"Tag number: %@\nIP Address: %@\nVLAN: %@", [self tag], [self ipAddress], [[NSNumber numberWithInteger:[self vlan]] stringValue]];
+    [buffer appendFormat:@"Tag number: %@\nIP Address: %@\nVLAN: %@\n", [self tag], [self ipAddress], [[NSNumber numberWithInteger:[self vlan]] stringValue]];
     [buffer appendFormat:@"%@ is a %@.\n", [self getDeviceName], [self getDeviceTypeString]];
     return buffer;
 }
