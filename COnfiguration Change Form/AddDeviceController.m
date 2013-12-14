@@ -87,8 +87,15 @@
     return YES;
 }
 
-#pragma mark - 
+-(void) textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [super textFieldDidBeginEditing:textField];
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+}
+#pragma mark -
 #pragma mark UIResponder methods
+
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     

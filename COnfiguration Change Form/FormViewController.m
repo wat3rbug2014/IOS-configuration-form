@@ -193,6 +193,14 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
     return YES;
+}
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
 }
 @end

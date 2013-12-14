@@ -106,7 +106,7 @@
 
 -(void) updateConfigurationDataStructure {
     
-    if ([[vlan text] length] > 0) {
+    if ([[vlan text] length] > 0 && [[vlan text] intValue] != 0) {
         [data setVlan:[[vlan text] integerValue]];
     }
     [data setUpLinkOneTo:[devDestPortOne text]];
@@ -175,4 +175,12 @@
     [self changeLabelColorForMissingInfo];
     return YES;
 }
+
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self updateConfigurationDataStructure];
+    [self changeLabelColorForMissingInfo];
+}
+
 @end
