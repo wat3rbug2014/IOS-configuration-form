@@ -34,6 +34,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    // move the items up to compensate for missing tag
+    
     [[super currentTagLabel] setText:@"New tag"];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];

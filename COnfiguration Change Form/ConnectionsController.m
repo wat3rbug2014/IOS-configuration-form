@@ -92,9 +92,11 @@
     [devPortOne setText:[[self data] uplinkOneFrom]];
     [devPortTwo setText:[[self data] uplinkTwoFrom]];
     [devDestPortOne setText:[[self data] uplinkOneFrom]];
-    [devDestPortTwo setText:[[self data] uplinkOneFrom]];
+    [devDestPortTwo setText:[[self data] uplinkTwoFrom]];
     [vlan setText:[[NSNumber numberWithInteger:[data vlan]] stringValue]];
     [currentIP setText:[data ipAddress]];
+    [destTagOne setText:[[self data] destOneTag]];
+    [destTagTwo setText:[[self data] destTwoTag]];
 }
 
 -(void) pushNextController {

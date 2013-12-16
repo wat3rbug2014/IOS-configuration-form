@@ -30,7 +30,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
@@ -108,6 +108,8 @@
             [errorAlert show];
         }
     }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 @end
