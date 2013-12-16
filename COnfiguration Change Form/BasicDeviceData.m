@@ -62,10 +62,19 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return _vlan;
 }
 
+
 -(void) setVlan:(NSInteger)newVlan {
     
-    if (newVlan > [[NSNumber numberWithInt:0] integerValue] &&  newVlan < [[NSNumber numberWithInt:9999] integerValue]) {
+    if (newVlan > [[NSNumber numberWithInt:0] integerValue] &&  newVlan <= [[NSNumber numberWithInt:9999] integerValue]) {
         _vlan = newVlan;
+    }
+}
+
+-(void) setVlanFromString:(NSString *)newVlan {
+    
+    NSInteger thisVlan = [newVlan integerValue];
+    if (thisVlan > 0 && thisVlan<= 9999) {
+        [self setVlan:thisVlan];
     }
 }
 

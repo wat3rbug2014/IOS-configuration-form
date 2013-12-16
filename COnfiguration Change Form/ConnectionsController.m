@@ -109,9 +109,7 @@
 
 -(void) updateConfigurationDataStructure {
     
-    if ([[vlan text] length] > 0 && [[vlan text] intValue] != 0) {
-        [data setVlan:[[vlan text] integerValue]];
-    }
+    [data setVlanFromString:[vlan text]];
     [data setUpLinkOneTo:[devDestPortOne text]];
     [data setUplinkOneFrom:[devPortOne text]];
     [data setUplinkTwoTo:[devDestPortTwo text]];

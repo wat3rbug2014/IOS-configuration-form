@@ -28,4 +28,6 @@
 -(void) setOldTag: (NSString*) newTag;
 -(NSString*) oldTag;
 
+-(void) setVlan:(NSInteger)vlan;
+-(void) setVlanFromString: (NSString*) newVlan;
 @end
