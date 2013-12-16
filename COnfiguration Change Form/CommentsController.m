@@ -45,10 +45,11 @@
     [commentSection setTextColor:[UIColor userTextColor]];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[self data] setComments:[commentSection text]];
+    NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
 -(void) readyToSendForm {

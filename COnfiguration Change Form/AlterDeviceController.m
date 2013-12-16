@@ -40,6 +40,13 @@
     [[self navigationItem] setRightBarButtonItem:toConnection];
 }
 
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+    [self updateConfigurationDataStructure];
+    NSLog(@"%@ is showing memory warning", [[self class] description]);
+}
+
 -(void) pushNextController {
     
     ConnectionsController *updateConnectorController = [[ConnectionsController alloc] init];

@@ -49,6 +49,7 @@
     
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
+    NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
 -(void) updateConfigurationDataStructure {

@@ -66,6 +66,7 @@
     
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
+    NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
 #pragma mark -
