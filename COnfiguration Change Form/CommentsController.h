@@ -17,7 +17,7 @@
 @property (nonatomic) id<ConfigurationDataProtocol> data;
 @property (retain, nonatomic) IBOutlet UILabel *commentLabel;
 
--(id) initWithData: (BasicDeviceData*) data;
+-(id) initWithData: (id<ConfigurationDataProtocol>) data;
 
 -(void) sendForm;
 

@@ -19,7 +19,7 @@
 @synthesize commentSection;
 @synthesize commentLabel;
 
--(id) initWithData:(BasicDeviceData *)data {
+-(id) initWithData:(id<ConfigurationDataProtocol>)data {
     
     self = [self initWithNibName:@"CommentsController" bundle:nil];
     [self setData: data];

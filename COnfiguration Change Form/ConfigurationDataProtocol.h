@@ -24,6 +24,12 @@
 -(NSString*) getAbbreviateDeviceString;
 -(void) setComments: (NSString*) comment;
 -(NSString*) comments;
+-(void) setBuilding: (NSString*) building;
+-(NSString*) building;
+-(void) setDeviceType: (NSInteger) type;
+-(NSInteger) deviceType;
+-(void) setCloset: (NSString*) closet;
+-(NSString*) closet;
 -(void) clear;
 
 -(void) addEmailAddress: (NSString*) email withName: (NSString*) name;
@@ -39,5 +45,8 @@
 
 @optional
 
+
+-(NSString*) oldTag;
+-(void) setOldTag: (NSString*) tag;
 
 @end

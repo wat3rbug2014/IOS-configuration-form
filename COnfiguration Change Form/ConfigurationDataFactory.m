@@ -16,7 +16,7 @@
 @implementation ConfigurationDataFactory
 
 
-+(id) create:(int)formType {
++(id<ConfigurationDataProtocol>) create:(int)formType {
     
     id result = nil;
     switch (formType) {

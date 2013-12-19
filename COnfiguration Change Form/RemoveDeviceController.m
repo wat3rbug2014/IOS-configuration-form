@@ -10,6 +10,7 @@
 #import "UIColor+ExtendedColor.h"
 #import "ConfigurationDataFactory.h"
 #import "CommentsController.h"
+#import "RemoveDeviceData.h"
 
 @interface RemoveDeviceController ()
 
@@ -41,7 +42,12 @@
 
 - (void)viewDidLoad {
     
+
     [super viewDidLoad];
+    
+    // this is redundant but the data structure type changes between init and viewdidload ?!!
+    [super setData:[ConfigurationDataFactory create:REMOVE]];
+    
     UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toCommenter];
     UIColor *textColor = [UIColor textColor];
@@ -67,7 +73,7 @@
 -(void) pushNextController {
     
     [self updateConfigurationDataStructure];
-    CommentsController *commenter = [[CommentsController alloc] initWithData:[self data]];
+    CommentsController *commenter = [[CommentsController alloc] initWithData:self.data];
     [[self navigationController] pushViewController:commenter animated:YES];
 }
 

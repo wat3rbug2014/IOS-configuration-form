@@ -76,7 +76,7 @@
     
     [super updateConfigurationDataStructure];
     [[super data] setTag:[currentTag text]];
-    [[super data] setOldTag:[oldTag text]];
+    [[self data] setOldTag:[oldTag text]];
 }
 
 -(void) changeLabelColorForMissingInfo {
