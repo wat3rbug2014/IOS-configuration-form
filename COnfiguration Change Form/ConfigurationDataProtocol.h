@@ -22,6 +22,8 @@
 -(NSString*) getSiteString;
 -(NSString*) getSiteAbbreviatedString;
 -(NSString*) getAbbreviateDeviceString;
+-(void) setComments: (NSString*) comment;
+-(NSString*) comments;
 -(void) clear;
 
 -(void) addEmailAddress: (NSString*) email withName: (NSString*) name;

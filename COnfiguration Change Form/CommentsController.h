@@ -14,7 +14,7 @@
 
 
 @property (retain, nonatomic) IBOutlet UITextView *commentSection;
-@property (retain, nonatomic) BasicDeviceData *data;
+@property (nonatomic) id<ConfigurationDataProtocol> data;
 @property (retain, nonatomic) IBOutlet UILabel *commentLabel;
 
 -(id) initWithData: (BasicDeviceData*) data;

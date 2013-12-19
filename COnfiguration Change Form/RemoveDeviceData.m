@@ -22,4 +22,22 @@
     
     return [NSString stringWithFormat:@"Removed %@", [super getEmailSubject]];
 }
+
+-(BOOL) isFormFilledOut {
+    
+    bool result = true;
+    if ([[self tag] length] == 0) {
+        result = false;
+    }
+    if ([[self building] length] == 0) {
+        result = false;
+    }
+    if ([[self closet] length] == 0) {
+        result = false;
+    }
+    if ([self deviceType] == UNDEFINED) {
+        result = false;
+    }
+    return result;
+}
 @end
