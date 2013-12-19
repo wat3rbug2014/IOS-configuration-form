@@ -14,8 +14,20 @@
 
 -(BOOL) isFormFilledOut {
     
-    BOOL result = [super isFormFilledOut];
-    if ([oldTag length] == 0) {
+    bool result = true;
+    if ([[self tag] length] == 0) {
+        result = false;
+    }
+    if ([[self building] length] == 0) {
+        result = false;
+    }
+    if ([[self closet] length] == 0) {
+        result = false;
+    }
+    if ([self deviceType] == UNDEFINED) {
+        result = false;
+    }
+    if ([[self oldTag] length] == 0) {
         result = false;
     }
     return result;
