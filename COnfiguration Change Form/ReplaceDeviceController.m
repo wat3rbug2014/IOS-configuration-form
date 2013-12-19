@@ -44,6 +44,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [[super deviceTypeSelection] setFrame:CGRectMake(0.0, 195.0, 320.0, 162.0)];
     [oldTag setTextColor:[UIColor userTextColor]];
     [currentTag setTextColor:[UIColor userTextColor]];
     [self updateFormContents];

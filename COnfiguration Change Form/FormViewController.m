@@ -66,7 +66,7 @@
     
     // setup roller selector
     
-    deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 255.0, 320.0, 162.0)];
+    deviceTypeSelection = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 185.0, 320.0, 162.0)];
     [deviceTypeSelection setDelegate:self];
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
