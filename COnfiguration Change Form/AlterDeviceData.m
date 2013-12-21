@@ -36,11 +36,11 @@
     }
     // check to see that some kind of connection is different
     
-    if ([[super upLinkOneTo] length] > 0 || [super vlan] > 0 || [[super uplinkTwoTo] length] > 0) {
+    if ([[super uplinkOneTo] length] > 0 || [super vlan] > 0 || [[super uplinkTwoTo] length] > 0) {
         
         // check for complete uplink 1 info
         
-        if ([[super upLinkOneTo] length] > 0) {
+        if ([[super uplinkOneTo] length] > 0) {
             if ([[super uplinkOneFrom] length] == 0 || [[super destOneTag] length] == 0) {
                 result = false;
             }

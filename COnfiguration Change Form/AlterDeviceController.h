@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ReplaceDeviceController.h"
+#import "AddDeviceController.h"
 
-@interface AlterDeviceController : ReplaceDeviceController
+@interface AlterDeviceController : AddDeviceController
 
 @end

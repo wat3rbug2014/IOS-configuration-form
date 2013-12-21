@@ -110,14 +110,14 @@
 
 -(void) updateConfigurationDataStructure {
     
-    [data setVlanFromString:[vlan text]];
-    [data setUplinkOneTo:[devDestPortOne text]];
-    [data setUplinkOneFrom:[devPortOne text]];
-    [data setUplinkTwoTo:[devDestPortTwo text]];
-    [data setUplinkTwoFrom:[devPortTwo text]];
-    [data setDestOneTag:[destTagOne text]];
-    [data setDestTwoTag:[destTagTwo text]];
-    [data setIpAddress:[currentIP text]];
+    [self.data setVlanFromString:[vlan text]];
+    [self.data setUplinkOneTo:[devDestPortOne text]];
+    [self.data setUplinkOneFrom:[devPortOne text]];
+    [self.data setUplinkTwoTo:[devDestPortTwo text]];
+    [self.data setUplinkTwoFrom:[devPortTwo text]];
+    [self.data setDestOneTag:[destTagOne text]];
+    [self.data setDestTwoTag:[destTagTwo text]];
+    [self.data setIpAddress:[currentIP text]];
 }
 
 -(void) setUnusedUplinkOne {

@@ -36,6 +36,7 @@
 -(void) viewDidLoad {
     
     [super viewDidLoad];
+    [[self currentTagLabel] setText:@"Tag"];
     [super setData:[ConfigurationDataFactory create:OTHER]];
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
