@@ -9,7 +9,8 @@
 #import "ConnectionsController.h"
 #import "UIColor+ExtendedColor.h"
 #import "CommentsController.h"
-#import "AddDeviceData.h"
+#import "ConfigurationDataProtocol.h"
+#import "AlterDeviceData.h"
 
 @interface ConnectionsController ()
 
@@ -119,24 +120,66 @@
     [data setIpAddress:[currentIP text]];
 }
 
--(void) changeLabelColorForMissingInfo {
+-(void) setUnusedUplinkOne {
     
-        
-    if ([[devPortOne text] length] > 0) {
-        [devPortOneLabel setTextColor:[UIColor textColor]];
-    } else {
-        [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
-    }
+    [devPortOneLabel setTextColor:[UIColor textColor]];
+    [devDestPortOneLabel setTextColor:[UIColor textColor]];
+    [destTagOneLabel setTextColor:[UIColor textColor]];
+}
+
+-(void) setUnusedUplinkTwo {
+    
+    [devPortTwoLabel setTextColor:[UIColor textColor]];
+    [devDestPortTwoLabel setTextColor:[UIColor textColor]];
+    [destTagTwoLabel setTextColor:[UIColor textColor]];
+}
+
+-(void) setUnusedVlan {
+    
+    [vlanLabel setTextColor:[UIColor textColor]];
+    [currentIPLabel setTextColor:[UIColor textColor]];
+}
+
+-(void) changeUpLinkOneColor {
+    
     if ([[devDestPortOne text] length] > 0) {
         [devDestPortOneLabel setTextColor:[UIColor textColor]];
     } else {
         [devDestPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[devPortOne text] length] > 0) {
+        [devPortOneLabel setTextColor:[UIColor textColor]];
+    } else {
+        [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
     if ([[destTagOne text] length] > 0) {
         [destTagOneLabel setTextColor:[UIColor textColor]];
     } else {
         [destTagOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
     }
+}
+
+-(void) changeUpLinkTwoColor {
+    
+    if ([[devDestPortTwo text] length] > 0) {
+        [devDestPortTwoLabel setTextColor:[UIColor textColor]];
+    } else {
+        [devDestPortTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[devPortTwo text] length] > 0) {
+        [devPortTwoLabel setTextColor:[UIColor textColor]];
+    } else {
+        [devPortTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+    if ([[destTagTwo text] length] > 0) {
+        [destTagTwoLabel setTextColor:[UIColor textColor]];
+    } else {
+        [destTagTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+}
+
+-(void)changeVlanInfoColor {
+    
     if ([[vlan text] intValue] != 0) {
         [vlanLabel setTextColor:[UIColor textColor]];
     } else {
@@ -146,6 +189,78 @@
         [currentIPLabel setTextColor:[UIColor textColor]];
     } else {
         [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+    }
+}
+
+-(void) changeLabelColorForMissingInfo {
+    
+    // alter device doesn't have strict requirements
+    
+    if ([[self data] isKindOfClass:[AlterDeviceData class]]) {
+        
+        bool isVlanDifferent = false;
+        bool isLinkOneDifferent = false;
+        bool isLinkTwoDifferent = false;
+        bool isIPDifferent = false;
+        
+        // test to see if the sections are filled
+        
+        // if uplink 1 started
+        
+        if ([[devDestPortOne text] length] > 0 || [[devPortOne text] length] > 0 || [[destTagOne text] length] > 0) {
+            isLinkOneDifferent = true;
+        }
+        
+        // if uplink 2 started
+        
+        if ([[devDestPortTwo text] length] > 0 || [[devDestPortTwo text] length] > 0 || [[destTagTwo text] length] > 0) {
+            isLinkTwoDifferent = true;
+        }
+        
+        // if vlan done
+        
+        if ([[vlan text] intValue] != 0) {
+            isVlanDifferent = true;
+        }
+        
+        if ([[currentIP text] length] > 0) {
+            isIPDifferent = true;
+        }
+        // fill the sections
+        
+        if (!isVlanDifferent && !isLinkOneDifferent && !isLinkTwoDifferent && !isIPDifferent) {
+            [devPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [devPortTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [devDestPortOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [devDestPortTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [destTagOneLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [destTagTwoLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [vlanLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+        } else {
+            [self setUnusedUplinkOne];
+            [self setUnusedUplinkTwo];
+            [self setUnusedVlan];
+            if (isLinkOneDifferent) {
+                [self changeUpLinkOneColor];
+            }
+            if (isLinkTwoDifferent) {
+                [self changeUpLinkTwoColor];
+            }
+            if (isVlanDifferent) {
+                [self changeVlanInfoColor];
+            }
+            if (isIPDifferent) {
+                [vlanLabel setTextColor:[UIColor textColor]];
+            }
+        }
+    } else {
+        
+        // other classes have strict requirements for data
+        
+        [self changeUpLinkOneColor];
+        [self setUnusedUplinkTwo];
+        [self changeVlanInfoColor];
     }
 }
 

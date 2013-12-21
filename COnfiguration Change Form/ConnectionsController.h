@@ -33,5 +33,11 @@
 @property (retain, nonatomic) IBOutlet UILabel *currentIPLabel;
 
 -(id) initWithData: (id<ConfigurationDataProtocol>) newData;
+-(void) changeUpLinkOneColor;
+-(void) changeUpLinkTwoColor;
+-(void) changeVlanInfoColor;
+-(void) setUnusedUplinkOne;
+-(void) setUnusedUplinkTwo;
+-(void) setUnusedVlan;
 
 @end
