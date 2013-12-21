@@ -51,6 +51,7 @@
 -(void) pushNextController {
     
     ConnectionsController *updateConnectorController = [[ConnectionsController alloc] init];
+    [updateConnectorController setData:[self data]];
     [[self navigationController] pushViewController:updateConnectorController animated:YES];
 }
 @end
