@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AddDeviceData.h"
+#import "ConfigurationDataProtocol.h"
 #import <MessageUI/MessageUI.h>
 #import "FormViewProtocol.h"
 
 @interface ConnectionsController : UIViewController<UITextFieldDelegate, MFMailComposeViewControllerDelegate, FormViewProtocol>
 
-@property (retain, nonatomic) AddDeviceData *data;
+@property (retain, nonatomic) id<ConfigurationDataProtocol> data;
 @property (retain, nonatomic) IBOutlet UITextField *devPortOne;
 @property (retain, nonatomic) IBOutlet UITextField *devPortTwo;
 @property (retain, nonatomic) IBOutlet UITextField *devDestPortOne;
@@ -32,6 +32,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *vlanLabel;
 @property (retain, nonatomic) IBOutlet UILabel *currentIPLabel;
 
--(id) initWithData: (AddDeviceData*) newData;
+-(id) initWithData: (id<ConfigurationDataProtocol>) newData;
 
 @end

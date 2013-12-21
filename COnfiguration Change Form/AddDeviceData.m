@@ -12,7 +12,7 @@
 
 
 @synthesize uplinkOneFrom;
-@synthesize upLinkOneTo;
+@synthesize uplinkOneTo;
 @synthesize destOneTag;
 @synthesize uplinkTwoFrom;
 @synthesize uplinkTwoTo;
@@ -26,7 +26,7 @@
     if ([uplinkOneFrom length] == 0) {
         result = false;
     }
-    if ([upLinkOneTo length] == 0) {
+    if ([uplinkOneTo length] == 0) {
         result = false;
     }
     if ([destOneTag length] == 0) {
@@ -39,7 +39,7 @@
     
     NSMutableString *buffer = [NSMutableString stringWithString:[super getEmailMessageBody]];
     [buffer appendFormat:@"The first uplink on port %@ of %@ connects to port %@ of the device with tag# %@<br/>", [self uplinkOneFrom],
-     [super getDeviceName], [self upLinkOneTo], [self destOneTag]];
+     [super getDeviceName], [self uplinkOneTo], [self destOneTag]];
     if ([uplinkTwoFrom length] > 0 && [uplinkTwoTo length] > 0 && [destTwoTag length] > 0) {
         [buffer appendFormat:@"The second uplink on port %@ of %@ connects to port %@ of the device with tag# %@.<br/>", [self uplinkTwoFrom],
          [super getDeviceName], [self uplinkTwoTo], [self destTwoTag]];

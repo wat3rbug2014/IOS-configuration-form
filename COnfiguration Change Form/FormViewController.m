@@ -81,7 +81,6 @@
     [buildingEntry setTextColor:[UIColor userTextColor]];
     [closetEntry setTextColor:[UIColor userTextColor]];
     [deviceTypeSelResult setTextColor:[UIColor userTextColor]];
-    data = [[AddDeviceData alloc] init];
     [currentTag setDelegate:self];
     [buildingEntry setDelegate:self];
     [closetEntry setDelegate:self];

@@ -44,7 +44,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [[super deviceTypeSelection] setFrame:CGRectMake(0.0, 195.0, 320.0, 162.0)];
+    [[super deviceTypeSelection] setFrame:CGRectMake(0.0, 205.0, 320.0, 162.0)];
     [super setData: [ConfigurationDataFactory create:REPLACE]];
     [oldTag setTextColor:[UIColor userTextColor]];
     [currentTag setTextColor:[UIColor userTextColor]];

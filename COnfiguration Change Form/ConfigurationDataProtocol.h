@@ -45,8 +45,33 @@
 
 @optional
 
+-(NSString*) uplinkOneFrom;
+-(void) setUplinkOneFrom: (NSString*) linkOne;
+
+-(NSString*) upLinkOneTo;
+-(void) setUplinkOneTo: (NSString*) linkTo;
+
+-(NSString*) destOneTag;
+-(void) setDestOneTag: (NSString*) destTag;
+
+-(NSString*) uplinkTwoFrom;
+-(void) setUplinkTwoFrom: (NSString*) linkTwo;
+
+-(NSString*) uplinkTwoTo;
+-(void) setUplinkTwoTo: (NSString*) linkTo;
+
+-(NSString*) destTwoTag;
+-(void) setDestTwoTag: (NSString*) destTag;
 
 -(NSString*) oldTag;
 -(void) setOldTag: (NSString*) tag;
+
+-(NSString*) ipAddress;
+-(void) setIpAddress: (NSString*) ip;
+
+-(void) setVlan: (NSNumber*) vlan;
+-(int) vlan;
+
+-(void) setVlanFromString: (NSString*) vlanString;
 
 @end

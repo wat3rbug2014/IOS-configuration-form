@@ -12,7 +12,7 @@
 @interface AddDeviceData : BasicDeviceData
 
 @property (retain) NSString* uplinkOneFrom;
-@property (retain) NSString* upLinkOneTo;
+@property (retain) NSString* uplinkOneTo;
 @property (retain) NSString* destOneTag;
 @property (retain) NSString* uplinkTwoFrom;
 @property (retain) NSString* uplinkTwoTo;

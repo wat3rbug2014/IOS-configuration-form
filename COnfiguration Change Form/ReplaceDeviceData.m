@@ -44,14 +44,14 @@
 
 -(NSString*) getEmailMessageBody {
     
-    NSMutableString *buffer = [NSMutableString stringWithString:[super getEmailMessageBody]];
+    NSMutableString *buffer = [NSMutableString stringWithFormat:@"<b>Device name:</b> %@<br/><b>Building:</b> %@<br/><b>Closet:</b> %@<br/>", [super getDeviceName], [super building], [super closet]];
     [buffer appendFormat:@"The old tag# was %@ and the new tag is %@\n.", [self oldTag], [super tag]];
     return [buffer copy];
 }
 
 -(NSString*) getEmailSubject {
     
-    return [NSString stringWithFormat:@"%@ replaced tag #%@", [super getEmailSubject], [self oldTag]];
+    return [NSString stringWithFormat:@"Replaced tag# %@  with tag# %@ for %@ in building %@ closet %@", [super tag], [self oldTag],[super getDeviceTypeString], [super building], [super closet]];
 }
 
 @end

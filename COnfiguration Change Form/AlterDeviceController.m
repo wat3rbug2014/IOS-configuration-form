@@ -20,7 +20,7 @@
 
 -(id) init {
     
-    return [self initWithNibName:@"ReplaceDeviceController" bundle:nil];
+    return [self initWithNibName:@"AddDeviceController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

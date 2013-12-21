@@ -39,7 +39,7 @@
 #pragma mark Initialization Methods
 
 
--(id) initWithData:(AddDeviceData *)newData {
+-(id) initWithData:(id<ConfigurationDataProtocol>)newData {
     
     return [self initWithNibName:@"ConnectionsController" bundle:nil];
     [self setData:newData];
@@ -110,7 +110,7 @@
 -(void) updateConfigurationDataStructure {
     
     [data setVlanFromString:[vlan text]];
-    [data setUpLinkOneTo:[devDestPortOne text]];
+    [data setUplinkOneTo:[devDestPortOne text]];
     [data setUplinkOneFrom:[devPortOne text]];
     [data setUplinkTwoTo:[devDestPortTwo text]];
     [data setUplinkTwoFrom:[devPortTwo text]];
