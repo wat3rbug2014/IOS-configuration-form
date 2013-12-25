@@ -10,6 +10,7 @@
 #import "ConfigurationDataProtocol.h"
 #import <MessageUI/MessageUI.h>
 #import "FormViewProtocol.h"
+#define OFFSET 20.0
 
 @interface ConnectionsController : UIViewController<UITextFieldDelegate, MFMailComposeViewControllerDelegate, FormViewProtocol>
 
@@ -32,6 +33,13 @@
 @property (retain, nonatomic) IBOutlet UILabel *vlanLabel;
 @property (retain, nonatomic) IBOutlet UILabel *currentIPLabel;
 
+@property (retain) NSNotificationCenter *notifier;
+@property (retain, nonatomic) UITextField *activeField;
+@property (retain,nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic) CGSize keyboardSize;
+@property (nonatomic) CGPoint originalFrame;
+
+
 -(id) initWithData: (id<ConfigurationDataProtocol>) newData;
 -(void) changeUpLinkOneColor;
 -(void) changeUpLinkTwoColor;
@@ -39,5 +47,7 @@
 -(void) setUnusedUplinkOne;
 -(void) setUnusedUplinkTwo;
 -(void) setUnusedVlan;
+-(void) keyboardWasShown: (NSNotification*) notice;
+-(void) keyboardWillBeHidden: (NSNotification*) notice;
 
 @end

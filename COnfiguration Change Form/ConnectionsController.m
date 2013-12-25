@@ -35,6 +35,11 @@
 @synthesize destTagTwoLabel;
 @synthesize devPortOneLabel;
 @synthesize devPortTwoLabel;
+@synthesize notifier;
+@synthesize activeField;
+@synthesize scrollView;
+@synthesize keyboardSize;
+@synthesize originalFrame;
 
 #pragma mark -
 #pragma mark Initialization Methods
@@ -61,6 +66,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    notifier = [NSNotificationCenter defaultCenter];
+    [notifier addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+    [notifier addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardDidHideNotification object:nil];
     [currentIP setTextColor:[UIColor textColor]];
     UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toCommenter];
@@ -77,6 +85,7 @@
     
     [super didReceiveMemoryWarning];
     [self updateConfigurationDataStructure];
+    [notifier removeObserver:self];
     NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
@@ -84,6 +93,7 @@
     
     [self updateConfigurationDataStructure];
     [super viewWillDisappear:animated];
+    [notifier removeObserver:self];
 }
 
 #pragma mark -
@@ -295,8 +305,35 @@
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField {
     
+    [self setActiveField:textField];
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
 
+-(void) textFieldDidEndEditing:(UITextField *)textField {
+    
+    [self setActiveField:nil];
+}
+
+#pragma mark -
+#pragma NSNofitication Center methods
+
+-(void) keyboardWasShown: (NSNotification*) notice {
+
+    NSDictionary *info = [notice userInfo];
+    keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect background = activeField.superview.frame;
+    originalFrame = activeField.superview.frame.origin;
+    background.size.height += keyboardSize.height;
+    [activeField.superview setFrame:background];
+    [scrollView setContentOffset:CGPointMake(0.0, activeField.frame.origin.y - keyboardSize.height) animated:YES];
+}
+
+-(void) keyboardWillBeHidden:(NSNotification *)notice {
+    
+    CGRect background = activeField.superview.frame;
+    background.size.height -= keyboardSize.height;
+    [activeField.superview setFrame:background];
+    [scrollView setContentOffset:CGPointMake(0.0, -(self.navigationController.navigationBar.frame.size.height + OFFSET)) animated:YES];
+}
 @end

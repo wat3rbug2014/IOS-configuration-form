@@ -63,4 +63,27 @@
     }
     return result;
 }
+
+-(NSString*) getEmailMessageBody {
+    
+    NSMutableString *buffer = [NSMutableString stringWithFormat:@"<b>Tag:</b> %@</br><b>Building:</b> %@</br>", [self tag], [self building]];
+    [buffer appendFormat:@"<b>Closet:</b> %@</br><b>Device Type:</b> %@</br><p>", [self closet],[self getDeviceTypeString]];
+    if ([[self uplinkOneTo] length] > 0) {
+        [buffer appendFormat:@"Now uplink 1 goes from port %@ to port %@ on device tag# %@</br>", [self uplinkOneFrom], [self uplinkOneTo], [self destOneTag]];
+    }
+    if ([[self uplinkTwoTo] length] > 0) {
+        [buffer appendFormat:@"Now uplink 2 goes from port %@ to port %@ on device tag# %@</br>", [self uplinkTwoFrom], [self uplinkTwoTo], [self destTwoTag]];
+    }
+    if ([self vlan] > 0) {
+        [buffer appendFormat:@"VLAN changed to %d with IP address: %@</br>", [self vlan], [self ipAddress]];
+    } else {
+        if ([[self ipAddress] length] > 0) {
+            [buffer appendFormat:@"The IP address changed to %@</br></p>", [self ipAddress]];
+        }
+    }
+    if ([[super comments] length] > 0) {
+        [buffer appendFormat:@"<p></p><b>Comments:</b><br/>%@", [super comments]];
+    }
+    return [buffer copy];
+}
 @end
