@@ -20,13 +20,14 @@
                 <outlet property="devPortOneLabel" destination="SY3-ng-cUB" id="FaA-0W-5Gk"/>
                 <outlet property="devPortTwo" destination="grZ-BG-xVL" id="Sdv-NN-yEK"/>
                 <outlet property="devPortTwoLabel" destination="Tb6-dQ-cZu" id="oNi-AS-ecp"/>
+                <outlet property="scrollView" destination="1" id="Tav-s8-XXG"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="vlan" destination="kjQ-EM-kZw" id="qMJ-2h-PPz"/>
                 <outlet property="vlanLabel" destination="JIX-hf-8Ae" id="5sw-Au-3Zs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="1" customClass="UIScrollView">
+        <view contentMode="scaleToFill" id="1" userLabel="scrollView" customClass="UIScrollView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -138,6 +139,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="delegate" destination="-1" id="IOt-8h-7Qr"/>
+            </connections>
         </view>
     </objects>
 </document>
