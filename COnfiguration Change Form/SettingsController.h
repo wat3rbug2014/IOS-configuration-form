@@ -11,7 +11,7 @@
 #import "enumList.h"
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface SettingsController : UITableViewController <ABPeoplePickerNavigationControllerDelegate>
+@interface SettingsController : UITableViewController <ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate>
 
 @property (retain) BasicDeviceData *appData;
 

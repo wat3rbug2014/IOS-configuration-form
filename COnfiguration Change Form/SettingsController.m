@@ -50,6 +50,7 @@
     
     ABPeoplePickerNavigationController *listOfContacts = [[ABPeoplePickerNavigationController alloc] init];
     [listOfContacts setPeoplePickerDelegate:self];
+    //listOfContacts.delegate = self;
     NSArray *itemsToDisplay = [NSArray arrayWithObjects:[NSNumber numberWithInt: kABPersonFirstNameProperty]
                                ,[NSNumber numberWithInt: kABPersonLastNameProperty], [NSNumber numberWithInt: kABPersonEmailProperty], nil];
     [listOfContacts setDisplayedProperties:itemsToDisplay];
@@ -121,30 +122,33 @@
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     
-    
     return YES;
 }
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
 
     bool tryAgain = YES;
-    NSMutableString *name = [NSMutableString stringWithString: (__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty)];
-    [name appendString: @" "];
-    [name appendString:(__bridge_transfer NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty)];
+
+    // make name title for the email dictionary entry
+        
+    NSMutableString *name = [NSMutableString stringWithString:(__bridge_transfer NSString*)ABRecordCopyCompositeName(person)];
     if (property == kABPersonEmailProperty) {
         tryAgain = NO;
     }
-    // should I check identifier for invalid multivalue?
+
+    // make email address for dictionary entry
+        
     NSString *email;
     ABMultiValueRef emailAddress = ABRecordCopyValue(person, kABPersonEmailProperty);
     if (ABMultiValueGetCount(emailAddress) > 1) {
         int index = ABMultiValueGetIndexForIdentifier(emailAddress, identifier);
         email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, index);
-
     }
     if (ABMultiValueGetCount(emailAddress) == 1) {
         email = (__bridge_transfer NSString*)ABMultiValueCopyValueAtIndex(emailAddress, 0);
     }
+    // do popup if no email otherwise add to dictionary
+        
     if (email != nil && name != nil) {
         [appData addEmailAddress:email withName:name];
     } else {
@@ -152,6 +156,7 @@
         UIAlertView *emailSelectError = [[UIAlertView alloc] initWithTitle:@"No Email Address" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [emailSelectError show];
     }
+
     [peoplePicker dismissViewControllerAnimated:YES completion:nil];
     [[self tableView] reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     return tryAgain;
@@ -161,4 +166,5 @@
     
     [peoplePicker dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end
