@@ -52,6 +52,9 @@
     NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
+#pragma mark -
+#pragma Custom methods
+
 -(void) readyToSendForm {
     
     bool canSend = [MFMailComposeViewController canSendMail] & [[self data] isFormFilledOut];

@@ -63,4 +63,9 @@
     settingsViewer = nil;
 }
 
+-(BOOL) shouldAutorotate {
+    
+    return  NO;
+}
+
 @end
