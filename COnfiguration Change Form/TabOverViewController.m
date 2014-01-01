@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv1.png", @"rmdv1.png", @"changedv2.png", @"changedv1.png", @"settings.png", nil];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"changedv2.png", @"alterdv.png", @"settings.png", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
     FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];

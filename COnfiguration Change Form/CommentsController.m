@@ -42,7 +42,16 @@
     [[self navigationItem] setRightBarButtonItem:sendForm];
     [commentLabel setTextColor:[UIColor textColor]];
     [commentLabel setText:@"Tap below to comment"];
+    if ([[[self data] comments] length] > 0) {
+        [commentSection setText:[[self data] comments]];
+    }
     [commentSection setTextColor:[UIColor userTextColor]];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    
+    [[self data] setComments:[commentSection text]];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
