@@ -13,8 +13,8 @@
 
 -(NSString*) getEmailSubject {
     
-    return[NSString stringWithFormat:@"Altered the configuration for tag# %@ to building %@ closet %@",
-           [self tag], [self building], [self closet]];
+    return[NSString stringWithFormat:@"Altered the configuration for %@",
+           [self getDeviceName]];
 }
 
 -(BOOL) isFormFilledOut {
