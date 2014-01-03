@@ -47,7 +47,7 @@
 -(void) setUnusedUplinkOne;
 -(void) setUnusedUplinkTwo;
 -(void) setUnusedVlan;
--(void) keyboardWasShown: (NSNotification*) notice;
+-(void) keyboardWillBeShown: (NSNotification*) notice;
 -(void) keyboardWillBeHidden: (NSNotification*) notice;
 
 @end
