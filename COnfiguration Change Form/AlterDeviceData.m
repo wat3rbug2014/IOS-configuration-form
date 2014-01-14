@@ -75,7 +75,7 @@
         [buffer appendFormat:@"Now uplink 2 goes from port %@ to port %@ on device tag# %@</br>", [self uplinkTwoFrom], [self uplinkTwoTo], [self destTwoTag]];
     }
     if ([self vlan] > 0) {
-        [buffer appendFormat:@"VLAN changed to %d with IP address: %@</br>", [self vlan], [self ipAddress]];
+        [buffer appendFormat:@"VLAN changed to %ld with IP address: %@</br>", (long)[self vlan], [self ipAddress]];
     } else {
         if ([[self ipAddress] length] > 0) {
             [buffer appendFormat:@"The IP address changed to %@</br></p>", [self ipAddress]];
