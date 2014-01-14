@@ -33,6 +33,7 @@
     if (self) {
         [self setTitle: @"Remove"];
         [super setData:[ConfigurationDataFactory create:REMOVE]];
+        [self setRestorationIdentifier:@"RemoveDevice"];
     }
     return self;
 }

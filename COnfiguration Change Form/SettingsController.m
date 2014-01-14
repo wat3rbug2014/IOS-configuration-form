@@ -26,6 +26,7 @@
     if (self) {
         [self setTitle:@"Mail Settings"];
         appData = [[BasicDeviceData alloc] init];
+        [self setRestorationIdentifier:@"Settings"];
     }
     return self;
 }

@@ -19,6 +19,7 @@
 -(id) init {
     
     return [self initWithNibName:@"AddDeviceController" bundle:nil];
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -27,6 +28,7 @@
     if (self) {
         [self setTitle: @"Add"];
         [super setData:[ConfigurationDataFactory create:ADD]];
+        [self setRestorationIdentifier:@"AddDevice"];
     }
     return self;
 }
