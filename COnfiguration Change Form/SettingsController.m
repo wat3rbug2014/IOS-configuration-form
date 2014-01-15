@@ -27,6 +27,7 @@
         [self setTitle:@"Mail Settings"];
         appData = [[BasicDeviceData alloc] init];
         [self setRestorationIdentifier:@"Settings"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }

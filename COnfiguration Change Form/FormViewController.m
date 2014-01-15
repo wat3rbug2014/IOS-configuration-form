@@ -48,6 +48,8 @@
     
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         devices = [[PickerItems alloc] init];
+        [self setRestorationIdentifier:@"Form"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }

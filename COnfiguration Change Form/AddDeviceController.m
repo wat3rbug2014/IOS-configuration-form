@@ -29,6 +29,7 @@
         [self setTitle: @"Add"];
         [super setData:[ConfigurationDataFactory create:ADD]];
         [self setRestorationIdentifier:@"AddDevice"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }

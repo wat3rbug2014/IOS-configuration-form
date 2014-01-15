@@ -31,7 +31,8 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self setRestorationIdentifier:@"Tab"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }
@@ -41,6 +42,7 @@
     [super viewDidLoad];
     NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"alterdv.png", @"changedv2.png", @"settings.png", nil];
     NSArray *tabSelectedIcons = [NSArray arrayWithObjects:@"adddv2_selected.png", @"rmdv2_selected.png", @"alterdv_selected.png",  @"changedv2.png", @"settings_selected.png", nil];
+    NSArray *restoreIDs = [NSArray arrayWithObjects:@"AddNav", @"RemoveNav", @"ReplaceNav", @"AlterNav", @"SetingNav", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
     FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];
@@ -57,6 +59,7 @@
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [[[navControllers objectAtIndex:i] tabBarItem] setSelectedImage:selected];
         [[[navControllers objectAtIndex:i] tabBarItem] setImage:normal];
+        [[navControllers objectAtIndex:i] setRestorationIdentifier:[restoreIDs objectAtIndex:i]];
     }
     [self setViewControllers:navControllers animated:YES];
 }

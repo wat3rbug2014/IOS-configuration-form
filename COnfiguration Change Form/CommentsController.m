@@ -30,7 +30,8 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        [self setRestorationIdentifier:@"Comments"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }

@@ -30,6 +30,7 @@
         [self setTitle:@"Alter"];
         [super setData:[ConfigurationDataFactory create:OTHER]];
         [self setRestorationIdentifier:@"AlterDevice"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }

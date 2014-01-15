@@ -56,6 +56,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle: @"Uplinks"];
+        [self setRestorationIdentifier:@"Connections"];
+        [self setRestorationClass:[self class]];
     }
     return self;
 }
