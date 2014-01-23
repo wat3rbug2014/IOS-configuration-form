@@ -52,6 +52,13 @@
     
     ABPeoplePickerNavigationController *listOfContacts = [[ABPeoplePickerNavigationController alloc] init];
     [listOfContacts setPeoplePickerDelegate:self];
+    
+    [[listOfContacts navigationBar] setBarTintColor:[UIColor textColor]];
+    [[listOfContacts navigationBar] setBarStyle:UIBarStyleBlack];
+    [[listOfContacts navigationBar] setTranslucent:NO];
+    [[listOfContacts navigationBar] setOpaque:YES];
+    [[listOfContacts navigationBar] setBackgroundColor:[UIColor textColor]];
+    [[listOfContacts navigationBar] setTintColor:[UIColor navigatorItemColor]];
     //listOfContacts.delegate = self;
     NSArray *itemsToDisplay = [NSArray arrayWithObjects:[NSNumber numberWithInt: kABPersonFirstNameProperty]
                                ,[NSNumber numberWithInt: kABPersonLastNameProperty], [NSNumber numberWithInt: kABPersonEmailProperty], nil];

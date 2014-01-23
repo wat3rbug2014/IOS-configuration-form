@@ -15,7 +15,13 @@
 
 +(UIColor*) textColor {
     
-    return  [UIColor colorByHex:@"0x3216b0"];
+    //return  [UIColor colorByHex:@"0x3216b0"];
+    return [UIColor colorByHex:@"0x00a08a"];
+}
+
++(UIColor*) navigatorItemColor {
+    
+    return [UIColor yellowColor];
 }
 
 +(UIColor*) unFilledRequiredTextColor {
@@ -25,7 +31,8 @@
 
 +(UIColor*) userTextColor {
     
-    return  [UIColor colorByHex:@"0x00a08a"];
+    //return  [UIColor colorByHex:@"0x00a08a"];
+    return [UIColor colorByHex:@"0x34d0ba"];
 }
 
 #pragma mark -

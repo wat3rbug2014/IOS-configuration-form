@@ -40,6 +40,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [[self tabBar] setTintColor:[UIColor textColor]];
     NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"alterdv.png", @"changedv2.png", @"settings.png", nil];
     NSArray *tabSelectedIcons = [NSArray arrayWithObjects:@"adddv2_selected.png", @"rmdv2_selected.png", @"alterdv_selected.png",  @"changedv2.png", @"settings_selected.png", nil];
     NSArray *restoreIDs = [NSArray arrayWithObjects:@"AddNav", @"RemoveNav", @"ReplaceNav", @"AlterNav", @"SetingNav", nil];
@@ -64,6 +65,7 @@
         [[[navControllers objectAtIndex:i] navigationBar] setTranslucent:NO];
         [[[navControllers objectAtIndex:i] navigationBar] setOpaque:YES];
         [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor textColor]];
+        [[[navControllers objectAtIndex:i] navigationBar] setTintColor:[UIColor navigatorItemColor]];
         [[navControllers objectAtIndex:i] setRestorationIdentifier:[restoreIDs objectAtIndex:i]];
     }
     [self setViewControllers:navControllers animated:YES];

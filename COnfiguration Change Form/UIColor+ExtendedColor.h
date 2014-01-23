@@ -17,4 +17,5 @@
 +(UIColor*) textColor;
 +(UIColor*) userTextColor;
 +(UIColor*) unFilledRequiredTextColor;
++(UIColor*) navigatorItemColor;
 @end
