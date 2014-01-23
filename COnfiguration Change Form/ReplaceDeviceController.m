@@ -37,8 +37,6 @@
     if (self) {
         [super setTitle: @"Replace"];
         [super setData: [ConfigurationDataFactory create:REPLACE]];
-        [self setRestorationIdentifier:@"ReplaceDevice"];
-        [self setRestorationClass:[self class]];
     }
     return self;
 }

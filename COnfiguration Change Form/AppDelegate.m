@@ -70,11 +70,11 @@ enum selectedView {
 
 -(BOOL) application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
     
-    return YES;
+    return NO;
 }
 
 -(BOOL) application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
     
-    return YES;
+    return NO;
 }
 @end

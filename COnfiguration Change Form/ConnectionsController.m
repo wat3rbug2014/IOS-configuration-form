@@ -56,8 +56,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle: @"Uplinks"];
-        [self setRestorationIdentifier:@"Connections"];
-        [self setRestorationClass:[self class]];
     }
     return self;
 }
@@ -69,7 +67,7 @@
 {
     [super viewDidLoad];
     notifier = [NSNotificationCenter defaultCenter];
-    [notifier addObserver:self selector:@selector(keyboardWillBeShown:) name:UIKeyboardWillShowNotification object:nil];
+    [notifier addObserver:self selector:@selector(keyboardWillBeShown:) name:UIKeyboardDidShowNotification object:nil];
     [notifier addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
     [currentIP setTextColor:[UIColor textColor]];
     UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
