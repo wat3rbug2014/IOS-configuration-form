@@ -59,12 +59,6 @@
         selected = [selected imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [[[navControllers objectAtIndex:i] tabBarItem] setSelectedImage:selected];
         [[[navControllers objectAtIndex:i] tabBarItem] setImage:normal];
-        [[[navControllers objectAtIndex:i] navigationBar] setBarTintColor:[UIColor textColor]];
-        [[[navControllers objectAtIndex:i] navigationBar] setBarStyle:UIBarStyleBlack];
-        [[[navControllers objectAtIndex:i] navigationBar] setTranslucent:NO];
-        [[[navControllers objectAtIndex:i] navigationBar] setOpaque:YES];
-        [[[navControllers objectAtIndex:i] navigationBar] setBackgroundColor:[UIColor textColor]];
-        [[[navControllers objectAtIndex:i] navigationBar] setTintColor:[UIColor navigatorItemColor]];
         [[navControllers objectAtIndex:i] setRestorationIdentifier:[restoreIDs objectAtIndex:i]];
     }
     [self setViewControllers:navControllers animated:YES];

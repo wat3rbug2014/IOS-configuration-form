@@ -322,6 +322,7 @@
 
     NSDictionary *info = [notice userInfo];
     keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    NSLog(@"keyboard size is %f", keyboardSize.height);
     CGRect background = activeField.superview.frame;
     originalFrame = activeField.superview.frame.origin;
     background.size.height += keyboardSize.height;

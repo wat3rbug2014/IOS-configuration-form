@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TabOverViewController.h"
+#import "UIColor+ExtendedColor.h"
 
 @implementation AppDelegate
 
@@ -38,6 +39,10 @@ enum selectedView {
     self.window.rootViewController = mainController;
     [self.window makeKeyAndVisible];
     defaults = nil;
+    [[UINavigationBar appearance] setBarTintColor:[UIColor textColor]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor textColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor navigatorItemColor]];
     return YES;
 }
 
