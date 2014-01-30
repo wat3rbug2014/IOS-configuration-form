@@ -68,7 +68,7 @@
     [super viewDidLoad];
     notifier = [NSNotificationCenter defaultCenter];
     [notifier addObserver:self selector:@selector(keyboardWillBeShown:) name:UIKeyboardDidShowNotification object:nil];
-    [notifier addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+    [notifier addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardDidHideNotification object:nil];
     [currentIP setTextColor:[UIColor textColor]];
     UIBarButtonItem *toCommenter = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toCommenter];
@@ -322,7 +322,6 @@
 
     NSDictionary *info = [notice userInfo];
     keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    NSLog(@"keyboard size is %f", keyboardSize.height);
     CGRect background = activeField.superview.frame;
     originalFrame = activeField.superview.frame.origin;
     background.size.height += keyboardSize.height;

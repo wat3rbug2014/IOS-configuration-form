@@ -40,6 +40,9 @@
 @property (nonatomic) CGPoint originalFrame;
 
 
+
+
+
 -(id) initWithData: (id<ConfigurationDataProtocol>) newData;
 -(void) changeUpLinkOneColor;
 -(void) changeUpLinkTwoColor;

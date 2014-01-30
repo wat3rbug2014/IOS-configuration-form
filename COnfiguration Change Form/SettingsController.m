@@ -140,7 +140,7 @@
     NSString *email;
     ABMultiValueRef emailAddress = ABRecordCopyValue(person, kABPersonEmailProperty);
     if (ABMultiValueGetCount(emailAddress) > 1) {
-        int index = ABMultiValueGetIndexForIdentifier(emailAddress, identifier);
+        long index = ABMultiValueGetIndexForIdentifier(emailAddress, identifier);
         email = (__bridge_transfer NSString*) ABMultiValueCopyValueAtIndex(emailAddress, index);
     }
     if (ABMultiValueGetCount(emailAddress) == 1) {
