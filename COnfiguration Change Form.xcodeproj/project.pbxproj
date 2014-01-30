@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50596DD182C7FA600973CD2 /* ConfigurationDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */; };
+		A50596E0182C80A800973CD2 /* AddDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A50596DF182C80A800973CD2 /* AddDeviceData.m */; };
+		A50596E7182DC8AA00973CD2 /* ReplaceDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A50596E6182DC8AA00973CD2 /* ReplaceDeviceData.m */; };
 		A5102C7E17F201A300A9494E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5102C7D17F201A300A9494E /* Foundation.framework */; };
 		A5102C8017F201A300A9494E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5102C7F17F201A300A9494E /* CoreGraphics.framework */; };
 		A5102C8217F201A300A9494E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5102C8117F201A300A9494E /* UIKit.framework */; };
@@ -21,21 +24,39 @@
 		A5102CA317F201A300A9494E /* COnfiguration_Change_FormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CA217F201A300A9494E /* COnfiguration_Change_FormTests.m */; };
 		A5102CF317F266F100A9494E /* TabOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CF117F266F100A9494E /* TabOverViewController.m */; };
 		A5102CF417F266F100A9494E /* TabOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102CF217F266F100A9494E /* TabOverViewController.xib */; };
-		A5102CF817F26DAD00A9494E /* AddOrRemoveDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CF617F26DAD00A9494E /* AddOrRemoveDeviceController.m */; };
-		A5102CF917F26DAD00A9494E /* AddOrRemoveDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102CF717F26DAD00A9494E /* AddOrRemoveDeviceController.xib */; };
-		A5102CFD17F26DEB00A9494E /* ChangeDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CFB17F26DEB00A9494E /* ChangeDeviceController.m */; };
-		A5102CFE17F26DEB00A9494E /* ChangeDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102CFC17F26DEB00A9494E /* ChangeDeviceController.xib */; };
+		A5102CF817F26DAD00A9494E /* RemoveDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CF617F26DAD00A9494E /* RemoveDeviceController.m */; };
+		A5102CF917F26DAD00A9494E /* RemoveDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102CF717F26DAD00A9494E /* RemoveDeviceController.xib */; };
+		A5102CFD17F26DEB00A9494E /* ReplaceDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102CFB17F26DEB00A9494E /* ReplaceDeviceController.m */; };
+		A5102CFE17F26DEB00A9494E /* ReplaceDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102CFC17F26DEB00A9494E /* ReplaceDeviceController.xib */; };
 		A5102D0217F26E1C00A9494E /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D0017F26E1C00A9494E /* SettingsController.m */; };
 		A5102D0317F26E1C00A9494E /* SettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102D0117F26E1C00A9494E /* SettingsController.xib */; };
 		A5102D0717F26E5300A9494E /* ConnectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D0517F26E5300A9494E /* ConnectionsController.m */; };
 		A5102D0817F26E5300A9494E /* ConnectionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102D0617F26E5300A9494E /* ConnectionsController.xib */; };
-		A5102D0B17F26F7000A9494E /* ConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D0A17F26F7000A9494E /* ConfigurationData.m */; };
 		A5102D1517F5250800A9494E /* UIColor+ExtendedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */; };
-		A5860BC017FB6DDE00F142BD /* adddevice.png in Resources */ = {isa = PBXBuildFile; fileRef = A5860BBF17FB6DDD00F142BD /* adddevice.png */; };
-		A5860BC217FB6E6500F142BD /* rmdevice.png in Resources */ = {isa = PBXBuildFile; fileRef = A5860BC117FB6E6500F142BD /* rmdevice.png */; };
-		A5B46D6217FB737100BE8FD9 /* changedevice.png in Resources */ = {isa = PBXBuildFile; fileRef = A5B46D6117FB737100BE8FD9 /* changedevice.png */; };
+		A52BD7E518330EEE00A5162B /* adddv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7E418330EEE00A5162B /* adddv1.png */; };
+		A52BD7E718330F4E00A5162B /* rmdv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7E618330F4E00A5162B /* rmdv1.png */; };
+		A52BD7EB183312D300A5162B /* changedv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7EA183312D300A5162B /* changedv1.png */; };
+		A52BD7F11833151C00A5162B /* changedv2.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7F01833151C00A5162B /* changedv2.png */; };
+		A52BD7F418331C3200A5162B /* BasicDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A52BD7F318331C3200A5162B /* BasicDeviceData.m */; };
+		A55B57C41835C59C006D1378 /* ChangeDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A55B57C31835C59C006D1378 /* ChangeDeviceData.m */; };
+		A55B57C81837ED76006D1378 /* CommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55B57C61837ED76006D1378 /* CommentsController.m */; };
+		A55B57C91837ED76006D1378 /* CommentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55B57C71837ED76006D1378 /* CommentsController.xib */; };
+		A5678A6E186F98C7009591B3 /* adddv2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5678A6B186F98C7009591B3 /* adddv2.png */; };
+		A5678A6F186F98C7009591B3 /* alterdv.png in Resources */ = {isa = PBXBuildFile; fileRef = A5678A6C186F98C7009591B3 /* alterdv.png */; };
+		A5678A70186F98C7009591B3 /* rmdv2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5678A6D186F98C7009591B3 /* rmdv2.png */; };
+		A58C10351833208F00BBA45E /* RemoveDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A58C10341833208F00BBA45E /* RemoveDeviceData.m */; };
+		A596B2351829D3C8009F74CA /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A596B2341829D3C8009F74CA /* FormViewController.m */; };
+		A596B2381829D441009F74CA /* FormViewControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A596B2371829D441009F74CA /* FormViewControllerFactory.m */; };
+		A596B23B1829D72F009F74CA /* AddDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A596B23A1829D72F009F74CA /* AddDeviceController.m */; };
+		A596B2421829D84F009F74CA /* AlterDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = A596B2401829D84F009F74CA /* AlterDeviceController.m */; };
+		A596B2451829DC5B009F74CA /* AddDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A596B2441829DC5B009F74CA /* AddDeviceController.xib */; };
+		A5AE7A52187B0D22002B033D /* adddv2_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AE7A51187B0D22002B033D /* adddv2_selected.png */; };
+		A5AE7A54187B0DAE002B033D /* rmdv2_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AE7A53187B0DAE002B033D /* rmdv2_selected.png */; };
+		A5AE7A58187B0F8F002B033D /* settings_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AE7A56187B0F8F002B033D /* settings_selected.png */; };
+		A5AE7A5A187B120E002B033D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AE7A59187B120E002B033D /* settings.png */; };
 		A5B46D6517FB863800BE8FD9 /* PickerItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B46D6417FB863800BE8FD9 /* PickerItems.m */; };
-		A5B46D6B17FCA5B900BE8FD9 /* MailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B46D6A17FCA5B900BE8FD9 /* MailController.m */; };
+		A5D500B2187B07A300965EB7 /* alterdv_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D500B1187B07A300965EB7 /* alterdv_selected.png */; };
+		A5EECDB2184A683C00346B5F /* AlterDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EECDB1184A683C00346B5F /* AlterDeviceData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A5102C7A17F201A300A9494E /* COnfiguration Change Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COnfiguration Change Form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50596DB182C7FA600973CD2 /* ConfigurationDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationDataFactory.h; sourceTree = "<group>"; };
+		A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationDataFactory.m; sourceTree = "<group>"; };
+		A50596DE182C80A800973CD2 /* AddDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceData.h; sourceTree = "<group>"; };
+		A50596DF182C80A800973CD2 /* AddDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceData.m; sourceTree = "<group>"; };
+		A50596E4182C874D00973CD2 /* ConfigurationDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigurationDataProtocol.h; sourceTree = "<group>"; };
+		A50596E5182DC8AA00973CD2 /* ReplaceDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceDeviceData.h; sourceTree = "<group>"; };
+		A50596E6182DC8AA00973CD2 /* ReplaceDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceDeviceData.m; sourceTree = "<group>"; };
+		A5102C7A17F201A300A9494E /* Config Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Config Form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5102C7D17F201A300A9494E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5102C7F17F201A300A9494E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A5102C8117F201A300A9494E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -66,32 +94,58 @@
 		A5102CA017F201A300A9494E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5102CA217F201A300A9494E /* COnfiguration_Change_FormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COnfiguration_Change_FormTests.m; sourceTree = "<group>"; };
 		A5102CF017F266F100A9494E /* TabOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabOverViewController.h; sourceTree = "<group>"; };
-		A5102CF117F266F100A9494E /* TabOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabOverViewController.m; sourceTree = "<group>"; };
+		A5102CF117F266F100A9494E /* TabOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabOverViewController.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		A5102CF217F266F100A9494E /* TabOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabOverViewController.xib; sourceTree = "<group>"; };
-		A5102CF517F26DAD00A9494E /* AddOrRemoveDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrRemoveDeviceController.h; sourceTree = "<group>"; };
-		A5102CF617F26DAD00A9494E /* AddOrRemoveDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrRemoveDeviceController.m; sourceTree = "<group>"; };
-		A5102CF717F26DAD00A9494E /* AddOrRemoveDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddOrRemoveDeviceController.xib; sourceTree = "<group>"; };
-		A5102CFA17F26DEB00A9494E /* ChangeDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDeviceController.h; sourceTree = "<group>"; };
-		A5102CFB17F26DEB00A9494E /* ChangeDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDeviceController.m; sourceTree = "<group>"; };
-		A5102CFC17F26DEB00A9494E /* ChangeDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeDeviceController.xib; sourceTree = "<group>"; };
+		A5102CF517F26DAD00A9494E /* RemoveDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveDeviceController.h; sourceTree = "<group>"; };
+		A5102CF617F26DAD00A9494E /* RemoveDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoveDeviceController.m; sourceTree = "<group>"; };
+		A5102CF717F26DAD00A9494E /* RemoveDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemoveDeviceController.xib; sourceTree = "<group>"; };
+		A5102CFA17F26DEB00A9494E /* ReplaceDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceDeviceController.h; sourceTree = "<group>"; };
+		A5102CFB17F26DEB00A9494E /* ReplaceDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplaceDeviceController.m; sourceTree = "<group>"; };
+		A5102CFC17F26DEB00A9494E /* ReplaceDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplaceDeviceController.xib; sourceTree = "<group>"; };
 		A5102CFF17F26E1C00A9494E /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		A5102D0017F26E1C00A9494E /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 		A5102D0117F26E1C00A9494E /* SettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsController.xib; sourceTree = "<group>"; };
 		A5102D0417F26E5300A9494E /* ConnectionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsController.h; sourceTree = "<group>"; };
 		A5102D0517F26E5300A9494E /* ConnectionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsController.m; sourceTree = "<group>"; };
 		A5102D0617F26E5300A9494E /* ConnectionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionsController.xib; sourceTree = "<group>"; };
-		A5102D0917F26F7000A9494E /* ConfigurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigurationData.h; sourceTree = "<group>"; };
-		A5102D0A17F26F7000A9494E /* ConfigurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigurationData.m; sourceTree = "<group>"; };
 		A5102D0C17F271EC00A9494E /* enumList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enumList.h; sourceTree = "<group>"; };
 		A5102D1317F5250800A9494E /* UIColor+ExtendedColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ExtendedColor.h"; sourceTree = "<group>"; };
 		A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ExtendedColor.m"; sourceTree = "<group>"; };
-		A5860BBF17FB6DDD00F142BD /* adddevice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddevice.png; sourceTree = "<group>"; };
-		A5860BC117FB6E6500F142BD /* rmdevice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rmdevice.png; sourceTree = "<group>"; };
-		A5B46D6117FB737100BE8FD9 /* changedevice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changedevice.png; sourceTree = "<group>"; };
+		A52BD7E418330EEE00A5162B /* adddv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adddv1.png; path = ../adddv1.png; sourceTree = "<group>"; };
+		A52BD7E618330F4E00A5162B /* rmdv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rmdv1.png; path = ../rmdv1.png; sourceTree = "<group>"; };
+		A52BD7EA183312D300A5162B /* changedv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = changedv1.png; path = ../changedv1.png; sourceTree = "<group>"; };
+		A52BD7F01833151C00A5162B /* changedv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changedv2.png; sourceTree = "<group>"; };
+		A52BD7F218331C3200A5162B /* BasicDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDeviceData.h; sourceTree = "<group>"; };
+		A52BD7F318331C3200A5162B /* BasicDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDeviceData.m; sourceTree = "<group>"; };
+		A55B57C21835C59C006D1378 /* ChangeDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDeviceData.h; sourceTree = "<group>"; };
+		A55B57C31835C59C006D1378 /* ChangeDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDeviceData.m; sourceTree = "<group>"; };
+		A55B57C51837ED76006D1378 /* CommentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsController.h; sourceTree = "<group>"; };
+		A55B57C61837ED76006D1378 /* CommentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsController.m; sourceTree = "<group>"; };
+		A55B57C71837ED76006D1378 /* CommentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsController.xib; sourceTree = "<group>"; };
+		A5678A6B186F98C7009591B3 /* adddv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddv2.png; sourceTree = "<group>"; };
+		A5678A6C186F98C7009591B3 /* alterdv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alterdv.png; sourceTree = "<group>"; };
+		A5678A6D186F98C7009591B3 /* rmdv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rmdv2.png; sourceTree = "<group>"; };
+		A56C5758182E9B2D00343D26 /* FormViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormViewProtocol.h; sourceTree = "<group>"; };
+		A58C10331833208F00BBA45E /* RemoveDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoveDeviceData.h; sourceTree = "<group>"; };
+		A58C10341833208F00BBA45E /* RemoveDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoveDeviceData.m; sourceTree = "<group>"; };
+		A596B2331829D3C8009F74CA /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
+		A596B2341829D3C8009F74CA /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
+		A596B2361829D441009F74CA /* FormViewControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewControllerFactory.h; sourceTree = "<group>"; };
+		A596B2371829D441009F74CA /* FormViewControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewControllerFactory.m; sourceTree = "<group>"; };
+		A596B2391829D72F009F74CA /* AddDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDeviceController.h; sourceTree = "<group>"; };
+		A596B23A1829D72F009F74CA /* AddDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDeviceController.m; sourceTree = "<group>"; };
+		A596B23F1829D84F009F74CA /* AlterDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterDeviceController.h; sourceTree = "<group>"; };
+		A596B2401829D84F009F74CA /* AlterDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterDeviceController.m; sourceTree = "<group>"; };
+		A596B2441829DC5B009F74CA /* AddDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddDeviceController.xib; sourceTree = "<group>"; };
+		A5AE7A51187B0D22002B033D /* adddv2_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddv2_selected.png; sourceTree = "<group>"; };
+		A5AE7A53187B0DAE002B033D /* rmdv2_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rmdv2_selected.png; sourceTree = "<group>"; };
+		A5AE7A56187B0F8F002B033D /* settings_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_selected.png; sourceTree = "<group>"; };
+		A5AE7A59187B120E002B033D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		A5B46D6317FB863800BE8FD9 /* PickerItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerItems.h; sourceTree = "<group>"; };
 		A5B46D6417FB863800BE8FD9 /* PickerItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerItems.m; sourceTree = "<group>"; };
-		A5B46D6917FCA5B900BE8FD9 /* MailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailController.h; sourceTree = "<group>"; };
-		A5B46D6A17FCA5B900BE8FD9 /* MailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailController.m; sourceTree = "<group>"; };
+		A5D500B1187B07A300965EB7 /* alterdv_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alterdv_selected.png; sourceTree = "<group>"; };
+		A5EECDB0184A683C00346B5F /* AlterDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterDeviceData.h; sourceTree = "<group>"; };
+		A5EECDB1184A683C00346B5F /* AlterDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterDeviceData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +185,7 @@
 		A5102C7B17F201A300A9494E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5102C7A17F201A300A9494E /* COnfiguration Change Form.app */,
+				A5102C7A17F201A300A9494E /* Config Form.app */,
 				A5102C9517F201A300A9494E /* COnfiguration Change FormTests.xctest */,
 			);
 			name = Products;
@@ -153,34 +207,67 @@
 			children = (
 				A5102C8C17F201A300A9494E /* AppDelegate.h */,
 				A5102C8D17F201A300A9494E /* AppDelegate.m */,
-				A5102CF517F26DAD00A9494E /* AddOrRemoveDeviceController.h */,
-				A5102CF617F26DAD00A9494E /* AddOrRemoveDeviceController.m */,
-				A5102CF717F26DAD00A9494E /* AddOrRemoveDeviceController.xib */,
-				A5102CF017F266F100A9494E /* TabOverViewController.h */,
-				A5102CF117F266F100A9494E /* TabOverViewController.m */,
-				A5102CF217F266F100A9494E /* TabOverViewController.xib */,
-				A5102CFA17F26DEB00A9494E /* ChangeDeviceController.h */,
-				A5102CFB17F26DEB00A9494E /* ChangeDeviceController.m */,
-				A5102CFC17F26DEB00A9494E /* ChangeDeviceController.xib */,
-				A5102D0917F26F7000A9494E /* ConfigurationData.h */,
-				A5102D0A17F26F7000A9494E /* ConfigurationData.m */,
-				A5102D0417F26E5300A9494E /* ConnectionsController.h */,
-				A5102D0517F26E5300A9494E /* ConnectionsController.m */,
-				A5102D0617F26E5300A9494E /* ConnectionsController.xib */,
-				A5102D0C17F271EC00A9494E /* enumList.h */,
-				A5B46D6917FCA5B900BE8FD9 /* MailController.h */,
-				A5B46D6A17FCA5B900BE8FD9 /* MailController.m */,
-				A5B46D6317FB863800BE8FD9 /* PickerItems.h */,
-				A5B46D6417FB863800BE8FD9 /* PickerItems.m */,
+				A50596DE182C80A800973CD2 /* AddDeviceData.h */,
+				A50596DF182C80A800973CD2 /* AddDeviceData.m */,
+				A596B2391829D72F009F74CA /* AddDeviceController.h */,
+				A596B23A1829D72F009F74CA /* AddDeviceController.m */,
+				A596B2441829DC5B009F74CA /* AddDeviceController.xib */,
+				A58C10331833208F00BBA45E /* RemoveDeviceData.h */,
+				A58C10341833208F00BBA45E /* RemoveDeviceData.m */,
+				A5102CF517F26DAD00A9494E /* RemoveDeviceController.h */,
+				A5102CF617F26DAD00A9494E /* RemoveDeviceController.m */,
+				A5102CF717F26DAD00A9494E /* RemoveDeviceController.xib */,
+				A55B57C21835C59C006D1378 /* ChangeDeviceData.h */,
+				A55B57C31835C59C006D1378 /* ChangeDeviceData.m */,
+				A5EECDB0184A683C00346B5F /* AlterDeviceData.h */,
+				A5EECDB1184A683C00346B5F /* AlterDeviceData.m */,
+				A596B23F1829D84F009F74CA /* AlterDeviceController.h */,
+				A596B2401829D84F009F74CA /* AlterDeviceController.m */,
+				A50596E5182DC8AA00973CD2 /* ReplaceDeviceData.h */,
+				A50596E6182DC8AA00973CD2 /* ReplaceDeviceData.m */,
+				A5102CFA17F26DEB00A9494E /* ReplaceDeviceController.h */,
+				A5102CFB17F26DEB00A9494E /* ReplaceDeviceController.m */,
+				A5102CFC17F26DEB00A9494E /* ReplaceDeviceController.xib */,
 				A5102CFF17F26E1C00A9494E /* SettingsController.h */,
 				A5102D0017F26E1C00A9494E /* SettingsController.m */,
 				A5102D0117F26E1C00A9494E /* SettingsController.xib */,
+				A5102CF017F266F100A9494E /* TabOverViewController.h */,
+				A5102CF117F266F100A9494E /* TabOverViewController.m */,
+				A5102CF217F266F100A9494E /* TabOverViewController.xib */,
+				A50596E4182C874D00973CD2 /* ConfigurationDataProtocol.h */,
+				A52BD7F218331C3200A5162B /* BasicDeviceData.h */,
+				A52BD7F318331C3200A5162B /* BasicDeviceData.m */,
+				A50596DB182C7FA600973CD2 /* ConfigurationDataFactory.h */,
+				A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */,
+				A5102D0417F26E5300A9494E /* ConnectionsController.h */,
+				A5102D0517F26E5300A9494E /* ConnectionsController.m */,
+				A5102D0617F26E5300A9494E /* ConnectionsController.xib */,
+				A55B57C51837ED76006D1378 /* CommentsController.h */,
+				A55B57C61837ED76006D1378 /* CommentsController.m */,
+				A55B57C71837ED76006D1378 /* CommentsController.xib */,
+				A5102D0C17F271EC00A9494E /* enumList.h */,
+				A56C5758182E9B2D00343D26 /* FormViewProtocol.h */,
+				A596B2331829D3C8009F74CA /* FormViewController.h */,
+				A596B2341829D3C8009F74CA /* FormViewController.m */,
+				A596B2361829D441009F74CA /* FormViewControllerFactory.h */,
+				A596B2371829D441009F74CA /* FormViewControllerFactory.m */,
+				A5B46D6317FB863800BE8FD9 /* PickerItems.h */,
+				A5B46D6417FB863800BE8FD9 /* PickerItems.m */,
 				A5102D1317F5250800A9494E /* UIColor+ExtendedColor.h */,
 				A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */,
 				A5102C8F17F201A300A9494E /* Images.xcassets */,
-				A5B46D6117FB737100BE8FD9 /* changedevice.png */,
-				A5860BC117FB6E6500F142BD /* rmdevice.png */,
-				A5860BBF17FB6DDD00F142BD /* adddevice.png */,
+				A5AE7A59187B120E002B033D /* settings.png */,
+				A5AE7A56187B0F8F002B033D /* settings_selected.png */,
+				A5AE7A53187B0DAE002B033D /* rmdv2_selected.png */,
+				A5AE7A51187B0D22002B033D /* adddv2_selected.png */,
+				A5D500B1187B07A300965EB7 /* alterdv_selected.png */,
+				A5678A6B186F98C7009591B3 /* adddv2.png */,
+				A5678A6C186F98C7009591B3 /* alterdv.png */,
+				A5678A6D186F98C7009591B3 /* rmdv2.png */,
+				A52BD7EA183312D300A5162B /* changedv1.png */,
+				A52BD7E618330F4E00A5162B /* rmdv1.png */,
+				A52BD7E418330EEE00A5162B /* adddv1.png */,
+				A52BD7F01833151C00A5162B /* changedv2.png */,
 				A5102C8417F201A300A9494E /* Supporting Files */,
 			);
 			name = "Configuration Change Form";
@@ -234,7 +321,7 @@
 			);
 			name = "COnfiguration Change Form";
 			productName = "COnfiguration Change Form";
-			productReference = A5102C7A17F201A300A9494E /* COnfiguration Change Form.app */;
+			productReference = A5102C7A17F201A300A9494E /* Config Form.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A5102C9417F201A300A9494E /* COnfiguration Change FormTests */ = {
@@ -292,15 +379,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5102CF917F26DAD00A9494E /* AddOrRemoveDeviceController.xib in Resources */,
-				A5860BC017FB6DDE00F142BD /* adddevice.png in Resources */,
-				A5102CFE17F26DEB00A9494E /* ChangeDeviceController.xib in Resources */,
+				A5AE7A54187B0DAE002B033D /* rmdv2_selected.png in Resources */,
+				A5678A6F186F98C7009591B3 /* alterdv.png in Resources */,
+				A5102CF917F26DAD00A9494E /* RemoveDeviceController.xib in Resources */,
+				A52BD7EB183312D300A5162B /* changedv1.png in Resources */,
+				A5AE7A52187B0D22002B033D /* adddv2_selected.png in Resources */,
+				A5D500B2187B07A300965EB7 /* alterdv_selected.png in Resources */,
+				A5102CFE17F26DEB00A9494E /* ReplaceDeviceController.xib in Resources */,
+				A5AE7A58187B0F8F002B033D /* settings_selected.png in Resources */,
+				A52BD7F11833151C00A5162B /* changedv2.png in Resources */,
+				A596B2451829DC5B009F74CA /* AddDeviceController.xib in Resources */,
 				A5102C8817F201A300A9494E /* InfoPlist.strings in Resources */,
 				A5102C9017F201A300A9494E /* Images.xcassets in Resources */,
+				A5678A70186F98C7009591B3 /* rmdv2.png in Resources */,
 				A5102D0317F26E1C00A9494E /* SettingsController.xib in Resources */,
-				A5860BC217FB6E6500F142BD /* rmdevice.png in Resources */,
-				A5B46D6217FB737100BE8FD9 /* changedevice.png in Resources */,
+				A55B57C91837ED76006D1378 /* CommentsController.xib in Resources */,
+				A5AE7A5A187B120E002B033D /* settings.png in Resources */,
+				A52BD7E518330EEE00A5162B /* adddv1.png in Resources */,
+				A5678A6E186F98C7009591B3 /* adddv2.png in Resources */,
 				A5102D0817F26E5300A9494E /* ConnectionsController.xib in Resources */,
+				A52BD7E718330F4E00A5162B /* rmdv1.png in Resources */,
 				A5102CF417F266F100A9494E /* TabOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,17 +418,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5102D0B17F26F7000A9494E /* ConfigurationData.m in Sources */,
-				A5B46D6B17FCA5B900BE8FD9 /* MailController.m in Sources */,
+				A50596E7182DC8AA00973CD2 /* ReplaceDeviceData.m in Sources */,
 				A5102D0217F26E1C00A9494E /* SettingsController.m in Sources */,
 				A5102D1517F5250800A9494E /* UIColor+ExtendedColor.m in Sources */,
-				A5102CF817F26DAD00A9494E /* AddOrRemoveDeviceController.m in Sources */,
-				A5102CFD17F26DEB00A9494E /* ChangeDeviceController.m in Sources */,
+				A55B57C81837ED76006D1378 /* CommentsController.m in Sources */,
+				A596B2381829D441009F74CA /* FormViewControllerFactory.m in Sources */,
+				A5102CF817F26DAD00A9494E /* RemoveDeviceController.m in Sources */,
+				A5102CFD17F26DEB00A9494E /* ReplaceDeviceController.m in Sources */,
+				A596B2351829D3C8009F74CA /* FormViewController.m in Sources */,
+				A5EECDB2184A683C00346B5F /* AlterDeviceData.m in Sources */,
 				A5102CF317F266F100A9494E /* TabOverViewController.m in Sources */,
 				A5B46D6517FB863800BE8FD9 /* PickerItems.m in Sources */,
+				A52BD7F418331C3200A5162B /* BasicDeviceData.m in Sources */,
+				A596B23B1829D72F009F74CA /* AddDeviceController.m in Sources */,
+				A58C10351833208F00BBA45E /* RemoveDeviceData.m in Sources */,
+				A55B57C41835C59C006D1378 /* ChangeDeviceData.m in Sources */,
+				A596B2421829D84F009F74CA /* AlterDeviceController.m in Sources */,
 				A5102C8E17F201A300A9494E /* AppDelegate.m in Sources */,
 				A5102D0717F26E5300A9494E /* ConnectionsController.m in Sources */,
 				A5102C8A17F201A300A9494E /* main.m in Sources */,
+				A50596DD182C7FA600973CD2 /* ConfigurationDataFactory.m in Sources */,
+				A50596E0182C80A800973CD2 /* AddDeviceData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +560,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "COnfiguration Change Form/COnfiguration Change Form-Prefix.pch";
 				INFOPLIST_FILE = "COnfiguration Change Form/COnfiguration Change Form-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "Config Form";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -465,7 +574,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "COnfiguration Change Form/COnfiguration Change Form-Prefix.pch";
 				INFOPLIST_FILE = "COnfiguration Change Form/COnfiguration Change Form-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "Config Form";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
