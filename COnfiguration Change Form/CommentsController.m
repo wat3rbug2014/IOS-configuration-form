@@ -94,7 +94,11 @@
     [mailer setToRecipients:[[self data] getMailingList]];
     [mailer setSubject:[[self data] getEmailSubject]];
     [mailer setMessageBody:[[self data] getEmailMessageBody] isHTML:YES];
-        
+    [[mailer navigationBar] setTintColor:[UIColor navigatorItemColor]];
+    [[mailer navigationBar] setBackgroundColor:[UIColor textColor]];
+    [[mailer navigationBar] setBarStyle:UIBarStyleBlack];
+    [[mailer navigationBar] setBarTintColor:[UIColor textColor]];
+    
     // NOTE: documentation says do your email stuff before display of viewcontroller because you
     // cannot edit message from here on out.
         
