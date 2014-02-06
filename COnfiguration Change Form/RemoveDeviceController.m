@@ -53,6 +53,8 @@
     UIColor *textColor = [UIColor textColor];
     [super.currentTagLabel setTextColor:textColor];
     [super.currentTagLabel setText:@"Old tag"];
+    [[self data] setDeviceType:AS];
+    [self.deviceTypeSelResult setText:[[self data] getDeviceTypeString]];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
 }

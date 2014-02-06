@@ -48,6 +48,8 @@
     [super setData: [ConfigurationDataFactory create:REPLACE]];
     [oldTag setTextColor:[UIColor userTextColor]];
     [currentTag setTextColor:[UIColor userTextColor]];
+    [[self data] setDeviceType:AS];
+    [self.deviceTypeSelResult setText:[[self data] getDeviceTypeString]];
     [self updateFormContents];
     [self changeLabelColorForMissingInfo];
     
