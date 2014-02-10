@@ -71,8 +71,9 @@
     [deviceTypeSelection selectRow: DEF_ROW inComponent:0 animated:NO];
     [deviceTypeSelection setShowsSelectionIndicator:YES];
     [self.view addSubview:deviceTypeSelection];
+    [deviceTypeSelection reloadAllComponents];
     [deviceTypeSelection selectRow:AS inComponent:0 animated:YES];
-    [data setDeviceType:AS];
+    [data setDeviceType:[deviceTypeSelection selectedRowInComponent:0]];
     [deviceTypeSelResult setText:[data getDeviceTypeString]];
     
     // setup textfields
@@ -111,6 +112,7 @@
     
     [data setBuilding:[buildingEntry text]];
     [data setCloset:[closetEntry text]];
+    [data setDeviceType:[deviceTypeSelection selectedRowInComponent:0]];
 }
 
 -(void) pushNextController {

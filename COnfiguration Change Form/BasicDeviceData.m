@@ -104,7 +104,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     NSMutableString *buffer = [[NSMutableString alloc] init];
     [buffer appendFormat:@"%@-%@-%@-%@-%@", [self getSiteAbbreviatedString], [self getAbbreviateDeviceString], [self building], [self closet], [self tag]];
-    return [buffer copy];
+    return buffer;
 }
 
 -(NSString*) getSiteString {
