@@ -24,7 +24,7 @@
     
     self = [super initWithStyle:style];
     if (self) {
-        [self setTitle:@"Mail Settings"];
+        [self setTitle:@"Contacts"];
         appData = [[BasicDeviceData alloc] init];
     }
     return self;
@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *addContacts = [[UIBarButtonItem alloc] initWithTitle:@"Contacts" style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
+    UIBarButtonItem *addContacts = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
     [[self navigationItem] setRightBarButtonItem:addContacts];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }

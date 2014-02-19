@@ -13,9 +13,9 @@
 
 @synthesize uplinkOneFrom;
 @synthesize uplinkOneTo;
-@synthesize destOneTag;
 @synthesize uplinkTwoFrom;
 @synthesize uplinkTwoTo;
+@synthesize destOneTag;
 @synthesize destTwoTag;
 
 -(BOOL) isFormFilledOut {

@@ -11,6 +11,7 @@
 #import "CommentsController.h"
 #import "ConfigurationDataProtocol.h"
 #import "AlterDeviceData.h"
+#import "AddDeviceData.h"
 
 @interface ConnectionsController ()
 
@@ -103,8 +104,8 @@
     
     [devPortOne setText:[[self data] uplinkOneFrom]];
     [devPortTwo setText:[[self data] uplinkTwoFrom]];
-    [devDestPortOne setText:[[self data] uplinkOneFrom]];
-    [devDestPortTwo setText:[[self data] uplinkTwoFrom]];
+    [devDestPortOne setText:[[self data] uplinkOneTo]];
+    [devDestPortTwo setText:[[self data] uplinkTwoTo]];
     [vlan setText:[[NSNumber numberWithInteger:[data vlan]] stringValue]];
     [currentIP setText:[data ipAddress]];
     [destTagOne setText:[[self data] destOneTag]];

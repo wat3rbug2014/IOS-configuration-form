@@ -13,9 +13,9 @@
 
 @property (retain) NSString* uplinkOneFrom;
 @property (retain) NSString* uplinkOneTo;
-@property (retain) NSString* destOneTag;
 @property (retain) NSString* uplinkTwoFrom;
 @property (retain) NSString* uplinkTwoTo;
+@property (retain) NSString* destOneTag;
 @property (retain) NSString* destTwoTag;
 
 @end

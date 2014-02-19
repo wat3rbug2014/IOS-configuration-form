@@ -48,7 +48,7 @@
 -(NSString*) uplinkOneFrom;
 -(void) setUplinkOneFrom: (NSString*) linkOne;
 
--(NSString*) upLinkOneTo;
+-(NSString*) uplinkOneTo;
 -(void) setUplinkOneTo: (NSString*) linkTo;
 
 -(NSString*) destOneTag;
