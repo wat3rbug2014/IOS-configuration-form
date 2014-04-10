@@ -44,6 +44,7 @@
     [[self currentTag] setDelegate:self];
     [[super buildingEntry] setDelegate:self];
     [[super closetEntry] setDelegate:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {

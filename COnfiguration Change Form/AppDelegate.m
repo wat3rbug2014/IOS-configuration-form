@@ -9,32 +9,41 @@
 #import "AppDelegate.h"
 #import "TabOverViewController.h"
 #import "UIColor+ExtendedColor.h"
+#import "AddDeviceController.h"
+#import "RemoveDeviceController.h"
+#import "AlterDeviceController.h"
+#import "SettingsController.h"
+#import"ReplaceDeviceController.h"
 
 @implementation AppDelegate
+
+@synthesize lastViewController;
 
 enum selectedView {
     NOT_SET,
     ADD_DEVICE,
     REMOVE_DEVICE,
     CHANGE_DEVICE,
+    REPLACE_DEVICE,
     SETTINGS
 };
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     TabOverViewController *mainController = [[TabOverViewController alloc] init];
     
-    if ([defaults integerForKey:@"ConfigChanger.Mode"] != NOT_SET) {
-    
-            // set the selcted view
-        
-    } else {
+    if ([defaults integerForKey:@"ConfigChanger.Mode"] == NOT_SET) {
         [defaults setInteger:ADD_DEVICE forKey:@"ConfigChanger.Mode"];
+        NSMutableDictionary *email = [NSMutableDictionary dictionaryWithObject:@"jsc-dl-nics-network-moves@mail.nasa.gov"
+                                                                        forKey:@"jsc-dl-nics-network-moves"];
+        [defaults setObject:email forKey:@"ConfigChanger.Email"];
         [defaults synchronize];
+    } else {
+        [mainController setSelectedIndex:[defaults integerForKey:@"ConfigChanger.Mode"] - 1];
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = mainController;
     [self.window makeKeyAndVisible];
@@ -43,6 +52,13 @@ enum selectedView {
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setBackgroundColor:[UIColor textColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor navigatorItemColor]];
+    
+    // setup notification to update view index
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                selector:@selector(updateIndexOfLastViewController:)
+                name:@"CurrentViewController" object:nil];
+    
     return YES;
 }
 
@@ -68,18 +84,36 @@ enum selectedView {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application {
+    
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(BOOL) application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+-(void) updateIndexOfLastViewController:(NSNotification *)notification {
     
-    return NO;
-}
-
--(BOOL) application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
-    
-    return NO;
+    NSLog(@"Swapping views and noticed");
+    if ([[notification userInfo] objectForKey:@"CurrentViewCOntroller"]) {
+        lastViewController = [[notification userInfo] objectForKey:@"CurrentViewController"];
+        int result = NOT_SET;
+        if ([lastViewController isKindOfClass:[AddDeviceController class]]) {
+            result = ADD_DEVICE;
+        }
+        if ([lastViewController isKindOfClass:[RemoveDeviceController class]]) {
+            result = REMOVE_DEVICE;
+        }
+        if ([lastViewController isKindOfClass:[AlterDeviceController class]]) {
+            result = CHANGE_DEVICE;
+        }
+        if ([lastViewController isKindOfClass:[ReplaceDeviceController class]]) {
+            result = REPLACE_DEVICE;
+        }
+        if ([lastViewController isKindOfClass:[SettingsController class]]) {
+            result = SETTINGS;
+        }
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:result forKey:@"ConfigChanger.Mode"];
+        [defaults synchronize];
+        defaults = nil;
+    }
 }
 @end

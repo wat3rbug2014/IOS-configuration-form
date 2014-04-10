@@ -129,8 +129,13 @@
     bool tryAgain = YES;
 
     // make name title for the email dictionary entry
-        
-    NSMutableString *name = [NSMutableString stringWithString:(__bridge_transfer NSString*)ABRecordCopyCompositeName(person)];
+    
+    NSMutableString *name;
+    id test = (__bridge id)(ABRecordCopyCompositeName(person));
+    NSLog(@"The returned class is %@", [[test class] description]);
+    if (test != NULL) {
+        name = [NSMutableString stringWithString:(__bridge_transfer NSString*)ABRecordCopyCompositeName(person)];
+    } 
     if (property == kABPersonEmailProperty) {
         tryAgain = NO;
     }

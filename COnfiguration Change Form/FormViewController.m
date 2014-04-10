@@ -90,6 +90,8 @@
     
     UIBarButtonItem *toConnection = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pushNextController)];
     [[self navigationItem] setRightBarButtonItem:toConnection];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentViewController" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:self, @"CurrentViewController", nil]];
 }
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

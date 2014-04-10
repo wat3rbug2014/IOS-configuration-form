@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property id lastViewController;
+
+-(void) updateIndexOfLastViewController: (NSNotification*) notification;
 @end
