@@ -14,6 +14,7 @@
 #import "AlterDeviceController.h"
 #import "SettingsController.h"
 #import"ReplaceDeviceController.h"
+#import "BasicDeviceData.h"
 
 @implementation AppDelegate
 
@@ -36,10 +37,11 @@ enum selectedView {
     
     if ([defaults integerForKey:@"ConfigChanger.Mode"] == NOT_SET) {
         [defaults setInteger:ADD_DEVICE forKey:@"ConfigChanger.Mode"];
-        NSMutableDictionary *email = [NSMutableDictionary dictionaryWithObject:@"jsc-dl-nics-network-moves@mail.nasa.gov"
-                                                                        forKey:@"jsc-dl-nics-network-moves"];
-        [defaults setObject:email forKey:@"ConfigChanger.Email"];
         [defaults synchronize];
+        defaults = nil;
+        BasicDeviceData *defaultData = [[BasicDeviceData alloc] init];
+        [defaultData addEmailAddress:@"jsc-dl-nics-network-moves@mail.nasa.gov" withName:@"jsc-dl-nics-network-moves"];
+        [defaultData updateStoredEmailSettings];
     } else {
         [mainController setSelectedIndex:[defaults integerForKey:@"ConfigChanger.Mode"] - 1];
     }
@@ -47,7 +49,7 @@ enum selectedView {
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = mainController;
     [self.window makeKeyAndVisible];
-    defaults = nil;
+
     [[UINavigationBar appearance] setBarTintColor:[UIColor textColor]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setBackgroundColor:[UIColor textColor]];
