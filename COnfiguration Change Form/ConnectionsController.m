@@ -235,10 +235,14 @@
             [destTagTwoLabel setTextColor:[UIColor textColor]];
         }
         [self changeVlanInfoColor];
-        if ([[vlan text] intValue] == 0) {
-            [vlanLabel setTextColor:[UIColor textColor]];
-        }
         [currentIPLabel setTextColor:[UIColor textColor]];
+        if ([[vlan text] intValue] > 0) {
+            if ([[currentIP text] length] > 0) {
+                [currentIPLabel setTextColor:[UIColor textColor]];
+            } else {
+                [currentIPLabel setTextColor:[UIColor unFilledRequiredTextColor]];
+            }
+        }
     } else {
         [self changeVlanInfoColor];
         [self changeUpLinkOneColor];
