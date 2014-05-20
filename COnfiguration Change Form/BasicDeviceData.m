@@ -112,7 +112,21 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     NSString *siteName;
     switch ([self site]) {
         case LARC: {
-            siteName =@"LARC";
+            siteName = @"LARC";
+            break;
+        }
+        case WSTF: {
+            siteName = @"WSTF";
+            break;
+        }
+
+        case JPL: {
+            siteName = @"JPL";
+            break;
+        }
+
+        case KSC: {
+            siteName = @"KSC";
             break;
         }
         default: {
@@ -128,7 +142,19 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     NSString *siteName;
     switch ([self site]) {
         case LARC: {
-            siteName =@"ar";
+            siteName = @"ar";
+            break;
+        }
+        case WSTF: {
+            siteName = @"ws";
+            break;
+        }
+        case JPL: {
+            siteName = @"jp";
+            break;
+        }
+        case KSC: {
+            siteName = @"ks";
             break;
         }
         default: {

@@ -35,6 +35,7 @@ enum sites {
     JSC,
     WSTF,
     JPL,
+    KSC,
     LARC
 };
 
