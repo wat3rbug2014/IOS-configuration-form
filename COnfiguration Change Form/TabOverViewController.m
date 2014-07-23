@@ -40,7 +40,7 @@
     
     [super viewDidLoad];
     [[self tabBar] setTintColor:[UIColor textColor]];
-    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"alterdv.png", @"changedv2.png", @"settings.png", nil];
+    NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"alterdv.png", @"changedv2.png", @"contacts.png", nil];
     NSArray *tabSelectedIcons = [NSArray arrayWithObjects:@"adddv2_selected.png", @"rmdv2_selected.png", @"alterdv_selected.png",  @"changedv2.png", @"settings_selected.png", nil];
     FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
     FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];

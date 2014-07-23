@@ -15,6 +15,7 @@
 #import "SettingsController.h"
 #import"ReplaceDeviceController.h"
 #import "BasicDeviceData.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation AppDelegate
 
@@ -60,7 +61,9 @@ enum selectedView {
     [[NSNotificationCenter defaultCenter] addObserver:self
                 selector:@selector(updateIndexOfLastViewController:)
                 name:@"CurrentViewController" object:nil];
-    
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
+        // pass on the ability to use location services
+    }
     return YES;
 }
 

@@ -18,11 +18,47 @@
     
     self = [super init];
     if (self != nil) {
-        items = [NSArray arrayWithObjects:@"Unknown", @"Aggregation Device", @"Access Point", @"Access-Layer-Router", @"Access-Layer Switch",
-                 @"Border Router", @"Call Manager", @"Core Switch", @"Core Router", @"Distribution Switch", @"Distribution Router",
-                 @"Firewall", @"Load Balancer", @"NAM Module", @"Power Distribution Unit", @"Power Strip", @"Proxy", @"UPS",
-                 @"VPN Controller", @"Wireless Controller", @"Voice Gateway", nil];
-        deviceAbbr = [NSArray arrayWithObjects:@"unknwon", @"ad", @"ap", @"ar", @"as", @"br", @"cm", @"cs", @"cr", @"ds", @"dr", @"fw", @"lb", @"nm", @"pd", @"pr", @"up", @"vg", nil];
+        items = [NSArray arrayWithObjects:@"Unknown",
+                 @"Aggregation Device",
+                 @"Access Point",
+                 @"Access-Layer-Router",
+                 @"Access-Layer Switch",
+                 @"Border Router",
+                 @"Call Manager",
+                 @"Core Switch",
+                 @"Core Router",
+                 @"Distribution Switch",
+                 @"Distribution Router",
+                 @"Firewall",
+                 @"Load Balancer",
+                 @"NAM Module",
+                 @"Power Distribution Unit",
+                 @"Power Strip",
+                 @"Proxy", @"UPS",
+                 @"VPN Controller",
+                 @"Wireless Controller",
+                 @"Voice Gateway", nil];
+        deviceAbbr = [NSArray arrayWithObjects:@"unknown",
+                      @"ad",
+                      @"ap",
+                      @"ar",
+                      @"as",
+                      @"br",
+                      @"cm",
+                      @"cs",
+                      @"cr",
+                      @"ds",
+                      @"dr",
+                      @"fw",
+                      @"lb",
+                      @"nm",
+                      @"pd",
+                      @"ps",
+                      @"pr",
+                      @"up",
+                      @"vc",
+                      @"wc",
+                      @"vg", nil];
     }
     return self;
 }
