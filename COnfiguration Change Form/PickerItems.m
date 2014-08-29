@@ -37,7 +37,8 @@
                  @"Proxy", @"UPS",
                  @"VPN Controller",
                  @"Wireless Controller",
-                 @"Voice Gateway", nil];
+                 @"Voice Gateway",
+                 @"Wireless Bridge", nil];
         deviceAbbr = [NSArray arrayWithObjects:@"unknown",
                       @"ad",
                       @"ap",
@@ -58,7 +59,8 @@
                       @"up",
                       @"vc",
                       @"wc",
-                      @"vg", nil];
+                      @"vg",
+                      @"wb", nil];
     }
     return self;
 }
