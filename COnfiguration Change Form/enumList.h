@@ -29,7 +29,8 @@ enum device {
     PX,
     UP,
     VP,
-    WC
+    WC,
+    WB
 };
 enum sites {
     JSC,
