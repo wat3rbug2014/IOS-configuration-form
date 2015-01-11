@@ -56,6 +56,10 @@
 		A5AE7A5A187B120E002B033D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = A5AE7A59187B120E002B033D /* settings.png */; };
 		A5B46D6517FB863800BE8FD9 /* PickerItems.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B46D6417FB863800BE8FD9 /* PickerItems.m */; };
 		A5D500B2187B07A300965EB7 /* alterdv_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5D500B1187B07A300965EB7 /* alterdv_selected.png */; };
+		A5DE848C1A62040800B27308 /* Contacts_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE848B1A62040800B27308 /* Contacts_selected.png */; };
+		A5DE848E1A62044000B27308 /* Contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE848D1A62044000B27308 /* Contacts.png */; };
+		A5DE84901A62052C00B27308 /* Properties_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE848F1A62052C00B27308 /* Properties_selected.png */; };
+		A5DE84921A62054C00B27308 /* Properties.png in Resources */ = {isa = PBXBuildFile; fileRef = A5DE84911A62054C00B27308 /* Properties.png */; };
 		A5EECDB2184A683C00346B5F /* AlterDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EECDB1184A683C00346B5F /* AlterDeviceData.m */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +148,10 @@
 		A5B46D6317FB863800BE8FD9 /* PickerItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerItems.h; sourceTree = "<group>"; };
 		A5B46D6417FB863800BE8FD9 /* PickerItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerItems.m; sourceTree = "<group>"; };
 		A5D500B1187B07A300965EB7 /* alterdv_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alterdv_selected.png; sourceTree = "<group>"; };
+		A5DE848B1A62040800B27308 /* Contacts_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contacts_selected.png; sourceTree = "<group>"; };
+		A5DE848D1A62044000B27308 /* Contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contacts.png; sourceTree = "<group>"; };
+		A5DE848F1A62052C00B27308 /* Properties_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Properties_selected.png; sourceTree = "<group>"; };
+		A5DE84911A62054C00B27308 /* Properties.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Properties.png; sourceTree = "<group>"; };
 		A5EECDB0184A683C00346B5F /* AlterDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlterDeviceData.h; sourceTree = "<group>"; };
 		A5EECDB1184A683C00346B5F /* AlterDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlterDeviceData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +265,10 @@
 				A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */,
 				A5102C8F17F201A300A9494E /* Images.xcassets */,
 				A5AE7A59187B120E002B033D /* settings.png */,
+				A5DE848D1A62044000B27308 /* Contacts.png */,
+				A5DE848F1A62052C00B27308 /* Properties_selected.png */,
+				A5DE84911A62054C00B27308 /* Properties.png */,
+				A5DE848B1A62040800B27308 /* Contacts_selected.png */,
 				A5AE7A56187B0F8F002B033D /* settings_selected.png */,
 				A5AE7A53187B0DAE002B033D /* rmdv2_selected.png */,
 				A5AE7A51187B0D22002B033D /* adddv2_selected.png */,
@@ -379,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5DE84921A62054C00B27308 /* Properties.png in Resources */,
 				A5AE7A54187B0DAE002B033D /* rmdv2_selected.png in Resources */,
 				A5678A6F186F98C7009591B3 /* alterdv.png in Resources */,
 				A5102CF917F26DAD00A9494E /* RemoveDeviceController.xib in Resources */,
@@ -387,14 +400,17 @@
 				A5D500B2187B07A300965EB7 /* alterdv_selected.png in Resources */,
 				A5102CFE17F26DEB00A9494E /* ReplaceDeviceController.xib in Resources */,
 				A5AE7A58187B0F8F002B033D /* settings_selected.png in Resources */,
+				A5DE848C1A62040800B27308 /* Contacts_selected.png in Resources */,
 				A52BD7F11833151C00A5162B /* changedv2.png in Resources */,
 				A596B2451829DC5B009F74CA /* AddDeviceController.xib in Resources */,
 				A5102C8817F201A300A9494E /* InfoPlist.strings in Resources */,
 				A5102C9017F201A300A9494E /* Images.xcassets in Resources */,
 				A5678A70186F98C7009591B3 /* rmdv2.png in Resources */,
+				A5DE84901A62052C00B27308 /* Properties_selected.png in Resources */,
 				A5102D0317F26E1C00A9494E /* SettingsController.xib in Resources */,
 				A55B57C91837ED76006D1378 /* CommentsController.xib in Resources */,
 				A5AE7A5A187B120E002B033D /* settings.png in Resources */,
+				A5DE848E1A62044000B27308 /* Contacts.png in Resources */,
 				A52BD7E518330EEE00A5162B /* adddv1.png in Resources */,
 				A5678A6E186F98C7009591B3 /* adddv2.png in Resources */,
 				A5102D0817F26E5300A9494E /* ConnectionsController.xib in Resources */,

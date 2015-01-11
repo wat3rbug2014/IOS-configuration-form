@@ -42,8 +42,8 @@
 @synthesize keyboardSize;
 @synthesize originalFrame;
 
-#pragma mark -
-#pragma mark Initialization Methods
+
+#pragma mark - Initialization Methods
 
 
 -(id) initWithData:(id<ConfigurationDataProtocol>)newData {
@@ -61,8 +61,8 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Superclass methods
+#pragma mark - Superclass methods
+
 
 - (void)viewDidLoad
 {
@@ -100,8 +100,8 @@
     [notifier removeObserver:self];
 }
 
-#pragma mark -
-#pragma mark Class specific methods
+#pragma mark - Class specific methods
+
 
 -(void) updateFormContents {
     
@@ -256,9 +256,8 @@
     }
 }
 
+#pragma mark - MFMAilComposeViewControllerDelegate methods
 
-#pragma mark -
-#pragma MFMAilComposeViewControllerDelegate methods
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
@@ -273,8 +272,8 @@
     }
 }
 
-#pragma mark -
-#pragma UITextFieldDelegate methods
+#pragma mark - UITextFieldDelegate methods
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
@@ -283,7 +282,6 @@
     [self changeLabelColorForMissingInfo];
     return YES;
 }
-
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField {
     
@@ -297,8 +295,8 @@
     [self setActiveField:nil];
 }
 
-#pragma mark -
-#pragma NSNofitication Center methods
+#pragma mark - NSNofitication Center methods
+
 
 -(void) keyboardWillBeShown: (NSNotification*) notice {
 
