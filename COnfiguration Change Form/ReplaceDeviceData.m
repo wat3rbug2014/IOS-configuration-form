@@ -51,7 +51,7 @@
 
 -(NSString*) getEmailSubject {
     
-    return [NSString stringWithFormat:@"Replaced tag# %@  with tag# %@ for %@ in building %@ closet %@", [super oldTag], [self tag],[super getDeviceTypeString], [super building], [super closet]];
+    return [NSString stringWithFormat:@"Replaced tag# %@  with tag# %@ for %@ in building %@ closet %@", [self oldTag], [super tag],[super getDeviceTypeString], [super building], [super closet]];
 }
 
 @end
