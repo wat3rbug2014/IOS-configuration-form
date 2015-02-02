@@ -10,8 +10,8 @@
 
 @implementation UIColor (ExtendedColor)
 
-#pragma mark -
-#pragma mark Application specific methods
+#pragma mark - Application specific methods
+
 
 +(UIColor*) textColor {
     
@@ -35,8 +35,8 @@
     return [UIColor colorByHex:@"0x34d0ba"];
 }
 
-#pragma mark -
-#pragma mark Category methods
+#pragma mark - Category methods
+
 
 +(UIColor*) colorByHex:(NSString *)hexValue {
     

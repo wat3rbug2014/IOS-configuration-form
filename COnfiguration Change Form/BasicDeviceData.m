@@ -23,16 +23,18 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize emailAddresses;
 @synthesize nameArray;
 @synthesize emailArray;
+@synthesize application;
 
-#pragma mark -
-#pragma mark initialization methods
+#pragma mark - Initialization methods
+
 
 -(id) init {
     
     self = [super init];
     if (self != nil) {
         [self getStoredEmailSettings];
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocationFromNotification:)
+            name: @"LocationUpdated" object: [self application]];
     }
     return self;
 }
@@ -42,6 +44,10 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     [self setTag:newTag];
 }
 
+-(UIApplication*) application {
+    
+    return [UIApplication sharedApplication];
+}
 -(NSString*) currentTag {
     
     return [self tag];
@@ -61,7 +67,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     return _vlan;
 }
-
 
 -(void) setVlan:(NSInteger)newVlan {
     
@@ -165,8 +170,13 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return siteName;
 }
 
-#pragma mark -
-#pragma Email methods
+-(void) updateLocationFromNotification:(NSNotification *)notification {
+    
+    
+}
+
+#pragma mark - Email methods
+
 
 -(void) addEmailAddress: (NSString*) email withName: (NSString*) name {
     

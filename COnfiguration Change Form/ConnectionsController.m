@@ -61,11 +61,11 @@
     return self;
 }
 
-#pragma mark - Superclass methods
+#pragma mark - Overridden methods
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     notifier = [NSNotificationCenter defaultCenter];
     [notifier addObserver:self selector:@selector(keyboardWillBeShown:) name:UIKeyboardWillShowNotification object:nil];

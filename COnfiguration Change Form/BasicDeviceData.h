@@ -24,10 +24,13 @@
 @property (retain) NSMutableDictionary *emailAddresses;
 @property (retain) NSArray *nameArray;
 @property (retain) NSArray *emailArray;
+@property (readonly) UIApplication *application;
 
 -(void) setOldTag: (NSString*) newTag;
 -(NSString*) oldTag;
 
 -(void) setVlan:(NSInteger)vlan;
 -(void) setVlanFromString: (NSString*) newVlan;
+-(void) updateLocationFromNotification: (NSNotification*) notification;
+
 @end

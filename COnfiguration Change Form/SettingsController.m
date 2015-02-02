@@ -17,8 +17,8 @@
 
 @synthesize appData;
 
-#pragma mark -
-#pragma mark Initialization methods
+#pragma mark - Initialization methods
+
 
 - (id)initWithStyle:(UITableViewStyle)style {
     
@@ -30,8 +30,8 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Superclass methods
+#pragma mark - Overriden methods
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,8 +57,8 @@
     
 }
 
-#pragma mark -
-#pragma mark TableViewDataSource methods
+#pragma mark - TableViewDataSource methods
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -84,16 +84,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -106,8 +96,8 @@
     }   
 }
 
-#pragma mark -
 #pragma mark - TableViewDelegate methods
+
 
 //* Added so that the app doesn't hang up just cause it is selected. */
 
@@ -118,6 +108,7 @@
 
 
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
+
 
 -(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     

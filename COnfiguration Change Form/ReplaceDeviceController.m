@@ -23,8 +23,8 @@
 @synthesize currentTag;
 @synthesize oldTagLabel;
 
-#pragma mark -
-#pragma mark Superclass specific methods
+#pragma mark - Overridden methods
+
 
 -(id) init {
     
@@ -73,8 +73,8 @@
     NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
-#pragma mark -
-#pragma mark Sublass specific methods
+#pragma mark - Class Specific Methods
+
 
 -(void) updateConfigurationDataStructure {
     
@@ -112,8 +112,8 @@
     [[self navigationController] pushViewController:commenter animated:YES];
 }
 
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
+#pragma mark - UITextFieldDelegate methods
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
@@ -123,8 +123,8 @@
     return YES;
 }
 
-#pragma mark -
-#pragma mark UIResponder methods
+#pragma mark - UIResponder methods
+
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     

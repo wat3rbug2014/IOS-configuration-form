@@ -19,8 +19,8 @@
 @implementation RemoveDeviceController
 
 
-#pragma mark -
-#pragma mark Initialization Methods
+#pragma mark - Initialization Methods
+
 
 -(id) init {
     
@@ -37,8 +37,8 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Superclass methods
+#pragma mark - Overridden methods
+
 
 - (void)viewDidLoad {
     
@@ -95,8 +95,8 @@
     [[super currentTag] setText:[[super data] tag]];
 }
 
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
+#pragma mark -  UITextFieldDelegate methods
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
@@ -106,12 +106,13 @@
     return YES;
 }
 
-#pragma mark -
-#pragma mark UIResponder methods
+#pragma mark - UIResponder methods
+
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
+
 @end

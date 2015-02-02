@@ -61,8 +61,8 @@
     NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
-#pragma mark -
-#pragma Custom methods
+#pragma mark - Class specific methods
+
 
 -(void) readyToSendForm {
     
@@ -105,8 +105,8 @@
     [self presentViewController:mailer animated:YES completion:nil];
 }
 
-#pragma mark MFMailComposeViewControllerDelegate methods
-#pragma mark -
+#pragma mark - MFMailComposeViewControllerDelegate methods
+
 
 -(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     
@@ -127,6 +127,5 @@
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

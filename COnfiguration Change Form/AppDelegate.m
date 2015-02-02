@@ -16,10 +16,16 @@
 #import"ReplaceDeviceController.h"
 #import "BasicDeviceData.h"
 #import <CoreLocation/CoreLocation.h>
+#import "enumList.h"
 
 @implementation AppDelegate
 
 @synthesize lastViewController;
+@synthesize location;
+@synthesize locationManager;
+@synthesize locationListing;
+@synthesize locationUpdatesAllowed;
+@synthesize locationNames;
 
 enum selectedView {
     NOT_SET,
@@ -31,8 +37,10 @@ enum selectedView {
 };
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // setup tabview controller
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     TabOverViewController *mainController = [[TabOverViewController alloc] init];
     
@@ -56,14 +64,42 @@ enum selectedView {
     [[UINavigationBar appearance] setBackgroundColor:[UIColor textColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor navigatorItemColor]];
     
+    // setup location manager
+    
+    locationNames = [NSArray arrayWithObjects: @"Home", @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDelegate:self];
+    locationUpdatesAllowed = NO;
+    [locationManager requestWhenInUseAuthorization];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        locationUpdatesAllowed = YES;
+    }
+    if (locationUpdatesAllowed) {
+        [self loadRegions];
+        //[locationManager startMonitoringSignificantLocationChanges];
+        [locationManager startUpdatingLocation];
+    }
     // setup notification to update view index
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                selector:@selector(updateIndexOfLastViewController:)
-                name:@"CurrentViewController" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateIndexOfLastViewController:) name:@"CurrentViewController" object:nil];
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
         // pass on the ability to use location services
     }
+    // allow notification badges
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
+            settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+    UILocalNotification *batteryNotification = [[UILocalNotification alloc] init];
+    [batteryNotification setSoundName:UILocalNotificationDefaultSoundName];
+    [batteryNotification setApplicationIconBadgeNumber:1];
+//    [batteryNotification setAlertBody:[NSString stringWithFormat:@"%@ has low battery", name]];
+//    if (!lowBatteryNotified) {
+//        [[self app] presentLocalNotificationNow:batteryNotification];
+//    }
+
+    
     return YES;
 }
 
@@ -91,8 +127,30 @@ enum selectedView {
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [locationManager stopUpdatingLocation];
 }
+
+#pragma mark - CoreLocationManagerDelegate Methods
+
+
+-(void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
+    NSLog(@"Something failed to update for location services");
+}
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+   // NSLog(@"Location is %@", [[locations objectAtIndex:0] description]);
+}
+
+-(void) locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+
+    NSLog(@"Found region %@", [region identifier]);
+    NSNotification *enteredLocationNoticiation = [[NSNotification alloc] initWithName:@"LocationUpdated" object:region userInfo:nil];
+    [self updateCenterLocation:enteredLocationNoticiation];
+}
+
+#pragma mark - Notification Methods
+
 
 -(void) updateIndexOfLastViewController:(NSNotification *)notification {
     
@@ -121,4 +179,40 @@ enum selectedView {
         defaults = nil;
     }
 }
+
+-(void) updateCenterLocation:(NSNotification *)notification {
+    
+    NSLog(@"Updating datafiles");
+    // send out notification
+    // update badging
+    
+}
+
+#pragma mark - Helper methods
+
+-(void) loadRegions {
+    
+    CLLocationDirection defaultDistance = 1;
+    CLLocationDistance  wstfDistance = 100 * 1609.34;
+    double longitudes[] = { 29.53542276, 29.5630,  32.33555556, 0, 28.51944444, 37.08583333};
+    double latitdutes[] = { -95.21776079, -95.0910,  -106.4058333, 0, -80.67, -76.38055556};
+
+    NSMutableArray *tempListing = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [locationNames count]; i++) {
+        CLLocationCoordinate2D  currentCoord = {longitudes[i], latitdutes[i]};
+        CLCircularRegion *currentRegion;
+        
+        if ([[locationNames objectAtIndex:i] rangeOfString:@"WSTF"].location != NSNotFound) {
+            currentRegion = [[CLCircularRegion alloc] initWithCenter:currentCoord radius:wstfDistance identifier:@"WSTF"];
+        } else {
+            currentRegion = [[CLCircularRegion alloc] initWithCenter:currentCoord radius:defaultDistance identifier:[locationNames objectAtIndex:i]];
+        }
+        [tempListing addObject:currentRegion];
+        [locationManager startMonitoringForRegion:currentRegion];
+    }
+    locationListing = tempListing;
+}
+
 @end
+
+

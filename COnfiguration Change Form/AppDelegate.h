@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property id lastViewController;
+@property int location;
+@property CLLocationManager *locationManager;
+@property BOOL locationUpdatesAllowed;
+@property NSArray *locationListing;
+@property NSArray *locationNames;
 
 -(void) updateIndexOfLastViewController: (NSNotification*) notification;
+
+-(void) updateCenterLocation: (NSNotification*) notification;
+-(void) loadRegions;
 @end

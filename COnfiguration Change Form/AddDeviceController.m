@@ -82,8 +82,8 @@
     [[super currentTag] setText:[super.data tag]];
 }
 
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
+#pragma mark -  UITextFieldDelegate methods
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
@@ -99,8 +99,8 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
-#pragma mark -
-#pragma mark UIResponder methods
+
+#pragma mark - UIResponder methods
 
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -108,4 +108,5 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
+
 @end

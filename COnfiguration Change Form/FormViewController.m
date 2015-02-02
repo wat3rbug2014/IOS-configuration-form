@@ -32,8 +32,7 @@
 @synthesize closetLabel;
 @synthesize equipTypeLabel;
 
-#pragma mark -
-#pragma mark Initialization Methods
+#pragma mark - Initialization Methods
 
 -(id) init {
     
@@ -52,8 +51,7 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Superclass methods
+#pragma mark - Overridden methods
 
 - (void)viewDidLoad {
     
@@ -107,8 +105,7 @@
     NSLog(@"%@ is showing memory warning", [[self class] description]);
 }
 
-#pragma mark -
-#pragma mark Sublass specific methods
+#pragma mark - Class specific methods
 
 -(void) updateConfigurationDataStructure {
     
@@ -151,8 +148,8 @@
 }
 
 
-#pragma mark -
-#pragma mark UIPickerViewDataSource methods
+#pragma mark - UIPickerViewDataSource methods
+
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
@@ -164,8 +161,8 @@
     return [devices count];
 }
 
-#pragma mark -
-#pragma mark UIPickerViewDelegate methods
+#pragma mark - UIPickerViewDelegate methods
+
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
@@ -191,8 +188,8 @@
     return 300.0;
 }
 
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
+#pragma mark - UITextFieldDelegate methods
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     
@@ -207,4 +204,5 @@
     [self updateConfigurationDataStructure];
     [self changeLabelColorForMissingInfo];
 }
+
 @end
