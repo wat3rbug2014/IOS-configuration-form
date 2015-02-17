@@ -20,12 +20,11 @@
 
 @implementation AppDelegate
 
-@synthesize lastViewController;
+
 @synthesize location;
 @synthesize locationManager;
 @synthesize locationUpdatesAllowed;
 @synthesize locationNames;
-@synthesize previousRegions;
 @synthesize appRegions;
 
 enum selectedView {
@@ -73,25 +72,12 @@ enum selectedView {
     appRegions = [self createAppRegions];
     [self setupLocationMonitoring];
     
-    // setup notification to update view index
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateIndexOfLastViewController:) name:@"CurrentViewController" object:nil];
-    
     // allow notification badges
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings
             settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
     }
-    UILocalNotification *batteryNotification = [[UILocalNotification alloc] init];
-    [batteryNotification setSoundName:UILocalNotificationDefaultSoundName];
-    [batteryNotification setApplicationIconBadgeNumber:1];
-//    [batteryNotification setAlertBody:[NSString stringWithFormat:@"%@ has low battery", name]];
-//    if (!lowBatteryNotified) {
-//        [[self app] presentLocalNotificationNow:batteryNotification];
-//    }
-
-    
     return YES;
 }
 
@@ -131,26 +117,20 @@ enum selectedView {
 -(void) locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
 
     NSLog(@"Entered region %@", [region identifier]);
-    for (int i = 0; i < [locationNames count]; i++) {
-        if ([[locationNames objectAtIndex:i] rangeOfString:[region identifier]].location != NSNotFound) {
-            location = i;
-        }
-    }
     [self updateIndexForFoundRegion:region];
     [self presentNotificationForCenter:[NSString stringWithFormat:@"Entering %@", [region identifier]]];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     
-    NSLog(@"left region %@", [region identifier]);
+    NSLog(@"Left region %@", [region identifier]);
     [self presentNotificationForCenter:[NSString stringWithFormat:@"Exiting %@", [region identifier]]];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
     
-    NSLog(@"Now monitoring %@\nMonitoring count: %d", [region identifier], [[locationManager monitoredRegions] count]);
+    NSLog(@"Now monitoring %@", [region identifier]);
 }
-
 
 -(void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
     
@@ -188,46 +168,16 @@ enum selectedView {
     }
 }
 
-#pragma mark - Notification Methods
-
-
--(void) updateIndexOfLastViewController:(NSNotification *)notification {
-    
-    if ([[notification userInfo] objectForKey:@"CurrentViewController"]) {
-        lastViewController = [[notification userInfo] objectForKey:@"CurrentViewController"];
-        int result = NOT_SET;
-        if ([lastViewController isKindOfClass:[AddDeviceController class]]) {
-            result = ADD_DEVICE;
-        }
-        if ([lastViewController isKindOfClass:[RemoveDeviceController class]]) {
-            result = REMOVE_DEVICE;
-        }
-        if ([lastViewController isKindOfClass:[AlterDeviceController class]]) {
-            result = CHANGE_DEVICE;
-        }
-        if ([lastViewController isKindOfClass:[ReplaceDeviceController class]]) {
-            result = REPLACE_DEVICE;
-        }
-        if ([lastViewController isKindOfClass:[SettingsController class]]) {
-            result = SETTINGS;
-        }
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setInteger:result forKey:@"ConfigChanger.Mode"];
-        [defaults synchronize];
-        defaults = nil;
-    }
-}
-
 #pragma mark - Helper methods
 
 
 -(NSSet*) createAppRegions {
     
-    locationNames = [NSArray arrayWithObjects: @"Home", @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
+    locationNames = [NSArray arrayWithObjects: @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
     CLLocationDistance defaultDistance = 3 * METERS_PER_MILE;
     CLLocationDistance  wstfDistance = 100 * METERS_PER_MILE;
-    double longitudes[] = { 29.53542276, 29.5630,  32.33555556, 0, 28.51944444, 37.08583333};
-    double latitdutes[] = { -95.21776079, -95.0910,  -106.4058333, 0, -80.67, -76.38055556};
+    double longitudes[] = { 29.5630, 32.33555556, 137.4416334989196, 28.51944444, 37.08583333};
+    double latitdutes[] = { -95.0910,  -106.4058333, -4.5894669521344875, -80.67, -76.38055556};
     NSMutableArray *tempListing = [[NSMutableArray alloc] init];
     for (int i = 0; i < [locationNames count]; i++) {
         CLLocationCoordinate2D  currentCoord = {longitudes[i], latitdutes[i]};
@@ -244,7 +194,6 @@ enum selectedView {
     NSSet *results = [NSSet setWithArray:tempListing];
     return results;
 }
-
 
 -(void) setupLocationMonitoring {
     
@@ -268,6 +217,8 @@ enum selectedView {
     } else {
         NSLog(@"Region monitoring ALLOWED");
     }
+    // Add regions to be monitored
+    
     NSLog(@"Initial regions count: %d", [[locationManager monitoredRegions] count]);
     [self removeRegionsFromMonitoring:[locationManager monitoredRegions]];
     appRegions = [self createAppRegions];
