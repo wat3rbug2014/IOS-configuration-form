@@ -8,6 +8,7 @@
 
 #import "BasicDeviceData.h"
 #import "PickerItems.h"
+#import "AppDelegate.h"
 
 static NSString *const emailKey = @"ConfigChanger.Email";
 
@@ -37,6 +38,11 @@ static NSString *const emailKey = @"ConfigChanger.Email";
             name: @"LocationUpdated" object: [self application]];
     }
     return self;
+}
+
+-(int) site {
+    
+    return [(AppDelegate*)[application delegate] location];
 }
 
 -(void) setCurrentTag: (NSString*) newTag {

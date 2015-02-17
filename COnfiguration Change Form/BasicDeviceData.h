@@ -19,7 +19,6 @@
 @property NSInteger vlan;
 @property (retain) NSString *comments;
 @property NSInteger deviceType;
-@property NSInteger site;
 
 @property (retain) NSMutableDictionary *emailAddresses;
 @property (retain) NSArray *nameArray;
@@ -32,5 +31,6 @@
 -(void) setVlan:(NSInteger)vlan;
 -(void) setVlanFromString: (NSString*) newVlan;
 -(void) updateLocationFromNotification: (NSNotification*) notification;
+-(int) site;
 
 @end

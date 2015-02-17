@@ -23,9 +23,10 @@
 @synthesize lastViewController;
 @synthesize location;
 @synthesize locationManager;
-@synthesize locationListing;
 @synthesize locationUpdatesAllowed;
 @synthesize locationNames;
+@synthesize previousRegions;
+@synthesize appRegions;
 
 enum selectedView {
     NOT_SET,
@@ -66,25 +67,16 @@ enum selectedView {
     
     // setup location manager
     
-    locationNames = [NSArray arrayWithObjects: @"Home", @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     locationUpdatesAllowed = NO;
-    [locationManager requestWhenInUseAuthorization];
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        locationUpdatesAllowed = YES;
-    }
-    if (locationUpdatesAllowed) {
-        [self loadRegions];
-        //[locationManager startMonitoringSignificantLocationChanges];
-        [locationManager startUpdatingLocation];
-    }
+    appRegions = [self createAppRegions];
+    [self setupLocationMonitoring];
+    
     // setup notification to update view index
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateIndexOfLastViewController:) name:@"CurrentViewController" object:nil];
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
-        // pass on the ability to use location services
-    }
+    
     // allow notification badges
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -109,10 +101,8 @@ enum selectedView {
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -127,7 +117,7 @@ enum selectedView {
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-    [locationManager stopUpdatingLocation];
+    [self removeRegionsFromMonitoring:appRegions];
 }
 
 #pragma mark - CoreLocationManagerDelegate Methods
@@ -137,16 +127,65 @@ enum selectedView {
     
     NSLog(@"Something failed to update for location services");
 }
--(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-   // NSLog(@"Location is %@", [[locations objectAtIndex:0] description]);
-}
 
 -(void) locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
 
-    NSLog(@"Found region %@", [region identifier]);
-    NSNotification *enteredLocationNoticiation = [[NSNotification alloc] initWithName:@"LocationUpdated" object:region userInfo:nil];
-    [self updateCenterLocation:enteredLocationNoticiation];
+    NSLog(@"Entered region %@", [region identifier]);
+    for (int i = 0; i < [locationNames count]; i++) {
+        if ([[locationNames objectAtIndex:i] rangeOfString:[region identifier]].location != NSNotFound) {
+            location = i;
+        }
+    }
+    [self updateIndexForFoundRegion:region];
+    [self presentNotificationForCenter:[NSString stringWithFormat:@"Entering %@", [region identifier]]];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    
+    NSLog(@"left region %@", [region identifier]);
+    [self presentNotificationForCenter:[NSString stringWithFormat:@"Exiting %@", [region identifier]]];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
+    
+    NSLog(@"Now monitoring %@\nMonitoring count: %d", [region identifier], [[locationManager monitoredRegions] count]);
+}
+
+
+-(void) locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
+    
+    NSString *foundLocation;
+    for (int i = 0; i < [locationNames count]; i++) {
+        if ([[region identifier] rangeOfString:[locationNames objectAtIndex:i]].location != NSNotFound && state == CLRegionStateInside) {
+            NSLog(@"Found %@", [region identifier]);
+            foundLocation = [region identifier];
+        }
+    }
+    NSString *result;
+    switch (state) {
+        case CLRegionStateInside:
+            result = @"INSIDE";
+            [self updateIndexForFoundRegion:region];
+            [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+            break;
+        case CLRegionStateOutside:
+            result = @"OUTSIDE";
+        default:
+            result = @"UNKNOWN";
+            break;
+    }
+    NSLog(@"The %@ is %@", [region identifier], result);
+}
+
+-(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
+        NSLog(@"NOT authorized");
+        locationUpdatesAllowed = NO;
+    } else {
+        NSLog(@"Authorized");
+        locationUpdatesAllowed = YES;
+    }
 }
 
 #pragma mark - Notification Methods
@@ -154,8 +193,7 @@ enum selectedView {
 
 -(void) updateIndexOfLastViewController:(NSNotification *)notification {
     
-    NSLog(@"Swapping views and noticed");
-    if ([[notification userInfo] objectForKey:@"CurrentViewCOntroller"]) {
+    if ([[notification userInfo] objectForKey:@"CurrentViewController"]) {
         lastViewController = [[notification userInfo] objectForKey:@"CurrentViewController"];
         int result = NOT_SET;
         if ([lastViewController isKindOfClass:[AddDeviceController class]]) {
@@ -180,23 +218,16 @@ enum selectedView {
     }
 }
 
--(void) updateCenterLocation:(NSNotification *)notification {
-    
-    NSLog(@"Updating datafiles");
-    // send out notification
-    // update badging
-    
-}
-
 #pragma mark - Helper methods
 
--(void) loadRegions {
+
+-(NSSet*) createAppRegions {
     
-    CLLocationDirection defaultDistance = 1;
-    CLLocationDistance  wstfDistance = 100 * 1609.34;
+    locationNames = [NSArray arrayWithObjects: @"Home", @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
+    CLLocationDistance defaultDistance = 3 * METERS_PER_MILE;
+    CLLocationDistance  wstfDistance = 100 * METERS_PER_MILE;
     double longitudes[] = { 29.53542276, 29.5630,  32.33555556, 0, 28.51944444, 37.08583333};
     double latitdutes[] = { -95.21776079, -95.0910,  -106.4058333, 0, -80.67, -76.38055556};
-
     NSMutableArray *tempListing = [[NSMutableArray alloc] init];
     for (int i = 0; i < [locationNames count]; i++) {
         CLLocationCoordinate2D  currentCoord = {longitudes[i], latitdutes[i]};
@@ -207,12 +238,79 @@ enum selectedView {
         } else {
             currentRegion = [[CLCircularRegion alloc] initWithCenter:currentCoord radius:defaultDistance identifier:[locationNames objectAtIndex:i]];
         }
+        NSLog(@"making %@", [currentRegion identifier]);
         [tempListing addObject:currentRegion];
-        [locationManager startMonitoringForRegion:currentRegion];
     }
-    locationListing = tempListing;
+    NSSet *results = [NSSet setWithArray:tempListing];
+    return results;
 }
 
+
+-(void) setupLocationMonitoring {
+    
+    // check to see if location updating is allowed and region tests can be done
+    
+    if (locationManager == nil) {
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+    }
+    [locationManager requestAlwaysAuthorization];
+    if (!([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways)) {
+        locationUpdatesAllowed = NO;
+        NSLog(@"failed to authorize location updates");
+        return;
+    }
+    NSLog(@"Continuing location updating..AUTHORIZED");
+    if (![CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
+        NSLog(@"Region monitored NOT allowed");
+        locationUpdatesAllowed = NO;
+        return;
+    } else {
+        NSLog(@"Region monitoring ALLOWED");
+    }
+    NSLog(@"Initial regions count: %d", [[locationManager monitoredRegions] count]);
+    [self removeRegionsFromMonitoring:[locationManager monitoredRegions]];
+    appRegions = [self createAppRegions];
+    NSLog(@"Cleared regions count: %d", [[locationManager monitoredRegions] count]);
+    [self addRegionsToMonitor:appRegions];
+    NSLog(@"The app regions monitored is %d", [[locationManager monitoredRegions] count]);
+}
+
+-(void) removeRegionsFromMonitoring:(NSSet *)regions {
+    
+    for (CLRegion *currentRegion in regions) {
+        [locationManager stopMonitoringForRegion:currentRegion];
+    }
+}
+
+-(void) addRegionsToMonitor:(NSSet *)regions {
+    
+    for (CLRegion *currentRegion in regions) {
+        [locationManager startMonitoringForRegion: currentRegion];
+        [locationManager requestStateForRegion:currentRegion];
+    }
+}
+
+-(void) updateIndexForFoundRegion: (CLRegion*) region {
+    
+    NSArray *listOfRegions = [NSArray arrayWithArray:[appRegions allObjects]];
+    for (int i = 0; i < [appRegions count]; i++) {
+        CLRegion *currentRegion = [listOfRegions objectAtIndex:i];
+        if ([[region identifier] rangeOfString:[currentRegion identifier]].location != NSNotFound) {
+            location = i;
+            NSLog(@"Found %@", [region identifier]);
+        }
+    }
+}
+
+-(void) presentNotificationForCenter: (NSString*) message {
+    
+    UILocalNotification *foundNotification = [[UILocalNotification alloc] init];
+    [foundNotification setAlertBody:message];
+    [foundNotification setSoundName:UILocalNotificationDefaultSoundName];
+    [foundNotification setApplicationIconBadgeNumber:1];
+    [[UIApplication sharedApplication] presentLocalNotificationNow:foundNotification];
+}
 @end
 
 
