@@ -79,7 +79,7 @@
 }
 -(NSString*) deviceAtIndex:(NSInteger)index {
     
-    if (index < 0 || index == [items count]) {
+    if (index < 0 || index >= [items count]) {
         return [items objectAtIndex:0];
     }
     return [items objectAtIndex:index];
