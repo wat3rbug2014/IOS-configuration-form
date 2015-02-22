@@ -17,9 +17,16 @@
 #import <Foundation/Foundation.h>
 #import "ConfigurationDataProtocol.h"
 #import "enumList.h"
+#import "Centers.h"
 
 @interface BasicDeviceData : NSObject <ConfigurationDataProtocol>
 
+
+/**
+ * This variable contains all the center specific information.
+ */
+
+@property (retain) Centers *centerInfo;
 
 /**
  * The building the equipment is located in.

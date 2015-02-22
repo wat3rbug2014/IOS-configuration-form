@@ -69,4 +69,26 @@
 
 -(NSInteger)getIndexForRegion:(CLRegion *)region;
 
+
+/**
+ * This method gets the centers abbreviated name based on the index of the location.
+ *
+ * @param index The index of the location.
+ *
+ * @return The two character name of the center as a string.
+ */
+
+-(NSString*) getAbbreviatedCenterNameForIndex: (NSInteger) index;
+
+
+/**
+ * This method gets the centers acronym name based on the index of the location.
+ *
+ * @param index The index of the location.
+ *
+ * @return The acronym name of the center as a string.
+ */
+
+-(NSString*) getAcronymCenterNameForIndex: (NSInteger) index;
+
 @end

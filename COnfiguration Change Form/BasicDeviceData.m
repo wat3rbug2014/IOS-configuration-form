@@ -9,6 +9,7 @@
 #import "BasicDeviceData.h"
 #import "PickerItems.h"
 #import "AppDelegate.h"
+#import "Centers.h"
 
 static NSString *const emailKey = @"ConfigChanger.Email";
 
@@ -25,6 +26,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 @synthesize nameArray;
 @synthesize emailArray;
 @synthesize application;
+@synthesize centerInfo;
 
 #pragma mark - Initialization methods
 
@@ -34,6 +36,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     self = [super init];
     if (self != nil) {
         [self getStoredEmailSettings];
+        self.centerInfo = [[Centers alloc] init];
     }
     return self;
 }
@@ -52,6 +55,7 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     
     return [UIApplication sharedApplication];
 }
+
 -(NSString*) currentTag {
     
     return [self tag];
@@ -87,16 +91,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     }
 }
 
--(void) clear {
-    
-    // can i do this with new object and dismiss self and copy email over?
-    
-    building = nil;
-    closet = nil;
-    tag = nil;
-    ipAddress = nil;
-}
-
 -(NSString*) getAbbreviateDeviceString {
     
     PickerItems *deviceTypes = [[PickerItems alloc] init];
@@ -118,60 +112,12 @@ static NSString *const emailKey = @"ConfigChanger.Email";
 
 -(NSString*) getSiteString {
     
-    NSString *siteName;
-    switch ([self site]) {
-        case LARC: {
-            siteName = @"LARC";
-            break;
-        }
-        case WSTF: {
-            siteName = @"WSTF";
-            break;
-        }
-
-        case JPL: {
-            siteName = @"JPL";
-            break;
-        }
-
-        case KSC: {
-            siteName = @"KSC";
-            break;
-        }
-        default: {
-            siteName = @"JSC";
-            break;
-        }
-    }
-    return siteName;
+    return [centerInfo getAcronymCenterNameForIndex:[self site]];
 }
 
 -(NSString*) getSiteAbbreviatedString {
-    
-    NSString *siteName;
-    switch ([self site]) {
-        case LARC: {
-            siteName = @"ar";
-            break;
-        }
-        case WSTF: {
-            siteName = @"ws";
-            break;
-        }
-        case JPL: {
-            siteName = @"jp";
-            break;
-        }
-        case KSC: {
-            siteName = @"ks";
-            break;
-        }
-        default: {
-            siteName = @"js";
-            break;
-        }
-    }
-    return siteName;
+
+    return [centerInfo getAbbreviatedCenterNameForIndex:[self site]];
 }
 
 #pragma mark - Email methods

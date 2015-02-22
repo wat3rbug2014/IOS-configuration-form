@@ -47,9 +47,6 @@
 		A5102D0717F26E5300A9494E /* ConnectionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D0517F26E5300A9494E /* ConnectionsController.m */; };
 		A5102D0817F26E5300A9494E /* ConnectionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5102D0617F26E5300A9494E /* ConnectionsController.xib */; };
 		A5102D1517F5250800A9494E /* UIColor+ExtendedColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */; };
-		A52BD7E518330EEE00A5162B /* adddv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7E418330EEE00A5162B /* adddv1.png */; };
-		A52BD7E718330F4E00A5162B /* rmdv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7E618330F4E00A5162B /* rmdv1.png */; };
-		A52BD7EB183312D300A5162B /* changedv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7EA183312D300A5162B /* changedv1.png */; };
 		A52BD7F11833151C00A5162B /* changedv2.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7F01833151C00A5162B /* changedv2.png */; };
 		A52BD7F418331C3200A5162B /* BasicDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A52BD7F318331C3200A5162B /* BasicDeviceData.m */; };
 		A544CC101A9A714400E304D9 /* Centers.m in Sources */ = {isa = PBXBuildFile; fileRef = A544CC0F1A9A714400E304D9 /* Centers.m */; };
@@ -130,9 +127,6 @@
 		A5102D0C17F271EC00A9494E /* enumList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enumList.h; sourceTree = "<group>"; };
 		A5102D1317F5250800A9494E /* UIColor+ExtendedColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ExtendedColor.h"; sourceTree = "<group>"; };
 		A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ExtendedColor.m"; sourceTree = "<group>"; };
-		A52BD7E418330EEE00A5162B /* adddv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adddv1.png; path = ../adddv1.png; sourceTree = "<group>"; };
-		A52BD7E618330F4E00A5162B /* rmdv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rmdv1.png; path = ../rmdv1.png; sourceTree = "<group>"; };
-		A52BD7EA183312D300A5162B /* changedv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = changedv1.png; path = ../changedv1.png; sourceTree = "<group>"; };
 		A52BD7F01833151C00A5162B /* changedv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changedv2.png; sourceTree = "<group>"; };
 		A52BD7F218331C3200A5162B /* BasicDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDeviceData.h; sourceTree = "<group>"; };
 		A52BD7F318331C3200A5162B /* BasicDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDeviceData.m; sourceTree = "<group>"; };
@@ -230,56 +224,56 @@
 		A5102C8317F201A300A9494E /* Configuration Change Form */ = {
 			isa = PBXGroup;
 			children = (
-				A5102C8C17F201A300A9494E /* AppDelegate.h */,
-				A5102C8D17F201A300A9494E /* AppDelegate.m */,
 				A50596DE182C80A800973CD2 /* AddDeviceData.h */,
 				A50596DF182C80A800973CD2 /* AddDeviceData.m */,
 				A596B2391829D72F009F74CA /* AddDeviceController.h */,
 				A596B23A1829D72F009F74CA /* AddDeviceController.m */,
 				A596B2441829DC5B009F74CA /* AddDeviceController.xib */,
-				A58C10331833208F00BBA45E /* RemoveDeviceData.h */,
-				A58C10341833208F00BBA45E /* RemoveDeviceData.m */,
+				A596B23F1829D84F009F74CA /* AlterDeviceController.h */,
+				A596B2401829D84F009F74CA /* AlterDeviceController.m */,
+				A5EECDB0184A683C00346B5F /* AlterDeviceData.h */,
+				A5EECDB1184A683C00346B5F /* AlterDeviceData.m */,
+				A5102C8C17F201A300A9494E /* AppDelegate.h */,
+				A5102C8D17F201A300A9494E /* AppDelegate.m */,
+				A52BD7F218331C3200A5162B /* BasicDeviceData.h */,
+				A52BD7F318331C3200A5162B /* BasicDeviceData.m */,
+				A544CC0E1A9A714400E304D9 /* Centers.h */,
+				A544CC0F1A9A714400E304D9 /* Centers.m */,
+				A55B57C21835C59C006D1378 /* ChangeDeviceData.h */,
+				A55B57C31835C59C006D1378 /* ChangeDeviceData.m */,
+				A55B57C51837ED76006D1378 /* CommentsController.h */,
+				A55B57C61837ED76006D1378 /* CommentsController.m */,
+				A55B57C71837ED76006D1378 /* CommentsController.xib */,
+				A50596DB182C7FA600973CD2 /* ConfigurationDataFactory.h */,
+				A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */,
+				A50596E4182C874D00973CD2 /* ConfigurationDataProtocol.h */,
+				A5102D0417F26E5300A9494E /* ConnectionsController.h */,
+				A5102D0517F26E5300A9494E /* ConnectionsController.m */,
+				A5102D0617F26E5300A9494E /* ConnectionsController.xib */,
+				A5102D0C17F271EC00A9494E /* enumList.h */,
+				A596B2331829D3C8009F74CA /* FormViewController.h */,
+				A596B2341829D3C8009F74CA /* FormViewController.m */,
+				A596B2361829D441009F74CA /* FormViewControllerFactory.h */,
+				A596B2371829D441009F74CA /* FormViewControllerFactory.m */,
+				A56C5758182E9B2D00343D26 /* FormViewProtocol.h */,
+				A5B46D6317FB863800BE8FD9 /* PickerItems.h */,
+				A5B46D6417FB863800BE8FD9 /* PickerItems.m */,
 				A5102CF517F26DAD00A9494E /* RemoveDeviceController.h */,
 				A5102CF617F26DAD00A9494E /* RemoveDeviceController.m */,
 				A5102CF717F26DAD00A9494E /* RemoveDeviceController.xib */,
-				A55B57C21835C59C006D1378 /* ChangeDeviceData.h */,
-				A55B57C31835C59C006D1378 /* ChangeDeviceData.m */,
-				A5EECDB0184A683C00346B5F /* AlterDeviceData.h */,
-				A5EECDB1184A683C00346B5F /* AlterDeviceData.m */,
-				A596B23F1829D84F009F74CA /* AlterDeviceController.h */,
-				A596B2401829D84F009F74CA /* AlterDeviceController.m */,
-				A50596E5182DC8AA00973CD2 /* ReplaceDeviceData.h */,
-				A50596E6182DC8AA00973CD2 /* ReplaceDeviceData.m */,
+				A58C10331833208F00BBA45E /* RemoveDeviceData.h */,
+				A58C10341833208F00BBA45E /* RemoveDeviceData.m */,
 				A5102CFA17F26DEB00A9494E /* ReplaceDeviceController.h */,
 				A5102CFB17F26DEB00A9494E /* ReplaceDeviceController.m */,
 				A5102CFC17F26DEB00A9494E /* ReplaceDeviceController.xib */,
+				A50596E5182DC8AA00973CD2 /* ReplaceDeviceData.h */,
+				A50596E6182DC8AA00973CD2 /* ReplaceDeviceData.m */,
 				A5102CFF17F26E1C00A9494E /* SettingsController.h */,
 				A5102D0017F26E1C00A9494E /* SettingsController.m */,
 				A5102D0117F26E1C00A9494E /* SettingsController.xib */,
 				A5102CF017F266F100A9494E /* TabOverViewController.h */,
 				A5102CF117F266F100A9494E /* TabOverViewController.m */,
 				A5102CF217F266F100A9494E /* TabOverViewController.xib */,
-				A50596E4182C874D00973CD2 /* ConfigurationDataProtocol.h */,
-				A52BD7F218331C3200A5162B /* BasicDeviceData.h */,
-				A52BD7F318331C3200A5162B /* BasicDeviceData.m */,
-				A544CC0E1A9A714400E304D9 /* Centers.h */,
-				A544CC0F1A9A714400E304D9 /* Centers.m */,
-				A50596DB182C7FA600973CD2 /* ConfigurationDataFactory.h */,
-				A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */,
-				A5102D0417F26E5300A9494E /* ConnectionsController.h */,
-				A5102D0517F26E5300A9494E /* ConnectionsController.m */,
-				A5102D0617F26E5300A9494E /* ConnectionsController.xib */,
-				A55B57C51837ED76006D1378 /* CommentsController.h */,
-				A55B57C61837ED76006D1378 /* CommentsController.m */,
-				A55B57C71837ED76006D1378 /* CommentsController.xib */,
-				A5102D0C17F271EC00A9494E /* enumList.h */,
-				A56C5758182E9B2D00343D26 /* FormViewProtocol.h */,
-				A596B2331829D3C8009F74CA /* FormViewController.h */,
-				A596B2341829D3C8009F74CA /* FormViewController.m */,
-				A596B2361829D441009F74CA /* FormViewControllerFactory.h */,
-				A596B2371829D441009F74CA /* FormViewControllerFactory.m */,
-				A5B46D6317FB863800BE8FD9 /* PickerItems.h */,
-				A5B46D6417FB863800BE8FD9 /* PickerItems.m */,
 				A5102D1317F5250800A9494E /* UIColor+ExtendedColor.h */,
 				A5102D1417F5250800A9494E /* UIColor+ExtendedColor.m */,
 				A5102C8F17F201A300A9494E /* Images.xcassets */,
@@ -295,9 +289,6 @@
 				A5678A6B186F98C7009591B3 /* adddv2.png */,
 				A5678A6C186F98C7009591B3 /* alterdv.png */,
 				A5678A6D186F98C7009591B3 /* rmdv2.png */,
-				A52BD7EA183312D300A5162B /* changedv1.png */,
-				A52BD7E618330F4E00A5162B /* rmdv1.png */,
-				A52BD7E418330EEE00A5162B /* adddv1.png */,
 				A52BD7F01833151C00A5162B /* changedv2.png */,
 				A5102C8417F201A300A9494E /* Supporting Files */,
 			);
@@ -418,7 +409,6 @@
 				A5AE7A54187B0DAE002B033D /* rmdv2_selected.png in Resources */,
 				A5678A6F186F98C7009591B3 /* alterdv.png in Resources */,
 				A5102CF917F26DAD00A9494E /* RemoveDeviceController.xib in Resources */,
-				A52BD7EB183312D300A5162B /* changedv1.png in Resources */,
 				A5AE7A52187B0D22002B033D /* adddv2_selected.png in Resources */,
 				A5D500B2187B07A300965EB7 /* alterdv_selected.png in Resources */,
 				A5102CFE17F26DEB00A9494E /* ReplaceDeviceController.xib in Resources */,
@@ -434,10 +424,8 @@
 				A55B57C91837ED76006D1378 /* CommentsController.xib in Resources */,
 				A5AE7A5A187B120E002B033D /* settings.png in Resources */,
 				A5DE848E1A62044000B27308 /* Contacts.png in Resources */,
-				A52BD7E518330EEE00A5162B /* adddv1.png in Resources */,
 				A5678A6E186F98C7009591B3 /* adddv2.png in Resources */,
 				A5102D0817F26E5300A9494E /* ConnectionsController.xib in Resources */,
-				A52BD7E718330F4E00A5162B /* rmdv1.png in Resources */,
 				A5102CF417F266F100A9494E /* TabOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

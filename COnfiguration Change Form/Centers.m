@@ -33,8 +33,8 @@ CLLocationDistance const wstfDistance = 100 * METERS_PER_MILE;
         // setup values to create regions and the essential arrays
         
         centerAcronyms = [NSArray arrayWithObjects: @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
-        centerAbbreviations = [NSArray arrayWithObjects:@"js", @"ws", @"jp", @"ks", "lc", nil];
-        centerFullNames = [NSArray arrayWithObjects:@"Johnson Space Center", @"White Sands Test Facility", @" Jet Propulsion Laboratory", @"Kennedy Space Center", @"Langley Research Center", nil];
+        centerAbbreviations = [NSArray arrayWithObjects:@"js", @"ws", @"jp", @"ks", @"lc", nil];
+        centerFullNames = [NSArray arrayWithObjects:@"Johnson Space Center", @"White Sands Test Facility", @"Jet Propulsion Laboratory", @"Kennedy Space Center", @"Langley Research Center", nil];
         double longitudes[] = { 29.5630, 32.33555556, 137.4416334989196, 28.51944444, 37.08583333};
         double latitdutes[] = { -95.0910,  -106.4058333, -4.5894669521344875, -80.67, -76.38055556};
 
@@ -83,6 +83,16 @@ CLLocationDistance const wstfDistance = 100 * METERS_PER_MILE;
         }
     }
     return index;
+}
+
+-(NSString*) getAbbreviatedCenterNameForIndex:(NSInteger)index {
+    
+    return [centerAbbreviations objectAtIndex:index];
+}
+
+-(NSString*) getAcronymCenterNameForIndex:(NSInteger)index {
+    
+    return [centerAcronyms objectAtIndex:index];
 }
 
 @end
