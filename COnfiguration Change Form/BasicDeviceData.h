@@ -104,7 +104,7 @@
 /**
  * The setter for the equipment tag.
  *
- * @param The string representation for the equipment tag.
+ * @param newTag The string representation for the equipment tag.
  */
 
 -(void) setOldTag: (NSString*) newTag;
@@ -122,7 +122,7 @@
 /**
  * The setter for the VLAN using an integer value.
  *
- * @param An integer value for the vlan.
+ * @param vlan An integer value for the vlan.
  */
 
 -(void) setVlan:(NSInteger)vlan;
@@ -131,7 +131,7 @@
 /**
  * The setter for the VLAN using a string value.
  *
- * @param The string representation for the VLAN.
+ * @param newVlan The string representation for the VLAN.
  */
 
 -(void) setVlanFromString: (NSString*) newVlan;

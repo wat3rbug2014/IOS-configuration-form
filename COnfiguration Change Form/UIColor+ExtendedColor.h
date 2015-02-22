@@ -60,6 +60,10 @@
 /**
  * Performs integer and integer calculation for hexidecimal lower case characters above 9.  Its a 
  * bad hack cause I was in a hurry, as is half of the class.
+ *
+ * @param currentLetter The letter that is to be converted to an integer equivalent.
+ *
+ * @return The integer value of the character that was sent.
  */
 
 +(int) convertLowerHexNumToInt: (char) currentLetter;

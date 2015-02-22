@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A544CC111A9A7C0900E304D9 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A544CC121A9A7C0A00E304D9 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				A544CC171A9A7C3C00E304D9 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A50596DD182C7FA600973CD2 /* ConfigurationDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */; };
 		A50596E0182C80A800973CD2 /* AddDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A50596DF182C80A800973CD2 /* AddDeviceData.m */; };
@@ -38,6 +52,7 @@
 		A52BD7EB183312D300A5162B /* changedv1.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7EA183312D300A5162B /* changedv1.png */; };
 		A52BD7F11833151C00A5162B /* changedv2.png in Resources */ = {isa = PBXBuildFile; fileRef = A52BD7F01833151C00A5162B /* changedv2.png */; };
 		A52BD7F418331C3200A5162B /* BasicDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A52BD7F318331C3200A5162B /* BasicDeviceData.m */; };
+		A544CC101A9A714400E304D9 /* Centers.m in Sources */ = {isa = PBXBuildFile; fileRef = A544CC0F1A9A714400E304D9 /* Centers.m */; };
 		A55B57C41835C59C006D1378 /* ChangeDeviceData.m in Sources */ = {isa = PBXBuildFile; fileRef = A55B57C31835C59C006D1378 /* ChangeDeviceData.m */; };
 		A55B57C81837ED76006D1378 /* CommentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A55B57C61837ED76006D1378 /* CommentsController.m */; };
 		A55B57C91837ED76006D1378 /* CommentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55B57C71837ED76006D1378 /* CommentsController.xib */; };
@@ -121,6 +136,8 @@
 		A52BD7F01833151C00A5162B /* changedv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changedv2.png; sourceTree = "<group>"; };
 		A52BD7F218331C3200A5162B /* BasicDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDeviceData.h; sourceTree = "<group>"; };
 		A52BD7F318331C3200A5162B /* BasicDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicDeviceData.m; sourceTree = "<group>"; };
+		A544CC0E1A9A714400E304D9 /* Centers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Centers.h; sourceTree = "<group>"; };
+		A544CC0F1A9A714400E304D9 /* Centers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Centers.m; sourceTree = "<group>"; };
 		A55B57C21835C59C006D1378 /* ChangeDeviceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDeviceData.h; sourceTree = "<group>"; };
 		A55B57C31835C59C006D1378 /* ChangeDeviceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeDeviceData.m; sourceTree = "<group>"; };
 		A55B57C51837ED76006D1378 /* CommentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsController.h; sourceTree = "<group>"; };
@@ -245,6 +262,8 @@
 				A50596E4182C874D00973CD2 /* ConfigurationDataProtocol.h */,
 				A52BD7F218331C3200A5162B /* BasicDeviceData.h */,
 				A52BD7F318331C3200A5162B /* BasicDeviceData.m */,
+				A544CC0E1A9A714400E304D9 /* Centers.h */,
+				A544CC0F1A9A714400E304D9 /* Centers.m */,
 				A50596DB182C7FA600973CD2 /* ConfigurationDataFactory.h */,
 				A50596DC182C7FA600973CD2 /* ConfigurationDataFactory.m */,
 				A5102D0417F26E5300A9494E /* ConnectionsController.h */,
@@ -366,6 +385,9 @@
 					A5102C9417F201A300A9494E = {
 						TestTargetID = A5102C7917F201A300A9494E;
 					};
+					A544CC111A9A7C0900E304D9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = A5102C7517F201A300A9494E /* Build configuration list for PBXProject "COnfiguration Change Form" */;
@@ -382,6 +404,7 @@
 			targets = (
 				A5102C7917F201A300A9494E /* COnfiguration Change Form */,
 				A5102C9417F201A300A9494E /* COnfiguration Change FormTests */,
+				A544CC111A9A7C0900E304D9 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +452,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A544CC171A9A7C3C00E304D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Start constants\ncompany=\"TryIt\";\ncompanyID=\"tryit.com\";\ncompanyURL=\"tryit.com\";\ntarget=\"iphoneos\";\noutputPath=\"~/Documents/software/Configuration\\ Change\\ Form/COnfiguration\\ Change\\ Form/help/${PROJECT_NAME}\";\n# End constants\n\n/usr/local/bin/appledoc \\\n--exit-threshold 2 \\\n--project-company \"TryIt\" \\\n--company-id \"tryit.com\" \\\n--docset-atom-filename \"TryIt\" \\\n--docset-feed-url \"Tryit.com/docs/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"tryit.com/docs/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"tryit.com/docs\" \\\n--docset-platform-family \"iphoneos\" \\/usr/local/bin/appledoc \\\n--project-name \"Configuration Change Form\" \\\n--docset-package-url \"~/Documents/software/Configuration\\ Change\\ Form/COnfiguration\\ Change\\ Form/%DOCSETPACKAGEFILENAME\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LoadableCategory.h\" \\\n--index-desc \"${PROJECT_DIR}/readme.markdown\" \\\n\"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5102C7617F201A300A9494E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -448,6 +487,7 @@
 				A52BD7F418331C3200A5162B /* BasicDeviceData.m in Sources */,
 				A596B23B1829D72F009F74CA /* AddDeviceController.m in Sources */,
 				A58C10351833208F00BBA45E /* RemoveDeviceData.m in Sources */,
+				A544CC101A9A714400E304D9 /* Centers.m in Sources */,
 				A55B57C41835C59C006D1378 /* ChangeDeviceData.m in Sources */,
 				A596B2421829D84F009F74CA /* AlterDeviceController.m in Sources */,
 				A5102C8E17F201A300A9494E /* AppDelegate.m in Sources */,
@@ -634,6 +674,20 @@
 			};
 			name = Release;
 		};
+		A544CC131A9A7C0A00E304D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A544CC141A9A7C0A00E304D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -663,6 +717,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A544CC121A9A7C0A00E304D9 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A544CC131A9A7C0A00E304D9 /* Debug */,
+				A544CC141A9A7C0A00E304D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

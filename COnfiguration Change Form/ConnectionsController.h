@@ -195,6 +195,10 @@
 /**
  * Initialization wrapper that uses the super class initWithBundle: method and
  * then sets the data model.
+ *
+ * @param newData The data model that conforms to ConfigurationDataProtocol
+ *
+ * @return A viewcontroller that has the data model already set.
  */
 
 -(id) initWithData: (id<ConfigurationDataProtocol>) newData;

@@ -321,7 +321,7 @@
  * connectivity and is the first one.  Most data models in this application require
  * its use exception for replacement.
  *
- * @param The string representation of the first port used on the device.
+ * @param linkOne The string representation of the first port used on the device.
  */
 
 -(void) setUplinkOneFrom: (NSString*) linkOne;
@@ -344,7 +344,7 @@
  * device for connectivity and is the first one.  Most data models in this application
  * require its use exception for replacement.
  *
- * @param The string representation of the first port used on the device at the distant
+ * @param linkTo The string representation of the first port used on the device at the distant
  * end device.
  */
 
@@ -365,7 +365,7 @@
  * This setter method sets the value of the tag that is used on the distant end
  * device for connectivity and is the first one.
  *
- * @param The string representation of the first device tag at the distant end device.
+ * @param destTag The string representation of the first device tag at the distant end device.
  */
 
 -(void) setDestOneTag: (NSString*) destTag;
@@ -387,7 +387,7 @@
  * for connectivity and is the second one.  Most data models in this application require
  * its use exception for replacement.
  *
- * @param The string representation of the second port used on the device.
+ * @param linkTwo The string representation of the second port used on the device.
  */
 
 -(void) setUplinkTwoFrom: (NSString*) linkTwo;
@@ -408,7 +408,7 @@
  * This setter method sets the value of the port that is used on the distant end
  * device for connectivity and is the second one.
  *
- * @param The string representation of the second port used on the device at the distant
+ * @param linkTo The string representation of the second port used on the device at the distant
  * end device.
  */
 
@@ -429,7 +429,7 @@
  * This setter method sets the value of the tag that is used on the distant end
  * device for connectivity and is the second one.
  *
- * @param The string representation of the second device tag at the distant end device.
+ * @param destTag The string representation of the second device tag at the distant end device.
  */
 
 -(void) setDestTwoTag: (NSString*) destTag;
@@ -452,7 +452,7 @@
  * data model types except the replacement model.  The oldTag is the default tag for other
  * data models.
  *
- * @param oldTag The tag string for the existing equipment, or in the case of replacement, the
+ * @param tag The tag string for the existing equipment, or in the case of replacement, the
  * old equipment.
  */
 
@@ -481,7 +481,7 @@
 /**
  * This setter method sets the vlan number.
  *
- * @param An NSNumber representation of the vlan.
+ * @param vlan An NSNumber representation of the vlan.
  */
 
 -(void) setVlan: (NSNumber*) vlan;

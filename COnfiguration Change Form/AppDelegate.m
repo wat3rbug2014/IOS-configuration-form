@@ -17,6 +17,7 @@
 #import "BasicDeviceData.h"
 #import <CoreLocation/CoreLocation.h>
 #import "enumList.h"
+#import "Centers.h"
 
 @implementation AppDelegate
 
@@ -25,7 +26,7 @@
 @synthesize locationManager;
 @synthesize locationUpdatesAllowed;
 @synthesize locationNames;
-@synthesize appRegions;
+@synthesize centerInfo;
 
 enum selectedView {
     NOT_SET,
@@ -69,7 +70,7 @@ enum selectedView {
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     locationUpdatesAllowed = NO;
-    appRegions = [self createAppRegions];
+    centerInfo = [[Centers alloc] init];
     [self setupLocationMonitoring];
     
     // allow notification badges
@@ -103,7 +104,7 @@ enum selectedView {
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
-    [self removeRegionsFromMonitoring:appRegions];
+    [self removeRegionsFromMonitoring:[centerInfo centerRegions]];
 }
 
 #pragma mark - CoreLocationManagerDelegate Methods
@@ -120,14 +121,13 @@ enum selectedView {
     [self updateIndexForFoundRegion:region];
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground ||
         [[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
-        [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+        [self presentNotificationForCenter: [centerInfo getNameForRegion:region]];
     }
 }
 
 -(void) locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     
     NSLog(@"Left region %@", [region identifier]);
-    [self presentNotificationForCenter:[NSString stringWithFormat:@"Exiting %@", [region identifier]]];
 }
 
 -(void) locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -146,19 +146,26 @@ enum selectedView {
     }
     NSString *result;
     switch (state) {
-        case CLRegionStateInside:
+        case CLRegionStateInside: {
             result = @"INSIDE";
             [self updateIndexForFoundRegion:region];
-            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground ||
-                [[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
-                [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+            UIApplication *app = [UIApplication sharedApplication];
+            if ([app applicationState] == UIApplicationStateBackground ||  [app applicationState] == UIApplicationStateInactive) {
+                if ([app applicationIconBadgeNumber] < 1) {
+                    NSString *message = [centerInfo getNameForRegion:region];
+                    [self presentNotificationForCenter: message];
+                }
             }
             break;
-        case CLRegionStateOutside:
+        }
+        case CLRegionStateOutside: {
             result = @"OUTSIDE";
-        default:
+            break;
+        }
+        default: {
             result = @"UNKNOWN";
             break;
+        }
     }
     NSLog(@"The %@ is %@", [region identifier], result);
 }
@@ -176,30 +183,6 @@ enum selectedView {
 
 #pragma mark - Helper methods
 
-
--(NSSet*) createAppRegions {
-    
-    locationNames = [NSArray arrayWithObjects: @"JSC", @"WSTF", @"JPL", @"KSC", @"LARC", nil];
-    CLLocationDistance defaultDistance = 3 * METERS_PER_MILE;
-    CLLocationDistance  wstfDistance = 100 * METERS_PER_MILE;
-    double longitudes[] = { 29.5630, 32.33555556, 137.4416334989196, 28.51944444, 37.08583333};
-    double latitdutes[] = { -95.0910,  -106.4058333, -4.5894669521344875, -80.67, -76.38055556};
-    NSMutableArray *tempListing = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [locationNames count]; i++) {
-        CLLocationCoordinate2D  currentCoord = {longitudes[i], latitdutes[i]};
-        CLCircularRegion *currentRegion;
-        
-        if ([[locationNames objectAtIndex:i] rangeOfString:@"WSTF"].location != NSNotFound) {
-            currentRegion = [[CLCircularRegion alloc] initWithCenter:currentCoord radius:wstfDistance identifier:@"WSTF"];
-        } else {
-            currentRegion = [[CLCircularRegion alloc] initWithCenter:currentCoord radius:defaultDistance identifier:[locationNames objectAtIndex:i]];
-        }
-        NSLog(@"making %@", [currentRegion identifier]);
-        [tempListing addObject:currentRegion];
-    }
-    NSSet *results = [NSSet setWithArray:tempListing];
-    return results;
-}
 
 -(void) setupLocationMonitoring {
     
@@ -227,9 +210,9 @@ enum selectedView {
     
     NSLog(@"Initial regions count: %d", [[locationManager monitoredRegions] count]);
     [self removeRegionsFromMonitoring:[locationManager monitoredRegions]];
-    appRegions = [self createAppRegions];
+    
     NSLog(@"Cleared regions count: %d", [[locationManager monitoredRegions] count]);
-    [self addRegionsToMonitor:appRegions];
+    [self addRegionsToMonitor:[centerInfo centerRegions]];
     NSLog(@"The app regions monitored is %d", [[locationManager monitoredRegions] count]);
 }
 
@@ -249,15 +232,8 @@ enum selectedView {
 }
 
 -(void) updateIndexForFoundRegion: (CLRegion*) region {
-    
-    NSArray *listOfRegions = [NSArray arrayWithArray:[appRegions allObjects]];
-    for (int i = 0; i < [appRegions count]; i++) {
-        CLRegion *currentRegion = [listOfRegions objectAtIndex:i];
-        if ([[region identifier] rangeOfString:[currentRegion identifier]].location != NSNotFound) {
-            location = i;
-            NSLog(@"Found %@", [region identifier]);
-        }
-    }
+ 
+    location = [centerInfo getIndexForRegion:region];
 }
 
 -(void) presentNotificationForCenter: (NSString*) message {

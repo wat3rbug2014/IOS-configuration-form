@@ -28,6 +28,8 @@
 /**
  * This method is for setting the tag for the equipment that is being installed.
  * This is the setter for the value needed by this data model.
+ *
+ * @param currentTag is device tag for the new device.
  */
 
 -(void) setCurrentTag: (NSString*) currentTag;

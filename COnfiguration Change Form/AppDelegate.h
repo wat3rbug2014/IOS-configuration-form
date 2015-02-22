@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #define MAX_ALLOWED_REGIONS 20
-#define METERS_PER_MILE 1609.34
+#import "Centers.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
@@ -32,6 +32,12 @@
 
 @property int location;
 
+
+/**
+ * The object that has all center information so it is centralized for changes.
+ */
+
+@property Centers *centerInfo;
 
 /**
  * The location manager instance used for the application.
@@ -55,17 +61,10 @@
 
 
 /**
- * The listing of regions that the app will use for monitoring.
- */
-
-@property NSSet *appRegions;
-
-
-/**
  * This method provides a means to update the index used by the data objects for the center.
  * The region that is passed will be checked to see if it matches anything in the appRegions.
  * 
- * region The discovered region that is checked against the list.
+ * @param region The discovered region that is checked against the list.
  */
 
 -(void) updateIndexForFoundRegion: (CLRegion*) region;
@@ -84,7 +83,7 @@
  * This method adds an NSSet of regions to provide monitoring for the purposes of this app.
  * NOTE: A maximum of 20 regions can be monitored for the CLLocationManager.
  *
- * regions A set regions to start monitoring.
+ * @param regions A set regions to start monitoring.
  */
 
 -(void) addRegionsToMonitor: (NSSet*) regions;
@@ -98,7 +97,7 @@
  * for [locationmanager monitoredRegions] is NSSet.  For this reason the method accepts NSSet
  * instead of NSArray.  
  *
- * regions A set of regions that will be removed.
+ * @param regions A set of regions that will be removed.
  */
 
 -(void) removeRegionsFromMonitoring: (NSSet*) regions;

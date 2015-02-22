@@ -24,7 +24,7 @@
  * This class method requires an integer from enumList.h and creates a DeviceData class
  * appropriate to the operation described.
  *
- * @param An integer for one of the operations, Add, Alter, Replace, and Remove devices.
+ * @param formType An integer for one of the operations, Add, Alter, Replace, and Remove devices.
  *
  * @return An instance of a DeviceData class which conforms to the ConfigurationDataProtocol.
  */
