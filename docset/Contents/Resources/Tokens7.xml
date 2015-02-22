@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/Centers.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/Centers</TokenIdentifier>
+			<Abstract type="html">This class defines the various centers, their coordinates and the names.
+It is used as a center repository for the names and coordinates to make
+changes easier.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/setCenterFullNames:</TokenIdentifier>
+			<Abstract type="html">This array contains the full name for each of the centers.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerFullNames</Declaration>
+			
+			
+			<Anchor>//api/name/centerFullNames</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/centerFullNames</TokenIdentifier>
+			<Abstract type="html">This array contains the full name for each of the centers.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerFullNames</Declaration>
+			
+			
+			<Anchor>//api/name/centerFullNames</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Centers/centerFullNames</TokenIdentifier>
+			<Abstract type="html">This array contains the full name for each of the centers.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerFullNames</Declaration>
+			
+			
+			<Anchor>//api/name/centerFullNames</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/setCenterAcronyms:</TokenIdentifier>
+			<Abstract type="html">This is the Acronym listing for all of the centers.  It is aligned with the
+full names array.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAcronyms</Declaration>
+			
+			
+			<Anchor>//api/name/centerAcronyms</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/centerAcronyms</TokenIdentifier>
+			<Abstract type="html">This is the Acronym listing for all of the centers.  It is aligned with the
+full names array.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAcronyms</Declaration>
+			
+			
+			<Anchor>//api/name/centerAcronyms</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Centers/centerAcronyms</TokenIdentifier>
+			<Abstract type="html">This is the Acronym listing for all of the centers.  It is aligned with the
+full names array.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAcronyms</Declaration>
+			
+			
+			<Anchor>//api/name/centerAcronyms</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/setCenterAbbreviations:</TokenIdentifier>
+			<Abstract type="html">This array is aligned with the center full names and contains the 2 character
+abbreviations used for naming the devices.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAbbreviations</Declaration>
+			
+			
+			<Anchor>//api/name/centerAbbreviations</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/centerAbbreviations</TokenIdentifier>
+			<Abstract type="html">This array is aligned with the center full names and contains the 2 character
+abbreviations used for naming the devices.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAbbreviations</Declaration>
+			
+			
+			<Anchor>//api/name/centerAbbreviations</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Centers/centerAbbreviations</TokenIdentifier>
+			<Abstract type="html">This array is aligned with the center full names and contains the 2 character
+abbreviations used for naming the devices.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *centerAbbreviations</Declaration>
+			
+			
+			<Anchor>//api/name/centerAbbreviations</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/setCenterRegions:</TokenIdentifier>
+			<Abstract type="html">This set contains the list of centers with basic location information.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSSet *centerRegions</Declaration>
+			
+			
+			<Anchor>//api/name/centerRegions</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/centerRegions</TokenIdentifier>
+			<Abstract type="html">This set contains the list of centers with basic location information.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSSet *centerRegions</Declaration>
+			
+			
+			<Anchor>//api/name/centerRegions</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/Centers/centerRegions</TokenIdentifier>
+			<Abstract type="html">This set contains the list of centers with basic location information.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>@property NSSet *centerRegions</Declaration>
+			
+			
+			<Anchor>//api/name/centerRegions</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/getNameForRegion:</TokenIdentifier>
+			<Abstract type="html">This method returns the full name for the center based on the region that was found.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getNameForRegion:(CLRegion *)region</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>region</Name>
+					<Abstract type="html">The region that was found and is used to get the full name of the center
+so that it can be used for the notifications.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The full name for the center is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/getNameForRegion:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/getIndexForRegion:</TokenIdentifier>
+			<Abstract type="html">This method returns an index for the center so that future emails can get the proper center.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)getIndexForRegion:(CLRegion *)region</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>region</Name>
+					<Abstract type="html">The region for the center as it was found.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The index of the center as it was found in the array of centers.</Abstract></ReturnValue>
+			<Anchor>//api/name/getIndexForRegion:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/getAbbreviatedCenterNameForIndex:</TokenIdentifier>
+			<Abstract type="html">This method gets the centers abbreviated name based on the index of the location.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getAbbreviatedCenterNameForIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the location.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The two character name of the center as a string.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAbbreviatedCenterNameForIndex:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/Centers/getAcronymCenterNameForIndex:</TokenIdentifier>
+			<Abstract type="html">This method gets the centers acronym name based on the index of the location.</Abstract>
+			<DeclaredIn>Centers.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getAcronymCenterNameForIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index of the location.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The acronym name of the center as a string.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAcronymCenterNameForIndex:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

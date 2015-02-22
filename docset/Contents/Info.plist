@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>tryit.com.Configuration-Change-Form</string>
+	<key>CFBundleName</key>
+	<string>Configuration Change Form Documentation</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	
+	
+	
+	<key>DocSetFallbackURL</key>
+	<string>tryit.com/docs</string>
+	<key>DocSetFeedName</key>
+	<string>Configuration Change Form Documentation</string>
+	<key>DocSetFeedURL</key>
+	<string>Tryit.com/docs/TryIt</string>
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	<key>DocSetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>DashDocSetFamily</key>
+	<string>appledoc</string>
+	<key>DocSetPublisherIdentifier</key>
+	<string>tryit.com.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>TryIt</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2015 TryIt. All rights reserved.</string>
+</dict>
+</plist>

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/FormViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/FormViewController</TokenIdentifier>
+			<Abstract type="html">This is a generic super class for the subsequent view controller.  It is created
+because the generic ViewController class does not provide immediate support for
+several protocols that are in use for all the subsequent views that are used for
+this application.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setCurrentTag:</TokenIdentifier>
+			<Abstract type="html">The textfield that allows tag number entry for the application.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/currentTag</TokenIdentifier>
+			<Abstract type="html">The textfield that allows tag number entry for the application.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/currentTag</TokenIdentifier>
+			<Abstract type="html">The textfield that allows tag number entry for the application.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setCurrentTagLabel:</TokenIdentifier>
+			<Abstract type="html">Label for tag entry.  It is made accessible because some views change the label
+to allow previous and current label entries.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentTagLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/currentTagLabel</TokenIdentifier>
+			<Abstract type="html">Label for tag entry.  It is made accessible because some views change the label
+to allow previous and current label entries.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentTagLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/currentTagLabel</TokenIdentifier>
+			<Abstract type="html">Label for tag entry.  It is made accessible because some views change the label
+to allow previous and current label entries.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentTagLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setBuildingEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield that allows entry of the building number.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *buildingEntry</Declaration>
+			
+			
+			<Anchor>//api/name/buildingEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/buildingEntry</TokenIdentifier>
+			<Abstract type="html">The textfield that allows entry of the building number.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *buildingEntry</Declaration>
+			
+			
+			<Anchor>//api/name/buildingEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/buildingEntry</TokenIdentifier>
+			<Abstract type="html">The textfield that allows entry of the building number.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *buildingEntry</Declaration>
+			
+			
+			<Anchor>//api/name/buildingEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setBuildingLabel:</TokenIdentifier>
+			<Abstract type="html">The label that displays building so the text entry can be associated with it by
+proximity.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *buildingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/buildingLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/buildingLabel</TokenIdentifier>
+			<Abstract type="html">The label that displays building so the text entry can be associated with it by
+proximity.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *buildingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/buildingLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/buildingLabel</TokenIdentifier>
+			<Abstract type="html">The label that displays building so the text entry can be associated with it by
+proximity.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *buildingLabel</Declaration>
+			
+			
+			<Anchor>//api/name/buildingLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setClosetEntry:</TokenIdentifier>
+			<Abstract type="html">The textfield for closet entry.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *closetEntry</Declaration>
+			
+			
+			<Anchor>//api/name/closetEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/closetEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for closet entry.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *closetEntry</Declaration>
+			
+			
+			<Anchor>//api/name/closetEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/closetEntry</TokenIdentifier>
+			<Abstract type="html">The textfield for closet entry.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *closetEntry</Declaration>
+			
+			
+			<Anchor>//api/name/closetEntry</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setClosetLabel:</TokenIdentifier>
+			<Abstract type="html">The label that display closet so that adjacent textfield is related to it.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *closetLabel</Declaration>
+			
+			
+			<Anchor>//api/name/closetLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/closetLabel</TokenIdentifier>
+			<Abstract type="html">The label that display closet so that adjacent textfield is related to it.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *closetLabel</Declaration>
+			
+			
+			<Anchor>//api/name/closetLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/closetLabel</TokenIdentifier>
+			<Abstract type="html">The label that display closet so that adjacent textfield is related to it.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *closetLabel</Declaration>
+			
+			
+			<Anchor>//api/name/closetLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setDeviceTypeSelResult:</TokenIdentifier>
+			<Abstract type="html">The label that displays the result of the device type selector.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelResult</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/deviceTypeSelResult</TokenIdentifier>
+			<Abstract type="html">The label that displays the result of the device type selector.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelResult</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/deviceTypeSelResult</TokenIdentifier>
+			<Abstract type="html">The label that displays the result of the device type selector.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *deviceTypeSelResult</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelResult</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setDeviceTypeSelection:</TokenIdentifier>
+			<Abstract type="html">The pickerview that displays the list of devices to choose.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelection</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/deviceTypeSelection</TokenIdentifier>
+			<Abstract type="html">The pickerview that displays the list of devices to choose.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelection</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/deviceTypeSelection</TokenIdentifier>
+			<Abstract type="html">The pickerview that displays the list of devices to choose.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIPickerView *deviceTypeSelection</Declaration>
+			
+			
+			<Anchor>//api/name/deviceTypeSelection</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setEquipTypeLabel:</TokenIdentifier>
+			<Abstract type="html">The label that is adjacent to the device type label to designate the displayed
+result.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/equipTypeLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/equipTypeLabel</TokenIdentifier>
+			<Abstract type="html">The label that is adjacent to the device type label to designate the displayed
+result.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/equipTypeLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/equipTypeLabel</TokenIdentifier>
+			<Abstract type="html">The label that is adjacent to the device type label to designate the displayed
+result.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *equipTypeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/equipTypeLabel</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setDevices:</TokenIdentifier>
+			<Abstract type="html">The data structure that contains the contents for the UIPickerController for devices.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) PickerItems *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/devices</TokenIdentifier>
+			<Abstract type="html">The data structure that contains the contents for the UIPickerController for devices.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) PickerItems *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/devices</TokenIdentifier>
+			<Abstract type="html">The data structure that contains the contents for the UIPickerController for devices.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) PickerItems *devices</Declaration>
+			
+			
+			<Anchor>//api/name/devices</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/setData:</TokenIdentifier>
+			<Abstract type="html">The data structure that contains all in the information needed to complete the updates for emailing
+to the list in the user settings.  It conforms to the ConfigurationDataProtocol and is usually
+a subclass of BasicDeviceData class.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/data</TokenIdentifier>
+			<Abstract type="html">The data structure that contains all in the information needed to complete the updates for emailing
+to the list in the user settings.  It conforms to the ConfigurationDataProtocol and is usually
+a subclass of BasicDeviceData class.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FormViewController/data</TokenIdentifier>
+			<Abstract type="html">The data structure that contains all in the information needed to complete the updates for emailing
+to the list in the user settings.  It conforms to the ConfigurationDataProtocol and is usually
+a subclass of BasicDeviceData class.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/changeLabelColorForMissingInfo</TokenIdentifier>
+			<Abstract type="html">This method is used for highlighting the required fields of a particular form.  If overriding this
+method, it is recommended to call this class method inside the subclass method for simplification
+of code.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)changeLabelColorForMissingInfo</Declaration>
+			
+			
+			<Anchor>//api/name/changeLabelColorForMissingInfo</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/updateConfigurationDataStructure</TokenIdentifier>
+			<Abstract type="html">This method is used to save the data contents from the view.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateConfigurationDataStructure</Declaration>
+			
+			
+			<Anchor>//api/name/updateConfigurationDataStructure</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/pushNextController</TokenIdentifier>
+			<Abstract type="html">This is an overridable method for the view controllers that need an additional viewcontroller
+to be displayed for data entry.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)pushNextController</Declaration>
+			
+			
+			<Anchor>//api/name/pushNextController</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/FormViewController/updateFormContents</TokenIdentifier>
+			<Abstract type="html">This method is used to update the data model with information from the form fields.  This method should
+be called in the overridden instances so that original information is also sent, for the sake of brevity.</Abstract>
+			<DeclaredIn>FormViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)updateFormContents</Declaration>
+			
+			
+			<Anchor>//api/name/updateFormContents</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

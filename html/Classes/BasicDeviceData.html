@@ -1,0 +1,1102 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>BasicDeviceData Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Configuration Change Form </a></h1>
+				<a id="developerHome" href="../index.html">TryIt</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">BasicDeviceData Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/application">&nbsp;&nbsp;&nbsp;&nbsp;application</option>
+	
+	<option value="//api/name/building">&nbsp;&nbsp;&nbsp;&nbsp;building</option>
+	
+	<option value="//api/name/centerInfo">&nbsp;&nbsp;&nbsp;&nbsp;centerInfo</option>
+	
+	<option value="//api/name/closet">&nbsp;&nbsp;&nbsp;&nbsp;closet</option>
+	
+	<option value="//api/name/comments">&nbsp;&nbsp;&nbsp;&nbsp;comments</option>
+	
+	<option value="//api/name/deviceType">&nbsp;&nbsp;&nbsp;&nbsp;deviceType</option>
+	
+	<option value="//api/name/emailAddresses">&nbsp;&nbsp;&nbsp;&nbsp;emailAddresses</option>
+	
+	<option value="//api/name/emailArray">&nbsp;&nbsp;&nbsp;&nbsp;emailArray</option>
+	
+	<option value="//api/name/ipAddress">&nbsp;&nbsp;&nbsp;&nbsp;ipAddress</option>
+	
+	<option value="//api/name/nameArray">&nbsp;&nbsp;&nbsp;&nbsp;nameArray</option>
+	
+	<option value="//api/name/tag">&nbsp;&nbsp;&nbsp;&nbsp;tag</option>
+	
+	<option value="//api/name/vlan">&nbsp;&nbsp;&nbsp;&nbsp;vlan</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/oldTag">&nbsp;&nbsp;&nbsp;&nbsp;- oldTag</option>
+	
+	<option value="//api/name/setOldTag:">&nbsp;&nbsp;&nbsp;&nbsp;- setOldTag:</option>
+	
+	<option value="//api/name/setVlan:">&nbsp;&nbsp;&nbsp;&nbsp;- setVlan:</option>
+	
+	<option value="//api/name/setVlanFromString:">&nbsp;&nbsp;&nbsp;&nbsp;- setVlanFromString:</option>
+	
+	<option value="//api/name/site">&nbsp;&nbsp;&nbsp;&nbsp;- site</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application">application</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/building">building</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/centerInfo">centerInfo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closet">closet</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/comments">comments</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceType">deviceType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emailAddresses">emailAddresses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/emailArray">emailArray</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ipAddress">ipAddress</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nameArray">nameArray</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tag">tag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/vlan">vlan</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/oldTag">oldTag</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setOldTag:">setOldTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVlan:">setVlan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVlanFromString:">setVlanFromString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/site">site</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="BasicDeviceData Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">BasicDeviceData Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/ConfigurationDataProtocol.html">ConfigurationDataProtocol</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">BasicDeviceData.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is the superclass for all the datamodels because it has some essentials that all
+of the datamodels need.  One possible need for redesign may be the need to move the
+email recipients to a managed data model or something that allows a lot of email
+recipients, as the NSUserDefaults has a limited section of memory for its storage.
+As it stands right now, onbe distribution list is noted in the settings.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/centerInfo">&nbsp;&nbsp;centerInfo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/building">&nbsp;&nbsp;building</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closet">&nbsp;&nbsp;closet</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tag">&nbsp;&nbsp;tag</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ipAddress">&nbsp;&nbsp;ipAddress</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/vlan">&nbsp;&nbsp;vlan</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/comments">&nbsp;&nbsp;comments</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deviceType">&nbsp;&nbsp;deviceType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/emailAddresses">&nbsp;&nbsp;emailAddresses</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nameArray">&nbsp;&nbsp;nameArray</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/emailArray">&nbsp;&nbsp;emailArray</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application">&nbsp;&nbsp;application</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setOldTag:">&ndash;&nbsp;setOldTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/oldTag">&ndash;&nbsp;oldTag</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVlan:">&ndash;&nbsp;setVlan:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVlanFromString:">&ndash;&nbsp;setVlanFromString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/site">&ndash;&nbsp;site</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/application" title="application"></a>
+	<h3 class="subsubtitle method-title">application</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A shared instance of the UIapplication for use in determining which center
+the user is located in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) UIApplication *application</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/building" title="building"></a>
+	<h3 class="subsubtitle method-title">building</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The building the equipment is located in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *building</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/centerInfo" title="centerInfo"></a>
+	<h3 class="subsubtitle method-title">centerInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This variable contains all the center specific information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) Centers *centerInfo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/closet" title="closet"></a>
+	<h3 class="subsubtitle method-title">closet</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The closet the equipment is located in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *closet</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/comments" title="comments"></a>
+	<h3 class="subsubtitle method-title">comments</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The comments for the operation that the equipment is involved in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *comments</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deviceType" title="deviceType"></a>
+	<h3 class="subsubtitle method-title">deviceType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The integer value for the device type of the equipment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger deviceType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/emailAddresses" title="emailAddresses"></a>
+	<h3 class="subsubtitle method-title">emailAddresses</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The dictionary of key-value pairs that contain the selected email addresses
+and names.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSMutableDictionary *emailAddresses</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/emailArray" title="emailArray"></a>
+	<h3 class="subsubtitle method-title">emailArray</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An array of the email addresses for the table view for email recipients.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSArray *emailArray</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ipAddress" title="ipAddress"></a>
+	<h3 class="subsubtitle method-title">ipAddress</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The IP address of the equipment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *ipAddress</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nameArray" title="nameArray"></a>
+	<h3 class="subsubtitle method-title">nameArray</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An array of the names used for the tableview for the email recipients.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSArray *nameArray</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tag" title="tag"></a>
+	<h3 class="subsubtitle method-title">tag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The unique tag number for the equipment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *tag</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/vlan" title="vlan"></a>
+	<h3 class="subsubtitle method-title">vlan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The VLAN that the equipment is inhabiting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property NSInteger vlan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/oldTag" title="oldTag"></a>
+	<h3 class="subsubtitle method-title">oldTag</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The getter for the equipment <a href="#//api/name/tag">tag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)oldTag</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The string representation for the equipment <a href="#//api/name/tag">tag</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setOldTag:" title="setOldTag:"></a>
+	<h3 class="subsubtitle method-title">setOldTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The setter for the equipment <a href="#//api/name/tag">tag</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setOldTag:(NSString *)<em>newTag</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newTag</em></dt>
+			<dd><p>The string representation for the equipment <a href="#//api/name/tag">tag</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVlan:" title="setVlan:"></a>
+	<h3 class="subsubtitle method-title">setVlan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The setter for the VLAN using an integer value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setVlan:(NSInteger)<em>vlan</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>vlan</em></dt>
+			<dd><p>An integer value for the <a href="#//api/name/vlan">vlan</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVlanFromString:" title="setVlanFromString:"></a>
+	<h3 class="subsubtitle method-title">setVlanFromString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The setter for the VLAN using a string value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setVlanFromString:(NSString *)<em>newVlan</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newVlan</em></dt>
+			<dd><p>The string representation for the VLAN.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/site" title="site"></a>
+	<h3 class="subsubtitle method-title">site</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method returns an integer value for the NASA site.  This value is determined
+based on location tracking, so it is not statically stored.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)site</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">BasicDeviceData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 TryIt. All rights reserved. (Last updated: 2015-02-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

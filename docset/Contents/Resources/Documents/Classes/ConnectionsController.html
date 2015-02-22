@@ -1,0 +1,1771 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ConnectionsController Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Configuration Change Form </a></h1>
+				<a id="developerHome" href="../index.html">TryIt</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ConnectionsController Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/activeField">&nbsp;&nbsp;&nbsp;&nbsp;activeField</option>
+	
+	<option value="//api/name/currentIP">&nbsp;&nbsp;&nbsp;&nbsp;currentIP</option>
+	
+	<option value="//api/name/currentIPLabel">&nbsp;&nbsp;&nbsp;&nbsp;currentIPLabel</option>
+	
+	<option value="//api/name/data">&nbsp;&nbsp;&nbsp;&nbsp;data</option>
+	
+	<option value="//api/name/destTagOne">&nbsp;&nbsp;&nbsp;&nbsp;destTagOne</option>
+	
+	<option value="//api/name/destTagOneLabel">&nbsp;&nbsp;&nbsp;&nbsp;destTagOneLabel</option>
+	
+	<option value="//api/name/destTagTwo">&nbsp;&nbsp;&nbsp;&nbsp;destTagTwo</option>
+	
+	<option value="//api/name/destTagTwoLabel">&nbsp;&nbsp;&nbsp;&nbsp;destTagTwoLabel</option>
+	
+	<option value="//api/name/devDestPortOne">&nbsp;&nbsp;&nbsp;&nbsp;devDestPortOne</option>
+	
+	<option value="//api/name/devDestPortOneLabel">&nbsp;&nbsp;&nbsp;&nbsp;devDestPortOneLabel</option>
+	
+	<option value="//api/name/devDestPortTwo">&nbsp;&nbsp;&nbsp;&nbsp;devDestPortTwo</option>
+	
+	<option value="//api/name/devDestPortTwoLabel">&nbsp;&nbsp;&nbsp;&nbsp;devDestPortTwoLabel</option>
+	
+	<option value="//api/name/devPortOne">&nbsp;&nbsp;&nbsp;&nbsp;devPortOne</option>
+	
+	<option value="//api/name/devPortOneLabel">&nbsp;&nbsp;&nbsp;&nbsp;devPortOneLabel</option>
+	
+	<option value="//api/name/devPortTwo">&nbsp;&nbsp;&nbsp;&nbsp;devPortTwo</option>
+	
+	<option value="//api/name/devPortTwoLabel">&nbsp;&nbsp;&nbsp;&nbsp;devPortTwoLabel</option>
+	
+	<option value="//api/name/keyboardSize">&nbsp;&nbsp;&nbsp;&nbsp;keyboardSize</option>
+	
+	<option value="//api/name/notifier">&nbsp;&nbsp;&nbsp;&nbsp;notifier</option>
+	
+	<option value="//api/name/originalFrame">&nbsp;&nbsp;&nbsp;&nbsp;originalFrame</option>
+	
+	<option value="//api/name/scrollView">&nbsp;&nbsp;&nbsp;&nbsp;scrollView</option>
+	
+	<option value="//api/name/vlan">&nbsp;&nbsp;&nbsp;&nbsp;vlan</option>
+	
+	<option value="//api/name/vlanLabel">&nbsp;&nbsp;&nbsp;&nbsp;vlanLabel</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/changeUpLinkOneColor">&nbsp;&nbsp;&nbsp;&nbsp;- changeUpLinkOneColor</option>
+	
+	<option value="//api/name/changeUpLinkTwoColor">&nbsp;&nbsp;&nbsp;&nbsp;- changeUpLinkTwoColor</option>
+	
+	<option value="//api/name/changeVlanInfoColor">&nbsp;&nbsp;&nbsp;&nbsp;- changeVlanInfoColor</option>
+	
+	<option value="//api/name/initWithData:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithData:</option>
+	
+	<option value="//api/name/keyboardWillBeHidden:">&nbsp;&nbsp;&nbsp;&nbsp;- keyboardWillBeHidden:</option>
+	
+	<option value="//api/name/keyboardWillBeShown:">&nbsp;&nbsp;&nbsp;&nbsp;- keyboardWillBeShown:</option>
+	
+	<option value="//api/name/setUnusedUplinkOne">&nbsp;&nbsp;&nbsp;&nbsp;- setUnusedUplinkOne</option>
+	
+	<option value="//api/name/setUnusedUplinkTwo">&nbsp;&nbsp;&nbsp;&nbsp;- setUnusedUplinkTwo</option>
+	
+	<option value="//api/name/setUnusedVlan">&nbsp;&nbsp;&nbsp;&nbsp;- setUnusedVlan</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeField">activeField</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentIP">currentIP</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentIPLabel">currentIPLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/data">data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/destTagOne">destTagOne</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/destTagOneLabel">destTagOneLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/destTagTwo">destTagTwo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/destTagTwoLabel">destTagTwoLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devDestPortOne">devDestPortOne</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devDestPortOneLabel">devDestPortOneLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devDestPortTwo">devDestPortTwo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devDestPortTwoLabel">devDestPortTwoLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devPortOne">devPortOne</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devPortOneLabel">devPortOneLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devPortTwo">devPortTwo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devPortTwoLabel">devPortTwoLabel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/keyboardSize">keyboardSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/notifier">notifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/originalFrame">originalFrame</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scrollView">scrollView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/vlan">vlan</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/vlanLabel">vlanLabel</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeUpLinkOneColor">changeUpLinkOneColor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeUpLinkTwoColor">changeUpLinkTwoColor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeVlanInfoColor">changeVlanInfoColor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithData:">initWithData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/keyboardWillBeHidden:">keyboardWillBeHidden:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/keyboardWillBeShown:">keyboardWillBeShown:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUnusedUplinkOne">setUnusedUplinkOne</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUnusedUplinkTwo">setUnusedUplinkTwo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUnusedVlan">setUnusedVlan</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ConnectionsController Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ConnectionsController Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UIViewController</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/FormViewProtocol.html">FormViewProtocol</a><br />MFMailComposeViewControllerDelegate<br />UITextFieldDelegate</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ConnectionsController.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This view controller is used to add all the connection information for the
+particular <a href="#//api/name/data">data</a> model.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/data">&nbsp;&nbsp;data</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devPortOne">&nbsp;&nbsp;devPortOne</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devPortTwo">&nbsp;&nbsp;devPortTwo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devDestPortOne">&nbsp;&nbsp;devDestPortOne</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devDestPortTwo">&nbsp;&nbsp;devDestPortTwo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/destTagOne">&nbsp;&nbsp;destTagOne</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/destTagTwo">&nbsp;&nbsp;destTagTwo</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/vlan">&nbsp;&nbsp;vlan</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentIP">&nbsp;&nbsp;currentIP</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devPortOneLabel">&nbsp;&nbsp;devPortOneLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devPortTwoLabel">&nbsp;&nbsp;devPortTwoLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devDestPortOneLabel">&nbsp;&nbsp;devDestPortOneLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/devDestPortTwoLabel">&nbsp;&nbsp;devDestPortTwoLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/destTagOneLabel">&nbsp;&nbsp;destTagOneLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/destTagTwoLabel">&nbsp;&nbsp;destTagTwoLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/vlanLabel">&nbsp;&nbsp;vlanLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentIPLabel">&nbsp;&nbsp;currentIPLabel</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/notifier">&nbsp;&nbsp;notifier</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeField">&nbsp;&nbsp;activeField</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scrollView">&nbsp;&nbsp;scrollView</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/keyboardSize">&nbsp;&nbsp;keyboardSize</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/originalFrame">&nbsp;&nbsp;originalFrame</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithData:">&ndash;&nbsp;initWithData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changeUpLinkOneColor">&ndash;&nbsp;changeUpLinkOneColor</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changeUpLinkTwoColor">&ndash;&nbsp;changeUpLinkTwoColor</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changeVlanInfoColor">&ndash;&nbsp;changeVlanInfoColor</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUnusedUplinkOne">&ndash;&nbsp;setUnusedUplinkOne</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUnusedUplinkTwo">&ndash;&nbsp;setUnusedUplinkTwo</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUnusedVlan">&ndash;&nbsp;setUnusedVlan</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/keyboardWillBeShown:">&ndash;&nbsp;keyboardWillBeShown:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/keyboardWillBeHidden:">&ndash;&nbsp;keyboardWillBeHidden:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activeField" title="activeField"></a>
+	<h3 class="subsubtitle method-title">activeField</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This variable stores the current textfield so that it can be checked
+with touch events to determine if it should be dismissed or released.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) UITextField *activeField</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentIP" title="currentIP"></a>
+	<h3 class="subsubtitle method-title">currentIP</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The textfield for enting the current IP address or symbolic representation
+for the address.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *currentIP</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentIPLabel" title="currentIPLabel"></a>
+	<h3 class="subsubtitle method-title">currentIPLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the IP address on the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *currentIPLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/data" title="data"></a>
+	<h3 class="subsubtitle method-title">data</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The data model that is used to store the information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/destTagOne" title="destTagOne"></a>
+	<h3 class="subsubtitle method-title">destTagOne</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the tag on the first distant end device
+for which the current device is now connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *destTagOne</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/destTagOneLabel" title="destTagOneLabel"></a>
+	<h3 class="subsubtitle method-title">destTagOneLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the first tag on the distant end device that
+is used to connect the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *destTagOneLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/destTagTwo" title="destTagTwo"></a>
+	<h3 class="subsubtitle method-title">destTagTwo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the tag on the second distant end device
+for which the current device is now connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *destTagTwo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/destTagTwoLabel" title="destTagTwoLabel"></a>
+	<h3 class="subsubtitle method-title">destTagTwoLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the second port on the distant end device that
+is used to connect the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *destTagTwoLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devDestPortOne" title="devDestPortOne"></a>
+	<h3 class="subsubtitle method-title">devDestPortOne</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the port on the first distant end device
+for which the current device is now connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *devDestPortOne</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devDestPortOneLabel" title="devDestPortOneLabel"></a>
+	<h3 class="subsubtitle method-title">devDestPortOneLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the first port on the distant end device that
+is used to connect the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *devDestPortOneLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devDestPortTwo" title="devDestPortTwo"></a>
+	<h3 class="subsubtitle method-title">devDestPortTwo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the port on the second distant end device
+for which the current device is now connected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *devDestPortTwo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devDestPortTwoLabel" title="devDestPortTwoLabel"></a>
+	<h3 class="subsubtitle method-title">devDestPortTwoLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the second port on the distant end device that
+is used to connect the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *devDestPortTwoLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devPortOne" title="devPortOne"></a>
+	<h3 class="subsubtitle method-title">devPortOne</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the port on the device that is used to
+connect to the first distant end device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *devPortOne</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devPortOneLabel" title="devPortOneLabel"></a>
+	<h3 class="subsubtitle method-title">devPortOneLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the port on the device that is used to
+connect to the first distant end device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *devPortOneLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devPortTwo" title="devPortTwo"></a>
+	<h3 class="subsubtitle method-title">devPortTwo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This textfield is for entering the port on the device that is used to
+connect to the second distant end device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *devPortTwo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/devPortTwoLabel" title="devPortTwoLabel"></a>
+	<h3 class="subsubtitle method-title">devPortTwoLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the port on the device that is used to
+connect to the second distant end device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *devPortTwoLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/keyboardSize" title="keyboardSize"></a>
+	<h3 class="subsubtitle method-title">keyboardSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>System size that is used for the keyboard based on dynamic keyboard
+sizes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CGSize keyboardSize</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/notifier" title="notifier"></a>
+	<h3 class="subsubtitle method-title">notifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The instance of the notification center that is used to listen
+for special events and determine how the keyboard should react.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain) NSNotificationCenter *notifier</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/originalFrame" title="originalFrame"></a>
+	<h3 class="subsubtitle method-title">originalFrame</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Coordinates used by the superview so that they can be adjusted for keyboard
+animations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic) CGPoint originalFrame</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scrollView" title="scrollView"></a>
+	<h3 class="subsubtitle method-title">scrollView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This view is manipulated based on which textfield is being edited and
+when the keyboard is dismissed or raised.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UIScrollView *scrollView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/vlan" title="vlan"></a>
+	<h3 class="subsubtitle method-title">vlan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The textfield for entering the VLAN that the current device is using.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UITextField *vlan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/vlanLabel" title="vlanLabel"></a>
+	<h3 class="subsubtitle method-title">vlanLabel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This label is for entering the VLAN on the current device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (retain, nonatomic) IBOutlet UILabel *vlanLabel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/changeUpLinkOneColor" title="changeUpLinkOneColor"></a>
+	<h3 class="subsubtitle method-title">changeUpLinkOneColor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will change the color of label for the first uplink based on whether
+it is filled out properly or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changeUpLinkOneColor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/changeUpLinkTwoColor" title="changeUpLinkTwoColor"></a>
+	<h3 class="subsubtitle method-title">changeUpLinkTwoColor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will change the color of label for the second uplink based on whether
+it is filled out properly or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changeUpLinkTwoColor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/changeVlanInfoColor" title="changeVlanInfoColor"></a>
+	<h3 class="subsubtitle method-title">changeVlanInfoColor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method will change the color of label for the VLAN based on whether
+it is filled out properly or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changeVlanInfoColor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithData:" title="initWithData:"></a>
+	<h3 class="subsubtitle method-title">initWithData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialization wrapper that uses the super class initWithBundle: method and
+then sets the <a href="#//api/name/data">data</a> model.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithData:(id&lt;ConfigurationDataProtocol&gt;)<em>newData</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newData</em></dt>
+			<dd><p>The <a href="#//api/name/data">data</a> model that conforms to <a href="../Protocols/ConfigurationDataProtocol.html">ConfigurationDataProtocol</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A viewcontroller that has the <a href="#//api/name/data">data</a> model already set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/keyboardWillBeHidden:" title="keyboardWillBeHidden:"></a>
+	<h3 class="subsubtitle method-title">keyboardWillBeHidden:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called by the notification center because the view is observing the calls.
+It performs the calculations for the keyboard and then animates the scrollview so that
+what is being edited will be viewable when the keyboard is dismissed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)keyboardWillBeHidden:(NSNotification *)<em>notice</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notice</em></dt>
+			<dd><p>The notification that the notification center passes to the method.  Currently
+not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/keyboardWillBeShown:" title="keyboardWillBeShown:"></a>
+	<h3 class="subsubtitle method-title">keyboardWillBeShown:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called by the notification center because the view is observing the calls.
+It performs the calculations for the keyboard and then animates the scrollview so that
+what is being edited will be viewable when the keyboard is shown.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)keyboardWillBeShown:(NSNotification *)<em>notice</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>notice</em></dt>
+			<dd><p>The notification that the notification center passes to the method.  Currently
+not used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUnusedUplinkOne" title="setUnusedUplinkOne"></a>
+	<h3 class="subsubtitle method-title">setUnusedUplinkOne</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets the color of the labels for the first link to default because it is
+not used for this form.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setUnusedUplinkOne</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUnusedUplinkTwo" title="setUnusedUplinkTwo"></a>
+	<h3 class="subsubtitle method-title">setUnusedUplinkTwo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets the color of the labels for the second link to default because it is
+not used for this form.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setUnusedUplinkTwo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUnusedVlan" title="setUnusedVlan"></a>
+	<h3 class="subsubtitle method-title">setUnusedVlan</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method sets the color of the labels for the VLAN to default because it is not used
+for this form.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setUnusedVlan</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ConnectionsController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 TryIt. All rights reserved. (Last updated: 2015-02-22)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

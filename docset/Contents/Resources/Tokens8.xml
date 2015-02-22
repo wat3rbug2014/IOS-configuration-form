@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ChangeDeviceData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ChangeDeviceData</TokenIdentifier>
+			<Abstract type="html">This class extends the AddDeviceData class so that it can be used in
+the AddDeviceViewController for adding devices.  It is a data model to
+be used by the view controller.  The AddDeviceData class has the highest
+data requirements, all of which could be modified</Abstract>
+			<DeclaredIn>ChangeDeviceData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

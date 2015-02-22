@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ReplaceDeviceController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ReplaceDeviceController</TokenIdentifier>
+			<Abstract type="html">This ViewController is for the purposes of creating a form for replacing
+equipment out in the field.  It will have the new equipment tag, old
+equipment tag, and the location information so this equipment can be
+identified for the network map makers.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/setOldTag:</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that was removed
+from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/oldTag</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that was removed
+from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ReplaceDeviceController/oldTag</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that was removed
+from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/setCurrentTag:</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that has been placed
+into service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/currentTag</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that has been placed
+into service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ReplaceDeviceController/currentTag</TokenIdentifier>
+			<Abstract type="html">This field is for entering the tag number of the equipment that has been placed
+into service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/setOldTagLabel:</TokenIdentifier>
+			<Abstract type="html">This label is used for the fields for entering tags can be distinguished from
+each other.  It represents the tag number indication for the equipment that has
+been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *oldTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/oldTagLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceController/oldTagLabel</TokenIdentifier>
+			<Abstract type="html">This label is used for the fields for entering tags can be distinguished from
+each other.  It represents the tag number indication for the equipment that has
+been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *oldTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/oldTagLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ReplaceDeviceController/oldTagLabel</TokenIdentifier>
+			<Abstract type="html">This label is used for the fields for entering tags can be distinguished from
+each other.  It represents the tag number indication for the equipment that has
+been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *oldTagLabel</Declaration>
+			
+			
+			<Anchor>//api/name/oldTagLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

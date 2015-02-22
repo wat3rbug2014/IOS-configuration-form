@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ConnectionsController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ConnectionsController</TokenIdentifier>
+			<Abstract type="html">This view controller is used to add all the connection information for the
+particular data model.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setData:</TokenIdentifier>
+			<Abstract type="html">The data model that is used to store the information.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/data</TokenIdentifier>
+			<Abstract type="html">The data model that is used to store the information.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/data</TokenIdentifier>
+			<Abstract type="html">The data model that is used to store the information.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevPortOne:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devPortOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devPortOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevPortTwo:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devPortTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devPortTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevDestPortOne:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devDestPortOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devDestPortOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortOne</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevDestPortTwo:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devDestPortTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devDestPortTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the port on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *devDestPortTwo</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDestTagOne:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagOne</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/destTagOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagOne</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/destTagOne</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the first distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagOne</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDestTagTwo:</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagTwo</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/destTagTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagTwo</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/destTagTwo</TokenIdentifier>
+			<Abstract type="html">This textfield is for entering the tag on the second distant end device
+for which the current device is now connected.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *destTagTwo</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setVlan:</TokenIdentifier>
+			<Abstract type="html">The textfield for entering the VLAN that the current device is using.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/vlan</TokenIdentifier>
+			<Abstract type="html">The textfield for entering the VLAN that the current device is using.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/vlan</TokenIdentifier>
+			<Abstract type="html">The textfield for entering the VLAN that the current device is using.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setCurrentIP:</TokenIdentifier>
+			<Abstract type="html">The textfield for enting the current IP address or symbolic representation
+for the address.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentIP</Declaration>
+			
+			
+			<Anchor>//api/name/currentIP</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/currentIP</TokenIdentifier>
+			<Abstract type="html">The textfield for enting the current IP address or symbolic representation
+for the address.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentIP</Declaration>
+			
+			
+			<Anchor>//api/name/currentIP</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/currentIP</TokenIdentifier>
+			<Abstract type="html">The textfield for enting the current IP address or symbolic representation
+for the address.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextField *currentIP</Declaration>
+			
+			
+			<Anchor>//api/name/currentIP</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevPortOneLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devPortOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devPortOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the first distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevPortTwoLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devPortTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devPortTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the port on the device that is used to
+connect to the second distant end device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevDestPortOneLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devDestPortOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devDestPortOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDevDestPortTwoLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/devDestPortTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/devDestPortTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *devDestPortTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/devDestPortTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDestTagOneLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first tag on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/destTagOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first tag on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/destTagOneLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the first tag on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagOneLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagOneLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setDestTagTwoLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/destTagTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/destTagTwoLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the second port on the distant end device that
+is used to connect the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *destTagTwoLabel</Declaration>
+			
+			
+			<Anchor>//api/name/destTagTwoLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setVlanLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the VLAN on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *vlanLabel</Declaration>
+			
+			
+			<Anchor>//api/name/vlanLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/vlanLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the VLAN on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *vlanLabel</Declaration>
+			
+			
+			<Anchor>//api/name/vlanLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/vlanLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the VLAN on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *vlanLabel</Declaration>
+			
+			
+			<Anchor>//api/name/vlanLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setCurrentIPLabel:</TokenIdentifier>
+			<Abstract type="html">This label is for entering the IP address on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentIPLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentIPLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/currentIPLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the IP address on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentIPLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentIPLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/currentIPLabel</TokenIdentifier>
+			<Abstract type="html">This label is for entering the IP address on the current device.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *currentIPLabel</Declaration>
+			
+			
+			<Anchor>//api/name/currentIPLabel</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setNotifier:</TokenIdentifier>
+			<Abstract type="html">The instance of the notification center that is used to listen
+for special events and determine how the keyboard should react.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSNotificationCenter *notifier</Declaration>
+			
+			
+			<Anchor>//api/name/notifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/notifier</TokenIdentifier>
+			<Abstract type="html">The instance of the notification center that is used to listen
+for special events and determine how the keyboard should react.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSNotificationCenter *notifier</Declaration>
+			
+			
+			<Anchor>//api/name/notifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/notifier</TokenIdentifier>
+			<Abstract type="html">The instance of the notification center that is used to listen
+for special events and determine how the keyboard should react.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSNotificationCenter *notifier</Declaration>
+			
+			
+			<Anchor>//api/name/notifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setActiveField:</TokenIdentifier>
+			<Abstract type="html">This variable stores the current textfield so that it can be checked
+with touch events to determine if it should be dismissed or released.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) UITextField *activeField</Declaration>
+			
+			
+			<Anchor>//api/name/activeField</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/activeField</TokenIdentifier>
+			<Abstract type="html">This variable stores the current textfield so that it can be checked
+with touch events to determine if it should be dismissed or released.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) UITextField *activeField</Declaration>
+			
+			
+			<Anchor>//api/name/activeField</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/activeField</TokenIdentifier>
+			<Abstract type="html">This variable stores the current textfield so that it can be checked
+with touch events to determine if it should be dismissed or released.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) UITextField *activeField</Declaration>
+			
+			
+			<Anchor>//api/name/activeField</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setScrollView:</TokenIdentifier>
+			<Abstract type="html">This view is manipulated based on which textfield is being edited and
+when the keyboard is dismissed or raised.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIScrollView *scrollView</Declaration>
+			
+			
+			<Anchor>//api/name/scrollView</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/scrollView</TokenIdentifier>
+			<Abstract type="html">This view is manipulated based on which textfield is being edited and
+when the keyboard is dismissed or raised.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIScrollView *scrollView</Declaration>
+			
+			
+			<Anchor>//api/name/scrollView</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/scrollView</TokenIdentifier>
+			<Abstract type="html">This view is manipulated based on which textfield is being edited and
+when the keyboard is dismissed or raised.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UIScrollView *scrollView</Declaration>
+			
+			
+			<Anchor>//api/name/scrollView</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setKeyboardSize:</TokenIdentifier>
+			<Abstract type="html">System size that is used for the keyboard based on dynamic keyboard
+sizes.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGSize keyboardSize</Declaration>
+			
+			
+			<Anchor>//api/name/keyboardSize</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/keyboardSize</TokenIdentifier>
+			<Abstract type="html">System size that is used for the keyboard based on dynamic keyboard
+sizes.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGSize keyboardSize</Declaration>
+			
+			
+			<Anchor>//api/name/keyboardSize</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/keyboardSize</TokenIdentifier>
+			<Abstract type="html">System size that is used for the keyboard based on dynamic keyboard
+sizes.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGSize keyboardSize</Declaration>
+			
+			
+			<Anchor>//api/name/keyboardSize</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setOriginalFrame:</TokenIdentifier>
+			<Abstract type="html">Coordinates used by the superview so that they can be adjusted for keyboard
+animations.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint originalFrame</Declaration>
+			
+			
+			<Anchor>//api/name/originalFrame</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/originalFrame</TokenIdentifier>
+			<Abstract type="html">Coordinates used by the superview so that they can be adjusted for keyboard
+animations.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint originalFrame</Declaration>
+			
+			
+			<Anchor>//api/name/originalFrame</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ConnectionsController/originalFrame</TokenIdentifier>
+			<Abstract type="html">Coordinates used by the superview so that they can be adjusted for keyboard
+animations.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) CGPoint originalFrame</Declaration>
+			
+			
+			<Anchor>//api/name/originalFrame</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/initWithData:</TokenIdentifier>
+			<Abstract type="html">Initialization wrapper that uses the super class initWithBundle: method and
+then sets the data model.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithData:(id&lt;ConfigurationDataProtocol&gt;)newData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newData</Name>
+					<Abstract type="html">The data model that conforms to ConfigurationDataProtocol</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A viewcontroller that has the data model already set.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithData:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/changeUpLinkOneColor</TokenIdentifier>
+			<Abstract type="html">This method will change the color of label for the first uplink based on whether
+it is filled out properly or not.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)changeUpLinkOneColor</Declaration>
+			
+			
+			<Anchor>//api/name/changeUpLinkOneColor</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/changeUpLinkTwoColor</TokenIdentifier>
+			<Abstract type="html">This method will change the color of label for the second uplink based on whether
+it is filled out properly or not.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)changeUpLinkTwoColor</Declaration>
+			
+			
+			<Anchor>//api/name/changeUpLinkTwoColor</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/changeVlanInfoColor</TokenIdentifier>
+			<Abstract type="html">This method will change the color of label for the VLAN based on whether
+it is filled out properly or not.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)changeVlanInfoColor</Declaration>
+			
+			
+			<Anchor>//api/name/changeVlanInfoColor</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setUnusedUplinkOne</TokenIdentifier>
+			<Abstract type="html">This method sets the color of the labels for the first link to default because it is
+not used for this form.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)setUnusedUplinkOne</Declaration>
+			
+			
+			<Anchor>//api/name/setUnusedUplinkOne</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setUnusedUplinkTwo</TokenIdentifier>
+			<Abstract type="html">This method sets the color of the labels for the second link to default because it is
+not used for this form.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)setUnusedUplinkTwo</Declaration>
+			
+			
+			<Anchor>//api/name/setUnusedUplinkTwo</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/setUnusedVlan</TokenIdentifier>
+			<Abstract type="html">This method sets the color of the labels for the VLAN to default because it is not used
+for this form.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)setUnusedVlan</Declaration>
+			
+			
+			<Anchor>//api/name/setUnusedVlan</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/keyboardWillBeShown:</TokenIdentifier>
+			<Abstract type="html">This method is called by the notification center because the view is observing the calls.
+It performs the calculations for the keyboard and then animates the scrollview so that
+what is being edited will be viewable when the keyboard is shown.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)keyboardWillBeShown:(NSNotification *)notice</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notice</Name>
+					<Abstract type="html">The notification that the notification center passes to the method.  Currently
+not used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/keyboardWillBeShown:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ConnectionsController/keyboardWillBeHidden:</TokenIdentifier>
+			<Abstract type="html">This method is called by the notification center because the view is observing the calls.
+It performs the calculations for the keyboard and then animates the scrollview so that
+what is being edited will be viewable when the keyboard is dismissed.</Abstract>
+			<DeclaredIn>ConnectionsController.h</DeclaredIn>
+			
+			<Declaration>- (void)keyboardWillBeHidden:(NSNotification *)notice</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>notice</Name>
+					<Abstract type="html">The notification that the notification center passes to the method.  Currently
+not used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/keyboardWillBeHidden:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

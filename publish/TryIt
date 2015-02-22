@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
+    <id>Tryit.com/docs/TryIt/20150222155345</id>
+    <title type="text">Configuration Change Form Documentation</title>
+    <rights>Copyright © 2015 TryIt. All rights reserved.</rights>
+    <link rel="self" href="Tryit.com/docs/TryIt"></link>
+    <docset:publisherName>TryIt</docset:publisherName>
+    <docset:publisherID>tryit.com.documentation</docset:publisherID>
+    <updated>2015-02-22T15:53:45-06:00</updated>
+    <entry>
+        <id>tag:(null),2015-02-22:tryit.com.Configuration-Change-Form/1.0.0</id>
+        <title type="text">Configuration Change Form Documentation</title>
+        <updated>2015-02-22T15:53:45-06:00</updated>
+        <content type="text">Configuration Change Form Documentation (v1.0.0)</content>
+        <link rel="enclosure" type="application/octet-stream" href="~/Documents/software/Configuration\ Change\ Form/COnfiguration\ Change\ Form/tryit.com.Configuration-Change-Form-1.0.xar" length="507483"></link>
+        <docset:identifier>tryit.com.Configuration-Change-Form</docset:identifier>
+        <docset:version>1.0.0</docset:version>
+        <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>
+    </entry>
+</feed>

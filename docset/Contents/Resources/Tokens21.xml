@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIColor+ExtendedColor.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIColor(ExtendedColor)</TokenIdentifier>
+			<Abstract type="html">This extension to the UIColor class to allow colors to be determined using hexidecimal
+values.  It includes helper method for determining colors as well as a few methods
+that predefined colors can be used to help keep a theme to the app.  Opacity was chosen
+because it provides a performance enhancement and because the app had no need for tarnsparency
+effects.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/colorByHex:</TokenIdentifier>
+			<Abstract type="html">This method takes a hexidecimal value expressed in the format of 0xabcdef or abcdef and returns
+a RGB version of the color with opaque properties.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)colorByHex:(NSString *)hexValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hexValue</Name>
+					<Abstract type="html">A string with the composite hexidecimal value in RGB format.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A color that uses RGB values from the hexideciaml string passed to it.  The color is NOT
+transparent, but opaque.</Abstract></ReturnValue>
+			<Anchor>//api/name/colorByHex:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/convertHexToInt:</TokenIdentifier>
+			<Abstract type="html">This method takes a 2 character hexidecimal string and produces an integer value.  The assumption
+is that the string has already been parsed and the characters range from 0-9a-f.  This method is
+meant to be a private method ONLY.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (int)convertHexToInt:(NSString *)hexValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hexValue</Name>
+					<Abstract type="html">A string with 2 characters that represents a hexidecimal value.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An integer value from 0-255 that is used for RGB color creation.</Abstract></ReturnValue>
+			<Anchor>//api/name/convertHexToInt:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/colorIntToFloat:</TokenIdentifier>
+			<Abstract type="html">This method method converts an integer value from 0-255 to a float value that the UIColor class
+can use for its RGB initialization methods.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (CGFloat)colorIntToFloat:(int)color</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>color</Name>
+					<Abstract type="html">An integer value from 0-255 that can represent a portion of an RGB color selection.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The float value used by the UIColor library.</Abstract></ReturnValue>
+			<Anchor>//api/name/colorIntToFloat:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/convertLowerHexNumToInt:</TokenIdentifier>
+			<Abstract type="html">Performs integer and integer calculation for hexidecimal lower case characters above 9.  Its a
+bad hack cause I was in a hurry, as is half of the class.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (int)convertLowerHexNumToInt:(char)currentLetter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>currentLetter</Name>
+					<Abstract type="html">The letter that is to be converted to an integer equivalent.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The integer value of the character that was sent.</Abstract></ReturnValue>
+			<Anchor>//api/name/convertLowerHexNumToInt:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/textColor</TokenIdentifier>
+			<Abstract type="html">This class method returns the color used for labels and other things for a uniform color
+throughout the application.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)textColor</Declaration>
+			
+			<ReturnValue><Abstract type="html">UIColor for the labels on the forms.</Abstract></ReturnValue>
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/userTextColor</TokenIdentifier>
+			<Abstract type="html">This class method returns a color that is for the text the user is entering.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)userTextColor</Declaration>
+			
+			<ReturnValue><Abstract type="html">UIColor for the user entry text.</Abstract></ReturnValue>
+			<Anchor>//api/name/userTextColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/unFilledRequiredTextColor</TokenIdentifier>
+			<Abstract type="html">This class method returns UIColor to indicate that something
+is not complete.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)unFilledRequiredTextColor</Declaration>
+			
+			<ReturnValue><Abstract type="html">UIColor to signify some text is not filled in properly.</Abstract></ReturnValue>
+			<Anchor>//api/name/unFilledRequiredTextColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UIColor/navigatorItemColor</TokenIdentifier>
+			<Abstract type="html">A UIColor that is used in the navigation bars for the text.</Abstract>
+			<DeclaredIn>UIColor+ExtendedColor.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)navigatorItemColor</Declaration>
+			
+			<ReturnValue><Abstract type="html">UIColor for the text in the navigation items.</Abstract></ReturnValue>
+			<Anchor>//api/name/navigatorItemColor</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

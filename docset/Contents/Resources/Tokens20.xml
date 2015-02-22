@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/TabOverViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/TabOverViewController</TokenIdentifier>
+			<Abstract type="html">This viewcontroller has all five viewcontrollers and handles the
+intialization of those controllers so that the AppDelegate is easier
+to read to troubleshoot.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/setAddDeviceViewer:</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+added to the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *addDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/addDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/addDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+added to the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *addDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/addDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TabOverViewController/addDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+added to the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *addDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/addDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/setRemoveDeviceViewer:</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+removed from the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *removeDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/removeDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/removeDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+removed from the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *removeDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/removeDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TabOverViewController/removeDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+removed from the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *removeDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/removeDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/setReplaceDeviceViewer:</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+replaced by another device on the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *replaceDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/replaceDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/replaceDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+replaced by another device on the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *replaceDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/replaceDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TabOverViewController/replaceDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+replaced by another device on the network.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *replaceDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/replaceDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/setAlterDeviceViewer:</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+altered in its configuration.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *alterDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/alterDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/alterDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+altered in its configuration.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *alterDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/alterDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TabOverViewController/alterDeviceViewer</TokenIdentifier>
+			<Abstract type="html">This controller handles the information gathering for the purposes
+of creating a form that gives the details of a device that has been
+altered in its configuration.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *alterDeviceViewer</Declaration>
+			
+			
+			<Anchor>//api/name/alterDeviceViewer</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/setEmailRecipientsSelector:</TokenIdentifier>
+			<Abstract type="html">This viewcontroller handles the selection of the recipients that the
+resultant form will be mailed to when the form is completed.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *emailRecipientsSelector</Declaration>
+			
+			
+			<Anchor>//api/name/emailRecipientsSelector</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TabOverViewController/emailRecipientsSelector</TokenIdentifier>
+			<Abstract type="html">This viewcontroller handles the selection of the recipients that the
+resultant form will be mailed to when the form is completed.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *emailRecipientsSelector</Declaration>
+			
+			
+			<Anchor>//api/name/emailRecipientsSelector</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TabOverViewController/emailRecipientsSelector</TokenIdentifier>
+			<Abstract type="html">This viewcontroller handles the selection of the recipients that the
+resultant form will be mailed to when the form is completed.</Abstract>
+			<DeclaredIn>TabOverViewController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) UINavigationController *emailRecipientsSelector</Declaration>
+			
+			
+			<Anchor>//api/name/emailRecipientsSelector</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

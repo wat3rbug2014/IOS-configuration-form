@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SettingsController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SettingsController</TokenIdentifier>
+			<Abstract type="html">This is a viewcontroller that has a table of the contacts that have been selected
+for emailing the resultant form to the recipents that are listed.  It allows for
+selection of recipients as well as deselection of the recipients.</Abstract>
+			<DeclaredIn>SettingsController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SettingsController/setAppData:</TokenIdentifier>
+			<Abstract type="html">This datamodel is used because all data models reference a NSUserDefaults section
+which has the list of recipients that will be emailed.</Abstract>
+			<DeclaredIn>SettingsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BasicDeviceData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SettingsController/appData</TokenIdentifier>
+			<Abstract type="html">This datamodel is used because all data models reference a NSUserDefaults section
+which has the list of recipients that will be emailed.</Abstract>
+			<DeclaredIn>SettingsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BasicDeviceData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SettingsController/appData</TokenIdentifier>
+			<Abstract type="html">This datamodel is used because all data models reference a NSUserDefaults section
+which has the list of recipients that will be emailed.</Abstract>
+			<DeclaredIn>SettingsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain) BasicDeviceData *appData</Declaration>
+			
+			
+			<Anchor>//api/name/appData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SettingsController/addContacts</TokenIdentifier>
+			<Abstract type="html">This method creates an ABPeoplePickerNavigationController instance and hands over control.
+It is noted that this viewcontroller is also the delegate, so the delegate methods handle
+the selection of email recipients and dismissal of the view.</Abstract>
+			<DeclaredIn>SettingsController.h</DeclaredIn>
+			
+			<Declaration>- (void)addContacts</Declaration>
+			
+			
+			<Anchor>//api/name/addContacts</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

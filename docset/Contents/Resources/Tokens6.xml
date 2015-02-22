@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/BasicDeviceData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/BasicDeviceData</TokenIdentifier>
+			<Abstract type="html">This is the superclass for all the datamodels because it has some essentials that all
+of the datamodels need.  One possible need for redesign may be the need to move the
+email recipients to a managed data model or something that allows a lot of email
+recipients, as the NSUserDefaults has a limited section of memory for its storage.
+As it stands right now, onbe distribution list is noted in the settings.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setCenterInfo:</TokenIdentifier>
+			<Abstract type="html">This variable contains all the center specific information.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/centerInfo</TokenIdentifier>
+			<Abstract type="html">This variable contains all the center specific information.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/centerInfo</TokenIdentifier>
+			<Abstract type="html">This variable contains all the center specific information.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setBuilding:</TokenIdentifier>
+			<Abstract type="html">The building the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/building</TokenIdentifier>
+			<Abstract type="html">The building the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/building</TokenIdentifier>
+			<Abstract type="html">The building the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *building</Declaration>
+			
+			
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setCloset:</TokenIdentifier>
+			<Abstract type="html">The closet the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *closet</Declaration>
+			
+			
+			<Anchor>//api/name/closet</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/closet</TokenIdentifier>
+			<Abstract type="html">The closet the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *closet</Declaration>
+			
+			
+			<Anchor>//api/name/closet</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/closet</TokenIdentifier>
+			<Abstract type="html">The closet the equipment is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *closet</Declaration>
+			
+			
+			<Anchor>//api/name/closet</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setTag:</TokenIdentifier>
+			<Abstract type="html">The unique tag number for the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/tag</TokenIdentifier>
+			<Abstract type="html">The unique tag number for the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/tag</TokenIdentifier>
+			<Abstract type="html">The unique tag number for the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setIpAddress:</TokenIdentifier>
+			<Abstract type="html">The IP address of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *ipAddress</Declaration>
+			
+			
+			<Anchor>//api/name/ipAddress</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/ipAddress</TokenIdentifier>
+			<Abstract type="html">The IP address of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *ipAddress</Declaration>
+			
+			
+			<Anchor>//api/name/ipAddress</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/ipAddress</TokenIdentifier>
+			<Abstract type="html">The IP address of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *ipAddress</Declaration>
+			
+			
+			<Anchor>//api/name/ipAddress</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setVlan:</TokenIdentifier>
+			<Abstract type="html">The VLAN that the equipment is inhabiting.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/vlan</TokenIdentifier>
+			<Abstract type="html">The VLAN that the equipment is inhabiting.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/vlan</TokenIdentifier>
+			<Abstract type="html">The VLAN that the equipment is inhabiting.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger vlan</Declaration>
+			
+			
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setComments:</TokenIdentifier>
+			<Abstract type="html">The comments for the operation that the equipment is involved in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/comments</TokenIdentifier>
+			<Abstract type="html">The comments for the operation that the equipment is involved in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/comments</TokenIdentifier>
+			<Abstract type="html">The comments for the operation that the equipment is involved in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setDeviceType:</TokenIdentifier>
+			<Abstract type="html">The integer value for the device type of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger deviceType</Declaration>
+			
+			
+			<Anchor>//api/name/deviceType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/deviceType</TokenIdentifier>
+			<Abstract type="html">The integer value for the device type of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger deviceType</Declaration>
+			
+			
+			<Anchor>//api/name/deviceType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/deviceType</TokenIdentifier>
+			<Abstract type="html">The integer value for the device type of the equipment.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property NSInteger deviceType</Declaration>
+			
+			
+			<Anchor>//api/name/deviceType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setEmailAddresses:</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pairs that contain the selected email addresses
+and names.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableDictionary *emailAddresses</Declaration>
+			
+			
+			<Anchor>//api/name/emailAddresses</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/emailAddresses</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pairs that contain the selected email addresses
+and names.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableDictionary *emailAddresses</Declaration>
+			
+			
+			<Anchor>//api/name/emailAddresses</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/emailAddresses</TokenIdentifier>
+			<Abstract type="html">The dictionary of key-value pairs that contain the selected email addresses
+and names.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSMutableDictionary *emailAddresses</Declaration>
+			
+			
+			<Anchor>//api/name/emailAddresses</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setNameArray:</TokenIdentifier>
+			<Abstract type="html">An array of the names used for the tableview for the email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *nameArray</Declaration>
+			
+			
+			<Anchor>//api/name/nameArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/nameArray</TokenIdentifier>
+			<Abstract type="html">An array of the names used for the tableview for the email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *nameArray</Declaration>
+			
+			
+			<Anchor>//api/name/nameArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/nameArray</TokenIdentifier>
+			<Abstract type="html">An array of the names used for the tableview for the email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *nameArray</Declaration>
+			
+			
+			<Anchor>//api/name/nameArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setEmailArray:</TokenIdentifier>
+			<Abstract type="html">An array of the email addresses for the table view for email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *emailArray</Declaration>
+			
+			
+			<Anchor>//api/name/emailArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/emailArray</TokenIdentifier>
+			<Abstract type="html">An array of the email addresses for the table view for email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *emailArray</Declaration>
+			
+			
+			<Anchor>//api/name/emailArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/emailArray</TokenIdentifier>
+			<Abstract type="html">An array of the email addresses for the table view for email recipients.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSArray *emailArray</Declaration>
+			
+			
+			<Anchor>//api/name/emailArray</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setApplication:</TokenIdentifier>
+			<Abstract type="html">A shared instance of the UIapplication for use in determining which center
+the user is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *application</Declaration>
+			
+			
+			<Anchor>//api/name/application</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/application</TokenIdentifier>
+			<Abstract type="html">A shared instance of the UIapplication for use in determining which center
+the user is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *application</Declaration>
+			
+			
+			<Anchor>//api/name/application</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/BasicDeviceData/application</TokenIdentifier>
+			<Abstract type="html">A shared instance of the UIapplication for use in determining which center
+the user is located in.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (readonly) UIApplication *application</Declaration>
+			
+			
+			<Anchor>//api/name/application</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setOldTag:</TokenIdentifier>
+			<Abstract type="html">The setter for the equipment tag.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (void)setOldTag:(NSString *)newTag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newTag</Name>
+					<Abstract type="html">The string representation for the equipment tag.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOldTag:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/oldTag</TokenIdentifier>
+			<Abstract type="html">The getter for the equipment tag.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)oldTag</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation for the equipment tag.</Abstract></ReturnValue>
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setVlan:</TokenIdentifier>
+			<Abstract type="html">The setter for the VLAN using an integer value.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (void)setVlan:(NSInteger)vlan</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vlan</Name>
+					<Abstract type="html">An integer value for the vlan.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setVlan:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/setVlanFromString:</TokenIdentifier>
+			<Abstract type="html">The setter for the VLAN using a string value.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (void)setVlanFromString:(NSString *)newVlan</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newVlan</Name>
+					<Abstract type="html">The string representation for the VLAN.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setVlanFromString:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/BasicDeviceData/site</TokenIdentifier>
+			<Abstract type="html">This method returns an integer value for the NASA site.  This value is determined
+based on location tracking, so it is not statically stored.</Abstract>
+			<DeclaredIn>BasicDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (int)site</Declaration>
+			
+			
+			<Anchor>//api/name/site</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

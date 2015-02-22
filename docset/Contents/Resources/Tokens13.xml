@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/FormViewControllerFactory.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/FormViewControllerFactory</TokenIdentifier>
+			<Abstract type="html">This class is a factory class for creating the view controllers for the tab
+view controller for the application.  It is meant as a central point of creation
+so that polymorphic behavior can be used.  See enumList.h for connectType enum values
+that can be passed to this class.</Abstract>
+			<DeclaredIn>FormViewControllerFactory.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/FormViewControllerFactory/createFormView:</TokenIdentifier>
+			<Abstract type="html">Creates a view controller based on integer values passed to it.  See enumList.h for connectType
+enum values for the acceptable range of values to pass to this method.</Abstract>
+			<DeclaredIn>FormViewControllerFactory.h</DeclaredIn>
+			
+			<Declaration>+ (id&lt;FormViewProtocol&gt;)createFormView:(int)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">the enum value used for selecting which view controller to create.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A subclass of the FormViewController class.</Abstract></ReturnValue>
+			<Anchor>//api/name/createFormView:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

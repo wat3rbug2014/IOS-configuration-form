@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AppDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AppDelegate</TokenIdentifier>
+			<Abstract type="html">This is the first ObjC entry point for the application.  Major calls for application state
+change happen here.  This version has location services.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setWindow:</TokenIdentifier>
+			<Abstract type="html">The display window for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/window</TokenIdentifier>
+			<Abstract type="html">The display window for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/window</TokenIdentifier>
+			<Abstract type="html">The display window for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			
+			
+			<Anchor>//api/name/window</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setLocation:</TokenIdentifier>
+			<Abstract type="html">The index used by the device data objects for determining which center the user is location in.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property int location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/location</TokenIdentifier>
+			<Abstract type="html">The index used by the device data objects for determining which center the user is location in.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property int location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/location</TokenIdentifier>
+			<Abstract type="html">The index used by the device data objects for determining which center the user is location in.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property int location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setCenterInfo:</TokenIdentifier>
+			<Abstract type="html">The object that has all center information so it is centralized for changes.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/centerInfo</TokenIdentifier>
+			<Abstract type="html">The object that has all center information so it is centralized for changes.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/centerInfo</TokenIdentifier>
+			<Abstract type="html">The object that has all center information so it is centralized for changes.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property Centers *centerInfo</Declaration>
+			
+			
+			<Anchor>//api/name/centerInfo</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setLocationManager:</TokenIdentifier>
+			<Abstract type="html">The location manager instance used for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, retain) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/locationManager</TokenIdentifier>
+			<Abstract type="html">The location manager instance used for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, retain) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/locationManager</TokenIdentifier>
+			<Abstract type="html">The location manager instance used for the application.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property (strong, retain) CLLocationManager *locationManager</Declaration>
+			
+			
+			<Anchor>//api/name/locationManager</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setLocationUpdatesAllowed:</TokenIdentifier>
+			<Abstract type="html">The flag that is used to determine whether to continue trying to use location services.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationUpdatesAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationUpdatesAllowed</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/locationUpdatesAllowed</TokenIdentifier>
+			<Abstract type="html">The flag that is used to determine whether to continue trying to use location services.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationUpdatesAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationUpdatesAllowed</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/locationUpdatesAllowed</TokenIdentifier>
+			<Abstract type="html">The flag that is used to determine whether to continue trying to use location services.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property BOOL locationUpdatesAllowed</Declaration>
+			
+			
+			<Anchor>//api/name/locationUpdatesAllowed</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setLocationNames:</TokenIdentifier>
+			<Abstract type="html">The list of names that will be used for creating the location regions.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *locationNames</Declaration>
+			
+			
+			<Anchor>//api/name/locationNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/locationNames</TokenIdentifier>
+			<Abstract type="html">The list of names that will be used for creating the location regions.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *locationNames</Declaration>
+			
+			
+			<Anchor>//api/name/locationNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/locationNames</TokenIdentifier>
+			<Abstract type="html">The list of names that will be used for creating the location regions.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>@property NSArray *locationNames</Declaration>
+			
+			
+			<Anchor>//api/name/locationNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/updateIndexForFoundRegion:</TokenIdentifier>
+			<Abstract type="html">This method provides a means to update the index used by the data objects for the center.
+The region that is passed will be checked to see if it matches anything in the appRegions.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)updateIndexForFoundRegion:(CLRegion *)region</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>region</Name>
+					<Abstract type="html">The discovered region that is checked against the list.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateIndexForFoundRegion:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setupLocationMonitoring</TokenIdentifier>
+			<Abstract type="html">This method does the checking to see if location services are allowed by the user and the
+device.  Then it sets up the locationmanager in order to monitor for proximity to the
+targeted centers.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)setupLocationMonitoring</Declaration>
+			
+			
+			<Anchor>//api/name/setupLocationMonitoring</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/addRegionsToMonitor:</TokenIdentifier>
+			<Abstract type="html">This method adds an NSSet of regions to provide monitoring for the purposes of this app.
+NOTE: A maximum of 20 regions can be monitored for the CLLocationManager.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)addRegionsToMonitor:(NSSet *)regions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>regions</Name>
+					<Abstract type="html">A set regions to start monitoring.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRegionsToMonitor:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/removeRegionsFromMonitoring:</TokenIdentifier>
+			<Abstract type="html">This method provides a means of cleaning up the locationmanager for the regions it monitors.
+The locationmanager is constrained to doing approximately 20 locations, so it is important to
+clean up prior instances.  At this moment no overlap between other apps has been observed so
+this method makes the assumption that the regions were created by this app.  The return type
+for [locationmanager monitoredRegions] is NSSet.  For this reason the method accepts NSSet
+instead of NSArray.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)removeRegionsFromMonitoring:(NSSet *)regions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>regions</Name>
+					<Abstract type="html">A set of regions that will be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRegionsFromMonitoring:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/presentNotificationForCenter:</TokenIdentifier>
+			<Abstract type="html">Provides a method to give banner notifcations to the phone. The message is determined
+prior to delivery to this message.  No further processing will happen to the message.</Abstract>
+			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			
+			<Declaration>- (void)presentNotificationForCenter:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>message</Name>
+					<Abstract type="html">The message that the banner is going to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/presentNotificationForCenter:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

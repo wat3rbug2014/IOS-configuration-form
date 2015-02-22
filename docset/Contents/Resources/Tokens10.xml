@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ConfigurationDataFactory.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ConfigurationDataFactory</TokenIdentifier>
+			<Abstract type="html">This factory class is used for creating the data model class based on
+the enum used in enumList.h for the type of application operation needed.
+The idea is to use a factory for creating the class and using polymorphic
+behavior.</Abstract>
+			<DeclaredIn>ConfigurationDataFactory.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ConfigurationDataFactory/create:</TokenIdentifier>
+			<Abstract type="html">This class method requires an integer from enumList.h and creates a DeviceData class
+appropriate to the operation described.</Abstract>
+			<DeclaredIn>ConfigurationDataFactory.h</DeclaredIn>
+			
+			<Declaration>+ (id&lt;ConfigurationDataProtocol&gt;)create:(int)formType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>formType</Name>
+					<Abstract type="html">An integer for one of the operations, Add, Alter, Replace, and Remove devices.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of a DeviceData class which conforms to the ConfigurationDataProtocol.</Abstract></ReturnValue>
+			<Anchor>//api/name/create:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

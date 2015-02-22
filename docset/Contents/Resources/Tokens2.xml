@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AddDeviceData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AddDeviceData</TokenIdentifier>
+			<Abstract type="html">This class extends the BasicDeviceData class so that it can be used in
+the AddDeviceViewController for adding devices.  It is a data model to
+be used by the view controller.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setUplinkOneFrom:</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink where the side is on the device
+that is being reported.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/uplinkOneFrom</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink where the side is on the device
+that is being reported.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/uplinkOneFrom</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink where the side is on the device
+that is being reported.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setUplinkOneTo:</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink on the side that is connecting to
+existing equipment, and not the device that is being added.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/uplinkOneTo</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink on the side that is connecting to
+existing equipment, and not the device that is being added.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/uplinkOneTo</TokenIdentifier>
+			<Abstract type="html">This value is the first uplink on the side that is connecting to
+existing equipment, and not the device that is being added.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkOneTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkOneTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setUplinkTwoFrom:</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink where the side is on the device
+that is being reported.  It can be optional, because not all devices
+will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/uplinkTwoFrom</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink where the side is on the device
+that is being reported.  It can be optional, because not all devices
+will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/uplinkTwoFrom</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink where the side is on the device
+that is being reported.  It can be optional, because not all devices
+will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoFrom</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoFrom</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setUplinkTwoTo:</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink on the side that is connecting to
+existing equipment, and not the device that is being added.  It is
+optional, because not all devices will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/uplinkTwoTo</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink on the side that is connecting to
+existing equipment, and not the device that is being added.  It is
+optional, because not all devices will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/uplinkTwoTo</TokenIdentifier>
+			<Abstract type="html">This value is the second uplink on the side that is connecting to
+existing equipment, and not the device that is being added.  It is
+optional, because not all devices will have 2 uplinks.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *uplinkTwoTo</Declaration>
+			
+			
+			<Anchor>//api/name/uplinkTwoTo</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setDestOneTag:</TokenIdentifier>
+			<Abstract type="html">This value is the tag number of the distant end device for the first
+uplink.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destOneTag</Declaration>
+			
+			
+			<Anchor>//api/name/destOneTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/destOneTag</TokenIdentifier>
+			<Abstract type="html">This value is the tag number of the distant end device for the first
+uplink.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destOneTag</Declaration>
+			
+			
+			<Anchor>//api/name/destOneTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/destOneTag</TokenIdentifier>
+			<Abstract type="html">This value is the tag number of the distant end device for the first
+uplink.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destOneTag</Declaration>
+			
+			
+			<Anchor>//api/name/destOneTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/setDestTwoTag:</TokenIdentifier>
+			<Abstract type="html">This value contains the tag number of the distant end device for the
+second uplink.  It is optional because the second link may not be
+configured.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destTwoTag</Declaration>
+			
+			
+			<Anchor>//api/name/destTwoTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AddDeviceData/destTwoTag</TokenIdentifier>
+			<Abstract type="html">This value contains the tag number of the distant end device for the
+second uplink.  It is optional because the second link may not be
+configured.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destTwoTag</Declaration>
+			
+			
+			<Anchor>//api/name/destTwoTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AddDeviceData/destTwoTag</TokenIdentifier>
+			<Abstract type="html">This value contains the tag number of the distant end device for the
+second uplink.  It is optional because the second link may not be
+configured.</Abstract>
+			<DeclaredIn>AddDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *destTwoTag</Declaration>
+			
+			
+			<Anchor>//api/name/destTwoTag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AlterDeviceController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AlterDeviceController</TokenIdentifier>
+			<Abstract type="html">This class extends the AddDeviceController because many of the graphical
+elements are the same or that can be used to support the idea of changing
+a particular element of the data model.  Many of the methods from the super
+class have been overridden to support the ability to change elements, because
+the requirements for information are not the same, but are optional.</Abstract>
+			<DeclaredIn>AlterDeviceController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

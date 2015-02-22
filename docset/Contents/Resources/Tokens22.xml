@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ConfigurationDataProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ConfigurationDataProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is created for contract enforcement by the subclassed
+datatype for compiler checks.  It sets setters and getters for the data
+models that are basic and the ones that are optional because not all of the
+data models require them.  At this moment, I&apos;m not sure if that adds more
+simplicity than the occasional call to see if the particular class supports
+the desired selector.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/building</TokenIdentifier>
+			<Abstract type="html">This method returns the building information string.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)building</Declaration>
+			
+			<ReturnValue><Abstract type="html">The building expressed as a string.</Abstract></ReturnValue>
+			<Anchor>//api/name/building</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setBuilding:</TokenIdentifier>
+			<Abstract type="html">This method sets the building information string.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setBuilding:(NSString *)building</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>building</Name>
+					<Abstract type="html">The building expressed as a string.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBuilding:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/closet</TokenIdentifier>
+			<Abstract type="html">This method returns the string designation for the closet where the equipment is located.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)closet</Declaration>
+			
+			<ReturnValue><Abstract type="html">The closet expressed as a string.</Abstract></ReturnValue>
+			<Anchor>//api/name/closet</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setCloset:</TokenIdentifier>
+			<Abstract type="html">This methods sets the string designation for the closet where the equipment is located.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setCloset:(NSString *)closet</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>closet</Name>
+					<Abstract type="html">The string representation of the closet.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCloset:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/tag</TokenIdentifier>
+			<Abstract type="html">This method retrieves the string designation for the tag of the equipment.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)tag</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the equipment tag.</Abstract></ReturnValue>
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setTag:</TokenIdentifier>
+			<Abstract type="html">This method sets the string designation for the tag of the equipment.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setTag:(NSString *)currentTag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>currentTag</Name>
+					<Abstract type="html">The string representation of the equipment tag.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setTag:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/comments</TokenIdentifier>
+			<Abstract type="html">This method returns the comments made about the device and anything to do with
+the activity that this data model is explaining.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)comments</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string containing the entire comment.</Abstract></ReturnValue>
+			<Anchor>//api/name/comments</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setComments:</TokenIdentifier>
+			<Abstract type="html">This method sets the comments to be made about the equipment or the activity that
+it is involved in.  This method does not do concatenation but replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setComments:(NSString *)comment</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>comment</Name>
+					<Abstract type="html">The string containg the entire comment.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setComments:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/deviceType</TokenIdentifier>
+			<Abstract type="html">This method returns an integer that is the equivalent of something listed in the
+enumList.h.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)deviceType</Declaration>
+			
+			<ReturnValue><Abstract type="html">An integer representing the device type.</Abstract></ReturnValue>
+			<Anchor>//api/name/deviceType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setDeviceType:</TokenIdentifier>
+			<Abstract type="html">Set the device type as it correlates to the enumList.h file.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setDeviceType:(NSInteger)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">An integer representing the device type.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDeviceType:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/addEmailAddress:withName:</TokenIdentifier>
+			<Abstract type="html">This method will add an email address along with its associated name to the
+NSUserDefaults section.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)addEmailAddress:(NSString *)email withName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>email</Name>
+					<Abstract type="html">The email address</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name associated with the email address.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addEmailAddress:withName:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/removeEmailAddress:</TokenIdentifier>
+			<Abstract type="html">This method will remove the email address and the associated name for the email
+address.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)removeEmailAddress:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name that will be used to remove the key-value pair for the email
+address.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeEmailAddress:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getEmailMessageBody</TokenIdentifier>
+			<Abstract type="html">This method creates the message body for the email and returns the string representation.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getEmailMessageBody</Declaration>
+			
+			<ReturnValue><Abstract type="html">The message to be used in the email.</Abstract></ReturnValue>
+			<Anchor>//api/name/getEmailMessageBody</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getEmailSubject</TokenIdentifier>
+			<Abstract type="html">This method creates the subject line for the email.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getEmailSubject</Declaration>
+			
+			<ReturnValue><Abstract type="html">The subject line for the email.</Abstract></ReturnValue>
+			<Anchor>//api/name/getEmailSubject</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/isFormFilledOut</TokenIdentifier>
+			<Abstract type="html">This is method designed to be overridden for the particular data class so that
+all necessary items are filled out before trying to make an email message.  YES
+means that everything that is required has been supplied.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isFormFilledOut</Declaration>
+			
+			<ReturnValue><Abstract type="html">The boolean flag for whether all required items are available.</Abstract></ReturnValue>
+			<Anchor>//api/name/isFormFilledOut</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getNameAtIndex:</TokenIdentifier>
+			<Abstract type="html">This method returns a name for the array of email address based on the index.
+Its use is for the SettingsController which maps a name and email address to a
+particular UITableViewCell.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getNameAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index value that will be used got get a name for the TableView.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of the name associated with an email address.</Abstract></ReturnValue>
+			<Anchor>//api/name/getNameAtIndex:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getEmailAtIndex:</TokenIdentifier>
+			<Abstract type="html">This method returns an email address for the array of email address/names based
+on the index.  Its use is for the SettingsController which maps a name and email
+address to a particular UITableViewCell.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getEmailAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">The index value that will be used got get an email address for the
+TableView.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of the email address associated with a name.</Abstract></ReturnValue>
+			<Anchor>//api/name/getEmailAtIndex:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/emailCount</TokenIdentifier>
+			<Abstract type="html">The number of email addresses that are currently stored by the application.  This
+does not include any email addresses that are part of a distribution list.  A
+distribution only counts as one item.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)emailCount</Declaration>
+			
+			<ReturnValue><Abstract type="html">An integer value expressing the number of email addresses that will be
+used when filling out the email.</Abstract></ReturnValue>
+			<Anchor>//api/name/emailCount</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getStoredEmailSettings</TokenIdentifier>
+			<Abstract type="html">This method is not meant to be public.  It is meant to retrieve email names and
+addresses from the NSUserDefaults.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)getStoredEmailSettings</Declaration>
+			
+			
+			<Anchor>//api/name/getStoredEmailSettings</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/updateStoredEmailSettings</TokenIdentifier>
+			<Abstract type="html">This method is not meant to be public.  It is meant to store the email names and
+addresses to NSUserDefaults.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)updateStoredEmailSettings</Declaration>
+			
+			
+			<Anchor>//api/name/updateStoredEmailSettings</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getMailingList</TokenIdentifier>
+			<Abstract type="html">This method gets all of the selected email addresses.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)getMailingList</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of strings containing the selected email addresses.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMailingList</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/removeEntryAtIndex:</TokenIdentifier>
+			<Abstract type="html">This method is meant to be used by the SettingsController so that cell selection
+will remove the desired email address and name from the stored email addresses
+for the application.  It makes the assumption that the email address and the name
+correlate correctly with the arrays containing those string.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)removeEntryAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">An integer that correlates with the location in the array for the
+email address and name so that they are removed from the list of stored email
+addresses.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeEntryAtIndex:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getDeviceName</TokenIdentifier>
+			<Abstract type="html">This method returns a complete device name which includes the center, device type, building,
+closet, and unique tag number for the device.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getDeviceName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string value for the complete device name.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDeviceName</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getDeviceTypeString</TokenIdentifier>
+			<Abstract type="html">This methods returns a two character string of the device type based on what is selected.
+See enumList.h for the device type abbreviations.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getDeviceTypeString</Declaration>
+			
+			<ReturnValue><Abstract type="html">String with 2 character representing the device type.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDeviceTypeString</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getSiteString</TokenIdentifier>
+			<Abstract type="html">This methods returns an abbreviation of the center names.  This is not to be confused with
+the getSiteAbbreviatedString method.  As an example JPL is used for Jet Propulsion Lab will
+return a value of &apos;JPL&apos;.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getSiteString</Declaration>
+			
+			<ReturnValue><Abstract type="html">A acronym value of the center name.</Abstract></ReturnValue>
+			<Anchor>//api/name/getSiteString</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getSiteAbbreviatedString</TokenIdentifier>
+			<Abstract type="html">This methods returns a two character representation of the NASA center that is to be
+used in creating the device name.  As an example JPL or Jet Propulsion Lab will return a
+value of &apos;jp&apos;.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getSiteAbbreviatedString</Declaration>
+			
+			<ReturnValue><Abstract type="html">Two character string for the center.</Abstract></ReturnValue>
+			<Anchor>//api/name/getSiteAbbreviatedString</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/getAbbreviateDeviceString</TokenIdentifier>
+			<Abstract type="html">This methods returns a two character representation of the device type.  See enumList.h for
+the device types.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)getAbbreviateDeviceString</Declaration>
+			
+			<ReturnValue><Abstract type="html">Two character representation of the device type.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAbbreviateDeviceString</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/uplinkOneFrom</TokenIdentifier>
+			<Abstract type="html">This getter method returns the value of the port that is used on the device for
+connectivity and is the first one.  Most data models in this application require
+its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)uplinkOneFrom</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the first port used on the device.</Abstract></ReturnValue>
+			<Anchor>//api/name/uplinkOneFrom</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setUplinkOneFrom:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the value of the port that is used on the device for
+connectivity and is the first one.  Most data models in this application require
+its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setUplinkOneFrom:(NSString *)linkOne</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>linkOne</Name>
+					<Abstract type="html">The string representation of the first port used on the device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUplinkOneFrom:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/uplinkOneTo</TokenIdentifier>
+			<Abstract type="html">This getter method gets the value of the port that is used on the distant end
+device for connectivity and is the first one.  Most data models in this application
+require its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)uplinkOneTo</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the first port used on the device at the distant
+end device.</Abstract></ReturnValue>
+			<Anchor>//api/name/uplinkOneTo</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setUplinkOneTo:</TokenIdentifier>
+			<Abstract type="html">This setter method gets the value of the port that is used on the distant end
+device for connectivity and is the first one.  Most data models in this application
+require its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setUplinkOneTo:(NSString *)linkTo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>linkTo</Name>
+					<Abstract type="html">The string representation of the first port used on the device at the distant
+end device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUplinkOneTo:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/destOneTag</TokenIdentifier>
+			<Abstract type="html">This getter method returns the value of the tag that is used on the distant end
+device for connectivity and is the first one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)destOneTag</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the first device tag at the distant end device.</Abstract></ReturnValue>
+			<Anchor>//api/name/destOneTag</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setDestOneTag:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the value of the tag that is used on the distant end
+device for connectivity and is the first one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setDestOneTag:(NSString *)destTag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>destTag</Name>
+					<Abstract type="html">The string representation of the first device tag at the distant end device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDestOneTag:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/uplinkTwoFrom</TokenIdentifier>
+			<Abstract type="html">This getter method gets the value of the port that is used on the distant end device
+for connectivity and is the second one.  Most data models in this application require
+its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)uplinkTwoFrom</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the second port used on the device.</Abstract></ReturnValue>
+			<Anchor>//api/name/uplinkTwoFrom</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setUplinkTwoFrom:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the value of the port that is used on the distant end device
+for connectivity and is the second one.  Most data models in this application require
+its use exception for replacement.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setUplinkTwoFrom:(NSString *)linkTwo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>linkTwo</Name>
+					<Abstract type="html">The string representation of the second port used on the device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUplinkTwoFrom:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/uplinkTwoTo</TokenIdentifier>
+			<Abstract type="html">This getter method gets the value of the port that is used on the distant end
+device for connectivity and is the second one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)uplinkTwoTo</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the second port used on the device at the distant
+end device.</Abstract></ReturnValue>
+			<Anchor>//api/name/uplinkTwoTo</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setUplinkTwoTo:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the value of the port that is used on the distant end
+device for connectivity and is the second one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setUplinkTwoTo:(NSString *)linkTo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>linkTo</Name>
+					<Abstract type="html">The string representation of the second port used on the device at the distant
+end device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUplinkTwoTo:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/destTwoTag</TokenIdentifier>
+			<Abstract type="html">This getter method returns the value of the tag that is used on the distant end
+device for connectivity and is the second one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)destTwoTag</Declaration>
+			
+			<ReturnValue><Abstract type="html">The string representation of the second device tag at the distant end device.</Abstract></ReturnValue>
+			<Anchor>//api/name/destTwoTag</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setDestTwoTag:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the value of the tag that is used on the distant end
+device for connectivity and is the second one.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setDestTwoTag:(NSString *)destTag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>destTag</Name>
+					<Abstract type="html">The string representation of the second device tag at the distant end device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDestTwoTag:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/oldTag</TokenIdentifier>
+			<Abstract type="html">This getter method returns the tag of the existing equipment.  This method is used in all
+data model types except the replacement model.  The oldTag is the default tag for other
+data models.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)oldTag</Declaration>
+			
+			<ReturnValue><Abstract type="html">oldTag The tag string for the existing equipment, or in the case of replacement, the
+old equipment.</Abstract></ReturnValue>
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setOldTag:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the tag of the existing equipment.  This method is used in all
+data model types except the replacement model.  The oldTag is the default tag for other
+data models.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setOldTag:(NSString *)tag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tag</Name>
+					<Abstract type="html">The tag string for the existing equipment, or in the case of replacement, the
+old equipment.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOldTag:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/ipAddress</TokenIdentifier>
+			<Abstract type="html">This getter method returns the string representation of an IP address.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)ipAddress</Declaration>
+			
+			<ReturnValue><Abstract type="html">A string representation of an IP address or various combinations.</Abstract></ReturnValue>
+			<Anchor>//api/name/ipAddress</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setIpAddress:</TokenIdentifier>
+			<Abstract type="html">This setter method allows IPv4 addresses or abbreviated addresses such as
+ins.170.3.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setIpAddress:(NSString *)ip</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ip</Name>
+					<Abstract type="html">The string representation of an IP address or an idea for an IP address.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setIpAddress:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setVlan:</TokenIdentifier>
+			<Abstract type="html">This setter method sets the vlan number.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setVlan:(NSNumber *)vlan</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vlan</Name>
+					<Abstract type="html">An NSNumber representation of the vlan.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setVlan:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/vlan</TokenIdentifier>
+			<Abstract type="html">This methods returns the integer value of a vlan since the range is from 1
+to 4000.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (int)vlan</Declaration>
+			
+			<ReturnValue><Abstract type="html">Integer value for vlan.</Abstract></ReturnValue>
+			<Anchor>//api/name/vlan</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ConfigurationDataProtocol/setVlanFromString:</TokenIdentifier>
+			<Abstract type="html">This method takes a string input and and converts it to integer and allows it to
+be stored in the particular data model.</Abstract>
+			<DeclaredIn>ConfigurationDataProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)setVlanFromString:(NSString *)vlanString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vlanString</Name>
+					<Abstract type="html">a string that represents a vlan as a number from 1-4000.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setVlanFromString:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

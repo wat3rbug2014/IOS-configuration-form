@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/CommentsController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/CommentsController</TokenIdentifier>
+			<Abstract type="html">This class of view controller allows the entry of comments so that
+extra notes can be used to describe the equipment changes.  It also
+uses the MFMailComposeViewControllerDelegate so that the email can be created
+and sent out from this view.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/setCommentSection:</TokenIdentifier>
+			<Abstract type="html">The UITextView that is used for writing the comments.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextView *commentSection</Declaration>
+			
+			
+			<Anchor>//api/name/commentSection</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/commentSection</TokenIdentifier>
+			<Abstract type="html">The UITextView that is used for writing the comments.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextView *commentSection</Declaration>
+			
+			
+			<Anchor>//api/name/commentSection</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CommentsController/commentSection</TokenIdentifier>
+			<Abstract type="html">The UITextView that is used for writing the comments.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UITextView *commentSection</Declaration>
+			
+			
+			<Anchor>//api/name/commentSection</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/setData:</TokenIdentifier>
+			<Abstract type="html">The data model that is used for storing the comments and creating the email.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/data</TokenIdentifier>
+			<Abstract type="html">The data model that is used for storing the comments and creating the email.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CommentsController/data</TokenIdentifier>
+			<Abstract type="html">The data model that is used for storing the comments and creating the email.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) id&lt;ConfigurationDataProtocol&gt; data</Declaration>
+			
+			
+			<Anchor>//api/name/data</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/setCommentLabel:</TokenIdentifier>
+			<Abstract type="html">The UILabel that is used for giviong the user an indication of the purpose
+of the textview.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *commentLabel</Declaration>
+			
+			
+			<Anchor>//api/name/commentLabel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/commentLabel</TokenIdentifier>
+			<Abstract type="html">The UILabel that is used for giviong the user an indication of the purpose
+of the textview.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *commentLabel</Declaration>
+			
+			
+			<Anchor>//api/name/commentLabel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CommentsController/commentLabel</TokenIdentifier>
+			<Abstract type="html">The UILabel that is used for giviong the user an indication of the purpose
+of the textview.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>@property (retain, nonatomic) IBOutlet UILabel *commentLabel</Declaration>
+			
+			
+			<Anchor>//api/name/commentLabel</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/initWithData:</TokenIdentifier>
+			<Abstract type="html">This initialization method is a wrapper to initWithBundle: in that it allows
+the data model to be stored after creation throught the super class init method.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithData:(id&lt;ConfigurationDataProtocol&gt;)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">is a DeviceData class of some sort that is required to conform to the
+ConfigurationDataProtocol protocol.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of the CommentsController is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithData:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/sendForm</TokenIdentifier>
+			<Abstract type="html">This methods creates a MFMAilComposeViewController and populates the fields
+based on the data stored in the data ivar.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>- (void)sendForm</Declaration>
+			
+			
+			<Anchor>//api/name/sendForm</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CommentsController/readyToSendForm</TokenIdentifier>
+			<Abstract type="html">This method goes to the data model and does a check to see if all the necessary data
+is present before trying to present the mail composer view.</Abstract>
+			<DeclaredIn>CommentsController.h</DeclaredIn>
+			
+			<Declaration>- (void)readyToSendForm</Declaration>
+			
+			
+			<Anchor>//api/name/readyToSendForm</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

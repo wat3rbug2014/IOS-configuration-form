@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/FormViewProtocol.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/FormViewProtocol</TokenIdentifier>
+			<Abstract type="html">This protocol is used for conforming the view controllers so that they have
+a common  API.</Abstract>
+			<DeclaredIn>FormViewProtocol.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/FormViewProtocol/changeLabelColorForMissingInfo</TokenIdentifier>
+			<Abstract type="html">This method is used for highlighting the required fields of a particular form.  If overriding this
+method, it is recommended to call this class method inside the subclass method for simplification
+of code.</Abstract>
+			<DeclaredIn>FormViewProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)changeLabelColorForMissingInfo</Declaration>
+			
+			
+			<Anchor>//api/name/changeLabelColorForMissingInfo</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/FormViewProtocol/updateConfigurationDataStructure</TokenIdentifier>
+			<Abstract type="html">This method is used to save the data contents from the view.</Abstract>
+			<DeclaredIn>FormViewProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)updateConfigurationDataStructure</Declaration>
+			
+			
+			<Anchor>//api/name/updateConfigurationDataStructure</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/FormViewProtocol/updateFormContents</TokenIdentifier>
+			<Abstract type="html">This method is used to update the data model with information from the form fields.  This method should
+be called in the overridden instances so that original information is also sent, for the sake of brevity.</Abstract>
+			<DeclaredIn>FormViewProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)updateFormContents</Declaration>
+			
+			
+			<Anchor>//api/name/updateFormContents</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/FormViewProtocol/pushNextController</TokenIdentifier>
+			<Abstract type="html">This is an overridable method for the view controllers that need an additional viewcontroller
+to be displayed for data entry.</Abstract>
+			<DeclaredIn>FormViewProtocol.h</DeclaredIn>
+			
+			<Declaration>- (void)pushNextController</Declaration>
+			
+			
+			<Anchor>//api/name/pushNextController</Anchor>
+            <NodeRef refid="23"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ReplaceDeviceData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ReplaceDeviceData</TokenIdentifier>
+			<Abstract type="html">This data model supports the replacement of equipment.  It is probably
+the least restrictive of the data models because so little information
+is required.  Essential the tag numbers for the devices change, but a
+few other items are need for the network map folks so that they can update
+the maps with less frustration.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+            
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceData/setOldTag:</TokenIdentifier>
+			<Abstract type="html">This tag is for the old equipment that has been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceData/oldTag</TokenIdentifier>
+			<Abstract type="html">This tag is for the old equipment that has been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ReplaceDeviceData/oldTag</TokenIdentifier>
+			<Abstract type="html">This tag is for the old equipment that has been removed from service.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+			
+			<Declaration>@property (retain) NSString *oldTag</Declaration>
+			
+			
+			<Anchor>//api/name/oldTag</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceData/setCurrentTag:</TokenIdentifier>
+			<Abstract type="html">This method is for setting the tag for the equipment that is being installed.
+This is the setter for the value needed by this data model.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (void)setCurrentTag:(NSString *)currentTag</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>currentTag</Name>
+					<Abstract type="html">is device tag for the new device.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCurrentTag:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ReplaceDeviceData/currentTag</TokenIdentifier>
+			<Abstract type="html">This is the getter method for the new equipment for this data model.</Abstract>
+			<DeclaredIn>ReplaceDeviceData.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)currentTag</Declaration>
+			
+			
+			<Anchor>//api/name/currentTag</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
