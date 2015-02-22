@@ -41,10 +41,10 @@
     [[self tabBar] setTintColor:[UIColor textColor]];
     NSArray *tabIcons = [NSArray arrayWithObjects:@"adddv2.png", @"rmdv2.png", @"Properties.png", @"changedv2.png", @"Contacts.png", nil];
     NSArray *tabSelectedIcons = [NSArray arrayWithObjects:@"adddv2_selected.png", @"rmdv2_selected.png", @"Properties_selected.png",  @"changedv2.png", @"Contacts_selected.png", nil];
-    FormViewController *addView = [FormViewControllerFactory createFormView: ADD];
-    FormViewController *removeView = [FormViewControllerFactory createFormView: REMOVE];
-    FormViewController *replaceView = [FormViewControllerFactory createFormView: REPLACE];
-    FormViewController *changeView = [FormViewControllerFactory createFormView: OTHER];
+    id addView = [FormViewControllerFactory createFormView: ADD];
+    id removeView = [FormViewControllerFactory createFormView: REMOVE];
+    id replaceView = [FormViewControllerFactory createFormView: REPLACE];
+    id changeView = [FormViewControllerFactory createFormView: OTHER];
     SettingsController *settingsView = [[SettingsController alloc] init];
     NSArray *viewcontrollerArray = [NSArray arrayWithObjects:addView, removeView, changeView, replaceView, settingsView, nil];
     NSMutableArray *navControllers = [NSMutableArray arrayWithCapacity:5];

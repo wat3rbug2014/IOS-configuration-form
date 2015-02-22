@@ -34,8 +34,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     self = [super init];
     if (self != nil) {
         [self getStoredEmailSettings];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocationFromNotification:)
-            name: @"LocationUpdated" object: [self application]];
     }
     return self;
 }
