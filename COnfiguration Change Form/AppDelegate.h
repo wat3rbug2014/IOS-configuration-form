@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Douglas Gardiner. All rights reserved.
 //
 
+/**
+ * This is the first ObjC entry point for the application.  Major calls for application state
+ * change happen here.  This version has location services.
+ */
+
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #define MAX_ALLOWED_REGIONS 20

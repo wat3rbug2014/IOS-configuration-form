@@ -176,11 +176,6 @@ static NSString *const emailKey = @"ConfigChanger.Email";
     return siteName;
 }
 
--(void) updateLocationFromNotification:(NSNotification *)notification {
-    
-    
-}
-
 #pragma mark - Email methods
 
 

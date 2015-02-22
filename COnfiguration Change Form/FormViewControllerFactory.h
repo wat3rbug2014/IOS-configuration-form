@@ -19,6 +19,7 @@
 #import "ReplaceDeviceController.h"
 #import "ConnectionsController.h"
 #import "AlterDeviceController.h"
+#import "FormViewProtocol.h"
 
 @interface FormViewControllerFactory : NSObject
 
@@ -32,6 +33,6 @@
  * @return A subclass of the FormViewController class.
  */
 
-+(id) createFormView:(int) type;
++(id<FormViewProtocol>) createFormView:(int) type;
 
 @end

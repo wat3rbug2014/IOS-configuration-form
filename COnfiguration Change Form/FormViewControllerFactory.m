@@ -16,7 +16,7 @@
 @implementation FormViewControllerFactory
 
 
-+(id) createFormView: (int) type {
++(id<FormViewProtocol>) createFormView: (int) type {
     
     if (type == ADD) {
         return [[AddDeviceController alloc] init];

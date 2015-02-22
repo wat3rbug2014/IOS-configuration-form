@@ -10,6 +10,5 @@
 
 @implementation ChangeDeviceData
 
-@synthesize oldTag;
 
 @end

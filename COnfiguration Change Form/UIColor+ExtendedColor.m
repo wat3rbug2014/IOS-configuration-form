@@ -77,19 +77,19 @@
         if ([temp characterAtIndex:0] >= '0' && [temp characterAtIndex:0] <= '9') {
             result += 16 * (short)([temp characterAtIndex:0] - '0');
         } else {
-            result += 16 * (short)[UIColor convertUpperHexNumToInt:[hexValue characterAtIndex:0]];
+            result += 16 * (short)[UIColor convertLowerHexNumToInt:[hexValue characterAtIndex:0]];
         }
         if ([temp characterAtIndex:1] >= '0' && [temp characterAtIndex:0] <= '9') {
             result += (short)([temp characterAtIndex:1] - '0');
         } else {
-            result += (short)[UIColor convertUpperHexNumToInt:[hexValue characterAtIndex:0]];
+            result += (short)[UIColor convertLowerHexNumToInt:[hexValue characterAtIndex:0]];
         }
     }
     return result;
 }
 /* This should be one line of calculation but..unichar */
 
-+(int) convertUpperHexNumToInt: (char) currentLetter {
++(int) convertLowerHexNumToInt: (char) currentLetter {
     
     switch (currentLetter) {
         case 'a': return 10;

@@ -23,7 +23,7 @@
 @synthesize removeDeviceViewer;
 @synthesize replaceDeviceViewer;
 @synthesize alterDeviceViewer;
-@synthesize settingsViewer;
+@synthesize emailRecipientsSelector;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -71,7 +71,7 @@
     removeDeviceViewer = nil;
     replaceDeviceViewer = nil;
     alterDeviceViewer =nil;
-    settingsViewer = nil;
+    emailRecipientsSelector = nil;
 }
 
 -(BOOL) shouldAutorotate {

@@ -17,8 +17,6 @@
 
 @synthesize appData;
 
-#pragma mark - Initialization methods
-
 
 - (id)initWithStyle:(UITableViewStyle)style {
     
@@ -29,9 +27,6 @@
     }
     return self;
 }
-
-#pragma mark - Overriden methods
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];

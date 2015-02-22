@@ -93,7 +93,7 @@ enum selectedView {
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -118,7 +118,10 @@ enum selectedView {
 
     NSLog(@"Entered region %@", [region identifier]);
     [self updateIndexForFoundRegion:region];
-    [self presentNotificationForCenter:[NSString stringWithFormat:@"Entering %@", [region identifier]]];
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground ||
+        [[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
+        [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+    }
 }
 
 -(void) locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
@@ -146,7 +149,10 @@ enum selectedView {
         case CLRegionStateInside:
             result = @"INSIDE";
             [self updateIndexForFoundRegion:region];
-            [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+            if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground ||
+                [[UIApplication sharedApplication] applicationState] == UIApplicationStateInactive) {
+                [self presentNotificationForCenter:[NSString stringWithFormat:@"At %@", [region identifier]]];
+            }
             break;
         case CLRegionStateOutside:
             result = @"OUTSIDE";

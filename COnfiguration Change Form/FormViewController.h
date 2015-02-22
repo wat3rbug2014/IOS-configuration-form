@@ -7,9 +7,10 @@
 //
 
 /**
- * This is a generic super class for the subsequent view controller.  It is created because the generic
- * ViewController class does not provide immediate support for several protocols that are in use for
- * all the subsequent views that are used for this application.
+ * This is a generic super class for the subsequent view controller.  It is created 
+ * because the generic ViewController class does not provide immediate support for 
+ * several protocols that are in use for all the subsequent views that are used for 
+ * this application.
  */
 
 #import <UIKit/UIKit.h>
@@ -17,7 +18,8 @@
 #import "ConfigurationDataProtocol.h"
 #import "FormViewProtocol.h"
 
-@interface FormViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource,  UITextFieldDelegate, FormViewProtocol>
+@interface FormViewController : UIViewController<UIPickerViewDelegate,
+UIPickerViewDataSource,  UITextFieldDelegate, FormViewProtocol>
 
 
 /**
