@@ -149,13 +149,8 @@ enum selectedView {
         case CLRegionStateInside: {
             result = @"INSIDE";
             [self updateIndexForFoundRegion:region];
-            UIApplication *app = [UIApplication sharedApplication];
-            if ([app applicationState] == UIApplicationStateBackground ||  [app applicationState] == UIApplicationStateInactive) {
-                if ([app applicationIconBadgeNumber] < 1) {
-                    NSString *message = [centerInfo getNameForRegion:region];
-                    [self presentNotificationForCenter: message];
-                }
-            }
+            NSString *message = [centerInfo getNameForRegion:region];
+            [self presentNotificationForCenter: message];
             break;
         }
         case CLRegionStateOutside: {
@@ -208,12 +203,12 @@ enum selectedView {
     }
     // Add regions to be monitored
     
-    NSLog(@"Initial regions count: %d", [[locationManager monitoredRegions] count]);
+    NSLog(@"Initial regions count: %lu", (unsigned long)[[locationManager monitoredRegions] count]);
     [self removeRegionsFromMonitoring:[locationManager monitoredRegions]];
     
-    NSLog(@"Cleared regions count: %d", [[locationManager monitoredRegions] count]);
+    NSLog(@"Cleared regions count: %lu", (unsigned long)[[locationManager monitoredRegions] count]);
     [self addRegionsToMonitor:[centerInfo centerRegions]];
-    NSLog(@"The app regions monitored is %d", [[locationManager monitoredRegions] count]);
+    NSLog(@"The app regions monitored is %lu", (unsigned long)[[locationManager monitoredRegions] count]);
 }
 
 -(void) removeRegionsFromMonitoring:(NSSet *)regions {
@@ -233,7 +228,7 @@ enum selectedView {
 
 -(void) updateIndexForFoundRegion: (CLRegion*) region {
  
-    location = [centerInfo getIndexForRegion:region];
+    location = (int)[centerInfo getIndexForRegion:region];
 }
 
 -(void) presentNotificationForCenter: (NSString*) message {
@@ -241,7 +236,6 @@ enum selectedView {
     UILocalNotification *foundNotification = [[UILocalNotification alloc] init];
     [foundNotification setAlertBody:message];
     [foundNotification setSoundName:UILocalNotificationDefaultSoundName];
-    [foundNotification setApplicationIconBadgeNumber:1];
     [[UIApplication sharedApplication] presentLocalNotificationNow:foundNotification];
 }
 @end
