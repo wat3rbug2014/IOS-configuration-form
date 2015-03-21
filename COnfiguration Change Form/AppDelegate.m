@@ -222,7 +222,7 @@ enum selectedView {
     
     for (CLRegion *currentRegion in regions) {
         [locationManager startMonitoringForRegion: currentRegion];
-        [locationManager requestStateForRegion:currentRegion];
+//        [locationManager requestStateForRegion:currentRegion];
     }
 }
 
